@@ -19,8 +19,6 @@ jobs:
       - name: JC
         run: |
           ls
-          pwd
-          ls public
       - name: Deploy to github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
