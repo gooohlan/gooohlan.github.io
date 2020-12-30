@@ -21,17 +21,17 @@ jobs:
         uses: heowc/action-hexo@main
         with:
           args: clean
-      - name: Generate
+      - name: Hexo Generate
         uses: heowc/action-hexo@main
         with:
           args: generate
-          - name Deploy to github.io
-      uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.CI_TOKEN }}
-          external_repository: inkdp/inkdp.github.io
-          publish_branch: master
-          publish_dir: ./public
+      - name: Deploy to github.io
+        uses: peaceiris/actions-gh-pages@v3
+          with:
+            personal_token: ${{ secrets.CI_TOKEN }}
+            external_repository: inkdp/inkdp.github.io
+            publish_branch: master
+            publish_dir: ./public
 
 #      - name: Setup hexo
 #        env:
