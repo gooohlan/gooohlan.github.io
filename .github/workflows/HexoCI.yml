@@ -12,6 +12,22 @@ jobs:
         uses: heowc/action-hexo@main
         with:
           args: clean
+      - name: Setup hexo
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "inkdp@qq.com"
+          git config --global user.name "InkDP"
+          npm install hexo-cli -g
+          npm install
+      - name: Hexo deploy
+        run: |
+          hexo d
+          pwd
 #      - name: Generate
 #        uses: heowc/action-hexo@main
 #        with:
@@ -29,22 +45,6 @@ jobs:
 #          external_repository: inkdp/inkdp.github.io
 #          publish_branch: master
 #          publish_dir: ./public
-      - name: Setup hexo
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "inkdp@qq.com"
-          git config --global user.name "InkDP"
-          npm install hexo-cli -g
-          npm install
-        - name: Hexo deploy
-          run: |
-            hexo d
-            pwd
 #name: CI
 #
 #on:
