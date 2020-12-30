@@ -33,4 +33,4 @@ jobs:
           hexo clean
           hexo d
           pwd
-          cd public
+          cat index.html
