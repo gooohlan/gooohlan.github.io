@@ -18,7 +18,8 @@ jobs:
           args: generate
       - name: JC
         run: |
-          ls
+          sudo apt-get install tree
+          tree -d
       - name: Deploy to github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
