@@ -18,15 +18,15 @@ jobs:
         with:
           version: ${{ matrix.node_version }}
       - name: Hexo Clean
-	uses: heowc/action-hexo@main
-      	with:
-        args: clean
+        uses: heowc/action-hexo@main
+        with:
+          args: clean
       - name: Generate
-      	uses: heowc/action-hexo@main
-     	 with:
-        args: generate
-      - name Deploy to github.io
-	uses: peaceiris/actions-gh-pages@v3
+        uses: heowc/action-hexo@main
+        with:
+          args: generate
+          - name Deploy to github.io
+      uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.CI_TOKEN }}
           external_repository: inkdp/inkdp.github.io
