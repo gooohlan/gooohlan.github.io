@@ -7,21 +7,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: CheckOut
-        uses: actions/checkout@v2
-
-      - name: Cache node modules
-        uses: actions/cache@v1
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
 
       - name: Hexo Clean
         uses: heowc/action-hexo@main
