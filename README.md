@@ -1,8 +1,6 @@
 # 墨殇的技术博客
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inkdp/inkdp.github.io/Action)
-
-![cs](https://github.com/inkdp/inkdp.github.io/workflows/CI/badge.svg)
+![CI](https://github.com/inkdp/inkdp.github.io/workflows/CI/badge.svg) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inkdp/inkdp.github.io/CI) ![GitHub last commit](https://img.shields.io/github/last-commit/inkdp/inkdp.github.io)  
 
 ## 1.0.2
 
