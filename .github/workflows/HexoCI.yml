@@ -9,17 +9,17 @@ jobs:
     steps:
 
       steps:
-        - name: 清除Hexo
+        - name: Clean hexo
           uses: heowc/action-hexo@main
           with:
             args: clean
 
-        - name: 生成Hexo
+        - name: Generate Hexo
           uses: heowc/action-hexo@main
           with:
             args: generate
 
-        - name: 部署到master分支
+        - name: Deploy to inkdp.github.io
           uses: peaceiris/actions-gh-pages@v3
           with:
             personal_token: ${{ secrets.CI_TOKEN }}
