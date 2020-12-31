@@ -8,14 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v1
+      - name: Clean
+        uses: heowc/action-hexo@main
         with:
-          ref: hexo
-#      - name: Clean
-#        uses: heowc/action-hexo@main
-#        with:
-#          args: clean
+          args: clean
       - name: Generate
         uses: heowc/action-hexo@main
         with:
