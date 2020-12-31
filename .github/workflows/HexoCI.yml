@@ -35,4 +35,4 @@ jobs:
       - name: Deploy inkdp.cn
         run: |
           mv ./public ./www
-          scp -o StrictHostKeyChecking=no -r ./www root@47.95.141.144:/dockerData/
+          scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
