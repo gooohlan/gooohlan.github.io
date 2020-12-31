@@ -10,31 +10,30 @@ jobs:
       - name: CheckOut
         uses: actions/checkout@v2
 
-      - name: Cache node modules
-        uses: actions/cache@v1
-        id: cache
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+#      - name: Cache node modules
+#        uses: actions/cache@v1
+#        id: cache
+#        with:
+#          path: node_modules
+#          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#          restore-keys: |
+#            ${{ runner.os }}-node-
+#
+#      - name: Install Dependencies
+#        if: steps.cache.outputs.cache-hit != 'true'
+#        run: npm ci
 
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
-
-      - name: Hexo Clean
+      - name: 清除Hexo
         uses: heowc/action-hexo@main
         with:
           args: clean
 
-
-      - name: Hexo Generate Public
+      - name: 生成Hexo
         uses: heowc/action-hexo@main
         with:
           args: generate
 
-      - name: Deploy to inkdp.github.io
+      - name: 部署到master分支
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.CI_TOKEN }}
