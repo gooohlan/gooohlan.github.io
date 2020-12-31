@@ -6,23 +6,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
+      - name: 清除Hexo
+        uses: heowc/action-hexo@main
+        with:
+          args: clean
 
-      steps:
-        - name: Clean hexo
-          uses: heowc/action-hexo@main
-          with:
-            args: clean
+      - name: 生成Hexo
+        uses: heowc/action-hexo@main
+        with:
+          args: generate
 
-        - name: Generate Hexo
-          uses: heowc/action-hexo@main
-          with:
-            args: generate
-
-        - name: Deploy to inkdp.github.io
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            personal_token: ${{ secrets.CI_TOKEN }}
-            external_repository: inkdp/inkdp.github.io
-            publish_branch: master
-            publish_dir: ./public
+      - name: 部署到master分支
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.CI_TOKEN }}
+          external_repository: inkdp/inkdp.github.io
+          publish_branch: master
+          publish_dir: ./public
