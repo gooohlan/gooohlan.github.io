@@ -98,11 +98,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
-  repo: 'git@github.com:InkDP/inkdp.github.io.git'
-  branch: 'master'
+#  type: 'git'
+#  repo: 'git@github.com:InkDP/inkdp.github.io.git'
+#  branch: 'master'
