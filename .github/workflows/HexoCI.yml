@@ -12,29 +12,19 @@ jobs:
         uses: actions/checkout@v1
         with:
           ref: hexo
-      - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
+      - name: Clean
+        uses: heowc/action-hexo@main
         with:
-          version: ${{ matrix.node_version }}
-      - name: Setup hexo
+          args: clean
+      - name: Generate
+        uses: heowc/action-hexo@main
+        with:
+          args: generate
+      - name: Deploy
+        uses: heowc/action-hexo@main
         env:
-          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "inkdp@qq.com"
-          git config --global user.name "InkDP"
-          npm install hexo-cli -g
-          npm install
-      - name: Hexo deploy
-        run: |
-          hexo clean
-          hexo d
-      - name: Deploy inkdp.cn
-        env:
-          SERVER_DIR: ${{ secrets.SERVER_DIR }}
-        run: |
-          mv ./public ./www
-          scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
+          EMAIL: inkdp.qq.com
+          NAME: InkDP
+        with:
+          args: deploy
+
