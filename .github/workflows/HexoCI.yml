@@ -7,26 +7,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clean
-        uses: heowc/action-hexo@main
-        with:
-          args: clean
-      - name: Generate
-        uses: heowc/action-hexo@main
-        with:
-          args: generate
-      - name: Deploy
-        uses: heowc/action-hexo@main
-        env:
-          EMAIL: inkdp@qq.com
-          NAME: InkDP
-        with:
-          args: deploy
-#
-#        - name: Deploy to inkdp.github.io
-#        uses: peaceiris/actions-gh-pages@v3
-#        with:
-#          personal_token: ${{ secrets.CI_TOKEN }}
-#          external_repository: inkdp/inkdp.github.io
-#          publish_branch: master
-#          publish_dir: ./public
+
+      steps:
+        - name: 清除Hexo
+          uses: heowc/action-hexo@main
+          with:
+            args: clean
+
+        - name: 生成Hexo
+          uses: heowc/action-hexo@main
+          with:
+            args: generate
+
+        - name: 部署到master分支
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            personal_token: ${{ secrets.CI_TOKEN }}
+            external_repository: inkdp/inkdp.github.io
+            publish_branch: master
+            publish_dir: ./public
