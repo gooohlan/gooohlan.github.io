@@ -33,6 +33,8 @@ jobs:
           hexo clean
           hexo d
       - name: Deploy inkdp.cn
+        env:
+          SERVER_DIR: ${{ secrets.SERVER_DIR }}
         run: |
           mv ./public ./www
           scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
