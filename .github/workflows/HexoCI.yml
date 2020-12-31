@@ -12,10 +12,12 @@ jobs:
         uses: heowc/action-hexo@main
         with:
           args: clean
+
       - name: Generate
         uses: heowc/action-hexo@main
         with:
           args: generate
+
       - name: Deploy
         uses: heowc/action-hexo@main
         env:
@@ -23,4 +25,12 @@ jobs:
           NAME: InkDP
         with:
           args: deploy
+
+      - name: Deploy to inkdp.github.io
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.CI_TOKEN }}
+          external_repository: inkdp/inkdp.github.io
+          publish_branch: master
+          publish_dir: ./public
 
