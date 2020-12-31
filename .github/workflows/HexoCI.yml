@@ -6,34 +6,38 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: 清除Hexo
+      - name: CheckOut
+        uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        id: cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Hexo Clean
         uses: heowc/action-hexo@main
         with:
           args: clean
 
-      - name: 生成Hexo
+
+      - name: Hexo Generate Public
         uses: heowc/action-hexo@main
         with:
           args: generate
 
-      - name: 部署到master分支
+      - name: Deploy to inkdp.github.io
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.CI_TOKEN }}
           external_repository: inkdp/inkdp.github.io
           publish_branch: master
           publish_dir: ./public
-#      - name: 部署到个人服务器
-#        env:
-#          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
-#          SERVER_DIR: ${{ secrets.SERVER_DIR }}
-#        run: |
-#          mkdir -p ~/.ssh/
-#          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-#          chmod 600 ~/.ssh/id_rsa
-#          mv ./public ./www
-#          scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
-
-
