@@ -7,20 +7,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: CheckOut
+      - name: 切换分支
         uses: actions/checkout@v2
-#      - name: Cache node modules
-#        uses: actions/cache@v1
-#        id: cache
-#        with:
-#          path: node_modules
-#          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-#          restore-keys: |
-#            ${{ runner.os }}-node-
 
-#      - name: Install Dependencies
-#        if: steps.cache.outputs.cache-hit != 'true'
-#        run: npm ci
+      - name: 安装依赖
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
 
       - name: 清除Hexo
         uses: heowc/action-hexo@main
@@ -39,3 +31,14 @@ jobs:
           external_repository: inkdp/inkdp.github.io
           publish_branch: master
           publish_dir: ./public
+
+      - name: 部署到个人服务器
+          env:
+            ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+            SERVER_DIR: ${{ secrets.SERVER_DIR }}
+          run: |
+            mkdir -p ~/.ssh/
+            echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            mv ./public ./www
+            scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
