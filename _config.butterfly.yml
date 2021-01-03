@@ -278,8 +278,6 @@ livere:
 # gitalk
 # https://github.com/gitalk/gitalk
 gitalk:
-  client_id: 5a813f575932a117fc98
-  client_secret: cafc6c8f1fd2ee80a41a2876e157a332bcc23a85
   repo: inkdp.github.io
   owner: InkDP
   admin: InkDP
@@ -292,8 +290,6 @@ gitalk:
 # valine
 # https://valine.js.org
 valine:
-  appId: xYtUMiqO5vSG6beaCAYrICFW-gzGzoHsz # leancloud application app id
-  appKey: veMNE92zCzu85c8CHcMs6fkN # leancloud application app key
   pageSize: 10 # comment list page size
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
