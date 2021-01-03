@@ -26,10 +26,10 @@ jobs:
           VID: ${{ secrets.VALINE_ID }}
           VKEY: ${{ secrets.VALINE_KEY }}
         run: |
-          sudo sed -i ${GSECRET} _config.butterfly.yml
-          sudo sed -i ${GID} _config.butterfly.yml
-          sudo sed -i ${VKEY} _config.butterfly.yml
-          sudo sed -i ${VID} _config.butterfly.yml
+          sudo sed -i "${GSECRET}" _config.butterfly.yml
+          sudo sed -i "${GID}" _config.butterfly.yml
+          sudo sed -i "${VKEY}" _config.butterfly.yml
+          sudo sed -i "${VID}" _config.butterfly.yml
 
       - name: 生成Hexo
         uses: heowc/action-hexo@main
