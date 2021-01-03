@@ -20,11 +20,17 @@ jobs:
           args: clean
 
       - name: 导入配置文件
+        env:
+          GID: ${{ secrets.GITALK_ID }}
+          GSECRET: ${{ secrets.GITALK_SECRET }}
+          VID: ${{ secrets.VALINE_ID }}
+          VKEY: ${{ secrets.VALINE_KEY }}
         run: |
-          sudo sed -i ${{ secrets.GITALK_ID }} _config.butterfly.yml
-          sudo sed -i ${{ secrets.GITALK_SECRET }} _config.butterfly.yml
-          sudo sed -i ${{ secrets.VALINE_ID }} _config.butterfly.yml
-          sudo sed -i ${{ secrets.VALINE_KEY }} _config.butterfly.yml
+          sudo sed -i ${$GID} _config.butterfly.yml
+          sudo sed -i ${GSECRET} _config.butterfly.yml
+          sudo sed -i ${VID} _config.butterfly.yml
+          sudo sed -i ${VKEY} _config.butterfly.yml
+
       - name: 生成Hexo
         uses: heowc/action-hexo@main
         with:
