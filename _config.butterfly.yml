@@ -26,7 +26,7 @@ hide_sidebar_menu_child: false
 highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
-highlight_shrink: true # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
+highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
 code_word_wrap: false
 
 # copy settings
@@ -43,7 +43,8 @@ copy:
 social:
    fab fa-github: https://github.com/InkDP || Github
    fas fa-envelope: mailto:inkdp@qq.com || Email
-   fab fa-qq: tencent://message/?Menu=yes&uin=1576962841&Service=300&sigT=45a1e5847943b64c6ff3990f8a9e644d2b31356cb0b4ac6b24663a3c8dd0f8aa12a595b1714f9d45 || QQ
+   fab fa-qq: tencent://message/?uin=1576962841 || QQ
+   fab fa-weixin: /images/add_weixin.png
    fab fa-steam: https://steamcommunity.com/id/InkDP
 
 # search (搜索)
