@@ -1,0 +1,27 @@
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: 贼拉正经的技术博客
+      link: https://www.stackoverflow.wiki/
+      avatar: ttps://avatars1.githubusercontent.com/u/6754458?v=4
+      descr: 死钻技术 | 绝不抄袭
+    - name: 鼠鼠在碎觉
+      link: https://sszsj.top/
+      avatar: https://www.sszsj.top/images/head.jpg
+      descr: forever alone forever sad
+    - name: 邯城往事
+      link: https://www.cjzshilong.cn/
+      avatar: https://avatars1.githubusercontent.com/u/48144475?v=4
+      descr: 记录精彩的坎坷人生，经营属于自己的世界！
+    - name: 云元帅一心
+      link: http://www.yunxincoder.cn/
+      avatar: https://avatars3.githubusercontent.com/u/31735120?v=4
+      descr: 给时光以生命，给岁月以文明
+    - name: JssDream 的个人博客
+      link: https://www.hjava.cn/
+      avatar: https://avatars2.githubusercontent.com/u/24471999?v=4
+      descr: 静以修身，俭以养德
+    - name: 殆己
+      link: https://www.heycmm.cn
+      avatar: https://img.hacpai.com/avatar/1547633760829_1554865237301.jpeg
+      descr: 好看的皮囊扫黄打非，有趣的灵魂涉嫌违规
