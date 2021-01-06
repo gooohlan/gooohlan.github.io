@@ -2,7 +2,7 @@ title: go 语言圣经练习解答 -- 第四章 (关闭)
 date: '2019-07-16 15:54:22'
 updated: '2019-07-22 13:50:36'
 tags: [golang, 学习, 教程]
-categories:’go'
+categories: ’go'
 
 permalink: /articles/2019/06/12/1560331304695.html
 ---
