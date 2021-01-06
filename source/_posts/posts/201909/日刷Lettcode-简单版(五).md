@@ -2,9 +2,13 @@ title: 日刷leetcode--简单版（五）
 date: '2019-09-14 15:19:40'
 updated: '2020-04-13 16:24:50'
 tags: [leetcode, 算法, golang]
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107001531491.jpeg',
+categories: '算法'
+
+
 permalink: /leetcode5.html
 ---
-![](https://img.hacpai.com/bing/20180327.jpg?imageView2/1/w/960/h/540/interlace/1/q/100)
+![img](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107001531491.jpeg)
 
 ### 返回总目录
 
@@ -16,12 +20,12 @@ permalink: /leetcode5.html
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/09/image-991e2526.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-991e2526.png)
 
 #### 解题思路
 
 * 此题与118类似，直接冲118中返回最后一个数组即可，但是要优化到O(k)就显得不是那么容易了
-* 公式:![image.png](https://img.hacpai.com/file/2019/09/image-570d44cb.png)
+* 公式:![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-570d44cb.png)
 * 简单的来说就是前面的数乘以一个分数,这个分数从左到右分别为n/1, (n-1)/2, ..., 2/(n-1), 1/n，比如第3行就是分别乘以3/1，2/2，1/3
 * 这里要注意的是[1]是第0行，而非第一行
 
@@ -50,7 +54,7 @@ func getRow(rowIndex int) []int {
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/09/image-4ef0e447.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4ef0e447.png)
 
 #### 解题思路1
 
@@ -88,7 +92,7 @@ func maxProfit(prices []int) int {
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/09/image-936d9087.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-936d9087.png)
 
 #### 解题思路
 
@@ -119,7 +123,7 @@ func maxProfit1(prices []int) int {
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/09/image-e7e16206.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-e7e16206.png)
 
 #### 解题思路
 
@@ -163,7 +167,7 @@ func ToUpper(ascii uint8) uint8 {
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/09/image-ddc62dfc.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ddc62dfc.png)
 
 #### 解题思路1
 
@@ -217,7 +221,7 @@ func singleNumbers(nums []int) int {
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/09/image-2fe4d07f.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-2fe4d07f.png)
 
 #### 生成环链表
 
@@ -303,9 +307,9 @@ func hasCycle(head *ListNode) bool {
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/10/image-4c11d1e2.png)
-![image.png](https://img.hacpai.com/file/2019/10/image-9370deab.png)
-![image.png](https://img.hacpai.com/file/2019/10/image-9faf6e7e.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4c11d1e2.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-9370deab.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-9faf6e7e.png)
 
 #### 解题思路
 
@@ -315,7 +319,7 @@ func hasCycle(head *ListNode) bool {
 * 如果 pB 到了末尾，则 pB = headA 继续遍历
 * 因为指针A是先跑完headA然后跑headB，指针B与之相反，所以他们最后一段路一定是携手共进，这时判断他们是否相等就可以了
 * 图解如下
-  ![相交链表.png](https://pic.leetcode-cn.com/e86e947c8b87ac723b9c858cd3834f9a93bcc6c5e884e41117ab803d205ef662-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8.png)
+  ![相交链表.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/e86e947c8b87ac723b9c858cd3834f9a93bcc6c5e884e41117ab803d205ef662-%E7%9B%B8%E4%BA%A4%E9%93%BE%E8%A1%A8.png)
 
 ##### 示例代码
 

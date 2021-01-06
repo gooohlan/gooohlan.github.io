@@ -4,7 +4,7 @@ updated: '2020-06-19 21:36:50'
 tags: [golang, 读书笔记]
 permalink: /articles/2020/06/19/1592560522403.html
 ---
-![](https://img.hacpai.com/bing/20190201.jpg?imageView2/1/w/960/h/540/interlace/1/q/100) 
+![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190201.jpg) 
 
 ### 1、函数返回值定义
 
@@ -28,7 +28,7 @@ if err != nil {
 }
 ```
 
-实际中，你绝对不会只返回一个 `err`，可能还夹杂着各种乱七八糟的东西，写一次还好，写多了你真的不会烦吗？然而有了第二种定义方式，不过你又多少个返回值，只需要一个 `return`即可搞定，![991592559676.pic.jpg](https://b3logfile.com/file/2020/06/991592559676.pic-f90f3138.jpg)
+实际中，你绝对不会只返回一个 `err`，可能还夹杂着各种乱七八糟的东西，写一次还好，写多了你真的不会烦吗？然而有了第二种定义方式，不过你又多少个返回值，只需要一个 `return`即可搞定，![991592559676.pic.jpg](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/991592559676.pic-f90f3138.jpg)
 
 ```go
 func (b buriedPoint) Retention() (channel, projectId, startTime, endTime string, list []dbmodel.BuriedPointKey, data []map[string]string, err error) {
@@ -38,7 +38,7 @@ func (b buriedPoint) Retention() (channel, projectId, startTime, endTime string,
 }
 ```
 
-当然上述的方法虽爽，但是也还是会有问题的，让我们再![991592559676.pic.jpg](https://b3logfile.com/file/2020/06/991592559676.pic-f90f3138.jpg)
+当然上述的方法虽爽，但是也还是会有问题的，让我们再![991592559676.pic.jpg](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/991592559676.pic-f90f3138.jpg)
 
 ```go
 func StringToInt(str string) (v int, err error) {

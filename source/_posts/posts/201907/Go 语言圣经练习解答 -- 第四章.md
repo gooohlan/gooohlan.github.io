@@ -2,7 +2,7 @@ title: go 语言圣经练习解答 -- 第四章 (关闭)
 date: '2019-07-16 15:54:22'
 updated: '2019-07-22 13:50:36'
 tags: [golang, 学习, 教程]
-categories: ’go'
+categories: 'go'
 
 permalink: /articles/2019/06/12/1560331304695.html
 ---
@@ -24,7 +24,7 @@ permalink: /articles/2019/06/12/1560331304695.html
 <iframe style="border:1px solid" src="https://wide.b3log.org/playground/8a883544635b919cd2f822312adb81cf.go" width="99%" height="600"></iframe>
 > 实际效果
 
-![image.png](https://img.hacpai.com/file/2019/07/image-0d9ee8d7.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0d9ee8d7.png)
 
 #### 练习 4.3: 重写reverse函数,使用数组指针代替slice。
 > 解题思路(无)
