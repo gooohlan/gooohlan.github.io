@@ -71,4 +71,4 @@ find . -mtime +7 -type f | xargs rm -rf
 ```
 这样的内容在sql中还不是一两句，到处都是。这里提供一段正则，可快速匹配到sql文件中所有`/*!40101XXXXX*/;`，通过正则`\/\*\![0-9]+\s[\s\S]+?\s\*\/;\n`实现快速替换。
 替换完后的效果如下所示，多舒服。
-![image.png](https://img.hacpai.com/file/2019/06/image-3766354f.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3766354f.png)

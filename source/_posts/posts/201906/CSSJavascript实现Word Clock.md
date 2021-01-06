@@ -4,7 +4,7 @@ updated: '2019-06-07 23:45:08'
 tags: [HTML, CSS, JS]
 permalink: /articles/2019/06/02/1559477290334.html
 ---
-![无标题.png](https://img.hacpai.com/file/2019/06/无标题-f88e3fb4.png)
+![无标题.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/无标题-f88e3fb4.png)
 ### 无意中看到了一款锁屏效果--world clock，感觉有点意思，就想着用前端来实现他。
 
 ### 实现这个效果主要需要实现两个部分
@@ -251,6 +251,6 @@ li:nth-child(1){ transform: rotate(0deg); }
 </html>
 ```
 ### 最后的效果
-![image.png](https://img.hacpai.com/file/2019/06/image-7492af1c.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-7492af1c.png)
 
 ### 写在最后，时间直接使用jq更改很僵硬，可以通过CSS动画实现。

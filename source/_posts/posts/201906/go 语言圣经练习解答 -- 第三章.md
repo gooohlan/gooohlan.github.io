@@ -4,7 +4,7 @@ updated: '2019-09-25 14:01:25'
 tags: [教程, 学习, golang]
 permalink: /articles/2019/06/10/1560159392016.html
 ---
-![](https://img.hacpai.com/bing/20180915.jpg?imageView2/1/w/960/h/540/interlace/1/q/100) 
+![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg) 
 
 ## go语言圣经(The Go Programming Language)第三章练习题答案
 ### 前言

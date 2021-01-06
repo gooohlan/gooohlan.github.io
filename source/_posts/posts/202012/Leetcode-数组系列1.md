@@ -4,17 +4,17 @@ updated: '2020-12-07 15:29:57'
 tags: [golang, leetcode, 学习]
 permalink: /leetcode_array1.html
 ---
-![](https://b3logfile.com/bing/20190622.jpg?imageView2/1/w/960/h/540/interlace/1/q/100) 
+![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg) 
 
 ### 169.多数元素
 
-![image.png](https://b3logfile.com/file/2020/12/image-7f596c4b.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-7f596c4b.png)
 
 #### 解题思路：
 
 1. 利用哈希表存储每个字符出现的个数，出现次数大于`n/2`的即为多数元素
 2. 根据题意，多数元素的个数大于`n/2`，每次遇到多数元素就将个数+1，否则减一，值为负数时则证明当前选取的这个数不是多数元素，则更换多数元素继续循环(摩尔投票法)
-   ![image.png](https://b3logfile.com/file/2020/12/image-022d2db7.png)
+   ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-022d2db7.png)
    上图来着，题169解解[摩尔投票法](https://leetcode-cn.com/problems/majority-element/solution/3chong-fang-fa-by-gfu-2)
 3. 排序，取下标为`len(nums)/2`的值
 
@@ -78,7 +78,7 @@ func majorityElement2(nums []int) int{
 
 ### 217.多数元素
 
-![image.png](https://b3logfile.com/file/2020/12/image-3291f9c1.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3291f9c1.png)
 
 #### 解题思路：
 
@@ -101,7 +101,7 @@ func containsDuplicate(nums []int) bool {
 
 ### 219. 存在重复元素 II
 
-![image.png](https://b3logfile.com/file/2020/12/image-b7080722.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b7080722.png)
 
 #### 解题思路：
 
@@ -126,7 +126,7 @@ func containsNearbyDuplicate(nums []int, k int) bool {
 
 ### 228. 汇总区间
 
-![image.png](https://b3logfile.com/file/2020/12/image-071d61e0.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-071d61e0.png)
 
 #### 解题思路：
 
@@ -186,7 +186,7 @@ func summaryRanges1(nums []int) []string {
 
 ### 268. 丢失的数字
 
-![image.png](https://b3logfile.com/file/2020/12/image-89a5554f.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-89a5554f.png)
 
 #### 解题思路：
 
@@ -245,7 +245,7 @@ func missingNumber4(nums []int) int {
 
 ### 283. 移动零
 
-![image.png](https://b3logfile.com/file/2020/12/image-be9c99ed.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-be9c99ed.png)
 
 #### 解题思路
 

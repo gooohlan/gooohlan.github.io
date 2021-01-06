@@ -4,7 +4,7 @@ updated: '2020-10-21 01:13:29'
 tags: [MySQL, 学习]
 permalink: /articles/2020/10/21/1603213579436.html
 ---
-![](https://b3logfile.com/bing/20200617.jpg?imageView2/1/w/960/h/540/interlace/1/q/100) 
+![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg) 
 
 
 ### 前言
@@ -16,7 +16,7 @@ Mysql慢查询优化，一直是开发中不可避免的问题，当然面试的
 ### 复盘
 
 回家后弄了个大概有快20W数据的表，实测一下，查询速度是否会因为 `limit`边大而边长。
-![image.png](https://b3logfile.com/file/2020/10/image-f1d086a6.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-f1d086a6.png)
 
 如上图所示，同样的查询条件下，因为 `limit`增大查询速度确实变慢了很多。
 
@@ -36,7 +36,7 @@ Mysql慢查询优化，一直是开发中不可避免的问题，当然面试的
 #### 解决
 
 随意Google一下，就找到了两种解决办法，分别贴出对于SQL以作参考
-![image.png](https://b3logfile.com/file/2020/10/image-dbe47374.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-dbe47374.png)
 
 因为数据量小，然后数据没有特意去设计，所以整体来说效果一般，但是还是有所提升
 
@@ -46,7 +46,7 @@ Mysql慢查询优化，一直是开发中不可避免的问题，当然面试的
 
 * 使用索引列或者主键作为`order by`操作列
 * 记录上次查询的主键，作为下次查询时主键的筛选条件
-  ![image.png](https://b3logfile.com/file/2020/10/image-bef7270a.png)
+  ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-bef7270a.png)
 
 参考：[性能优化之分页查询](https://segmentfault.com/a/1190000017059239?utm_source=sf-related)
 

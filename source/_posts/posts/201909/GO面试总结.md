@@ -40,7 +40,7 @@ permalink: /articles/2019/09/25/1569402355322.html
    * 一个包所有的文件，必须位于同一个目录下
 9. 字符串拼接的方式（延升问题，性能比较）
    答：使用运算符、fmt.Sprintf()、strings.Join()、buffer.WriteString()。执行效率如下图（理论上最后一个应该是最快的，不知道是不是我测试用例的原因）
-   ![image.png](https://img.hacpai.com/file/2019/10/image-b6c8f4f0.png)
+   ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b6c8f4f0.png)
 10. GC，何时回收，如何手动回收等
 11. 并非时如何防止公共变量污染问题
     

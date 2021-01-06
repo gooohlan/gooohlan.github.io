@@ -4,7 +4,7 @@ updated: '2020-04-13 16:25:06'
 tags: [leetcode, 算法, golang]
 permalink: /leetcode4.html
 ---
-![](https://img.hacpai.com/bing/20180706.jpg?imageView2/1/w/960/h/540/interlace/1/q/100) 
+![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg) 
 
 ### 返回总目录
 
@@ -16,7 +16,7 @@ permalink: /leetcode4.html
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/08/image-85be80cb.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-85be80cb.png)
 
 #### 解题思路
 
@@ -59,7 +59,7 @@ func reverses(nums []int) {
 ### 100. 相同的树
 
 #### 题目描述
-![image.png](https://img.hacpai.com/file/2019/08/image-00f58922.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-00f58922.png)
 
 #### 解题思路
 - 有两中情况下可直接返回
@@ -89,7 +89,7 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 ### 101. 对称二叉树
 
 #### 题目描述
-![image.png](https://img.hacpai.com/file/2019/08/image-3af0001a.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3af0001a.png)
 
 #### 解题思路--递归
 
@@ -167,7 +167,7 @@ func isSymmetric(root *TreeNode) bool { // 迭代方法，bfs
 
 #### 题目描述
 
-![image.png](https://img.hacpai.com/file/2019/09/image-59a22901.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-59a22901.png)
 
 #### 解题思路
 * 使用递归查看当前值是否为空，为空则返回0，接受到递归返回的0就加1
@@ -193,7 +193,7 @@ func maxDepth(root *TreeNode) int {
 ### 107. 二叉树的层次遍历 II
 
 #### 题目描述
-![image.png](https://img.hacpai.com/file/2019/09/image-28e94e96.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-28e94e96.png)
 
 #### 解题思路
 - 看下面代码注释
@@ -238,7 +238,7 @@ func levelOrderBottom(root *TreeNode) (res [][]int) {
 
 ### 118. 杨辉三角
 #### 题目描述
-![image.png](https://img.hacpai.com/file/2019/09/image-84d3bce3.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-84d3bce3.png)
 #### 解题思路
 * ![PascalTriangleAnimated2.gif](https://img.hacpai.com/file/2019/09/PascalTriangleAnimated2-9958c3e5.gif)
 

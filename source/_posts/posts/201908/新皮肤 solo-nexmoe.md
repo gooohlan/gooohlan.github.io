@@ -4,7 +4,7 @@ updated: '2020-03-27 18:01:20'
 tags: [Solo, 皮肤, Nexmoe]
 permalink: /articles/2019/08/23/1566468138289.html
 ---
-![image.png](https://img.hacpai.com/file/2019/09/image-ef3e7eed.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ef3e7eed.png)
 
 
 ## 简介
@@ -17,9 +17,9 @@ https://github.com/Programming-With-Love/solo-nexmoe
 
 ## 效果展示
 
-![image.png](https://img.hacpai.com/file/2019/09/image-0f32e4c2.png)
-![image.png](https://img.hacpai.com/file/2019/09/image-9386c650.png)
-![image.png](https://img.hacpai.com/file/2019/09/image-4ff20186.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0f32e4c2.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-9386c650.png)
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4ff20186.png)
 
 ## 演示
 
@@ -45,7 +45,7 @@ https://github.com/Programming-With-Love/solo-nexmoe
 ## 小功能
 
 * 快捷键 `T`可直接返回顶部
-* 自定义背景：默认使用canvas作为背景，在后台管理 → 偏好设定 → 参数设置 → 自定义模板变量中新加参数 `bg=*`,`*`对应0-9的数字，数字为透明度，`bg=1`对应 `opacity: .1`。设置好后背景图片为[默认图片](https://img.hacpai.com/file/2019/09/57873300p0-3496bc81.jpg)。如需更改默认图片可新增参数 `bgUrl=图片地址`，示例 `bgUrl=https://static-solo.b3log.org/skins/Bubble/images/header-bg.jpg`
+* 自定义背景：默认使用canvas作为背景，在后台管理 → 偏好设定 → 参数设置 → 自定义模板变量中新加参数 `bg=*`,`*`对应0-9的数字，数字为透明度，`bg=1`对应 `opacity: .1`。设置好后背景图片为[默认图片](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/57873300p0-3496bc81.jpg)。如需更改默认图片可新增参数 `bgUrl=图片地址`，示例 `bgUrl=https://static-solo.b3log.org/skins/Bubble/images/header-bg.jpg`
 * 后续添加中...
 
 ## 鸣谢
