@@ -2,9 +2,12 @@ title: Go面试总结
 date: '2019-09-25 17:05:55'
 updated: '2020-10-26 19:04:24'
 tags: [面试, golang, MySQL, docker]
+cover:'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg'
+
+
 permalink: /articles/2019/09/25/1569402355322.html
 ---
-![](https://b3logfile.com/bing/20191004.jpg?imageView2/1/w/960/h/540/interlace/1/q/100)
+![img](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg)
 
 ## 前言
 
@@ -59,7 +62,6 @@ permalink: /articles/2019/09/25/1569402355322.html
 | 不可重复读(read-committed) | × | ✓ | ✓ |
 | 可重复读(repeatable-read) | × | × | ✓ |
 | 串行化(serializable) | × | × | × |
-   
    
 2. 索引失效场景
    
