@@ -1,8 +1,10 @@
 title: GO实现一个单链表
 date: '2019-09-26 17:08:18'
 updated: '2019-09-26 17:08:18'
-tags: [golang, 算法]
-categories: '算法'
+tags: [Golang, 算法]
+categories:
+	- 算法
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180309.jpg
 permalink: /articles/2019/09/26/1569488898577.html
 ---
 # 不多BB，直接上代码，有关链表定义，请自行百度
@@ -60,4 +62,3 @@ func main() {
 	// --------end----------
 }
 ```
-

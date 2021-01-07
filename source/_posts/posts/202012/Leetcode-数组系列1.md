@@ -1,10 +1,12 @@
 title: leetcode-数组系列1
 date: '2020-12-07 15:29:30'
 updated: '2020-12-07 15:29:57'
-tags: [golang, leetcode, 学习]
+tags: [Golang, leetcode, 学习]
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg
+categories: '算法'
 permalink: /leetcode_array1.html
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg) 
+
 
 ### 169.多数元素
 
@@ -265,4 +267,3 @@ func moveZeroes(nums []int) {
 	fmt.Println(nums)
 }
 ```
-

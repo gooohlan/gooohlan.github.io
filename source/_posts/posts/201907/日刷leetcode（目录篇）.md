@@ -1,9 +1,9 @@
 title: 日刷leetcode（目录篇）
 date: '2019-07-29 17:19:31'
 updated: '2020-12-07 14:18:55'
-tags: [golang, leetcode, 算法]
+tags: [Golang, leetcode, 算法]
 categories: '算法'
-
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107221459186.jpeg
 permalink: /leetcode.html
 ---
 ### 前言
@@ -27,12 +27,12 @@ permalink: /leetcode.html
 
 ### 目录：
 
-* [日刷leetcode--简单版系列（一）](https://www.inkdp.cn/leetcode1.html)
-* [日刷leetcode--简单版系列（二）](https://www.inkdp.cn/leetcode2.html)
-* [日刷leetcode--简单版系列（三）](https://www.inkdp.cn/leetcode3.html)
-* [日刷leetcode--简单版系列（四）](https://www.inkdp.cn/leetcode4.html)
-* [日刷leetcode--简单版系列（五）](https://www.inkdp.cn/leetcode5.html)
-* [日刷leetcode--简单版系列（六）](https://www.inkdp.cn/leetcode6.html)
+* [日刷leetcode--简单版系列（一）](/leetcode1.html)
+* [日刷leetcode--简单版系列（二）](/leetcode2.html)
+* [日刷leetcode--简单版系列（三）](/leetcode3.html)
+* [日刷leetcode--简单版系列（四）](/leetcode4.html)
+* [日刷leetcode--简单版系列（五）](/leetcode5.html)
+* [日刷leetcode--简单版系列（六）](/leetcode6.html)
 
 #### 简单篇暂停更新，后续打算系统的刷，目录做出更改
 
@@ -40,7 +40,7 @@ permalink: /leetcode.html
 
 1. 数组
    * 简单[进行中]：此篇章尽量补书写题解
-     * [leetcode-数组系列1](https://www.inkdp.cn/leetcode_array1.html)
+     * [leetcode-数组系列1](/leetcode_array1.html)
    * 中等[未开始]
    * 困难[未开始]
 2. 字符串
@@ -48,4 +48,3 @@ permalink: /leetcode.html
 4. 栈
 5. 哈希表
 6. 树
-

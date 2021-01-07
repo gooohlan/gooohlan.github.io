@@ -1,14 +1,14 @@
 title: 日刷leetcode--简单版（二）
 date: '2019-07-29 17:59:33'
 updated: '2020-04-13 16:26:05'
-tags: [leetcode, golang, 算法]
+tags: [leetcode, Golang, 算法]
 categories: '算法'
-
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231236835.jpeg
 permalink: /leetcode2.html
 ---
 ### 返回总目录
 
-[日刷leetcode–简单版](https://www.inkdp.cn/leetcode.html)
+[日刷leetcode–简单版](/leetcode.html)
 
 ---
 ### 26. 删除排序数组中的重复项
@@ -20,8 +20,8 @@ permalink: /leetcode2.html
 > 示例 1:
 >
 > ```
-> 给定数组 nums = [1,1,2], 
-> 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 
+> 给定数组 nums = [1,1,2],
+> 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
 > 你不需要考虑数组中超出新长度后面的元素。
 > ```
 >

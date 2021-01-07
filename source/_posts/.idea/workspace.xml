@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ea5ec72-2b58-42d6-90d2-ed79fdb65a7a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/posts/201907/Go 语言圣经练习解答 -- 第四章.md" beforeDir="false" afterPath="$PROJECT_DIR$/posts/201907/Go 语言圣经练习解答 -- 第四章.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/201909/日刷Lettcode-简单版(五).md" beforeDir="false" afterPath="$PROJECT_DIR$/posts/201909/日刷Lettcode-简单版(五).md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/202006/记一次蹭车事件.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/posts/202012/Leetcode-数组系列1.md" beforeDir="false" afterPath="$PROJECT_DIR$/posts/202012/Leetcode-数组系列1.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../_config.butterfly.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../_config.butterfly.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

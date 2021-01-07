@@ -1,8 +1,8 @@
 title: 日刷leetcode--简单版（五）
 date: '2019-09-14 15:19:40'
 updated: '2020-04-13 16:24:50'
-tags: [leetcode, 算法, golang]
-cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107001531491.jpeg',
+tags: [leetcode, 算法, Golang]
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107001531491.jpeg
 categories: '算法'
 
 
@@ -12,7 +12,7 @@ permalink: /leetcode5.html
 
 ### 返回总目录
 
-[日刷leetcode–简单版](https://www.inkdp.cn/leetcode.html)
+[日刷leetcode–简单版]/leetcode.html
 
 ---
 
@@ -346,5 +346,5 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 ##### 运行结果
 
-> 执行用时 :44 ms, 在所有 golang 提交中击败了99.33%的用户
-> 内存消耗 :7.9 MB, 在所有 golang 提交中击败了5.53%的用户
+> 执行用时 :44 ms, 在所有 Golang 提交中击败了99.33%的用户
+> 内存消耗 :7.9 MB, 在所有 Golang 提交中击败了5.53%的用户

@@ -2,9 +2,10 @@ title: 从零开始安装 solo 博客
 date: '2019-08-06 00:18:51'
 updated: '2020-04-17 11:32:50'
 tags: [Solo, Docker]
+categories: 后端
 permalink: /articles/2019/08/06/1565021931775.html
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180919.jpg
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180919.jpg)
 
 之前也写过类似的帖子，但是由于那时自己的各种原因写的不是特别好，所以今天写一个聚合帖，记录从购买服务器到安装solo然后通过nginx反向代理，最后升级https的全过程。此贴献给完全无基础的人，所以废话较多，见谅
 
