@@ -1,10 +1,12 @@
 title: Go爬虫初体验
 date: '2020-07-09 17:36:46'
 updated: '2020-10-21 01:12:39'
-tags: [golang, 学习]
+tags: [Golang, 学习]
+categories:
+	- 后端
 permalink: /articles/2020/07/09/1594287406684.html
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190920.jpg)
 
 ## 前言
 
@@ -162,7 +164,7 @@ func CreateFileGetImg(catalog *Catalog, index int) {
    if err != nil {
       log.Println("创建文件夹失败")
    }
-   
+
    for k, v := range catalog.ImgArr {
          resp, err := http.Get(ImgHeader + v)
          if err != nil {
@@ -172,7 +174,7 @@ func CreateFileGetImg(catalog *Catalog, index int) {
          out, _ := os.Create(dir + "/" + strconv.Itoa(k+1) + ".jpg")
          io.Copy(out, bytes.NewReader(body))
          resp.Body.Close()
-   
+
 }
 ```
 
@@ -231,4 +233,3 @@ https://github.com/InkDP/PF
 ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-c06579cf.png)
 
 ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-fdd3f60d.png)
-

@@ -1,7 +1,8 @@
 title: Go面试总结
 date: '2019-09-25 17:05:55'
 updated: '2020-10-26 19:04:24'
-tags: [面试, golang, MySQL, docker]
+tags: [面试, Golang, MySQL, docker]
+categories: 面试
 cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg'
 
 
@@ -19,7 +20,7 @@ permalink: /articles/2019/09/25/1569402355322.html
 基础部分有部分为包的一下基础东西，自行查阅文档或谷歌
 
 1. sync
-   参考[浅谈 Golang sync 包的相关使用方法](https://deepzz.com/post/golang-sync-package-usage.html)
+   参考[浅谈 Golang sync 包的相关使用方法](https://deepzz.com/post/Golang-sync-package-usage.html)
 2. channel
 3. goroutine
 4. reflect
@@ -32,7 +33,7 @@ permalink: /articles/2019/09/25/1569402355322.html
 7. interface
 8. 包名/目录名之间的关系
    答：姑且总结为一下几点：
-   
+
    * import导入的是路径而不是包名
    * 一个文件夹下只能有一个package
    * 尽量让目录名与包名一致(非强制）
@@ -43,28 +44,28 @@ permalink: /articles/2019/09/25/1569402355322.html
    ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b6c8f4f0.png)
 10. GC，何时回收，如何手动回收等
 11. 并非时如何防止公共变量污染问题
-    
+
     答：锁或者通道
 
 ## MySQL
 
 1. MySQL 事务隔离级别
    了解隔离级别前先了解脏读、不可重复读、幻读这三个概念
-   
+
    - 脏读：一个事物读取到了另外一个事物未提交更新的数据，事物 A 更新了数据，但未提交，事物 B 读取到了这个更新数据，由于某些原因事物 A 回滚了，而此时事物 B 读取到的是事物 A 未提交的更新数据，此为脏读
    - 不可重复读：在一个事务中多次查询统一数据的到的结果不一致，事物 A 中多次读取数据'a',在此过程中事物 B 更新并提交数据'a',导致事物 A 多次读取的数据'a'不一致，此为不可重复读。可重复读与之相反，即多次读取到的都是同意数据，事物 B 更新并提交后的数据'a'读取不到。
    - 幻读：在一个事物中使用同样的查询语句查询出来的结果不一致(这里的结果不一致体现在结果集个数，而非数据内容不同，数据内容不同为不可重复读)，事物 A 中多次使用同一查询条件查询数据，在此过程中，事物 B 插入了若干条符合事物 A 中查询条件的数据，事物 A 后续查询突然多出若干条数据，此为幻读
    - 小结：不可重复读的和幻读很容易混淆，不可重复读侧**重于修改**，幻读侧重于**新增或删除**
-   
+
    | 隔离级别 | 脏读 | 不可重复读 | 幻读 |
 | :- | :-: | :-: | :-: |
 | 读未提交(read-uncommitted) | ✓ | ✓ | ✓ |
 | 不可重复读(read-committed) | × | ✓ | ✓ |
 | 可重复读(repeatable-read) | × | × | ✓ |
 | 串行化(serializable) | × | × | × |
-   
+
 2. 索引失效场景
-   
+
    - 列类型是字符串，查询条件未加引号
    - 未使用索引列作为查询条件
    - 使用了比较操作符 LIKE 和 REGEXP，搜索模板的第一个字符是通配符
@@ -77,11 +78,11 @@ permalink: /articles/2019/09/25/1569402355322.html
    - 如果 MySQL 估计使用全表扫描要比使用索引快
    - ...
 3. MySQL存储引擎的区别与比较
-   
+
    * MyISAM：有较高的插入、查询速度，但**不支持事务**
    * InnoDB：事务型数据库的首选引擎，支持事务安全表（ACID），支持**行锁定**和**外键，InnoDB是默认的MySQL引擎**
 4. Delete，drop与trunkcate的区别
-   
+
    * delete和truncate操作只删除表中数据，而不删除表结构；delete删除时对于自增类型的字段，值不会从1开始，truncate可以实现删除数据后，自增类型字段从1开始。drop语句将删除表的结构被依赖的约束(constraint)，触发器(trigger)，索引(index)；依赖于该报的存储过程/函数将会保留，但是会变成invalid状态。
    * 属于不同类型的操作，delete属于DML，这个操作会发放到rollback segement中，事务提交后才能生效；如果有相应的trigger，执行的时候将被触发。drop与truncate属于DDL，操作立即生效，原数据不会放到rollback segement中，不能回滚，操作是不触发trigger。
    * delete语句不影响表所占用的extent，高水线(high watermark)保持原位置不动。显然drop语句将所占用的空间全部释放，truncate语句缺省情况下把空间释放到minextents个extent，除非使用reuse storage；truncate会将高水位线复位(回到最开始)
@@ -205,4 +206,3 @@ func gogogo() {
 ```
 
 ```
-

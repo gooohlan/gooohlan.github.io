@@ -2,9 +2,10 @@ title: Navicat Premium for Mac 破解教程
 date: '2019-10-24 12:14:48'
 updated: '2019-10-24 12:24:50'
 tags: [破解, MySQL]
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180424.jpg
 permalink: /articles/2019/10/24/1571890488789.html
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180424.jpg)
+
 
 ## 前言
 本教程破解的版本为Navicat Premium 12.1.27，理论上支持12.0.24~最新版，所以在你开始破解时请确认你的版本
@@ -16,7 +17,7 @@ permalink: /articles/2019/10/24/1571890488789.html
 ## 编译
 
 ### 1. 安装依赖  
-  
+
 首先你的确认你安装了brew，没有的话就先去装一个吧，然后安装下列库  
 ```  
 brew install openssl  
@@ -63,7 +64,7 @@ ls bin/
 ```
 * `Navicat installation path` ：`Navicat Premium.app`的路径，必填
 * `RSA-2048 Private Key File`：PEM格式的RSA-2048的私钥路径，可选，不填会在当前目录下生成一个新的RSA-2047密钥文件`RegPrivateKey.pem`
-  
+
 默认如下：  
 ```  
 ./navicat-patcher /Applications/Navicat\ Premium.app/
@@ -81,21 +82,21 @@ ls bin/
    ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ea68d143.png)
 
 ### 6. 签名
-``` 
+```
 codesign -f -s "Navicat" /Applications/Navicat\ Premium.app/
 ```
 ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-c224bb16.png)
-## 激活 
+## 激活
 ### 1. 使用`navicat-keygen`生成序列号和激活码  
 ```  
 Usage:  
  navicat-keygen <RSA-2048 Private Key File>  
-  
+
  <RSA-2048 Private Key File>    Path to a PEM-format RSA-2048 private key file.  
  This parameter must be specified.  
 ```  
 * `RSA-2048 Private Key File`，PEM格式的RSA-2048密钥文件路径，既上文中提到的`RegPrivateKey.pem`  
-  
+
 默认如下：  
 ```  
 ./navicat-keygen ./RegPrivateKey.pem  
@@ -115,11 +116,11 @@ Usage:
 ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0aa226c9.png)
 
 * 一般都会激活失败，这时点击手动激活即可
-  
+
 ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-81692bde.png)
 
 * 手动激活的窗口会给到你一个请求码，复制并粘贴到注册机里面，**两次回车结束输入**
-  
+
 ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-eaa0ba85.png)
 
 * 不出意外的话，你会得到一个激活码，复制它并粘贴到navicat的手动激活窗口
@@ -133,4 +134,3 @@ Usage:
 [Navicat Keygen](https://github.com/DoubleLabyrinth/navicat-keygen/blob/mac/README.zh-CN.md)
 ## 后记
 由于删除了钥匙串的密码，所以原有连接里的密码可能需要重新输入
-

@@ -1,15 +1,17 @@
 title: go 语言圣经练习解答 -- 第三章
 date: '2019-06-10 17:36:32'
 updated: '2019-09-25 14:01:25'
-tags: [教程, 学习, golang]
+tags: [教程, 学习, Golang]
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231539301.jpeg
+categories: 后端
 permalink: /articles/2019/06/10/1560159392016.html
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg) 
+![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg)
 
 ## go语言圣经(The Go Programming Language)第三章练习题答案
 ### 前言
 go语言圣经是一本go入门非常不错的书籍，翻译至The Go Programming Language，本文记录该书章节后练习题答案
-* [中文pdf获取地址1](https://github.com/ThomasHuke/books/blob/master/gopl-zh.pdf)  [中文pdf获取地址2](https://books.studygolang.com/download/gopl-zh.pdf)
+* [中文pdf获取地址1](https://github.com/ThomasHuke/books/blob/master/gopl-zh.pdf)  [中文pdf获取地址2](https://books.studyGolang.com/download/gopl-zh.pdf)
 * [英文原版获取地址](https://github.com/KeKe-Li/book/blob/master/Go/The.Go.Programming.Language.pdf)
 * [中文实体书获取地址](https://https://weidian.com/item.html?itemID=2176920472) (一个还不赖的盗版书网站)
 * 本文从第三章练习3.10开始，前面的请查看移步我的[CSDN](https://blog.csdn.net/q1576962841)
@@ -29,7 +31,7 @@ func comma(s string) string {
     for i := 0; i < len(s); i++ {
         buffer.WriteString(string(s[i]))
 	// 取余3可以得到第一个插入逗号的位置,后面依次+3即可,末尾不加","
-        if (i+1)%3 == l%3 {  if (i+1)%3 == l%3 && i != l-1 { 
+        if (i+1)%3 == l%3 {  if (i+1)%3 == l%3 && i != l-1 {
             buffer.WriteString(",")
         }
     }

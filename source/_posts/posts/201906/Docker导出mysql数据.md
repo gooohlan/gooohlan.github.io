@@ -2,6 +2,8 @@ title: Docker导出mysql数据
 date: '2019-06-11 23:43:54'
 updated: '2019-09-25 14:03:21'
 tags: [MySQL, docker, Solo, shell]
+categories: 后端
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3766354f.png
 permalink: /articles/2019/06/11/1560267833958.html
 ---
 # 前言
@@ -54,7 +56,7 @@ cd /var/www/html/solo/sqlData
 docker exec mysql mysqldump -uroot -p123123 solo >`date +%Y%m%d%H%M%S`.sql
 # 删除7天前的sql(+号后面跟天数,N天前,find后指定目录)
 find . -mtime +7 -type f | xargs rm -rf
-``` 
+```
 ### 后记
 &emsp;&emsp;导出的sql文件中会出现一些版本备注信息等，这样的sql文件导入时有时会出现问题，会报错，导入之前需要将sql文件中的无用信息删除。
 ```

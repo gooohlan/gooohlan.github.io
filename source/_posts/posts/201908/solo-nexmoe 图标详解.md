@@ -3,6 +3,8 @@ date: '2019-08-23 16:26:25'
 updated: '2019-09-10 10:21:24'
 tags: [Solo, solo-nexmoe]
 permalink: /articles/2019/08/23/1566548785550.html
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107224813134.jpeg
+categories: 前端
 ---
 ## 前言
 本帖记录官方solo-nexmoe内所对应字体图标值
@@ -50,4 +52,3 @@ permalink: /articles/2019/08/23/1566548785550.html
 * `solo-gotop` <i class=" iconfont solo-gotop"></i>
 
 * `solo-` <i class=" iconfont solo-"></i>  自定义导航不设置图标时显示
-

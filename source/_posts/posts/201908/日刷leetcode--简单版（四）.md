@@ -1,14 +1,15 @@
 title: 日刷leetcode--简单版（四）
 date: '2019-08-31 16:48:41'
 updated: '2020-04-13 16:25:06'
-tags: [leetcode, 算法, golang]
+tags: [leetcode, 算法, Golang]
 permalink: /leetcode4.html
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg
+categories: 算法
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg) 
 
 ### 返回总目录
 
-[日刷leetcode–简单版](https://www.inkdp.cn/leetcode.html)
+[日刷leetcode–简单版]/leetcode.html
 
 ---
 
@@ -211,7 +212,7 @@ func levelOrderBottom(root *TreeNode) (res [][]int) {
         var tmp []int
         for i:= 0; i < len; i++ {
 	    // 循环次数等于每一层的节点数，每次都取第一个node，因为下面会将第一个node删除
-            indexNode := node[0] 
+            indexNode := node[0]
             node = node[1:]  // 将第一个node删除
             tmp = append(tmp, indexNode.Val) // 记录节点值
             if indexNode.Left != nil { // 如果左子树不为空，将左子树添加node

@@ -2,9 +2,12 @@ title: MySQL分页查询优化
 date: '2020-10-21 01:06:19'
 updated: '2020-10-21 01:13:29'
 tags: [MySQL, 学习]
+categories:
+  - 踩坑日记
+  - 后端
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg
 permalink: /articles/2020/10/21/1603213579436.html
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg) 
 
 
 ### 前言
@@ -29,7 +32,7 @@ Mysql慢查询优化，一直是开发中不可避免的问题，当然面试的
 * 翻译一下就是：
 * `offset`参数指定要返回的第一行的偏移量。第一行的偏移量为`0`，而不是`1`。
 * `count`指定要返回的最大行数。
-* 
+*
 
 因为要偏移到 `offset`处，所以就要先扫描前 `offset`行，所以随着 `limit`边大，也就越来越慢。
 
@@ -49,4 +52,3 @@ Mysql慢查询优化，一直是开发中不可避免的问题，当然面试的
   ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-bef7270a.png)
 
 参考：[性能优化之分页查询](https://segmentfault.com/a/1190000017059239?utm_source=sf-related)
-

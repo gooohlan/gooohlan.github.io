@@ -1,14 +1,15 @@
 title: 日刷leetcode--简单版（六）
 date: '2019-10-24 16:32:05'
 updated: '2020-04-13 16:25:40'
-tags: [golang, leetcode, 算法]
+tags: [Golang, leetcode, 算法]
+categories: '算法'
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190222.jpg
 permalink: /leetcode6.html
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190222.jpg) 
 
 ### 返回总目录
 
-[日刷leetcode–简单版](https://www.inkdp.cn/leetcode.html)
+[日刷leetcode–简单版]/leetcode.html
 
 ---
 
@@ -38,8 +39,8 @@ func twoSum(numbers []int, target int) []int {
 }
 ```
 ##### 运行结果
-> 执行用时 :4 ms, 在所有 golang 提交中击败了97.30%的用户
-> 内存消耗 :3 MB, 在所有 golang 提交中击败了68.38%的用户
+> 执行用时 :4 ms, 在所有 Golang 提交中击败了97.30%的用户
+> 内存消耗 :3 MB, 在所有 Golang 提交中击败了68.38%的用户
 
 ### 168. Excel表列名称
 #### 题目描述：
@@ -62,4 +63,3 @@ func convertToTitle(n int) string{
 	return str
 }
 ```
-
