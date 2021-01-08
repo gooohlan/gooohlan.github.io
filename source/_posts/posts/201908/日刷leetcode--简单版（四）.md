@@ -4,12 +4,13 @@ updated: '2020-04-13 16:25:06'
 tags: [leetcode, 算法, Golang]
 permalink: /leetcode4.html
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg
-categories: 算法
+categories:
+  - [技术, 算法]
 ---
 
 ### 返回总目录
 
-[日刷leetcode–简单版]/leetcode.html
+[日刷leetcode–简单版](https://inkdp.cn/leetcode.html)
 
 ---
 

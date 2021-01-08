@@ -4,7 +4,8 @@ updated: '2019-07-19 15:56:41'
 tags: [Golang, 学习, 教程]
 permalink: /articles/2019/06/16/1560663440490.html
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20181022.jpg
-categories: 后端
+categories:
+  - [技术, 后端]
 ---
 
 ## go语言圣经(The Go Programming Language)练习题答案

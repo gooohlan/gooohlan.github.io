@@ -3,7 +3,7 @@ date: '2019-09-26 17:08:18'
 updated: '2019-09-26 17:08:18'
 tags: [Golang, 算法]
 categories:
-	- 算法
+	- [技术, 算法]
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180309.jpg
 permalink: /articles/2019/09/26/1569488898577.html
 ---

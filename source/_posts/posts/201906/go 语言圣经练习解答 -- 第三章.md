@@ -3,7 +3,8 @@ date: '2019-06-10 17:36:32'
 updated: '2019-09-25 14:01:25'
 tags: [教程, 学习, Golang]
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231539301.jpeg
-categories: 后端
+categories: 
+  - [技术, 后端]
 permalink: /articles/2019/06/10/1560159392016.html
 ---
 ![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg)
