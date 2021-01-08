@@ -3,7 +3,7 @@
   link_list:
     - name: 贼拉正经的技术博客
       link: https://www.stackoverflow.wiki/
-      avatar: ttps://avatars1.githubusercontent.com/u/6754458?v=4
+      avatar: https://avatars1.githubusercontent.com/u/6754458?v=4
       descr: 死钻技术 | 绝不抄袭
     - name: 鼠鼠在碎觉
       link: https://sszsj.top/
@@ -25,3 +25,15 @@
       link: https://www.heycmm.cn
       avatar: https://img.hacpai.com/avatar/1547633760829_1554865237301.jpeg
       descr: 好看的皮囊扫黄打非，有趣的灵魂涉嫌违规
+
+- class_name: 网站
+  class_desc: 那些有意思的网站
+  link_list:
+    - name: 美团技术团队
+      link: https://tech.meituan.com/2014/06/30/mysql-index.html
+      avatar: https://awps-assets.meituan.net/mit/blog/v20190629/asset/icon/android-icon-192x192.png
+      descr: MySQL索引原理及慢查询优化
+    - name: 链滴
+      link: https://ld246.com/
+      avatar: https://ld246.com/images/apple-touch-icon.png
+      descr: 记录生活，连接点滴

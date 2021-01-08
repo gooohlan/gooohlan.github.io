@@ -2,7 +2,8 @@ title: Golang小技巧——不定时更新
 date: '2020-06-19 17:55:22'
 updated: '2020-06-19 21:36:50'
 tags: [Golang, 读书笔记]
-categories: 后端
+categories: 
+  - [技术, 后端]
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190201.jpg
 permalink: /articles/2020/06/19/1592560522403.html
 ---

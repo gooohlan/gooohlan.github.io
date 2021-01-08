@@ -2,7 +2,8 @@ title: Docker导出mysql数据
 date: '2019-06-11 23:43:54'
 updated: '2019-09-25 14:03:21'
 tags: [MySQL, docker, Solo, shell]
-categories: 后端
+categories: 
+  - [技术, 后端]
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3766354f.png
 permalink: /articles/2019/06/11/1560267833958.html
 ---

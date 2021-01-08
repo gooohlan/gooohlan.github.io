@@ -2,7 +2,8 @@ title: 从零开始安装 solo 博客
 date: '2019-08-06 00:18:51'
 updated: '2020-04-17 11:32:50'
 tags: [Solo, Docker]
-categories: 后端
+categories: 
+  - [技术, 后端]
 permalink: /articles/2019/08/06/1565021931775.html
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180919.jpg
 ---

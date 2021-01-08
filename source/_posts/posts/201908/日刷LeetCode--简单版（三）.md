@@ -4,7 +4,8 @@ updated: '2019-08-19 11:58:53'
 tags: [leetcode, 算法, Golang]
 permalink: /leetcode3.html
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/timg-af5a1c18.jpeg
-categories: 算法
+categories:
+  - [技术, 算法]
 ---
 
 

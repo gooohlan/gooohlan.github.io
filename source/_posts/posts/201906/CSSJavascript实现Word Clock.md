@@ -3,7 +3,8 @@ date: '2019-06-02 20:08:10'
 updated: '2019-06-07 23:45:08'
 tags: [HTML, CSS, JS]
 
-categories: 前端
+categories:
+  - [技术, 前端]
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/无标题-f88e3fb4.png
 permalink: /articles/2019/06/02/1559477290334.html
 ---

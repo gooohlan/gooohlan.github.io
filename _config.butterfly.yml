@@ -15,7 +15,7 @@ menu:
   #   - Music || /music/ || fas fa-music
   #   - Movie || /movies/ || fas fa-video
   友情链接: /link/ || fas fa-link
-  关于: /about/ || fas fa-heart
+  关于: /about.html || fas fa-heart
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -90,17 +90,18 @@ avatar:
   effect: false
 
 # The banner image of home page
-index_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210107213632.png
+# index_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210107213632.png
+index_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/144141610121105_.pic.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210107213632.png
+default_top_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/144141610121105_.pic.jpg
 
 # The banner image of archive page
-archive_img:
+archive_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/131610122001_.pic.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img:
+tag_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210108233349829.png
 
 # The banner image of tag page
 # format:
@@ -109,7 +110,7 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img:
+category_img: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/81610119874pic.jpg
 
 # The banner image of category page
 # format:
@@ -127,7 +128,7 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
     - https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210107213632.png
-    # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
+    - https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/144141610121105_.pic.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -385,7 +386,7 @@ footer:
   owner:
     enable: true
     since: 2019
-  custom_text: <a href="http://beian.miit.gov.cn">渝ICP备17007419号-2</a>
+  custom_text: <a href="http://beian.miit.gov.cn">渝ICP备17007419号-2</a><br/><span style="box-sizing:border-box;vertical-align:middle;">本网站由</span><img style="height:16px;box-sizing:border-box;vertical-align:middle;padding:0 2px;" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%8F%88%E6%8B%8D%E4%BA%91_logo5.png"><span style="box-sizing:border-box; vertical-align:middle;">提供CDN服务</span>
   copyright: true # Copyright of theme and framework
 
 # Analysis
@@ -495,7 +496,7 @@ tag_ui: # 留空或 index
 background:
 
 # Footer Background
-footer_bg: false
+footer_bg: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/141610122888_.pic.jpg
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom:
@@ -635,8 +636,8 @@ aside:
       text: 关注我
       link: https://github.com/InkDP
   card_announcement:
-    enable: false
-    content: <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1449794966&auto=0&height=66"></iframe>
+    enable: true
+    content: 旧博客停止更新，但依旧运行在<a href="https://www.inkdp.cn">www.inkdp.cn</a>下，文章已全部迁移至<a href="https://inkdp.cn">inkdp.cn</a>
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
@@ -795,8 +796,8 @@ aplayerInject:
 # position 彈窗位置
 # 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
-  position: bottom-left
+  enable: true
+  position: top-right
   bg_light: '#49b1f5' # The background color of Toast Notification in light mode
   bg_dark: '#121212' # The background color of Toast Notification in dark mode
 

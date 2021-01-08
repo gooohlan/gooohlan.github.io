@@ -4,7 +4,8 @@ updated: '2019-09-10 10:21:24'
 tags: [Solo, solo-nexmoe]
 permalink: /articles/2019/08/23/1566548785550.html
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107224813134.jpeg
-categories: 前端
+categories:
+  - [技术, 前端]
 ---
 ## 前言
 本帖记录官方solo-nexmoe内所对应字体图标值
