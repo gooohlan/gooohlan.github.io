@@ -15,11 +15,11 @@ TODO：
 - [X] 本地搜索
 - [X] 百度统计
 - [X] 接入`Gitalk`与`Valine`完成评价系统
-- [ ] 看板娘 
+- [X] 看板娘
 - [X] 图片迁移至CDN  
 - [X] CDN 加速静态文件
 - [ ] RSS
-- [ ] 迁移至inkdp.cn
+- [X] 迁移至inkdp.cn
 
 ## 1.0.2
 
