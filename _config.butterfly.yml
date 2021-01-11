@@ -849,10 +849,14 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
-
+    - <script src="/live2d-widget/autoload.js"></script>
+    # - <script defer src="https://cdn.jsdelivr.net/gh/Akilarlxh/live2d_demo_without_api@v1.1/assets/jquery-ui.min.js"></script>
+    # - <script defer data-pjax src="https://cdn.jsdelivr.net/gh/Akilarlxh/live2d_demo_without_api@v1.1/assets/autoload.js"></script>
 # CDN
 # Don't modify the following settings unless you know how they work
 # 非必要請不要修改
