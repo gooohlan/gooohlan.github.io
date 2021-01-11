@@ -69,7 +69,29 @@ index_generator:
 # Category & Tag
 default_category: uncategorized
 category_map:
+  技术: skill
+  前端: front_end
+  后端: back_end
+  算法: algorithm
+  踩坑日记: pitDiary
+  随笔: essays
+  情感: emotional
+  总结: summary
+  阅读: reading
+  面试: interview
+
 tag_map:
+  关于我: about_me
+  随笔: essay
+  总结: summary
+  读书笔记: study_notes
+  教程: tutorials
+  学习: learn
+  算法: algorithm
+  皮肤: skin
+  面试: interview
+  日记: diary
+  破解: crack
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
