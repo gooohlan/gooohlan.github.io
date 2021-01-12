@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d24f5a9-4142-4261-8320-e28d8cf61c13" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/themes/butterfly/source/live2d-widget/autoload.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/butterfly/source/live2d-widget/autoload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/butterfly/source/live2d-widget/waifu-tips.js" beforeDir="false" afterPath="$PROJECT_DIR$/themes/butterfly/source/live2d-widget/waifu-tips.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
