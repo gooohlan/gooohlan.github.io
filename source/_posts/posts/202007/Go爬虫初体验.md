@@ -1,11 +1,17 @@
+---
 title: Go爬虫初体验
 date: '2020-07-09 17:36:46'
 updated: '2020-10-21 01:12:39'
-tags: [Golang, 学习]
+tags:
+  - Golang
+  - 学习
 categories:
-  - [技术, 后端]
+  - - 技术
+    - 后端
 permalink: /articles/2020/07/09/1594287406684.html
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg
+cover: >-
+  https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg
+abbrlink: 40924
 ---
 
 ## 前言

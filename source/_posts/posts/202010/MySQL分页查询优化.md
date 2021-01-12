@@ -1,12 +1,17 @@
+---
 title: MySQL分页查询优化
 date: '2020-10-21 01:06:19'
 updated: '2020-10-21 01:13:29'
-tags: [MySQL, 学习]
+tags:
+  - MySQL
+  - 学习
 categories:
-  - [技术, 后端]
+  - - 技术
+    - 后端
   - 踩坑日记
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg'
 permalink: /articles/2020/10/21/1603213579436.html
+abbrlink: 19624
 ---
 
 

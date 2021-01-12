@@ -1,12 +1,16 @@
+---
 title: Go面试总结
 date: '2019-09-25 17:05:55'
 updated: '2020-10-26 19:04:24'
-tags: [面试, Golang, MySQL, docker]
+tags:
+  - 面试
+  - Golang
+  - MySQL
+  - docker
 categories: 面试
 cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg'
-
-
 permalink: /articles/2019/09/25/1569402355322.html
+abbrlink: 20413
 ---
 ![img](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg)
 

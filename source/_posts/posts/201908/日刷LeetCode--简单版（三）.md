@@ -1,11 +1,17 @@
+---
 title: 日刷leetcode--简单版（三）
 date: '2019-08-09 11:58:53'
 updated: '2019-08-19 11:58:53'
-tags: [leetcode, 算法, Golang]
+tags:
+  - leetcode
+  - 算法
+  - Golang
 permalink: /leetcode3.html
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/timg-af5a1c18.jpeg
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/timg-af5a1c18.jpeg'
 categories:
-  - [技术, 算法]
+  - - 技术
+    - 算法
+abbrlink: 43823
 ---
 
 

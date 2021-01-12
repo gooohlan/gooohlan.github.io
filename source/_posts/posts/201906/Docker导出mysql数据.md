@@ -1,11 +1,18 @@
+---
 title: Docker导出mysql数据
 date: '2019-06-11 23:43:54'
 updated: '2019-09-25 14:03:21'
-tags: [MySQL, docker, Solo, shell]
-categories: 
-  - [技术, 后端]
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3766354f.png
+tags:
+  - MySQL
+  - docker
+  - Solo
+  - shell
+categories:
+  - - 技术
+    - 后端
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3766354f.png'
 permalink: /articles/2019/06/11/1560267833958.html
+abbrlink: 9444
 ---
 # 前言
 &emsp;&emsp;前几天无意中在社区看到一个帖子（[记一次清空数据仓库的过程](https://hacpai.com/article/1553941852324)），讲的是自己无意中删库的经历。如文中所讲，大多时候删库这件事我们只是耳闻，并没有遇到过，可要是万一呢，到时候恐怕是追悔莫及，而且mysql也没有oracle的恢复机制，所以备份就成了一个非常有必要的操作。
