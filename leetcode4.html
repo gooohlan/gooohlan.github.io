@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>日刷leetcode--简单版（四） | 墨殇的技术博客</title><meta name="keywords" content="Golang,leetcode,算法"><meta name="author" content="InkDP"><meta name="copyright" content="InkDP"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="返回总目录日刷leetcode–简单版  88. 合并两个有序数组题目描述 解题思路 采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移  示例代码1234567891011121314151617181920212223242526func merge(nums1 []int, m int, nums2 []int, n int) []int &amp;#123;	if n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日刷leetcode--简单版（四）">
+<meta property="og:url" content="https://hexo.inkdp.cn/leetcode4.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="返回总目录日刷leetcode–简单版  88. 合并两个有序数组题目描述 解题思路 采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移  示例代码1234567891011121314151617181920212223242526func merge(nums1 []int, m int, nums2 []int, n int) []int &amp;#123;	if n">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg">
+<meta property="article:published_time" content="2019-08-31T08:48:41.000Z">
+<meta property="article:modified_time" content="2020-04-13T08:25:06.000Z">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="Golang">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg"><link rel="shortcut icon" href="/images/header.png"><link rel="canonical" href="https://hexo.inkdp.cn/leetcode4"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0a58708186792e44d0c32c51ee6fa8c9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"距离上次更新已有","messageNext":"天，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: InkDP","link":"链接: ","source":"来源: 墨殇的技术博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-04-13 16:25:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/header.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">墨殇的技术博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">日刷leetcode--简单版（四）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-31T08:48:41.000Z" title="发表于 2019-08-31 16:48:41">2019-08-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-04-13T08:25:06.000Z" title="更新于 2020-04-13 16:25:06">2020-04-13</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/skill/">技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/skill/algorithm/">算法</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="返回总目录"><a href="#返回总目录" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode.html">日刷leetcode–简单版</a></p>
+<hr>
+<h3 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="88. 合并两个有序数组"></a>88. 合并两个有序数组</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-85be80cb.png" alt="image.png"></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移</li>
+</ul>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(nums1 []<span class="keyword">int</span>, m <span class="keyword">int</span>, nums2 []<span class="keyword">int</span>, n <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums1</span><br><span class="line">	&#125;</span><br><span class="line">	i, j := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(nums1) &amp;&amp; j &lt; n; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums1[i] &gt; nums2[j] &#123;</span><br><span class="line">			reverses(nums1[i:])</span><br><span class="line">			nums1[i] = nums2[j]</span><br><span class="line">			j++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> j &lt; n &#123;</span><br><span class="line">		nums1[m+j] = nums2[j]</span><br><span class="line">		j++</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> nums1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverses</span><span class="params">(nums []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="built_in">len</span>(nums) - <span class="number">1</span>; i &gt; <span class="number">0</span>; i-- &#123;</span><br><span class="line">		nums[i] = nums[i<span class="number">-1</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了73.14%的用户<br>内存消耗 :3.6 MB, 在所有 Go 提交中击败了84.42%的用户</p>
+</blockquote>
+<h3 id="100-相同的树"><a href="#100-相同的树" class="headerlink" title="100. 相同的树"></a>100. 相同的树</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-00f58922.png" alt="image.png"></p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>有两中情况下可直接返回<ol>
+<li>p与q同时为空时为<code>True</code></li>
+<li>p或q只有一个为空时<code>False</code></li>
+</ol>
+</li>
+<li>p与q同时不为空是，判断其Val，同时递归判断两个的Left与Right</li>
+</ul>
+<h5 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSameTree</span><span class="params">(p *TreeNode, q *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> p == <span class="literal">nil</span> &amp;&amp; q == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> p != <span class="literal">nil</span> &amp;&amp; q != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> p.Val != q.Val &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> isSameTree(p.Left, q.Left) &amp;&amp; isSameTree(p.Right, q.Right)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :2.1 MB, 在所有 Go 提交中击败了87.07%的用户</p>
+</blockquote>
+<h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101. 对称二叉树"></a>101. 对称二叉树</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3af0001a.png" alt="image.png"></p>
+<h4 id="解题思路–递归"><a href="#解题思路–递归" class="headerlink" title="解题思路–递归"></a>解题思路–递归</h4><ul>
+<li>这道题与上一题很像，上一题是要求树完全相等，此题是要求对称</li>
+<li>两树相等时为<code>Left == Left</code>,<code>Right == Right</code>，而对称则是<code>Left == Right</code>，<code>Right == Left</code></li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isLeftRight(root.Left, root.Right)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isLeftRight</span><span class="params">(L *TreeNode, R *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> L == <span class="literal">nil</span> &amp;&amp; R == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> L == <span class="literal">nil</span> || R == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> L.Val != R.Val&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isLeftRight(L.Left, R.Right) &amp;&amp; isLeftRight(L.Right, R.Left)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :3 MB, 在所有 Go 提交中击败了60.14%的用户</p>
+</blockquote>
+<h4 id="解题思路–迭代"><a href="#解题思路–迭代" class="headerlink" title="解题思路–迭代"></a>解题思路–迭代</h4><ul>
+<li>迭代我也不是很懂，就摘抄了一个，配合注释看一看</li>
+</ul>
+<h5 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span> <span class="title">bool</span></span> &#123; <span class="comment">// 迭代方法，bfs</span></span><br><span class="line">	L := []*TreeNode&#123;&#125;       <span class="comment">// 从左向右遍历顺序的队列</span></span><br><span class="line">	R := []*TreeNode&#123;&#125;       <span class="comment">// 从右向左遍历顺序的队列</span></span><br><span class="line">	L = <span class="built_in">append</span>(L, root)     <span class="comment">// 加入初始节点</span></span><br><span class="line">	R = <span class="built_in">append</span>(R, root)</span><br><span class="line">	<span class="keyword">for</span> <span class="built_in">len</span>(L)!=<span class="number">0</span> &amp;&amp; <span class="built_in">len</span>(R)!=<span class="number">0</span> &#123;   <span class="comment">// bfs</span></span><br><span class="line">		Lv,rv := L[<span class="number">0</span>], R[<span class="number">0</span>]    <span class="comment">// 不同遍历顺序的队列，队首出队</span></span><br><span class="line">		L, R = L[<span class="number">1</span>:], R[<span class="number">1</span>:]      <span class="comment">// 删除队首元素</span></span><br><span class="line">		<span class="keyword">if</span> Lv==<span class="literal">nil</span> &amp;&amp; rv==<span class="literal">nil</span> &#123;  <span class="comment">// 空节点，不添加节点</span></span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> Lv!=<span class="literal">nil</span> &amp;&amp; rv!=<span class="literal">nil</span> &amp;&amp; Lv.Val == rv.Val &#123;    <span class="comment">// 比较两种遍历顺序的出队节点，如果相同，继续搜索</span></span><br><span class="line">			L = <span class="built_in">append</span>(L, Lv.Left, Lv.Right)</span><br><span class="line">			R = <span class="built_in">append</span>(R, rv.Right, rv.Left)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;                     <span class="comment">// 如果不同，证明不是镜像二叉树</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(L)==<span class="number">0</span> &amp;&amp; <span class="built_in">len</span>(R)==<span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-3"><a href="#运行结果-3" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :3.2 MB, 在所有 Go 提交中击败了5.80%的用户</p>
+</blockquote>
+<h3 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104. 二叉树的最大深度"></a>104. 二叉树的最大深度</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-59a22901.png" alt="image.png"></p>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>使用递归查看当前值是否为空，为空则返回0，接受到递归返回的0就加1</li>
+<li>毕竟树的左右，看那边更大，返回大的一边。<h5 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxDepth</span><span class="params">(root *TreeNode)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    Ll := maxDepth(root.Left) + <span class="number">1</span></span><br><span class="line">    Lr := maxDepth(root.Right) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> Ll &gt; Lr &#123;</span><br><span class="line">        <span class="keyword">return</span> Ll</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Lr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-4"><a href="#运行结果-4" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :8 ms, 在所有 Go 提交中击败了79.37%的用户<br>内存消耗 :4.4 MB, 在所有 Go 提交中击败了61.74%的用户</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="107-二叉树的层次遍历-II"><a href="#107-二叉树的层次遍历-II" class="headerlink" title="107. 二叉树的层次遍历 II"></a>107. 二叉树的层次遍历 II</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-28e94e96.png" alt="image.png"></p>
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>看下面代码注释<h5 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">levelOrderBottom</span><span class="params">(root *TreeNode)</span> <span class="params">(res [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> node []*TreeNode</span><br><span class="line">    node = <span class="built_in">append</span>(node, root)</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">len</span>(node) &gt; <span class="number">0</span> &#123; <span class="comment">// node不为0就一直循环</span></span><br><span class="line">        <span class="built_in">len</span> := <span class="built_in">len</span>(node)</span><br><span class="line">        <span class="keyword">var</span> tmp []<span class="keyword">int</span></span><br><span class="line">        <span class="keyword">for</span> i:= <span class="number">0</span>; i &lt; <span class="built_in">len</span>; i++ &#123;</span><br><span class="line">	    <span class="comment">// 循环次数等于每一层的节点数，每次都取第一个node，因为下面会将第一个node删除</span></span><br><span class="line">            indexNode := node[<span class="number">0</span>]</span><br><span class="line">            node = node[<span class="number">1</span>:]  <span class="comment">// 将第一个node删除</span></span><br><span class="line">            tmp = <span class="built_in">append</span>(tmp, indexNode.Val) <span class="comment">// 记录节点值</span></span><br><span class="line">            <span class="keyword">if</span> indexNode.Left != <span class="literal">nil</span> &#123; <span class="comment">// 如果左子树不为空，将左子树添加node</span></span><br><span class="line">                node = <span class="built_in">append</span>(node, indexNode.Left)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> indexNode.Right != <span class="literal">nil</span> &#123; <span class="comment">// 如果右边树不为空，将右子树添加node</span></span><br><span class="line">                node = <span class="built_in">append</span>(node, indexNode.Right)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">append</span>(res, tmp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> res1 [][]<span class="keyword">int</span></span><br><span class="line">    <span class="keyword">for</span> i:= <span class="built_in">len</span>(res)<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">        res1 = <span class="built_in">append</span>(res1, res[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-5"><a href="#运行结果-5" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了85.64%的用户<br>内存消耗 :6 MB, 在所有 Go 提交中击败了87.36%的用户</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>对树不是很了解，树相关题目后面再做</strong></p>
+<h3 id="118-杨辉三角"><a href="#118-杨辉三角" class="headerlink" title="118. 杨辉三角"></a>118. 杨辉三角</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-84d3bce3.png" alt="image.png"></p>
+<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li><img src="https://img.hacpai.com/file/2019/09/PascalTriangleAnimated2-9958c3e5.gif" alt="PascalTriangleAnimated2.gif"></li>
+</ul>
+<h5 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">generate</span><span class="params">(numRows <span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> arr [][]<span class="keyword">int</span></span><br><span class="line">	<span class="keyword">if</span> numRows == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> arr</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	arr = <span class="built_in">append</span>(arr, []<span class="keyword">int</span>&#123;<span class="number">1</span>&#125;)</span><br><span class="line">	<span class="keyword">if</span> numRows == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> arr</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; numRows; i++ &#123;</span><br><span class="line">		<span class="keyword">var</span> row []<span class="keyword">int</span></span><br><span class="line">		row = <span class="built_in">append</span>(row, <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; i; j++ &#123;</span><br><span class="line">			tmp := arr[i<span class="number">-1</span>][j<span class="number">-1</span>] + arr[i<span class="number">-1</span>][j]</span><br><span class="line">			fmt.Println(tmp)</span><br><span class="line">			row = <span class="built_in">append</span>(row, tmp)</span><br><span class="line">		&#125;</span><br><span class="line">		row = <span class="built_in">append</span>(row, <span class="number">1</span>)</span><br><span class="line">		arr = <span class="built_in">append</span>(arr, row)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-6"><a href="#运行结果-6" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :2.3 MB, 在所有 Go 提交中击败了47.54%的用户</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">InkDP</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hexo.inkdp.cn/leetcode4.html">https://hexo.inkdp.cn/leetcode4.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hexo.inkdp.cn" target="_blank">墨殇的技术博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Golang/">Golang</a><a class="post-meta__tags" href="/tags/leetcode/">leetcode</a><a class="post-meta__tags" href="/tags/algorithm/">算法</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/images/weixin.png" target="_blank"><img class="post-qr-code-img" src="/images/weixin.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/images/zhifubao.jpg" target="_blank"><img class="post-qr-code-img" src="/images/zhifubao.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/leetcode5.html"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107001531491.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">日刷leetcode--简单版（五）</div></div></a></div><div class="next-post pull-right"><a href="/articles/2019/08/31/1567227232395.html"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180526.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">《我的前半生》阅读笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a target="_blank" rel="noopener" href="//leetcode1.html" title="日刷leetcode--简单版（一）"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/timg-af5a1c18.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-16</div><div class="title">日刷leetcode--简单版（一）</div></div></a></div><div><a target="_blank" rel="noopener" href="//leetcode2.html" title="日刷leetcode--简单版（二）"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231236835.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-29</div><div class="title">日刷leetcode--简单版（二）</div></div></a></div><div><a target="_blank" rel="noopener" href="//leetcode.html" title="日刷leetcode（目录篇）"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107221459186.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-29</div><div class="title">日刷leetcode（目录篇）</div></div></a></div><div><a target="_blank" rel="noopener" href="//leetcode3.html" title="日刷leetcode--简单版（三）"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/timg-af5a1c18.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-08-09</div><div class="title">日刷leetcode--简单版（三）</div></div></a></div><div><a target="_blank" rel="noopener" href="//leetcode5.html" title="日刷leetcode--简单版（五）"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107001531491.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-09-14</div><div class="title">日刷leetcode--简单版（五）</div></div></a></div><div><a target="_blank" rel="noopener" href="//leetcode6.html" title="日刷leetcode--简单版（六）"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190222.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-10-24</div><div class="title">日刷leetcode--简单版（六）</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/header.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">InkDP</div><div class="author-info__description">墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/InkDP"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/InkDP" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:inkdp@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=1576962841" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/images/add_weixin.png" target="_blank" title=""><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://steamcommunity.com/id/InkDP" target="_blank" title=""><i class="fab fa-steam"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">旧博客停止更新，但依旧运行在<a target="_blank" rel="noopener" href="https://www.inkdp.cn">www.inkdp.cn</a>下，文章已全部迁移至<a target="_blank" rel="noopener" href="https://inkdp.cn">inkdp.cn</a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E6%80%BB%E7%9B%AE%E5%BD%95"><span class="toc-number">1.</span> <span class="toc-text">返回总目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#88-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84"><span class="toc-number">2.</span> <span class="toc-text">88. 合并两个有序数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-number">2.2.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">2.2.2.</span> <span class="toc-text">运行结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#100-%E7%9B%B8%E5%90%8C%E7%9A%84%E6%A0%91"><span class="toc-number">3.</span> <span class="toc-text">100. 相同的树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-1"><span class="toc-number">3.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-1"><span class="toc-number">3.2.</span> <span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">运行结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#101-%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">4.</span> <span class="toc-text">101. 对称二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="toc-number">4.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E2%80%93%E9%80%92%E5%BD%92"><span class="toc-number">4.2.</span> <span class="toc-text">解题思路–递归</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-2"><span class="toc-number">4.2.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C-2"><span class="toc-number">4.2.2.</span> <span class="toc-text">运行结果</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E2%80%93%E8%BF%AD%E4%BB%A3"><span class="toc-number">4.3.</span> <span class="toc-text">解题思路–迭代</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-3"><span class="toc-number">4.3.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C-3"><span class="toc-number">4.3.2.</span> <span class="toc-text">运行结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#104-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%A4%A7%E6%B7%B1%E5%BA%A6"><span class="toc-number">5.</span> <span class="toc-text">104. 二叉树的最大深度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="toc-number">5.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-2"><span class="toc-number">5.2.</span> <span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-4"><span class="toc-number">5.2.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C-4"><span class="toc-number">5.2.2.</span> <span class="toc-text">运行结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#107-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86-II"><span class="toc-number">6.</span> <span class="toc-text">107. 二叉树的层次遍历 II</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="toc-number">6.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-3"><span class="toc-number">6.2.</span> <span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-5"><span class="toc-number">6.2.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C-5"><span class="toc-number">6.2.2.</span> <span class="toc-text">运行结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#118-%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92"><span class="toc-number">7.</span> <span class="toc-text">118. 杨辉三角</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-5"><span class="toc-number">7.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF-4"><span class="toc-number">7.2.</span> <span class="toc-text">解题思路</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81-6"><span class="toc-number">7.2.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C-6"><span class="toc-number">7.2.2.</span> <span class="toc-text">运行结果</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/reading/posts-202101-2021-01-09-%E5%A6%82%E4%BD%95%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html" title="如何读一本书"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/dims.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何读一本书"/></a><div class="content"><a class="title" href="/reading/posts-202101-2021-01-09-%E5%A6%82%E4%BD%95%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6.html" title="如何读一本书">如何读一本书</a><time datetime="2021-01-08T16:46:38.000Z" title="发表于 2021-01-09 00:46:38">2021-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020.html" title="2020年个人总结"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0b682626.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2020年个人总结"/></a><div class="content"><a class="title" href="/2020.html" title="2020年个人总结">2020年个人总结</a><time datetime="2020-12-29T15:30:49.000Z" title="发表于 2020-12-29 23:30:49">2020-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/leetcode_array1.html" title="leetcode-数组系列1"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode-数组系列1"/></a><div class="content"><a class="title" href="/leetcode_array1.html" title="leetcode-数组系列1">leetcode-数组系列1</a><time datetime="2020-12-07T07:29:30.000Z" title="发表于 2020-12-07 15:29:30">2020-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/2020/10/21/1603213579436.html" title="MySQL分页查询优化"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL分页查询优化"/></a><div class="content"><a class="title" href="/articles/2020/10/21/1603213579436.html" title="MySQL分页查询优化">MySQL分页查询优化</a><time datetime="2020-10-20T17:06:19.000Z" title="发表于 2020-10-21 01:06:19">2020-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/2020/07/09/1594287406684.html" title="Go爬虫初体验"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go爬虫初体验"/></a><div class="content"><a class="title" href="/articles/2020/07/09/1594287406684.html" title="Go爬虫初体验">Go爬虫初体验</a><time datetime="2020-07-09T09:36:46.000Z" title="发表于 2020-07-09 17:36:46">2020-07-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/141610122888_.pic.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By InkDP</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="http://beian.miit.gov.cn">渝ICP备17007419号-2</a><br/><span style="box-sizing:border-box;vertical-align:middle;">本网站由</span><img style="height:16px;box-sizing:border-box;vertical-align:middle;padding:0 2px;" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%8F%88%E6%8B%8D%E4%BA%91_logo5.png"><span style="box-sizing:border-box; vertical-align:middle;">提供CDN服务</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: 'inkdp.github.io',
+      owner: 'InkDP',
+      admin: ['InkDP'],
+      id: '82c48ac95f4767f6074dbd4eec960255',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回复',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+    content = content.replace(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png|webp)/g, '') // remove image link
+    content = content.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi, '') // remove url
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/inkdp/inkdp.github.io/issues/comments?sort=updated&direction=desc&per_page=6&page=1')
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body),
+            'nick': item.user.login,
+            'url': item.html_url,
+            'date': item.updated_at
+          }
+        })
+        saveToLocal.set('github-newest-comments', JSON.stringify(githubArray), 10/(60*24))
+        generateHtml(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          let name = 'src'
+          if(false) {
+            name = 'data-lazy-src'
+          }
+          result += `<a href='${array[i].url}' class="thumbnail"><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})</script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>
