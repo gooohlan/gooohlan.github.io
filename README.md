@@ -1,4 +1,4 @@
-# [墨殇的技术博客](https://inkdp.cn)
+  # [墨殇的技术博客](https://inkdp.cn)
 
 ![CI](https://github.com/inkdp/inkdp.github.io/workflows/CI/badge.svg) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inkdp/inkdp.github.io/CI) ![GitHub last commit](https://img.shields.io/github/last-commit/inkdp/inkdp.github.io)
 
@@ -18,7 +18,7 @@ TODO：
 - [X] 看板娘
 - [X] 图片迁移至CDN  
 - [X] CDN 加速静态文件
-- [ ] RSS
+- [ ] ~~ RSS ~~
 - [X] 迁移至inkdp.cn
 
 ## 1.0.2

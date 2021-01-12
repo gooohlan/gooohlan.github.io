@@ -42,11 +42,10 @@ copy:
 #   icon: link || the description
 social:
    fab fa-github: https://github.com/InkDP || Github
-   fas fa-envelope: mailto:inkdp@qq.com || Email
+   iconfont icon-bilibili-fill: https://space.bilibili.com/18494658 || Bilibili
+   iconfont icon-netease-cloud-music-fill: https://music.163.com/#/user/home?id=285669792 || 网易云
    fab fa-qq: tencent://message/?uin=1576962841 || QQ
-   fab fa-weixin: /images/add_weixin.png
-   fab fa-steam: https://steamcommunity.com/id/InkDP
-
+   fab fa-weixin: /images/add_weixin.png || 微信
 # search (搜索)
 # --------------------------------------
 
@@ -597,9 +596,9 @@ hr_icon:
 subtitle:
   enable: true
   # Typewriter Effect (打字效果)
-  effect: true
+  effect: false
   # loop (循環打字)
-  loop: true
+  loop: false
   # source調用第三方服務
   # source: false 關閉調用
   # source: 1  調用搏天api的隨機語錄（簡體） https://api.btstu.cn/
@@ -614,6 +613,7 @@ subtitle:
   # 如果關閉打字效果，subtitle只會顯示sub的第一行文字
   sub:
     - 凡打不倒我的，必使我强大！！！
+    - 我们总在正确的事情和容易的事情之间做选择
 
 # Loading Animation (加載動畫)
 preloader: false
@@ -849,8 +849,8 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/other/iconfont2.css">
     - <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
