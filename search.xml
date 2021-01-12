@@ -80,9 +80,9 @@
             
             <tag> 学习 </tag>
             
-            <tag> leetcode </tag>
-            
             <tag> Golang </tag>
+            
+            <tag> leetcode </tag>
             
         </tags>
       
@@ -100,11 +100,11 @@
       
       <categories>
           
-          <category> 踩坑日记 </category>
-          
           <category> 技术 </category>
           
           <category> 后端 </category>
+          
+          <category> 踩坑日记 </category>
           
       </categories>
       
@@ -196,9 +196,9 @@
       
         <tags>
             
-            <tag> 读书笔记 </tag>
-            
             <tag> Golang </tag>
+            
+            <tag> 读书笔记 </tag>
             
         </tags>
       
@@ -370,11 +370,11 @@
       
         <tags>
             
+            <tag> Golang </tag>
+            
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> Golang </tag>
             
         </tags>
       
@@ -451,9 +451,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> Golang </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -482,9 +482,9 @@
             
             <tag> docker </tag>
             
-            <tag> 面试 </tag>
-            
             <tag> Golang </tag>
+            
+            <tag> 面试 </tag>
             
         </tags>
       
@@ -569,11 +569,11 @@
       
         <tags>
             
+            <tag> Golang </tag>
+            
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> Golang </tag>
             
         </tags>
       
@@ -600,11 +600,11 @@
       
         <tags>
             
+            <tag> Golang </tag>
+            
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> Golang </tag>
             
         </tags>
       
@@ -818,11 +818,11 @@
       
         <tags>
             
+            <tag> Golang </tag>
+            
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> Golang </tag>
             
         </tags>
       
@@ -957,11 +957,11 @@
       
         <tags>
             
+            <tag> Golang </tag>
+            
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> Golang </tag>
             
         </tags>
       
@@ -988,11 +988,11 @@
       
         <tags>
             
+            <tag> Golang </tag>
+            
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> Golang </tag>
             
         </tags>
       
@@ -1050,11 +1050,11 @@
       
         <tags>
             
+            <tag> Golang </tag>
+            
             <tag> leetcode </tag>
             
             <tag> 算法 </tag>
-            
-            <tag> Golang </tag>
             
         </tags>
       
