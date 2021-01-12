@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>墨殇的技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽">
+<meta property="og:type" content="website">
+<meta property="og:title" content="墨殇的技术博客">
+<meta property="og:url" content="https://hexo.inkdp.cn/page/3/index.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="墨殇的技术博客,墨殇,InkDP,inkdp,技术博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="墨殇的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">墨殇的技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexo.inkdp.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-posts-201908-日刷leetcode-简单版（四）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/leetcode4.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-31T08:48:41.000Z" itemprop="datePublished">2019-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/leetcode4.html">日刷leetcode--简单版（四）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="返回总目录"><a href="#返回总目录" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode.html">日刷leetcode–简单版</a></p>
+<hr>
+<h3 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="88. 合并两个有序数组"></a>88. 合并两个有序数组</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-85be80cb.png" alt="image.png"></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移</li>
+</ul>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(nums1 []<span class="keyword">int</span>, m <span class="keyword">int</span>, nums2 []<span class="keyword">int</span>, n <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums1</span><br><span class="line">	&#125;</span><br><span class="line">	i, j := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(nums1) &amp;&amp; j &lt; n; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums1[i] &gt; nums2[j] &#123;</span><br><span class="line">			reverses(nums1[i:])</span><br><span class="line">			nums1[i] = nums2[j]</span><br><span class="line">			j++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> j &lt; n &#123;</span><br><span class="line">		nums1[m+j] = nums2[j]</span><br><span class="line">		j++</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> nums1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverses</span><span class="params">(nums []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="built_in">len</span>(nums) - <span class="number">1</span>; i &gt; <span class="number">0</span>; i-- &#123;</span><br><span class="line">		nums[i] = nums[i<span class="number">-1</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了73.14%的用户<br>内存消耗 :3.6 MB, 在所有 Go 提交中击败了84.42%的用户</p>
+</blockquote>
+<h3 id="100-相同的树"><a href="#100-相同的树" class="headerlink" title="100. 相同的树"></a>100. 相同的树</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-00f58922.png" alt="image.png"></p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>有两中情况下可直接返回<ol>
+<li>p与q同时为空时为<code>True</code></li>
+<li>p或q只有一个为空时<code>False</code></li>
+</ol>
+</li>
+<li>p与q同时不为空是，判断其Val，同时递归判断两个的Left与Right</li>
+</ul>
+<h5 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSameTree</span><span class="params">(p *TreeNode, q *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> p == <span class="literal">nil</span> &amp;&amp; q == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> p != <span class="literal">nil</span> &amp;&amp; q != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> p.Val != q.Val &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> isSameTree(p.Left, q.Left) &amp;&amp; isSameTree(p.Right, q.Right)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :2.1 MB, 在所有 Go 提交中击败了87.07%的用户</p>
+</blockquote>
+<h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101. 对称二叉树"></a>101. 对称二叉树</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3af0001a.png" alt="image.png"></p>
+<h4 id="解题思路–递归"><a href="#解题思路–递归" class="headerlink" title="解题思路–递归"></a>解题思路–递归</h4><ul>
+<li>这道题与上一题很像，上一题是要求树完全相等，此题是要求对称</li>
+<li>两树相等时为<code>Left == Left</code>,<code>Right == Right</code>，而对称则是<code>Left == Right</code>，<code>Right == Left</code></li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isLeftRight(root.Left, root.Right)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isLeftRight</span><span class="params">(L *TreeNode, R *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> L == <span class="literal">nil</span> &amp;&amp; R == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> L == <span class="literal">nil</span> || R == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> L.Val != R.Val&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isLeftRight(L.Left, R.Right) &amp;&amp; isLeftRight(L.Right, R.Left)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :3 MB, 在所有 Go 提交中击败了60.14%的用户</p>
+</blockquote>
+<h4 id="解题思路–迭代"><a href="#解题思路–迭代" class="headerlink" title="解题思路–迭代"></a>解题思路–迭代</h4><ul>
+<li>迭代我也不是很懂，就摘抄了一个，配合注释看一看</li>
+</ul>
+<h5 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span> <span class="title">bool</span></span> &#123; <span class="comment">// 迭代方法，bfs</span></span><br><span class="line">	L := []*TreeNode&#123;&#125;       <span class="comment">// 从左向右遍历顺序的队列</span></span><br><span class="line">	R := []*TreeNode&#123;&#125;       <span class="comment">// 从右向左遍历顺序的队列</span></span><br><span class="line">	L = <span class="built_in">append</span>(L, root)     <span class="comment">// 加入初始节点</span></span><br><span class="line">	R = <span class="built_in">append</span>(R, root)</span><br><span class="line">	<span class="keyword">for</span> <span class="built_in">len</span>(L)!=<span class="number">0</span> &amp;&amp; <span class="built_in">len</span>(R)!=<span class="number">0</span> &#123;   <span class="comment">// bfs</span></span><br><span class="line">		Lv,rv := L[<span class="number">0</span>], R[<span class="number">0</span>]    <span class="comment">// 不同遍历顺序的队列，队首出队</span></span><br><span class="line">		L, R = L[<span class="number">1</span>:], R[<span class="number">1</span>:]      <span class="comment">// 删除队首元素</span></span><br><span class="line">		<span class="keyword">if</span> Lv==<span class="literal">nil</span> &amp;&amp; rv==<span class="literal">nil</span> &#123;  <span class="comment">// 空节点，不添加节点</span></span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> Lv!=<span class="literal">nil</span> &amp;&amp; rv!=<span class="literal">nil</span> &amp;&amp; Lv.Val == rv.Val &#123;    <span class="comment">// 比较两种遍历顺序的出队节点，如果相同，继续搜索</span></span><br><span class="line">			L = <span class="built_in">append</span>(L, Lv.Left, Lv.Right)</span><br><span class="line">			R = <span class="built_in">append</span>(R, rv.Right, rv.Left)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;                     <span class="comment">// 如果不同，证明不是镜像二叉树</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(L)==<span class="number">0</span> &amp;&amp; <span class="built_in">len</span>(R)==<span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-3"><a href="#运行结果-3" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :3.2 MB, 在所有 Go 提交中击败了5.80%的用户</p>
+</blockquote>
+<h3 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104. 二叉树的最大深度"></a>104. 二叉树的最大深度</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-59a22901.png" alt="image.png"></p>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>使用递归查看当前值是否为空，为空则返回0，接受到递归返回的0就加1</li>
+<li>毕竟树的左右，看那边更大，返回大的一边。<h5 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxDepth</span><span class="params">(root *TreeNode)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    Ll := maxDepth(root.Left) + <span class="number">1</span></span><br><span class="line">    Lr := maxDepth(root.Right) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> Ll &gt; Lr &#123;</span><br><span class="line">        <span class="keyword">return</span> Ll</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Lr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-4"><a href="#运行结果-4" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :8 ms, 在所有 Go 提交中击败了79.37%的用户<br>内存消耗 :4.4 MB, 在所有 Go 提交中击败了61.74%的用户</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="107-二叉树的层次遍历-II"><a href="#107-二叉树的层次遍历-II" class="headerlink" title="107. 二叉树的层次遍历 II"></a>107. 二叉树的层次遍历 II</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-28e94e96.png" alt="image.png"></p>
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>看下面代码注释<h5 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">levelOrderBottom</span><span class="params">(root *TreeNode)</span> <span class="params">(res [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> node []*TreeNode</span><br><span class="line">    node = <span class="built_in">append</span>(node, root)</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">len</span>(node) &gt; <span class="number">0</span> &#123; <span class="comment">// node不为0就一直循环</span></span><br><span class="line">        <span class="built_in">len</span> := <span class="built_in">len</span>(node)</span><br><span class="line">        <span class="keyword">var</span> tmp []<span class="keyword">int</span></span><br><span class="line">        <span class="keyword">for</span> i:= <span class="number">0</span>; i &lt; <span class="built_in">len</span>; i++ &#123;</span><br><span class="line">	    <span class="comment">// 循环次数等于每一层的节点数，每次都取第一个node，因为下面会将第一个node删除</span></span><br><span class="line">            indexNode := node[<span class="number">0</span>]</span><br><span class="line">            node = node[<span class="number">1</span>:]  <span class="comment">// 将第一个node删除</span></span><br><span class="line">            tmp = <span class="built_in">append</span>(tmp, indexNode.Val) <span class="comment">// 记录节点值</span></span><br><span class="line">            <span class="keyword">if</span> indexNode.Left != <span class="literal">nil</span> &#123; <span class="comment">// 如果左子树不为空，将左子树添加node</span></span><br><span class="line">                node = <span class="built_in">append</span>(node, indexNode.Left)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> indexNode.Right != <span class="literal">nil</span> &#123; <span class="comment">// 如果右边树不为空，将右子树添加node</span></span><br><span class="line">                node = <span class="built_in">append</span>(node, indexNode.Right)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">append</span>(res, tmp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> res1 [][]<span class="keyword">int</span></span><br><span class="line">    <span class="keyword">for</span> i:= <span class="built_in">len</span>(res)<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">        res1 = <span class="built_in">append</span>(res1, res[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-5"><a href="#运行结果-5" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了85.64%的用户<br>内存消耗 :6 MB, 在所有 Go 提交中击败了87.36%的用户</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>对树不是很了解，树相关题目后面再做</strong></p>
+<h3 id="118-杨辉三角"><a href="#118-杨辉三角" class="headerlink" title="118. 杨辉三角"></a>118. 杨辉三角</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-84d3bce3.png" alt="image.png"></p>
+<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li><img src="https://img.hacpai.com/file/2019/09/PascalTriangleAnimated2-9958c3e5.gif" alt="PascalTriangleAnimated2.gif"></li>
+</ul>
+<h5 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">generate</span><span class="params">(numRows <span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> arr [][]<span class="keyword">int</span></span><br><span class="line">	<span class="keyword">if</span> numRows == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> arr</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	arr = <span class="built_in">append</span>(arr, []<span class="keyword">int</span>&#123;<span class="number">1</span>&#125;)</span><br><span class="line">	<span class="keyword">if</span> numRows == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> arr</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; numRows; i++ &#123;</span><br><span class="line">		<span class="keyword">var</span> row []<span class="keyword">int</span></span><br><span class="line">		row = <span class="built_in">append</span>(row, <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; i; j++ &#123;</span><br><span class="line">			tmp := arr[i<span class="number">-1</span>][j<span class="number">-1</span>] + arr[i<span class="number">-1</span>][j]</span><br><span class="line">			fmt.Println(tmp)</span><br><span class="line">			row = <span class="built_in">append</span>(row, tmp)</span><br><span class="line">		&#125;</span><br><span class="line">		row = <span class="built_in">append</span>(row, <span class="number">1</span>)</span><br><span class="line">		arr = <span class="built_in">append</span>(arr, row)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-6"><a href="#运行结果-6" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :2.3 MB, 在所有 Go 提交中击败了47.54%的用户</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/leetcode4.html" data-id="ckjtnpjm6001n09l96q1th0cu" data-title="日刷leetcode--简单版（四）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-《我的前半生》阅读笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/31/1567227232395.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-31T04:53:52.000Z" itemprop="datePublished">2019-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/reading/">阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/31/1567227232395.html">《我的前半生》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  可能受篇幅影响，这是用Kindle看书以来，看的最快的一本，大概也就一两天的时间。篇幅虽小，但却丝毫不影响该书的质量。</p>
+<p>  老实说，文章的开头给我的感觉并不是特别好，似乎一部言情小说的样子，“女主上来就被抛弃，然后成为职业女强人，遇到白马王子”这类书太多太多了，看完后发现写的还真就是这么回事。看完后我不由得佩服起作者来，与都市言情几乎同样的剧情路线在作者手中展示出了不一样的魅力。虽说是与都市言情一样的线路，但是剧情还是大有不同，有幸读过一两篇相关题材的书，名字早已忘记，但依稀记得书中女主都是青春靓丽的，年龄不过24左右，在嫁人之前就是商业精英之类的，被抛弃后直接走上人生巅峰的那种。讲道理，这种书YY起来是真的爽，这也就是都市爽文的卖点之一了。</p>
+<p>  似乎略有偏题，讲回本书，感觉该书很适合女性去看一看，不论你是否是书中女主前半生那样的人，都适合去看一看。初被抛弃时，女主是无助的，绝望的，即将一无所有是多么绝望，所幸，女主是坚强的，那句“人要脸，树要皮。一个女人失去她的丈夫，已经是一最大的难堪与狼狈，我不能再出洋相”让我感受到女主身体最深处的倔强。离开丈夫的女主没有让人失望，从天真阔太转变为一位成功的职业女性，气质的申华，远比外在好很多，甚至前夫都觉得她年轻漂亮了许多。“人际关系这一门科学永远没有学成毕业的一日，每天都似投身于砂石中，缓缓磨动，皮破血流之余所积得的宝贵经验便是一般人口中的圆滑”，慢慢学会如何处理人际关系后与其妹妹关系也转好。或许女主本就不是愚笨的，如书中所说“我跟你讲过，做太太也不好做，你总不相信，我们在老板面前，何尝不是随他搓圆搓扁，丈夫要我笨，我只好笨”。“# 这世界像一个大马戏团子，班主名叫‘生活”，拿着皮鞭站在咱们背后使劲地抽打，逼咱们跳火圈、上刀山，你敢不去吗？皮鞭子响了，狠着劲咬紧牙关，也就上了”描绘出生活的不易。</p>
+<p>  文章的最后，女主再一次找到了真爱，在飞机上结束了自己的前半生。</p>
+<p>  后记，无意中发现还有电视剧，演员阵容大多都是我喜欢的，但是看了些剧情简介，似乎与此书大相径庭啊，瞬间就失去了兴趣。</p>
+<p>  文笔太差，想到什么就写什么，文章反倒显得杂乱无章。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/31/1567227232395.html" data-id="ckjtnpjlv001609l911j6631n" data-title="《我的前半生》阅读笔记" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-《诸神的传说：希腊神话故事》读中笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/29/1567093295295.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-29T15:41:35.000Z" itemprop="datePublished">2019-08-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/reading/">阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/29/1567093295295.html">《诸神的传说：希腊神话故事》读中笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  一开始开始看这本书是打算了解一下希腊神话中的神是什么样的，虽然之前也通过一些视频文字等了解过一些，指导诸如宙斯、雅典娜、阿波罗、波塞冬等，但是没有系统的去了解过，抱着好奇的态度翻开了这本书。<br>  <br>  这本书目前翻了几页，现在大概看了10%左右，不打算看下去了。可能由于文化差异的问题，我理解不了希腊神话中某些神的做法。该书号称将希腊神话进行收罗，整理后得出的版本，是很经典的书籍。可是给我的感觉是整个书杂乱无章（不排除存在翻译的原因），还没之前读的儿童读物讲的清楚，再就是篇幅过小，我还来不及记住该文主角是谁，这一章就讲完了。</p>
+<p>  虽然槽点很多，但是我还是挺喜欢希腊神话中的一些很经典的故事，比如奥德赛、木马计、塞壬的歌声等，可能该书的开头不是特别好，也可能是我带着主观意识去阅读导致的。但是目前不打算看了，毕竟时间有限，以后再看的话会更新该文章。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/29/1567093295295.html" data-id="ckjtnpjlw001909l961vvbcxr" data-title="《诸神的传说：希腊神话故事》读中笔记" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-博客更名" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/InkDP.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-28T15:29:26.000Z" itemprop="datePublished">2019-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/InkDP.html">博客更名</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="域名已由https-www-jinjianh-com迁移至https-www-inkdp-cn"><a href="#域名已由https-www-jinjianh-com迁移至https-www-inkdp-cn" class="headerlink" title="域名已由https://www.jinjianh.com迁移至https://www.inkdp.cn"></a>域名已由<a target="_blank" rel="noopener" href="https://www.jinjianh.com迁移至https//www.inkdp.cn">https://www.jinjianh.com迁移至https://www.inkdp.cn</a></h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>由于一系列原因，最主要的是突然被百度恶心到了，虽然之前也一直恶心着(PS:<a target="_blank" rel="noopener" href="https://www.baidu.com/s?ie=UTF-8&wd=%E9%87%91%E6%88%8B">百度搜索-金戋</a>就知道了) ，但是突然我就受不了，所以决定更换ID</p>
+<p>金戋(jinjian/jianjianh)  =&gt; 墨殇(InkDP)，墨殇诞生于:<a target="_blank" rel="noopener" href="https://hacpai.com/">黑客派社区</a> – <a target="_blank" rel="noopener" href="https://hacpai.com/article/1566807043243">悬赏一个新 ID</a></p>
+<blockquote>
+<p>墨殇是一种鸟，生在洛水之滨，墨殇百年一生。他们一旦起飞就不能停了，直到累的吐血才休息一会，继续往前飞。</p>
+</blockquote>
+<p>很喜欢墨殇的的寓意，虽然这两个字听起来很悲</p>
+<h3 id="站点更换"><a href="#站点更换" class="headerlink" title="站点更换"></a>站点更换</h3><ul>
+<li><p>博客名称:<a target="_blank" rel="noopener" href="https://www.jinjianh.com/">金戋博客</a> =&gt; <a target="_blank" rel="noopener" href="https://www.inkdp.cn/">墨殇的技术博客</a></p>
+</li>
+<li><p>github:<a target="_blank" rel="noopener" href="https://github.com/jinjianh">金戋</a> =&gt;<a target="_blank" rel="noopener" href="https://github.com/InkDP">墨殇</a></p>
+</li>
+<li><p>黑客派:<a target="_blank" rel="noopener" href="https://hacpai.com/member/jinjianh">金戋</a> =&gt; <a target="_blank" rel="noopener" href="https://hacpai.com/member/InkDP">墨殇</a></p>
+</li>
+</ul>
+<h3 id="新的图标"><a href="#新的图标" class="headerlink" title="新的图标"></a>新的图标</h3><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%9C%86%E5%BA%95-4f20ebb2.png" alt="ååº.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/InkDP.html" data-id="ckjtnpjly001b09l9d7de5vau" data-title="博客更名" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/about-me/" rel="tag">关于我</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-《天才在左，疯子在右》章节摘录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/23/1566551996115.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-23T09:19:56.000Z" itemprop="datePublished">2019-08-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/reading/">阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/23/1566551996115.html">《天才在左，疯子在右》章节摘录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="女人的星球"><a href="#女人的星球" class="headerlink" title="女人的星球"></a>女人的星球</h1><p>我推门进来的时候，吓了他一大跳，还没等我看清，他人就躲到桌子底下去了，说实话我也被吓了一跳。</p>
+<p>关上门后我把资料本子、录音笔放在桌上，并没直接坐下，而是蹲下看着他。我怕他在桌子底下咬我——有过先例。</p>
+<p>他被吓坏了，缩在桌子下拼命哆嗦着，惊恐不安地四下看。</p>
+<p>我：“出来吧，门我锁好了，没有女人。”</p>
+<p>他只是摇头不说话。</p>
+<p>我：“真的没有，我确定，你可以出来看一下，就看一眼，好吗？”</p>
+<p>跟这个患者接触大约2个月了。他有焦虑+严重的恐惧症，还失眠，而恐惧的对象是女人。</p>
+<p>他小心地探头看了下四周，谨慎地后退爬了出去，然后蹲坐在椅子上，紧紧地抱着自己双膝，惊魂未定地看着我。</p>
+<p>我：“你看，没有女人吧。”</p>
+<p>他：“你真的是男的？你脱了裤子我看看？”</p>
+<p>我：“……我是男的，这点我可以确认。你忘了我了？”</p>
+<p>他：“你还有什么证据？”</p>
+<p>我：“我今天特地没刮脸，你可以看到啊，这个胡子是真的，不是粘上去的。你见过女人长胡子吗？就算汗毛重也不会重成我这样吧？”</p>
+<p>他狐疑地盯着我的脸看了好一阵。</p>
+<p>他：“上次她们派了个大胡子女人来骗我。”</p>
+<p>我：“没有的，上次那个大胡子是你的主治医师，他可是地道的男人。”</p>
+<p>他努力在想着。我观察着他，琢磨今天到底有没有交流的可能。</p>
+<p>他：“嗯，好像是，你们俩都是男的……但是第一次那个不是。”</p>
+<p>我：“对，那是女人，你没错。”</p>
+<p>他：“现在她们化妆得越来越像了。”</p>
+<p>我：“哪儿有那么多化妆成男人的啊。这些日子觉得好点没？”</p>
+<p>他：“嗯，安全多了。”</p>
+<p>我：“最近吃药顺利吗？”他曾经拒绝吃药，说那是女人给他的毒药，或者安眠药，等他睡了她们好害他。”</p>
+<p>他：“嗯，就是吃了比较困，不过没别的事。”</p>
+<p>我：“就是嘛，没事的，这里很安全。”</p>
+<p>他：“你整天在外面小心点儿，小心那些女人憋着对你下手！”</p>
+<p>我想了下，没觉得自己有什么值得女人那么鸡飞狗跳寻死觅活惦记的，于是问他为什么。</p>
+<p>他：“她们早晚会征服这个地球的！”</p>
+<p>我：“地球是不可能被征服的。”</p>
+<p>他：“哦，她们会统治世界的。”</p>
+<p>我：“为什么？”</p>
+<p>他又疑神疑鬼地看着我，我也在好奇地看着他，因为从没听他说过这些。</p>
+<p>他：“你居然没发现？”</p>
+<p>我：“你发现了？”</p>
+<p>他严肃地点了点头。</p>
+<p>我：“你怎么发现的？”</p>
+<p>他：“女人，跟我们不是一种动物。”</p>
+<p>我：“那她们是什么？”</p>
+<p>他：“我不知道，很可能是外星来的，因为她们进化得比我们完善。”</p>
+<p>他好像镇定了一些。</p>
+<p>我：“我想听听，有能证明的吗？”</p>
+<p>他神秘地压低声音：“你知道DNA吗？”</p>
+<p>我：“脱氧核糖核酸？知道啊！你想说什么？染色体的问题？”</p>
+<p>他：“她们的秘密就在这里！”</p>
+<p>我：“呃……什么秘密？染色体秘密？”</p>
+<p>他：“没错！”</p>
+<p>我：“到底是怎么回事？”</p>
+<p>他：“人的DNA有23对染色体对不对？”</p>
+<p>我：“对，46条。”</p>
+<p>他依旧狐疑地看着我：“你知道多少？”</p>
+<p>我：“男女前44条染色体都是遗传信息什么的，最后那一对染色体是性染色体，男的是X/Y，女人是X/X。这个怎么了？”</p>
+<p>他严肃地看着我：“你们都太笨！这么简单的事都看不明白！”</p>
+<p>我：“呃……我知道这个，但是不知道怎么有问题了……”</p>
+<p>他：“男女差别不仅仅是这么简单的！男人的X/Y当中，X包含了两三千个基因，是活动频繁的，Y才包含了几十个基因，活动很小！明白了？”</p>
+<p>我：“呃……不明白……这个不是秘密吧？你从哪儿知道的？”</p>
+<p>他一脸恨铁不成钢的表情：“我原来去听过好多这种讲座。你们真是笨得没话说了，难怪女人要灭绝咱们！”</p>
+<p>我实在想不出这里面有什么玄机。</p>
+<p>他叹了口气：“女人最后两个染色体是不是X/X？”</p>
+<p>我：“对啊，我刚才说了啊……”</p>
+<p>他：“女人的那两个X都包含好几千个基因！而且都是活动频繁的，Y对X，几十对好几千！就凭这些，差别大了！女人比男人多了那么多信息基因！就是说女人进化得比男人高级多了！”</p>
+<p>我：“但是大体的都一样啊？就那么一点儿……”</p>
+<p>他有点儿愤怒：“你这个科盲！人和猩猩的基因相似度在99%以上，就是那不到1%导致了一个是人，一个是猩猩。男人比女人少那么点？还少啊！”</p>
+<p>看着他冷笑我一时也没想好说什么。</p>
+<p>他：“对女人来说，男人就像猩猩一样幼稚可笑。小看那一点儿基因信息？太愚昧！低等动物是永远不能了解高等动物的！女人是外星人，远远超过男人的外星人！”</p>
+<p>我：“有那么夸张吗？”</p>
+<p>他不屑地看着我：“你懂女人吗？”</p>
+<p>我：“呃……不算懂……”</p>
+<p>他：“但是女人懂你！她们天生就优秀得多，基因就比男人丰富。就是那些活动基因导致了完全不一样的结果！男人谁敢说了解女人？谁说谁就是胡说八道。我问你，从基因上看，是你高级还是宠物高级？”</p>
+<p>我：“呃……我……”</p>
+<p>我：“就是这样。你养的宠物怎么可能了解你？你吃饭它明白，你睡觉它明白，你看电影它就不见得明白了吧？你上网它就不理解了吧？你跟别人聊天它还是不明白吧？你看书它明白？不明白吧。你看球赛高兴了或者不高兴了它明白？它也不明白！它只能看到你的表面现象：你高兴了或者生气了。但是为什么，它永远不明白。”</p>
+<p>我：“嗯……你别激动，坐下慢慢说。”</p>
+<p>他：“你能看到女人喜欢这件衣服，为什么？因为好看。哪儿好看了？你明白吗？”</p>
+<p>我：“嗯，有时候是这样……”</p>
+<p>他：“女人生气了，你能看到她生气了，你知道为什么吗？你不知道……”</p>
+<p>我：“经常是一些小事儿吧……”</p>
+<p>他再度冷笑：“小事儿？你不懂她们的。你养的宠物打碎了你喜欢的杯子，你会生气，在宠物看来这没什么啊，有什么可气的？对不对？对不对！”</p>
+<p>看着他站在椅子上我有点儿不安。</p>
+<p>我：“你说的没错，先坐下来好不好？小心站那么高女人发现你了。”</p>
+<p>他果然快速地坐了下来。</p>
+<p>他：“没男人能了解女人的，女人的心思比男人多多了，女人早晚会统治这个世界，到时候男人可能会被留下一些种男，剩下的都杀掉。等科学更发达了，种男都不需要了，直接造出精子。可悲的男人啊，现在还以为在主导世界，其实快灭亡了，这个星球早晚是女人的……”</p>
+<p>我：“可怜的男人……感情呢？不需要吗？”</p>
+<p>他：“感情？那是为了繁衍的附加品。”</p>
+<p>我：“我觉得你悲观了点儿……就算是真的，对你也没威胁的。”</p>
+<p>他：“我悲观？我不站出来说明，我不站出来警告，你们会灭亡得更早！可惜我这样的人太少了。”</p>
+<p>我：“是啊……我知道的只有你。”</p>
+<p>他：“弗洛伊德，你知道吗？他也是和我一样，很早就发现了。”</p>
+<p>我：“哎？不是吧？”</p>
+<p>他：“弗洛伊德的临终遗言已经警告男人了。”</p>
+<p>我：“他还说过这个？怎么警告的？”</p>
+<p>他：“他死前警告所有男人，女人想要全世界！”</p>
+<p>我已经起身在收拾东西了：“嗯，我大体上了解怎么回事了，过段时间我还会来看你的。”</p>
+<p>他：“你不能声张，悄悄地传递消息，否则你也会很危险的。”</p>
+<p>我：“好的，我记住了。”</p>
+<p>我轻轻地关上了门。</p>
+<p>几天后我问一个对遗传学了解比较多的朋友，有这种事儿吗？他说除了来自外星、干掉男人、征服世界那部分，基本属实。</p>
+<p>不过，我们都觉得弗洛伊德那句临终遗言很有意思，虽然那只是个传闻。</p>
+<p>“女人啊，你究竟想要什么？”</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/23/1566551996115.html" data-id="ckjtnpjlu001409l90jjc8wiy" data-title="《天才在左，疯子在右》章节摘录" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-天才在左疯子在右阅读笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/23/1566551837849.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-23T09:17:17.000Z" itemprop="datePublished">2019-08-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/reading/">阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/23/1566551837849.html">《天才在左，疯子在右》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>  断断续续于今日上班的路上将这本书看完，虽然因为盗版书的原因有大概十章没有看，但也总算是看完了。</p>
+<p>  作者以一个特殊的角度让我了解到了精神病人是什么样子的，书中描写的案例有各式各样的人，他们都有着各式各样的问题。老实说，看完之后对于精神病医生这个职业油然起敬，治疗好一个病人得需要多大的耐心和多缜密的思维逻辑，感觉这也是一个高危职业，书中有提到有不少医生变成了病人，甚至有些人选择了自杀。</p>
+<p>  曾听说过“精神病与天才只有一墙之隔”，书中有很多不知道是天才还是精神病的人，他们大多逻辑缜密，而且在某些相关知识的理解也很到位，但是我无法判断他到底是不是疯了，就如同文中某位病人所说的那样，你回到唐朝去对当时的人讲现在的种种，他们也会觉得你疯了。当然书中也有很多是真的疯了，让我最诡异的就是那位认为自己已经死亡的病人，我无法想象出最后身体长出金属(依稀记得是铝丝)，这个似乎超出了我的认知。</p>
+<p>  读完这本书感觉最大的收获莫过于书中提到最多的物理知识，算是对自己的一个科普，也同时进一步的了解了精神病人的世界是怎么样的。</p>
+<p>  推荐我最喜欢的一个章节：<a target="_blank" rel="noopener" href="https://inkdp.cn/articles/2019/08/23/1566551996115.html">女人的星球</a>，没有别的意思，只是单纯的喜欢这章</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/23/1566551837849.html" data-id="ckjtnpjm2001d09l931135sqv" data-title="《天才在左，疯子在右》阅读笔记" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-新皮肤-solo-nexmoe" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/23/1566468138289.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-23T08:44:32.000Z" itemprop="datePublished">2019-08-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/front-end/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/23/1566468138289.html">新皮肤 solo-nexmoe</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>solo-nexmoe是移植Hexo的主题<a target="_blank" rel="noopener" href="https://github.com/nexmoe/hexo-theme-nexmoe">Nexmoe</a>而得到的，皮肤效果基本与原作者一致</p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p><a target="_blank" rel="noopener" href="https://github.com/Programming-With-Love/solo-nexmoe">https://github.com/Programming-With-Love/solo-nexmoe</a></p>
+<h2 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h2><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0f32e4c2.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-9386c650.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4ff20186.png" alt="image.png"></p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.inksp.cn/?skin=solo-nexmoe">墨殇的技术博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://sszsj.cc:444/?skin=solo-nexmoe">鼠鼠在碎觉</a></li>
+<li><a target="_blank" rel="noopener" href="https://witheloov.com/?skin=solo-nexmoe">记录精彩的人生</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cjzshilong.cn/?skin=solo-nexmoe">邯城往事</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.stackoverflow.wiki/blog/?skin=solo-nexmoe">贼拉正经的技术博客</a></li>
+<li>…</li>
+</ul>
+<p>欢迎将你的博客加入这里</p>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
+<li>本皮肤依赖于<a target="_blank" rel="noopener" href="https://github.com/b3log/solo">b3log/solo</a>，安装solo可查看<a target="_blank" rel="noopener" href="https://www.inkdp.cn/articles/2019/08/06/1565021931775.html">从零开始安装 Solo 博客</a></li>
+<li>导航栏自定义图标为字体图标，可以前往<a target="_blank" rel="noopener" href="https://www.inkdp.cn/articles/2019/08/23/1566548785550.html">solo-nexmoe 图标详解</a>查看图标对应名称，直接填入名称即可，目前包内所有图标都被应用了，填写是请删除前缀 <code>solo-</code>后填写</li>
+<li>接上条，由于solo会自动拉取你的github项目，《我的开源》对应的图标会被覆盖，所以请升级到最新版本，关闭自动拉取设置，然后讲图标设置为 <code>github</code>即可</li>
+<li>需要自定义新图标直接修改 <code>font-icon.scss</code>与 <code>font-icon.css</code>，如果你没有node环境，直接修改 <code>css</code>也是可以的，最后在导航管理处设置即可，你也可以提issue，我会定期收集一些图标更新</li>
+<li>现用图标可前往github上查看或者<a target="_blank" rel="noopener" href="https://img.hacpai.com/file/2019/08/download-9acf6646.zip">点击下载</a></li>
+<li>侧边栏中的标签可替换为公告栏，操作方法 <code>后台管理</code>=&gt;<code>设置</code>=&gt;<code>偏好设置</code>=&gt;<code>参数设置</code>=&gt;<code>自定义模板变量</code>，更改 <code>key0=0</code>为 <code>key0=bulletin</code>即可，PS:(由于侧边栏很窄，所以公告栏外链网易云的，需要考虑一下页面美观度的问题)</li>
+<li>友情链接提供两种显示方式，默认为原始版本的，操作方法如上，更改 <code>key1=0</code>为 <code>key1=list</code>即可(由于友链不能自定义图片，所以现在还很丑，等待D哥完成<a target="_blank" rel="noopener" href="https://github.com/b3log/solo/issues/12861">友情链接添加图片属性</a>后，这个会很好看)</li>
+</ul>
+<h2 id="小功能"><a href="#小功能" class="headerlink" title="小功能"></a>小功能</h2><ul>
+<li>快捷键 <code>T</code>可直接返回顶部</li>
+<li>自定义背景：默认使用canvas作为背景，在后台管理 → 偏好设定 → 参数设置 → 自定义模板变量中新加参数 <code>bg=*</code>,<code>*</code>对应0-9的数字，数字为透明度，<code>bg=1</code>对应 <code>opacity: .1</code>。设置好后背景图片为<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/57873300p0-3496bc81.jpg">默认图片</a>。如需更改默认图片可新增参数 <code>bgUrl=图片地址</code>，示例 <code>bgUrl=https://static-solo.b3log.org/skins/Bubble/images/header-bg.jpg</code></li>
+<li>后续添加中…</li>
+</ul>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><ul>
+<li>感谢皮肤原作者<a target="_blank" rel="noopener" href="https://docs.nexmoe.com/">折影轻梦</a></li>
+</ul>
+<h2 id="论坛"><a href="#论坛" class="headerlink" title="论坛"></a>论坛</h2><p>欢迎加入我们的小众开源社区，详情请看<a target="_blank" rel="noopener" href="https://hacpai.com/">这里</a></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>欢迎大家提issue，pr，以及点star</p>
+<h2 id="更新通知"><a href="#更新通知" class="headerlink" title="更新通知"></a>更新通知</h2><p>希望使用本皮肤的各位能够关注本帖，皮肤有BUG修复或者功能更新后会在本帖说明，重要的事说三遍<br>希望使用本皮肤的各位能够关注本帖，皮肤有BUG修复或者功能更新后会在本帖说明，重要的事说三遍<br>希望使用本皮肤的各位能够关注本帖，皮肤有BUG修复或者功能更新后会在本帖说明，重要的事说三遍</p>
+<ul>
+<li>2019-09-05：调换 <code>mater</code>分支与 <code>temporary</code>内容，目前连分支唯一差别就是友情链接页面</li>
+<li>2019-09-09：修复头图误删元素问题，完成<a target="_blank" rel="noopener" href="https://github.com/InkDP/solo-nexmoe/issues/6">左侧可以添加公告栏</a>，将 <code>master</code>与 <code>tempoary</code>，详细操作查看说明。</li>
+<li>2019-09-10：添加置顶标识，更换返回顶部图标</li>
+<li>2019-09-10：修复<a target="_blank" rel="noopener" href="https://github.com/InkDP/solo-nexmoe/issues/8">文章第一次评论时，无法直接更新只评论列表</a></li>
+<li>2019-09-10：修复最新版solo出现代码不高亮问题，没有出现代码不高亮可以不更新</li>
+<li>2019-09-12：侧边栏分类文章数量正确显示</li>
+<li>2019-09-19：修复solo3.6.5出现的无法从首页登录后台问题</li>
+<li>2019-09-25：修复表格无法换行问题</li>
+<li>2019-09-26：添加用户自定义背景功能</li>
+<li>2019-10-24：修复文章中:huaji:等表情过大问题，D 哥完成了<a target="_blank" rel="noopener" href="https://hacpai.com/forward?goto=https://github.com/b3log/solo/issues/12861">友情链接添加图片属性</a>，所以友链可以以列表的方式显示，不过你先得在友链中添加图片属性，效果如下：<a target="_blank" rel="noopener" href="https://www.inkdp.cn/links.html">友情链接-墨殇的技术博客</a></li>
+<li>2019-12-26日：修复社区防盗链引发的皮肤图片403问题：<a target="_blank" rel="noopener" href="https://hacpai.com/article/1577238746196%EF%BC%8C%E6%9B%B4%E6%96%B0%E5%B7%A6%E4%BE%A7%E5%A4%B4%E5%83%8F%E4%B8%BA%E8%87%AA%E5%B7%B1%E8%AE%BE%E7%BD%AE%E7%9A%84**Favicon**%EF%BC%8C%E8%80%8C%E9%9D%9E%E7%A4%BE%E5%8C%BA%E5%A4%B4%E5%83%8F">https://hacpai.com/article/1577238746196，更新左侧头像为自己设置的**Favicon**，而非社区头像</a></li>
+<li>2020-03-27日：修复所有已知BUG，抱歉拖了这么久，给各位带来的不便深表歉意</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/23/1566468138289.html" data-id="ckjtnpjm3001g09l974amanny" data-title="新皮肤 solo-nexmoe" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nexmoe/" rel="tag">Nexmoe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skin/" rel="tag">皮肤</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-solo-nexmoe-图标详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/23/1566548785550.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-23T08:26:25.000Z" itemprop="datePublished">2019-08-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/front-end/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/23/1566548785550.html">solo-nexmoe 图标详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本帖记录官方solo-nexmoe内所对应字体图标值</p>
+<ul>
+<li><p><code>solo-home</code> <i class="iconfont solo-home"></i></p>
+</li>
+<li><p><code>solo-list</code> <i class="iconfont solo-list"></i></p>
+</li>
+<li><p><code>solo-tags</code> <i class="iconfont solo-tags"></i></p>
+</li>
+<li><p><code>solo-tag</code> <i class="iconfont solo-tag"></i></p>
+</li>
+<li><p><code>solo-github</code> <i class="iconfont solo-github"></i></p>
+</li>
+<li><p><code>solo-about</code> <i class=" iconfont solo-about"></i></p>
+</li>
+<li><p><code>solo-search</code> <i class=" iconfont solo-search"></i></p>
+</li>
+<li><p><code>solo-rss</code> <i class=" iconfont solo-rss"></i></p>
+</li>
+<li><p><code>solo-calendarl</code> <i class=" iconfont solo-calendarl"></i></p>
+</li>
+<li><p><code>solo-category</code> <i class=" iconfont solo-category"></i></p>
+</li>
+<li><p><code>solo-left</code> <i class=" iconfont solo-left"></i></p>
+</li>
+<li><p><code>solo-right</code> <i class=" iconfont solo-right"></i></p>
+</li>
+<li><p><code>solo-browse</code> <i class=" iconfont solo-browse"></i></p>
+</li>
+<li><p><code>solo-heat</code> <i class=" iconfont solo-heat"></i></p>
+</li>
+<li><p><code>solo-about2</code> <i class=" iconfont solo-about2"></i></p>
+</li>
+<li><p><code>solo-top</code> <i class=" iconfont solo-top"></i></p>
+</li>
+<li><p><code>solo-login</code> <i class=" iconfont solo-login"></i></p>
+</li>
+<li><p><code>solo-logout</code> <i class=" iconfont solo-logout"></i></p>
+</li>
+<li><p><code>solo-spin</code> <i class=" iconfont solo-spin"></i></p>
+</li>
+<li><p><code>solo-comment</code> <i class=" iconfont solo-comment"></i></p>
+</li>
+<li><p><code>solo-gotop</code> <i class=" iconfont solo-gotop"></i></p>
+</li>
+<li><p><code>solo-</code> <i class=" iconfont solo-"></i>  自定义导航不设置图标时显示</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/23/1566548785550.html" data-id="ckjtnpjlt001109l9ffhf56ud" data-title="solo-nexmoe 图标详解" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/solo-nexmoe/" rel="tag">solo-nexmoe</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-日刷LeetCode-简单版（三）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/leetcode3.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-09T03:58:53.000Z" itemprop="datePublished">2019-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/leetcode3.html">日刷leetcode--简单版（三）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="返回总目录"><a href="#返回总目录" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a href="/leetcode.html">日刷leetcode–简单版</a></p>
+<hr>
+<h3 id="58-最后一个单词的长度"><a href="#58-最后一个单词的长度" class="headerlink" title="58. 最后一个单词的长度"></a>58. 最后一个单词的长度</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-45f2c7e9.png" alt="image.png"></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>定义一个变量统计，从前往后遍历，遇到空格归零就可以了，注意处理最后几个个字符全为空格的情况</li>
+<li>定义一个变量统计，从后往前便利，虽然时间复杂度同为 O(n)，但是第二个明显快很多</li>
+</ul>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">lengthOfLastWord</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">        <span class="keyword">var</span> count <span class="keyword">int</span></span><br><span class="line">                <span class="keyword">for</span> i:= <span class="built_in">len</span>(s)<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">                        <span class="keyword">if</span> s[i] == <span class="number">32</span>&#123;</span><br><span class="line">                                <span class="keyword">if</span> count == <span class="number">0</span> &#123;</span><br><span class="line">                                        <span class="keyword">continue</span></span><br><span class="line">                                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                        <span class="keyword">break</span></span><br><span class="line">                                &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                        count ++</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.2 MB, 在所有 Go 提交中击败了 39.13%的用户</p>
+</blockquote>
+<h3 id="66-加一"><a href="#66-加一" class="headerlink" title="66.加一"></a>66.加一</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-1081bedf.png" alt="image.png"></p>
+<h5 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h5><ul>
+<li>从后面往前面循环，最后以一位加 1 即可，处理好末尾<code>9</code>与<code>999</code></li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">plusOne</span><span class="params">(digits []<span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">        c := <span class="number">1</span> <span class="comment">// 定义一个变量用来进位，进位归零则程序结束</span></span><br><span class="line">        <span class="keyword">for</span> i := <span class="built_in">len</span>(digits) - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">                digits[i] += c</span><br><span class="line">                c--</span><br><span class="line">                <span class="keyword">if</span> digits[i] == <span class="number">10</span> &#123;</span><br><span class="line">                        digits[i] = <span class="number">0</span></span><br><span class="line">                        c = <span class="number">1</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> c == <span class="number">0</span> &#123;</span><br><span class="line">                        <span class="keyword">return</span> digits</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> c != <span class="number">0</span> &#123; <span class="comment">// 循环完后依旧存在进位则表示遇到了999</span></span><br><span class="line">                digits = <span class="built_in">append</span>([]<span class="keyword">int</span>&#123;<span class="number">1</span>&#125;, digits...)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> digits</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.2 MB, 在所有 Go 提交中击败了 30.57%的用户</p>
+</blockquote>
+<h3 id="67-二进制求和"><a href="#67-二进制求和" class="headerlink" title="67.二进制求和"></a>67.二进制求和</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-21de0dac.png" alt="image.png"></p>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>判断两个字符串的大小，保证 a 为较长的一个</li>
+<li>从后往前循环相加，先循环较短的字符串，再循环长字符串剩余的，定义一个变量记录是否需要进位，两个字符串相加是需要加上进位的值</li>
+<li>最后判断进位值是否为 0，不为 0 则在相加后字符串最前面一位加 1</li>
+</ul>
+<h5 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">addBinary</span><span class="params">(a <span class="keyword">string</span>, b <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	la, lb := <span class="built_in">len</span>(a), <span class="built_in">len</span>(b)</span><br><span class="line">	<span class="keyword">if</span> la &lt; lb &#123;</span><br><span class="line">		la, lb = lb, la</span><br><span class="line">		a, b = b, a</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> carry, s <span class="keyword">byte</span></span><br><span class="line">	str := <span class="built_in">make</span>([]<span class="keyword">byte</span>, la+<span class="number">1</span>)</span><br><span class="line">	<span class="keyword">for</span> lb &gt; <span class="number">0</span> &#123;</span><br><span class="line">		la--</span><br><span class="line">		lb--</span><br><span class="line">		s = <span class="keyword">byte</span>(a[la]-<span class="string">&#x27;0&#x27;</span>) + <span class="keyword">byte</span>(b[lb]-<span class="string">&#x27;0&#x27;</span>) + carry</span><br><span class="line">		carry = s / <span class="number">2</span></span><br><span class="line">		s = s % <span class="number">2</span></span><br><span class="line">		str[la+<span class="number">1</span>] = <span class="keyword">byte</span>(s + <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> la &gt; <span class="number">0</span> &#123;</span><br><span class="line">		la--</span><br><span class="line">		s = <span class="keyword">byte</span>(a[la]-<span class="string">&#x27;0&#x27;</span>) + carry</span><br><span class="line">		carry = s / <span class="number">2</span></span><br><span class="line">		s = s % <span class="number">2</span></span><br><span class="line">		str[la+<span class="number">1</span>] = <span class="keyword">byte</span>(s + <span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> carry == <span class="number">1</span> &#123;</span><br><span class="line">		str[la] = carry + <span class="string">&#x27;0&#x27;</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		str = str[la+<span class="number">1</span>:]</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">string</span>(str[la:])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.3 MB, 在所有 Go 提交中击败了 68.18%的用户</p>
+</blockquote>
+<h3 id="69-x-的平方根"><a href="#69-x-的平方根" class="headerlink" title="69. x 的平方根"></a>69. x 的平方根</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-66ad4fc1.png" alt="image.png"></p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路 1"></a>解题思路 1</h4><ul>
+<li>使用官方包 math.Sqrt，然后提取整数部分即可(不提供代码)</li>
+</ul>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路 2"></a>解题思路 2</h4><ul>
+<li>使用二分法，判断中位数的积是否大于 x，是则右边向左移，否则左边直接等于中位数</li>
+<li>注意的是取中位数是要取右中位数，也就是要加１，不然会死循环</li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码 2"></a>示例代码 2</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">mySqrt</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	l, r := <span class="number">0</span>, x/<span class="number">2</span>+<span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> l &lt; r &#123;</span><br><span class="line">		mid := (l + r + <span class="number">1</span>) / <span class="number">2</span></span><br><span class="line">		sqrt := mid * mid</span><br><span class="line">		<span class="keyword">if</span> sqrt &gt; x &#123;</span><br><span class="line">			r = mid - <span class="number">1</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			l = mid</span><br><span class="line">		&#125;</span><br><span class="line">		fmt.Println(l, r, mid)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> l</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-3"><a href="#运行结果-3" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :8 ms, 在所有 Go 提交中击败了 29.75%的用户<br>内存消耗 :2.8 MB, 在所有 Go 提交中击败了 5.23%的用户</p>
+</blockquote>
+<h3 id="70-爬楼梯"><a href="#70-爬楼梯" class="headerlink" title="70. 爬楼梯"></a>70. 爬楼梯</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4aa9ad43.png" alt="image.png"></p>
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>这是一个标准的斐波拉切数列，所以就不多说</li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">climbStairs</span><span class="params">(n <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n &lt; <span class="number">3</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> n</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	a, b := <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">	res := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">2</span>; i &lt; n; i++ &#123;</span><br><span class="line">		res = a + b</span><br><span class="line">		a, b = b, res</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-4"><a href="#运行结果-4" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2 MB, 在所有 Go 提交中击败了 52.61%的用户</p>
+</blockquote>
+<h3 id="83-删除排序链表中的重复"><a href="#83-删除排序链表中的重复" class="headerlink" title="83. 删除排序链表中的重复"></a>83. 删除排序链表中的重复</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-191c979d.png" alt="image.png"></p>
+<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>因为是排序了的，所以就相对来说比较简单，判断是否与下一个相等，相等即后移即可，讲<code>Next</code>指向<code>Next.Next</code></li>
+</ul>
+<h5 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">deleteDuplicates</span><span class="params">(head *ListNode)</span> *<span class="title">ListNode</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> head == <span class="literal">nil</span> || head.Next == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> head</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	carry := head</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> carry != <span class="literal">nil</span> &amp;&amp; carry.Next != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> carry.Val == carry.Next.Val &#123;</span><br><span class="line">			carry.Next = carry.Next.Next</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			carry = carry.Next</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> head</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-5"><a href="#运行结果-5" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 96.46%的用户<br>内存消耗 :3.2 MB, 在所有 Go 提交中击败了 48.18%的用户</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/leetcode3.html" data-id="ckjtnpjm5001k09l9ctv97kpo" data-title="日刷leetcode--简单版（三）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-20190809TGIF" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/09/1565315193270.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-09T02:56:36.000Z" itemprop="datePublished">2019-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/essays/">随笔</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/09/1565315193270.html">20190809 TGIF</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="史上最水的TGIF来了"><a href="#史上最水的TGIF来了" class="headerlink" title="史上最水的TGIF来了"></a>史上最水的TGIF来了</h1><p>想抢这个好几次了，可是每次都是在拥挤的地铁里就被人抢了，今天居然还在，既然抢到了就水一篇吧。</p>
+<p>不知不觉来社区已经67天了，想起注册社区，搭建博客的时候我还在成都。还坐在办公室里悠闲的摸鱼，划水，想着回到家里晚上吃着女朋友做的饭菜，妙啊。</p>
+<p>转眼间，两个月的时间，我已经来到广州工作，也入职了一个月，也成功从PHP转成了GO，看起来似乎完成了来广州的目的，然后女朋友去了新疆，又开始了异地。</p>
+<p>初来广州时，我踌躇满志，幻想着来到这边之后的一切一切。一开始打算用一个月的时间来找工作，毕竟我知道刚从成都跑到广州来的时候状态有多么的不好，毕竟在成都真的是天天摸鱼划水，太久没写代码，啥都忘了。可以一边面试一边总结，这次一定要找到一个称心如意的工作，毕竟前两次选择的工作都过于草率，也很不利于自己以后的发展。记得是晚上11点多到的广州，很讽刺的是我父母都在这边却并没有人来接我，虽然早知如此，但多少还是有一丝的遗憾吧，最后那晚我去了我姑姑家，第二天，我把箱子扔到我爸那里，就直接去面试了。</p>
+<p>来广州后的第一场面试，记得那天在下了很大的雨，去面试的路上鞋子都湿透了，心里在想下雨太难受了，还是天天出太阳比较好(我现在知道当时的想法有多么的愚蠢了，TMD好热)，扯远了…..那家公司是做外包的，我面试的是PHP，面试官是做JAVA的，所以没问些什么，问了些数据库的东西，就随意吹了一下，这算是我强项，然后问我能不能独立完成项目，我告诉他能。然后就是老板之类的来面试我，就瞎吹了一些：公司刚刚淘汰一个团队，想重新组建一个团队，屋外坐着的就是刚找来没几天的Java和前端，给了我5K+提成，转正后6-8K+提成(不就是6吗)。毕竟来广州是想往go的方向走，而且不想去外包公司，所以当时没答应，算是婉拒了。</p>
+<p>出门就接到我妈的微信电话，如实告诉我妈刚刚的情况。然后我妈就让我别挑，直接去上班，不满意可以慢慢找，但是就我就直接不干，说是要慢慢找下，然后我妈就不乐意了让我赶紧找，我头天晚上半夜到第二天就已经在面试了还要怎么赶紧找。</p>
+<p>后面稀稀疏疏的面了几家，但是都是PHP，大多都在6-8k的样子。因为当时使用boss方式不对，所以没投到多少go的岗位，也就没多少面试机会。</p>
+<p>后面面试了两家看着算是比较大公司，都是go，记得第一家离网易不是特别远，面试题我还做的不错，最后正式面试的时候回答的一塌糊涂，那时的我才发现自己好像只会最基础的CURD，所以面试的结果可想而知。第二家是映客直播，问了一些和头一天一样的问题，因为有做面试笔记的习惯，虽然都基本上回答上来了，但是感觉跟他要的人还是有所差距，看的出来面试官也在纠结，然后因为自己的不自信说错话导致面试凉凉。</p>
+<p>我保持这每天跑3-4场面试的频率，但是我的父母好像都在不断地催促我快点找工作，我自己清楚的知道我当时的状态不是特别好，需要沉淀一下，总结一下再接着面试，可是我回家连电脑摆出来都困难，所有的面试比较都是手机做的。一场有一场的面试打得我头昏脑涨。索性在第四天，我找到了两家在当时的情况下来说还不错的公司，当时还有些纠结<a target="_blank" rel="noopener" href="https://hacpai.com/article/1561715541829">选哪个 Offer</a>，最后我选了第二家，在纠结选哪家公司的时候我也从我爸那儿搬到了我妈那儿，在我妈附件租了房子，因为我父母离异10多年了，我妈担心我跟着我爸学坏了，一天3-4个电话打过来(我从没见过她这么关心我)。</p>
+<p>来公司一个月了，办公室一天安静的飞起(除了敲键盘的声音)，明明就坐在你对面的人，交流却要用钉钉，所以也导致的了我现在都说不出办公室里面所以人的名字。不算压抑，我习惯了。但是慢慢发现公司似乎与自己预想的出入有些大，6.5的薪资跟我来广州预计的还是差别有些大，当时说的是后面可以加，入职了才发现好像都没调薪制度；公司架构模式这些听起来很高大上，毕竟我也是在写微服务的人了，回头一想，我还是在写接口，还是整天CURD，虽然是电商项目，但是我想象中的高并发之类的东西，好像跟我不想关呀，只是个拧螺丝的；我知道自己能力不够，可我是一个在项目中学习的人，对于我来说能学到东西或者能挣到钱，我觉得天天加班到11点都无所谓(反正我1点左右才睡)，然后现在一天闲的飞起，我已经连续看了两天小说了。既来之则安之吧。</p>
+<p>最近整个人都变得很丧，回家倒头就玩手机，完全没有斗志，也不知道未来在何方，感觉上班有一次变成了摸鱼混日子，虽然知道自己要学的有很多，但是却不知道从何学起。熬夜玩手机成了日常，跑步记单词什么已经被抛之脑后，突然找不到一个奋斗的方向了，又陷入了“间歇性踌躇满志，持续性混吃等死”的状态。</p>
+<p>不说了，对接下业务，鼓捣点新东西</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/09/1565315193270.html" data-id="ckjtnpjlr000y09l9546a64az" data-title="20190809 TGIF" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TGIF/" rel="tag">TGIF</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/front-end/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/back-end/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/algorithm/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/pitDiary/">踩坑日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reading/">阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/essays/summary/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/emotional/">情感</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nexmoe/" rel="tag">Nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TGIF/" rel="tag">TGIF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solo-nexmoe/" rel="tag">solo-nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about-me/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skin/" rel="tag">皮肤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crack/" rel="tag">破解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Golang/" style="font-size: 20px;">Golang</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/Nexmoe/" style="font-size: 10px;">Nexmoe</a> <a href="/tags/Solo/" style="font-size: 13.33px;">Solo</a> <a href="/tags/TGIF/" style="font-size: 10px;">TGIF</a> <a href="/tags/docker/" style="font-size: 11.11px;">docker</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/solo-nexmoe/" style="font-size: 10px;">solo-nexmoe</a> <a href="/tags/about-me/" style="font-size: 14.44px;">关于我</a> <a href="/tags/learn/" style="font-size: 15.56px;">学习</a> <a href="/tags/summary/" style="font-size: 15.56px;">总结</a> <a href="/tags/tutorials/" style="font-size: 12.22px;">教程</a> <a href="/tags/diary/" style="font-size: 10px;">日记</a> <a href="/tags/skin/" style="font-size: 10px;">皮肤</a> <a href="/tags/crack/" style="font-size: 10px;">破解</a> <a href="/tags/algorithm/" style="font-size: 17.78px;">算法</a> <a href="/tags/study-notes/" style="font-size: 17.78px;">读书笔记</a> <a href="/tags/essay/" style="font-size: 18.89px;">随笔</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/reading/38859.html">如何读一本书</a>
+          </li>
+        
+          <li>
+            <a href="/2020.html">2020年个人总结</a>
+          </li>
+        
+          <li>
+            <a href="/leetcode_array1.html">leetcode-数组系列1</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/10/21/1603213579436.html">MySQL分页查询优化</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/07/09/1594287406684.html">Go爬虫初体验</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 InkDP<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

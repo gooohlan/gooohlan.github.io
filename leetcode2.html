@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>日刷leetcode--简单版（二） | 墨殇的技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="返回总目录日刷leetcode–简单版  26. 删除排序数组中的重复项 题目描述给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。示例 1: 123给定数组 nums &#x3D; [1,1,2],函数应该返回新的长度 2, 并且原数组 nums 的前两个元素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日刷leetcode--简单版（二）">
+<meta property="og:url" content="https://hexo.inkdp.cn/leetcode2.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="返回总目录日刷leetcode–简单版  26. 删除排序数组中的重复项 题目描述给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。示例 1: 123给定数组 nums &#x3D; [1,1,2],函数应该返回新的长度 2, 并且原数组 nums 的前两个元素">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-29T09:59:33.000Z">
+<meta property="article:modified_time" content="2020-04-13T08:26:05.000Z">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="Golang">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="墨殇的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">墨殇的技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexo.inkdp.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-posts-201907-日刷leetcode-简单版" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/leetcode2.html" class="article-date">
+  <time class="dt-published" datetime="2019-07-29T09:59:33.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      日刷leetcode--简单版（二）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="返回总目录"><a href="#返回总目录" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a href="/leetcode.html">日刷leetcode–简单版</a></p>
+<hr>
+<h3 id="26-删除排序数组中的重复项"><a href="#26-删除排序数组中的重复项" class="headerlink" title="26. 删除排序数组中的重复项"></a>26. 删除排序数组中的重复项</h3><blockquote>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定数组 nums &#x3D; [1,1,2],</span><br><span class="line">函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [0,0,1,1,1,2,2,3,3,4],</span><br><span class="line">函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>说明:<br>为什么返回数值是整数，但输出的答案是数组呢?<br>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br>你可以想象内部操作如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝</span><br><span class="line">int len &#x3D; removeDuplicates(nums);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">&#x2F;&#x2F; 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</span><br><span class="line">for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>题目中已说明，这是有序数组</li>
+<li>采用双指针的方式，一个用于循环，一个用于记录不同的数</li>
+</ul>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeDuplicates</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	i := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> j :=  <span class="number">1</span>; j &lt; <span class="built_in">len</span>(nums); j++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] != nums[j] &#123;</span><br><span class="line">			i++</span><br><span class="line">			nums[i] = nums[j]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> i + <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :100 ms, 在所有 Go 提交中击败了 84.75%的用户<br>内存消耗 :7.9 MB, 在所有 Go 提交中击败了 66.91%的用户</p>
+</blockquote>
+<hr>
+<h3 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a>27. 移除元素</h3><blockquote>
+<h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。<br>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [3,2,2,3], val &#x3D; 3,</span><br><span class="line">函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [0,1,2,2,3,0,4,2], val &#x3D; 2,</span><br><span class="line">函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。</span><br><span class="line">注意这五个元素可为任意顺序。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>说明:<br>为什么返回数值是整数，但输出的答案是数组呢?<br>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br>你可以想象内部操作如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len &#x3D; removeElement(nums, val);</span><br><span class="line">&#x2F;&#x2F; 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">&#x2F;&#x2F; 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</span><br><span class="line">for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>因为<code>你不需要考虑数组中超出新长度后面的元素</code>，所以遇到相同的移除就完事了</li>
+</ul>
+<h5 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeElement</span><span class="params">(nums []<span class="keyword">int</span>, val <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] == val &#123;</span><br><span class="line">			nums = <span class="built_in">append</span>(nums[:i], nums[i+<span class="number">1</span>:]...)</span><br><span class="line">			i--</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.4 MB, 在所有 Go 提交中击败了 44.67%的用户</p>
+</blockquote>
+<hr>
+<h3 id="28-实现-strStr"><a href="#28-实现-strStr" class="headerlink" title="28. 实现 strStr()"></a>28. 实现 strStr()</h3><blockquote>
+<h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>实现 strStr() 函数。<br>给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个 &gt; 位置 (从 0 开始)。如果不存在，则返回  -1。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack &#x3D; &quot;hello&quot;, needle &#x3D; &quot;ll&quot;</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack &#x3D; &quot;aaaaa&quot;, needle &#x3D; &quot;bba&quot;</span><br><span class="line">输出: -1</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>定义两个数组指针 i 和 j，分别记录 haystack 和 needle</li>
+<li>i 递增，从左往右依次匹配，如果当前 haystack 和 needle 字符相等，则继续匹配下一位，直到 j 的长度大于 needle 或者 haystack 和 needle 字符不相等</li>
+<li>如果 haystack 和 needle 字符不相等，则 i 回到第一次匹配的位置，j 归 0 等待下一次匹配</li>
+<li>判断 j 是否等于 needle 的长度，如果是这表示完全匹配</li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeElement</span><span class="params">(nums []<span class="keyword">int</span>, val <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] == val &#123;</span><br><span class="line">			nums = <span class="built_in">append</span>(nums[:i], nums[i+<span class="number">1</span>:]...)</span><br><span class="line">			i--</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.3 MB, 在所有 Go 提交中击败了 53.10%的用户</p>
+</blockquote>
+<h3 id="35-搜索插入位置"><a href="#35-搜索插入位置" class="headerlink" title="35. 搜索插入位置"></a>35. 搜索插入位置</h3><blockquote>
+<h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。<br>你可以假设数组中无重复元素。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 5</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 2</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure>
+
+<p>示例 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 7</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+
+<p>示例 4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 0</span><br><span class="line">输出: 0</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>这似乎是经典的二分了吧，所以微分就完事了</li>
+</ul>
+<h5 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">searchInsert</span><span class="params">(nums []<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	l, r := <span class="number">0</span>, <span class="built_in">len</span>(nums)</span><br><span class="line">	<span class="keyword">for</span> ; l &lt; r; &#123;</span><br><span class="line">		mid := (l + r) / <span class="number">2</span></span><br><span class="line">		<span class="keyword">if</span> nums[mid] == target &#123;</span><br><span class="line">			<span class="keyword">return</span> mid</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &lt; target &#123;</span><br><span class="line">			l = mid + <span class="number">1</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			r = mid</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-3"><a href="#运行结果-3" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 97.04%的用户<br>内存消耗 :3.1 MB, 在所有 Go 提交中击败了 50.79%的用户</p>
+</blockquote>
+<h3 id="38-报数"><a href="#38-报数" class="headerlink" title="38. 报数"></a>38. 报数</h3><blockquote>
+<h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br><span class="line">1 被读作  &quot;one 1&quot;  (&quot;一个一&quot;) , 即 11。</span><br><span class="line">11 被读作 &quot;two 1s&quot; (&quot;两个一&quot;）, 即 21。</span><br><span class="line">21 被读作 &quot;one 2&quot;,  &quot;one 1&quot; （&quot;一个二&quot; ,  &quot;一个一&quot;) , 即 1211。</span><br></pre></td></tr></table></figure>
+
+<p>给定一个正整数 n（1 ≤ n ≤ 30），输出报数序列的第 n 项。<br>注意：整数顺序将表示为一个字符串。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1</span><br><span class="line">输出: &quot;1&quot;</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: &quot;1211&quot;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>这道题其实并不难，难得是题目的描述可能让你弄不明白是怎么回事,</li>
+<li>从第二行开始，后面的每一行都是数前面的<code>数字</code>有几个连续的，比如第二行数第一行有<code>1</code>个<code>1</code>，所以第二行对应<code>11</code></li>
+<li>依次类推，第二行有<code>2</code>个<code>1</code>，所以第三行<code>21</code></li>
+<li>4: <code>1211</code></li>
+<li>5: <code>111221</code>(数连续的，<code>1</code>个<code>1</code>，<code>1</code>个<code>2</code>,<code>2</code>个<code>1</code>)</li>
+<li>…</li>
+<li>我们循环判断一个数字字符串，首先定义一个参照标准:<code>this := str[0]</code>，一个计数器<code>count := 1</code>,循环和从<code>str[1]</code>开始，判断<code>str[i] == this</code>，为真则<code>count ++ </code>，否则从新对<code>this</code>与<code>count</code>赋值。这样我们就完成了一次报数操作</li>
+<li>要求求到第 N 位，这个 N 可以循环也可以递归，看个人喜好</li>
+</ul>
+<h5 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">countStr</span><span class="params">(n <span class="keyword">int</span>, str []<span class="keyword">byte</span>)</span> []<span class="title">byte</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> str</span><br><span class="line">	&#125;</span><br><span class="line">	s := <span class="built_in">make</span>([]<span class="keyword">byte</span>, <span class="number">0</span>, <span class="built_in">len</span>(str)*<span class="number">2</span>)</span><br><span class="line">	this := str[<span class="number">0</span>]</span><br><span class="line">	count := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> this == str[i] &#123;</span><br><span class="line">			count++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			s = <span class="built_in">append</span>(s, <span class="keyword">byte</span>(count+<span class="string">&#x27;0&#x27;</span>), this) <span class="comment">// count为int型，+&#x27;0&#x27;相当于+48，得到count对应的ASCII码值</span></span><br><span class="line">			this = str[i]</span><br><span class="line">			count = <span class="number">1</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	s = <span class="built_in">append</span>(s, <span class="keyword">byte</span>(count+<span class="string">&#x27;0&#x27;</span>), this)</span><br><span class="line">	<span class="keyword">return</span> countStr(n<span class="number">-1</span>, s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-4"><a href="#运行结果-4" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.2 MB, 在所有 Go 提交中击败了 50.58%的用户</p>
+</blockquote>
+<h3 id="53-最大子序列合"><a href="#53-最大子序列合" class="headerlink" title="53. 最大子序列合"></a>53. 最大子序列合</h3><blockquote>
+<h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">输出: 6</span><br><span class="line">解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。</span><br></pre></td></tr></table></figure>
+
+<p>进阶:</p>
+<p>如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。</p>
+</blockquote>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路 1"></a>解题思路 1</h4><ul>
+<li>暴力法，时间复杂度为 O(n^2)使用双循环的形式累加即可，这里不过多阐述</li>
+</ul>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路 2"></a>解题思路 2</h4><ul>
+<li>分治法，这道题分治法并不是最简方式，但还是大概讲下思路</li>
+<li>最大子序和要么在左半边，要么在右半边，要么是穿过中间，对于左右边的序列，情况也是一样，因此可以用递归处理。中间部分的则可以直接计算出来，3 个值取最大的即可，时间复杂度是 O(nlogn)</li>
+</ul>
+<h5 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> maxSum(nums, <span class="number">0</span>, <span class="built_in">len</span>(nums)<span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxSum</span><span class="params">(nums []<span class="keyword">int</span>, l, r <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> l == r &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[l]</span><br><span class="line">    &#125;</span><br><span class="line">    mid := (l + r) / <span class="number">2</span></span><br><span class="line">    maxLeft := maxSum(nums, l, mid)</span><br><span class="line">    maxRight := maxSum(nums, mid+<span class="number">1</span>, r)</span><br><span class="line">    lSum, sum := math.MinInt64, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := mid; i &gt;= l; i-- &#123;</span><br><span class="line">        sum += nums[i]</span><br><span class="line">        <span class="keyword">if</span> sum &gt; lSum &#123;</span><br><span class="line">            lSum = sum</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    rSum, sum := math.MinInt64, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := mid + <span class="number">1</span>; i &lt;= r; i++ &#123;</span><br><span class="line">        sum += nums[i]</span><br><span class="line">        <span class="keyword">if</span> sum &gt; rSum &#123;</span><br><span class="line">            rSum = sum</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max(max(maxLeft, maxRight), lSum+rSum)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> a &gt; b &#123;</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-5"><a href="#运行结果-5" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :8 ms, 在所有 Go 提交中击败了 92.80%的用户</p>
+<p>内存消耗 :3.3 MB, 在所有 Go 提交中击败了 73.67%的用户</p>
+</blockquote>
+<h4 id="解题思路-2-1"><a href="#解题思路-2-1" class="headerlink" title="解题思路 2"></a>解题思路 2</h4><ul>
+<li>动态规划，有关这个思路我找到了一段通熟易懂的理解方式</li>
+</ul>
+<blockquote>
+<p>假设你是一个选择性遗忘的赌徒，数组表示你这几天来赢钱或者输钱，<br>你用 sum 来表示这几天来的输赢，<br>用 ans 来存储你手里赢到的最多的钱，</p>
+<p>如果昨天你手上还是输钱（sum &lt; 0），你忘记它，明天继续赌钱；<br>如果你手上是赢钱(sum &gt; 0), 你记得，你继续赌钱；<br>你记得你手赢到的最多的钱</p>
+</blockquote>
+<h5 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArrays</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    sum, ans := math.MinInt64, math.MinInt64</span><br><span class="line">    <span class="keyword">for</span> _,v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">        <span class="keyword">if</span> sum &gt; <span class="number">0</span> &#123;</span><br><span class="line">            sum += v</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            sum = v</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ans &lt; sum &#123;</span><br><span class="line">            ans = sum</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-6"><a href="#运行结果-6" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 99.10%的用户<br>内存消耗 :3.3 MB, 在所有 Go 提交中击败了 80.78%的用户</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/leetcode2.html" data-id="ckjtnpjlo000s09l9a1y6461o" data-title="日刷leetcode--简单版（二）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/articles/2019/07/30/1564419665414.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          《追风筝的人》阅读笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/leetcode.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">日刷leetcode（目录篇）</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/front-end/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/back-end/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/algorithm/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/pitDiary/">踩坑日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reading/">阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/essays/summary/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/emotional/">情感</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nexmoe/" rel="tag">Nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TGIF/" rel="tag">TGIF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solo-nexmoe/" rel="tag">solo-nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about-me/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skin/" rel="tag">皮肤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crack/" rel="tag">破解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Golang/" style="font-size: 20px;">Golang</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/Nexmoe/" style="font-size: 10px;">Nexmoe</a> <a href="/tags/Solo/" style="font-size: 13.33px;">Solo</a> <a href="/tags/TGIF/" style="font-size: 10px;">TGIF</a> <a href="/tags/docker/" style="font-size: 11.11px;">docker</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/solo-nexmoe/" style="font-size: 10px;">solo-nexmoe</a> <a href="/tags/about-me/" style="font-size: 14.44px;">关于我</a> <a href="/tags/learn/" style="font-size: 15.56px;">学习</a> <a href="/tags/summary/" style="font-size: 15.56px;">总结</a> <a href="/tags/tutorials/" style="font-size: 12.22px;">教程</a> <a href="/tags/diary/" style="font-size: 10px;">日记</a> <a href="/tags/skin/" style="font-size: 10px;">皮肤</a> <a href="/tags/crack/" style="font-size: 10px;">破解</a> <a href="/tags/algorithm/" style="font-size: 17.78px;">算法</a> <a href="/tags/study-notes/" style="font-size: 17.78px;">读书笔记</a> <a href="/tags/essay/" style="font-size: 18.89px;">随笔</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/reading/38859.html">如何读一本书</a>
+          </li>
+        
+          <li>
+            <a href="/2020.html">2020年个人总结</a>
+          </li>
+        
+          <li>
+            <a href="/leetcode_array1.html">leetcode-数组系列1</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/10/21/1603213579436.html">MySQL分页查询优化</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/07/09/1594287406684.html">Go爬虫初体验</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 InkDP<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

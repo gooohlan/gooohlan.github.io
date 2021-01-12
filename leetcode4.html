@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>日刷leetcode--简单版（四） | 墨殇的技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="返回总目录日刷leetcode–简单版  88. 合并两个有序数组题目描述 解题思路 采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移  示例代码1234567891011121314151617181920212223242526func merge(nums1 []int, m int, nums2 []int, n int) []int &amp;#123;	if n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="日刷leetcode--简单版（四）">
+<meta property="og:url" content="https://hexo.inkdp.cn/leetcode4.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="返回总目录日刷leetcode–简单版  88. 合并两个有序数组题目描述 解题思路 采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移  示例代码1234567891011121314151617181920212223242526func merge(nums1 []int, m int, nums2 []int, n int) []int &amp;#123;	if n">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-85be80cb.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-00f58922.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3af0001a.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-59a22901.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-28e94e96.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-84d3bce3.png">
+<meta property="og:image" content="https://img.hacpai.com/file/2019/09/PascalTriangleAnimated2-9958c3e5.gif">
+<meta property="article:published_time" content="2019-08-31T08:48:41.000Z">
+<meta property="article:modified_time" content="2020-04-13T08:25:06.000Z">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="Golang">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-85be80cb.png">
+  
+    <link rel="alternate" href="/atom.xml" title="墨殇的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">墨殇的技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexo.inkdp.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-posts-201908-日刷leetcode-简单版（四）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/leetcode4.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-31T08:48:41.000Z" itemprop="datePublished">2019-08-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      日刷leetcode--简单版（四）
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="返回总目录"><a href="#返回总目录" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode.html">日刷leetcode–简单版</a></p>
+<hr>
+<h3 id="88-合并两个有序数组"><a href="#88-合并两个有序数组" class="headerlink" title="88. 合并两个有序数组"></a>88. 合并两个有序数组</h3><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-85be80cb.png" alt="image.png"></p>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移</li>
+</ul>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(nums1 []<span class="keyword">int</span>, m <span class="keyword">int</span>, nums2 []<span class="keyword">int</span>, n <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums1</span><br><span class="line">	&#125;</span><br><span class="line">	i, j := <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> ; i &lt; <span class="built_in">len</span>(nums1) &amp;&amp; j &lt; n; i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums1[i] &gt; nums2[j] &#123;</span><br><span class="line">			reverses(nums1[i:])</span><br><span class="line">			nums1[i] = nums2[j]</span><br><span class="line">			j++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> j &lt; n &#123;</span><br><span class="line">		nums1[m+j] = nums2[j]</span><br><span class="line">		j++</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> nums1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverses</span><span class="params">(nums []<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="built_in">len</span>(nums) - <span class="number">1</span>; i &gt; <span class="number">0</span>; i-- &#123;</span><br><span class="line">		nums[i] = nums[i<span class="number">-1</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了73.14%的用户<br>内存消耗 :3.6 MB, 在所有 Go 提交中击败了84.42%的用户</p>
+</blockquote>
+<h3 id="100-相同的树"><a href="#100-相同的树" class="headerlink" title="100. 相同的树"></a>100. 相同的树</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-00f58922.png" alt="image.png"></p>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>有两中情况下可直接返回<ol>
+<li>p与q同时为空时为<code>True</code></li>
+<li>p或q只有一个为空时<code>False</code></li>
+</ol>
+</li>
+<li>p与q同时不为空是，判断其Val，同时递归判断两个的Left与Right</li>
+</ul>
+<h5 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSameTree</span><span class="params">(p *TreeNode, q *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> p == <span class="literal">nil</span> &amp;&amp; q == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> p != <span class="literal">nil</span> &amp;&amp; q != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> p.Val != q.Val &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> isSameTree(p.Left, q.Left) &amp;&amp; isSameTree(p.Right, q.Right)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :2.1 MB, 在所有 Go 提交中击败了87.07%的用户</p>
+</blockquote>
+<h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101. 对称二叉树"></a>101. 对称二叉树</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3af0001a.png" alt="image.png"></p>
+<h4 id="解题思路–递归"><a href="#解题思路–递归" class="headerlink" title="解题思路–递归"></a>解题思路–递归</h4><ul>
+<li>这道题与上一题很像，上一题是要求树完全相等，此题是要求对称</li>
+<li>两树相等时为<code>Left == Left</code>,<code>Right == Right</code>，而对称则是<code>Left == Right</code>，<code>Right == Left</code></li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isLeftRight(root.Left, root.Right)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isLeftRight</span><span class="params">(L *TreeNode, R *TreeNode)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> L == <span class="literal">nil</span> &amp;&amp; R == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> L == <span class="literal">nil</span> || R == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> L.Val != R.Val&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isLeftRight(L.Left, R.Right) &amp;&amp; isLeftRight(L.Right, R.Left)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :3 MB, 在所有 Go 提交中击败了60.14%的用户</p>
+</blockquote>
+<h4 id="解题思路–迭代"><a href="#解题思路–迭代" class="headerlink" title="解题思路–迭代"></a>解题思路–迭代</h4><ul>
+<li>迭代我也不是很懂，就摘抄了一个，配合注释看一看</li>
+</ul>
+<h5 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isSymmetric</span><span class="params">(root *TreeNode)</span> <span class="title">bool</span></span> &#123; <span class="comment">// 迭代方法，bfs</span></span><br><span class="line">	L := []*TreeNode&#123;&#125;       <span class="comment">// 从左向右遍历顺序的队列</span></span><br><span class="line">	R := []*TreeNode&#123;&#125;       <span class="comment">// 从右向左遍历顺序的队列</span></span><br><span class="line">	L = <span class="built_in">append</span>(L, root)     <span class="comment">// 加入初始节点</span></span><br><span class="line">	R = <span class="built_in">append</span>(R, root)</span><br><span class="line">	<span class="keyword">for</span> <span class="built_in">len</span>(L)!=<span class="number">0</span> &amp;&amp; <span class="built_in">len</span>(R)!=<span class="number">0</span> &#123;   <span class="comment">// bfs</span></span><br><span class="line">		Lv,rv := L[<span class="number">0</span>], R[<span class="number">0</span>]    <span class="comment">// 不同遍历顺序的队列，队首出队</span></span><br><span class="line">		L, R = L[<span class="number">1</span>:], R[<span class="number">1</span>:]      <span class="comment">// 删除队首元素</span></span><br><span class="line">		<span class="keyword">if</span> Lv==<span class="literal">nil</span> &amp;&amp; rv==<span class="literal">nil</span> &#123;  <span class="comment">// 空节点，不添加节点</span></span><br><span class="line">			<span class="keyword">continue</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> Lv!=<span class="literal">nil</span> &amp;&amp; rv!=<span class="literal">nil</span> &amp;&amp; Lv.Val == rv.Val &#123;    <span class="comment">// 比较两种遍历顺序的出队节点，如果相同，继续搜索</span></span><br><span class="line">			L = <span class="built_in">append</span>(L, Lv.Left, Lv.Right)</span><br><span class="line">			R = <span class="built_in">append</span>(R, rv.Right, rv.Left)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;                     <span class="comment">// 如果不同，证明不是镜像二叉树</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(L)==<span class="number">0</span> &amp;&amp; <span class="built_in">len</span>(R)==<span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-3"><a href="#运行结果-3" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :3.2 MB, 在所有 Go 提交中击败了5.80%的用户</p>
+</blockquote>
+<h3 id="104-二叉树的最大深度"><a href="#104-二叉树的最大深度" class="headerlink" title="104. 二叉树的最大深度"></a>104. 二叉树的最大深度</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-59a22901.png" alt="image.png"></p>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>使用递归查看当前值是否为空，为空则返回0，接受到递归返回的0就加1</li>
+<li>毕竟树的左右，看那边更大，返回大的一边。<h5 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxDepth</span><span class="params">(root *TreeNode)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    Ll := maxDepth(root.Left) + <span class="number">1</span></span><br><span class="line">    Lr := maxDepth(root.Right) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> Ll &gt; Lr &#123;</span><br><span class="line">        <span class="keyword">return</span> Ll</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Lr</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-4"><a href="#运行结果-4" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :8 ms, 在所有 Go 提交中击败了79.37%的用户<br>内存消耗 :4.4 MB, 在所有 Go 提交中击败了61.74%的用户</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="107-二叉树的层次遍历-II"><a href="#107-二叉树的层次遍历-II" class="headerlink" title="107. 二叉树的层次遍历 II"></a>107. 二叉树的层次遍历 II</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-28e94e96.png" alt="image.png"></p>
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>看下面代码注释<h5 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">levelOrderBottom</span><span class="params">(root *TreeNode)</span> <span class="params">(res [][]<span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> node []*TreeNode</span><br><span class="line">    node = <span class="built_in">append</span>(node, root)</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">len</span>(node) &gt; <span class="number">0</span> &#123; <span class="comment">// node不为0就一直循环</span></span><br><span class="line">        <span class="built_in">len</span> := <span class="built_in">len</span>(node)</span><br><span class="line">        <span class="keyword">var</span> tmp []<span class="keyword">int</span></span><br><span class="line">        <span class="keyword">for</span> i:= <span class="number">0</span>; i &lt; <span class="built_in">len</span>; i++ &#123;</span><br><span class="line">	    <span class="comment">// 循环次数等于每一层的节点数，每次都取第一个node，因为下面会将第一个node删除</span></span><br><span class="line">            indexNode := node[<span class="number">0</span>]</span><br><span class="line">            node = node[<span class="number">1</span>:]  <span class="comment">// 将第一个node删除</span></span><br><span class="line">            tmp = <span class="built_in">append</span>(tmp, indexNode.Val) <span class="comment">// 记录节点值</span></span><br><span class="line">            <span class="keyword">if</span> indexNode.Left != <span class="literal">nil</span> &#123; <span class="comment">// 如果左子树不为空，将左子树添加node</span></span><br><span class="line">                node = <span class="built_in">append</span>(node, indexNode.Left)</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> indexNode.Right != <span class="literal">nil</span> &#123; <span class="comment">// 如果右边树不为空，将右子树添加node</span></span><br><span class="line">                node = <span class="built_in">append</span>(node, indexNode.Right)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        res = <span class="built_in">append</span>(res, tmp)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> res1 [][]<span class="keyword">int</span></span><br><span class="line">    <span class="keyword">for</span> i:= <span class="built_in">len</span>(res)<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">        res1 = <span class="built_in">append</span>(res1, res[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-5"><a href="#运行结果-5" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了85.64%的用户<br>内存消耗 :6 MB, 在所有 Go 提交中击败了87.36%的用户</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>对树不是很了解，树相关题目后面再做</strong></p>
+<h3 id="118-杨辉三角"><a href="#118-杨辉三角" class="headerlink" title="118. 杨辉三角"></a>118. 杨辉三角</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-84d3bce3.png" alt="image.png"></p>
+<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li><img src="https://img.hacpai.com/file/2019/09/PascalTriangleAnimated2-9958c3e5.gif" alt="PascalTriangleAnimated2.gif"></li>
+</ul>
+<h5 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">generate</span><span class="params">(numRows <span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> arr [][]<span class="keyword">int</span></span><br><span class="line">	<span class="keyword">if</span> numRows == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> arr</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	arr = <span class="built_in">append</span>(arr, []<span class="keyword">int</span>&#123;<span class="number">1</span>&#125;)</span><br><span class="line">	<span class="keyword">if</span> numRows == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> arr</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; numRows; i++ &#123;</span><br><span class="line">		<span class="keyword">var</span> row []<span class="keyword">int</span></span><br><span class="line">		row = <span class="built_in">append</span>(row, <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; i; j++ &#123;</span><br><span class="line">			tmp := arr[i<span class="number">-1</span>][j<span class="number">-1</span>] + arr[i<span class="number">-1</span>][j]</span><br><span class="line">			fmt.Println(tmp)</span><br><span class="line">			row = <span class="built_in">append</span>(row, tmp)</span><br><span class="line">		&#125;</span><br><span class="line">		row = <span class="built_in">append</span>(row, <span class="number">1</span>)</span><br><span class="line">		arr = <span class="built_in">append</span>(arr, row)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> arr</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-6"><a href="#运行结果-6" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了100.00%的用户<br>内存消耗 :2.3 MB, 在所有 Go 提交中击败了47.54%的用户</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/leetcode4.html" data-id="ckjtnpjm6001n09l96q1th0cu" data-title="日刷leetcode--简单版（四）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/leetcode5.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          日刷leetcode--简单版（五）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/articles/2019/08/31/1567227232395.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">《我的前半生》阅读笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/front-end/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/back-end/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/algorithm/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/pitDiary/">踩坑日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reading/">阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/essays/summary/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/emotional/">情感</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nexmoe/" rel="tag">Nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TGIF/" rel="tag">TGIF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solo-nexmoe/" rel="tag">solo-nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about-me/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skin/" rel="tag">皮肤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crack/" rel="tag">破解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Golang/" style="font-size: 20px;">Golang</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/Nexmoe/" style="font-size: 10px;">Nexmoe</a> <a href="/tags/Solo/" style="font-size: 13.33px;">Solo</a> <a href="/tags/TGIF/" style="font-size: 10px;">TGIF</a> <a href="/tags/docker/" style="font-size: 11.11px;">docker</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/solo-nexmoe/" style="font-size: 10px;">solo-nexmoe</a> <a href="/tags/about-me/" style="font-size: 14.44px;">关于我</a> <a href="/tags/learn/" style="font-size: 15.56px;">学习</a> <a href="/tags/summary/" style="font-size: 15.56px;">总结</a> <a href="/tags/tutorials/" style="font-size: 12.22px;">教程</a> <a href="/tags/diary/" style="font-size: 10px;">日记</a> <a href="/tags/skin/" style="font-size: 10px;">皮肤</a> <a href="/tags/crack/" style="font-size: 10px;">破解</a> <a href="/tags/algorithm/" style="font-size: 17.78px;">算法</a> <a href="/tags/study-notes/" style="font-size: 17.78px;">读书笔记</a> <a href="/tags/essay/" style="font-size: 18.89px;">随笔</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/reading/38859.html">如何读一本书</a>
+          </li>
+        
+          <li>
+            <a href="/2020.html">2020年个人总结</a>
+          </li>
+        
+          <li>
+            <a href="/leetcode_array1.html">leetcode-数组系列1</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/10/21/1603213579436.html">MySQL分页查询优化</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/07/09/1594287406684.html">Go爬虫初体验</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 InkDP<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

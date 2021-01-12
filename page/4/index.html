@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>墨殇的技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽">
+<meta property="og:type" content="website">
+<meta property="og:title" content="墨殇的技术博客">
+<meta property="og:url" content="https://hexo.inkdp.cn/page/4/index.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="墨殇的技术博客,墨殇,InkDP,inkdp,技术博客">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="墨殇的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">墨殇的技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexo.inkdp.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-posts-201908-从零开始安装-solo-博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/06/1565021931775.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-05T16:18:51.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/back-end/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/06/1565021931775.html">从零开始安装 solo 博客</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>之前也写过类似的帖子，但是由于那时自己的各种原因写的不是特别好，所以今天写一个聚合帖，记录从购买服务器到安装solo然后通过nginx反向代理，最后升级https的全过程。此贴献给完全无基础的人，所以废话较多，见谅</p>
+<h1 id="1-购买服务器"><a href="#1-购买服务器" class="headerlink" title="1. 购买服务器"></a>1. 购买服务器</h1><p>首先你得有自己的服务器，有的话就跳过。服务商可选的有很多，比如：<a target="_blank" rel="noopener" href="https://cn.aliyun.com/">阿里云</a>、<a target="_blank" rel="noopener" href="https://cloud.tencent.com/">腾讯云</a>、<a target="_blank" rel="noopener" href="https://cloud.baidu.com/">百度云</a>、还有一些香港的服务商以及国外的（有特殊需求的可以考虑下）。腾讯和阿里对于新用户以及学生都有很大的优惠，配置的话如果只挂solo，买最低配1G1核1M即可。国内的几家都可以关注下，不定时会有很好的优惠活动。我比较推荐<a target="_blank" rel="noopener" href="https://cn.aliyun.com/">阿里云</a>，前段时间刚买了一台3年才668多，不知道活动结束没有。阿里云购买服务器时会要求你安装系统（不知道可不可以不选），推荐选择centos。</p>
+<h1 id="2-购买域名-可不买"><a href="#2-购买域名-可不买" class="headerlink" title="2. 购买域名(可不买)"></a>2. 购买域名(可不买)</h1><p>建议还是买一个域名，直接通过IP访问的话不是特别好。购买域名时不要盯着 <code>.com</code>，<code>.cn</code>这种比较热门的域名，往往很贵。还有尽量选择可备案的域名，否则就会像<a target="_blank" rel="noopener" href="https://sszsj.cc:444/">鼠鼠在碎觉</a>一样只能挂载444端口上运行。可通过<a target="_blank" rel="noopener" href="http://域名.信息/">域名.信息</a>查看可备案域名。如果你服务器买着国外的话似乎就不用备案。</p>
+<h1 id="3-域名解析与备案"><a href="#3-域名解析与备案" class="headerlink" title="3. 域名解析与备案"></a>3. 域名解析与备案</h1><p>服务器和域名购买完后需要将域名解析到服务器，有些服务商可能不支持跨服务商解析，腾讯云域名可以解析阿里云服务器。解析过程大概需要10分钟。解析完成后如下图所示：<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-5ff5a25e.png" alt="image.png"><br>如果不备案的话，80端口与443端口大概率会被封。所以备案还是需要的，备案的过程有点麻烦需要耐心。大致步骤如下：<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4527c63e.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-056ca9d6.png" alt="image.png"><br>接入备案很快，几天就完事了。</p>
+<h1 id="4-为服务器安装系统"><a href="#4-为服务器安装系统" class="headerlink" title="4. 为服务器安装系统"></a>4. 为服务器安装系统</h1><p>给服务器安装系统不用像你给自己装系统那样麻烦，很方便，由于我使用的centos，所以推荐安装centos，以免出现不必要的错误。后续操作嘘设置服务器安全组，开发如下端口：<code>80</code>、<code>8080</code>、<code>3306</code>、<code>443</code>、<code>22</code>。具体左右我会在下面一一说明，<code>22用来远程连接服务器使用</code>，windows用户可下载xshell远程链接服务器。</p>
+<h1 id="5-安装docker"><a href="#5-安装docker" class="headerlink" title="5. 安装docker"></a>5. 安装docker</h1><p>直接使用yum安装，简单快捷</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#安装 Docker</span><br><span class="line">yum -y install docker</span><br><span class="line"></span><br><span class="line">#启动 Docker 后台服务</span><br><span class="line">service docker start</span><br><span class="line"></span><br><span class="line">#测试运行 hello-world</span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+<p>出现hello world 就证明安装正常了<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-cc55a2ad.png" alt="image.png"></p>
+<h1 id="6-安装Mysql"><a href="#6-安装Mysql" class="headerlink" title="6.安装Mysql"></a>6.安装Mysql</h1><p>版本随意，我这里选择的5.6，你可以选择更高版本的，这个没关系，不影响使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 安装mysql:5.6,直接docker run 他会自动去官方镜想下载</span><br><span class="line"># MYSQL_ROOT_PASSWORD&#x3D;你的数据库密码</span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD&#x3D;123456 -d mysql:5.6</span><br><span class="line"></span><br><span class="line"># docker安装的mysql默认允许远程连接，可以使用Navicat等软件连接数据库</span><br><span class="line"># 进入容器mysql</span><br><span class="line">docker exec -it mysql bash</span><br><span class="line"></span><br><span class="line"># 进入数据库 p后面跟你的密码</span><br><span class="line">mysql -uroot -pXXX</span><br><span class="line"></span><br><span class="line"># 创建数据库(数据库名:solo;字符集utf8mb4;排序规则utf8mb4_general_ci)</span><br><span class="line">create database solo DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;</span><br><span class="line"># 出现Query OK, 1 row affected (0.00 sec)表示成功</span><br><span class="line">#退出数据库</span><br><span class="line">exit</span><br><span class="line">#退出容器</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<h1 id="7-安装solo"><a href="#7-安装solo" class="headerlink" title="7. 安装solo"></a>7. 安装solo</h1><p>直接运行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run --detach --name solo --network&#x3D;host \</span><br><span class="line">--env RUNTIME_DB&#x3D;&quot;MYSQL&quot; \</span><br><span class="line">--env JDBC_USERNAME&#x3D;&quot;root&quot; \</span><br><span class="line">--env JDBC_PASSWORD&#x3D;&quot;123456&quot; \</span><br><span class="line">--env JDBC_DRIVER&#x3D;&quot;com.mysql.cj.jdbc.Driver&quot; \</span><br><span class="line">--env JDBC_URL&#x3D;&quot;jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;solo?useUnicode&#x3D;yes&amp;characterEncoding&#x3D;UTF-8&amp;useSSL&#x3D;false&amp;serverTimezone&#x3D;UTC&quot; \</span><br><span class="line">--rm \</span><br><span class="line">b3log&#x2F;solo --listen_port&#x3D;8080 --server_scheme&#x3D;http --server_host&#x3D;www.jinjianh.com</span><br></pre></td></tr></table></figure>
+<p>上面的命令建议手敲，免得出错，参数说明</p>
+<ul>
+<li><code>--env JDBC_PASSWORD=&quot;123456&quot;</code> 将123456换成你的密码</li>
+<li><code>--listen_port=8080</code> 监听的端口</li>
+<li><code>--server_scheme=http</code> 请求方式，暂时使用http，后面我们会换成https</li>
+<li><code>--server_host=www.jinjianh.com</code> 你的域名，如果你没有域名可以写ip地址</li>
+<li><code>--rm</code>因为这个容器后面要删掉，带上rm会省很多事。</li>
+</ul>
+<p>命令成功执行没有报错的话，通过 <code>docker ps</code>查看执行的容器列表中是否存在solo，存在这表示启动成功，直接访问你的域名加:8080即可访问你的博客，<a target="_blank" rel="noopener" href="http://www.jinjianh.com:8080/">金戋博客–http://www.jinjianh.com:8080</a><br>如果你尚在备案中，你可以收藏本帖，后面等备案通过了在研究后面的部分。<br>如果你不想使用nginx也不想升级https，那么你可以先执行 <code>docker stop solo</code>，然后将上面 <code>--listen_port=8080</code>的 <code>8080</code>换成 <code>80</code>，然后去掉 <code>--rm</code>，再执行一次就ok。</p>
+<h1 id="8-安装nginx"><a href="#8-安装nginx" class="headerlink" title="8. 安装nginx"></a>8. 安装nginx</h1><p>安装nginx前，我们现在本地建立几个文件，用于存放nginx的配置文件等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 切换到服务器根目录</span><br><span class="line">cd &#x2F;</span><br><span class="line"># 创建主目录</span><br><span class="line">mkdir dockerData</span><br><span class="line"># 创建文件</span><br><span class="line">mkdir dockerData&#x2F;nginx dockerData&#x2F;nginx&#x2F;conf dockerData&#x2F;nginx&#x2F;logs dockerData&#x2F;nginx&#x2F;www dockerData&#x2F;nginx&#x2F;ssl</span><br></pre></td></tr></table></figure>
+<p>上面的 <code>dockerData</code>可以换成自己喜欢的名字</p>
+<ul>
+<li><code>dockerData/nginx</code> 用于存放docker下nginx自定义文件</li>
+<li><code> dockerData/nginx/conf</code> 存放nginx配置文件</li>
+<li><code>dockerData/nginx/log</code> 存放nginx日志文件</li>
+<li><code>dockerData/nginx/www</code> 存放nginx访问的资源文件</li>
+<li><code>dockerData/nginx/ssl</code> 存放ssl证书<br>启动nginx</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name nginx -p 80:80 -d --rm nginx</span><br></pre></td></tr></table></figure>
+<p>如果你没有备案，可以将上面的 <code>80:80</code>换成 <code>8081:80</code>，因为这个东西一会儿也要删掉，所以加上 <code>--rm</code>参数，命令执行玩后通过 <code>docker ps</code>查看nginx是否在运行，在运行的情况下访问你的域名加端口号查看是否正常安装，<code>80</code>直接省略。如下表示访问成功<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ec38061d.png" alt="image.png"><br>导出配置文件</p>
+<ul>
+<li><code>docker cp nginx:/etc/nginx/nginx.conf /dockerData/nginx/conf/nginx.conf</code> 导出配置文件nginx.conf</li>
+<li><code>docker cp nginx:/etc/nginx/conf.d /dockerData/nginx/conf/conf.d</code> 导出配置为你nginx.conf<br>执行 <code>docker stop nginx</code>，会自动删除现在的nginx容器，然后执行如下命令重新启动一个nginx容器</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 80:80 --name nginx \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;www:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;logs:&#x2F;var&#x2F;log&#x2F;nginx nginx</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-v /dockerData/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \</code> 挂载配置文件 <code>nginx.conf</code></li>
+<li><code>-v /dockerData/nginx/conf/conf.d:/etc/nginx/conf.d</code> 挂载配置文件 <code>default.conf</code></li>
+<li><code>-v /dockerData/nginx/www:/usr/share/nginx/html </code> 挂载项目文件</li>
+<li><code>-v /dockerData/nginx/logs:/var/log/nginx</code> 挂载配置文件</li>
+</ul>
+<p>访问你的域名，你会发现报错了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-9c8de340.png" alt="image.png"><br>这时我们可以前往 <code>/dockerData/nginx/logs</code>下查看日志文件</p>
+<p><code>2019/08/05 14:57:54 [error] 6#6: *3 directory index of &quot;/usr/share/nginx/html/&quot; is forbidden, client: 121.32.33.217, server: localhost, request: &quot;GET / HTTP/1.1&quot;, host: &quot;www.jinjianh.com&quot; </code></p>
+<p>因为 <code>/usr/share/nginx/html/</code>被挂载到了服务器上面的 <code>/dockerData/nginx/www</code>目录下，原来的欢迎页面在 <code>dockerData/nginx/www</code>是没有的，所有就报错了，这里我们随便建一个。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 打开项目文件</span><br><span class="line">cd &#x2F;dockerData&#x2F;nginx&#x2F;www</span><br><span class="line"># 使用vim 创建并编辑文件</span><br><span class="line">vim index.html</span><br><span class="line"># 此时我们会进入vim界面，按 i 插入，然后输入</span><br><span class="line">&lt;h1&gt;Hello Docker-Nginx&lt;&#x2F;h1&gt;</span><br><span class="line"># 输入完后，按 esc，然后输入 :wq</span><br></pre></td></tr></table></figure>
+<p>再次访问我们的域名就可以看到我们刚刚写的 <code>h1</code>标签内容</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-70a4130f.png" alt="image.png"></p>
+<h1 id="9-申请ssl证书，将http升级为https-可跳过"><a href="#9-申请ssl证书，将http升级为https-可跳过" class="headerlink" title="9. 申请ssl证书，将http升级为https(可跳过)"></a>9. 申请ssl证书，将http升级为https(可跳过)</h1><p><code>https</code>想比与 <code>http</code>来说，最核心的内容就是多了一个ssl证书，证书是可以免费申请的。</p>
+<h2 id="腾讯云"><a href="#腾讯云" class="headerlink" title="腾讯云"></a>腾讯云</h2><p>访问 <a target="_blank" rel="noopener" href="https://buy.cloud.tencent.com/ssl?fromSource=ssl">SSL证书选购</a> 申请</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-05285d99.png" alt="image.png"></p>
+<p>私钥可不填写<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-98544bc3.png" alt="image.png"></p>
+<p>选择手动DNS验证</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-44754a07.png" alt="image.png"></p>
+<p>可直接前往 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/400/4142#ManualVerification">SSL 证书 域名验证指引 - 操作指南 - 文档中心 - 腾讯云</a>查看</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3e6695e5.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-8828eaa2.png" alt="image.png"></p>
+<p>前往<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/ssl">证书管理-控制台</a>等待验证通过即可</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4c7bcc44.png" alt="image.png"></p>
+<p>将 <code>nginx</code>下文件上传到 <code>/dockerData/nginx/ssl</code>目录下即可</p>
+<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><p>访问<a target="_blank" rel="noopener" href="https://common-buy.aliyun.com/?spm=5176.10695662.958455.3.3f9140d55mPzFH&commodityCode=cas#/buy">云盾证书服务</a>申请，访问后如果有无内容可复制 <a target="_blank" rel="noopener" href="https://common-buy.aliyun.com/?spm=5176.10695662.958455.3.3f9140d55mPzFH&amp;commodityCode=cas#/buy">https://common-buy.aliyun.com/?spm=5176.10695662.958455.3.3f9140d55mPzFH&amp;commodityCode=cas#/buy</a> 打开<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-2f8ed8b3.png" alt="image.png"></p>
+<p>走一下支付流程，然后申请</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-af887011.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-a3de4d98.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-8ef94cdf.png" alt="image.png"><br>操作流程基本与腾讯云一样，我就不详细说明了</p>
+<h2 id="其他平台"><a href="#其他平台" class="headerlink" title="其他平台"></a>其他平台</h2><p>免费的证书平台有很多，也可以去别的地方申请</p>
+<h2 id="上传证书"><a href="#上传证书" class="headerlink" title="上传证书"></a>上传证书</h2><p>一下示例为腾讯云证书，阿里云<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-f9c0bb7e.png" alt="image.png"></p>
+<p>验证完后，我们下载证书，解压后得到</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-5b610f8d.png" alt="image.png"></p>
+<p>最后把 <code>Nginx</code>下的两个文件上传至服务器 <code>/dockerDat/nginx/ssl</code>目录下，别的服务商申请的证书也一样，将最后的ssl证书放到 <code>/dockerDat/nginx/ssl</code>下即可</p>
+<h2 id="配置nginx配置文件"><a href="#配置nginx配置文件" class="headerlink" title="配置nginx配置文件"></a>配置nginx配置文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d</span><br><span class="line">vim default.conf</span><br><span class="line"></span><br><span class="line"># 参考我的配置，配置自己的default.conf文件</span><br><span class="line">server &#123;</span><br><span class="line">    listen       443;</span><br><span class="line">    server_name  localhost;</span><br><span class="line">    ssl on;</span><br><span class="line"></span><br><span class="line">    #charset koi8-r;</span><br><span class="line">    #access_log  &#x2F;var&#x2F;log&#x2F;nginx&#x2F;host.access.log  main;</span><br><span class="line"></span><br><span class="line">    ssl_certificate &#x2F;ssl&#x2F;1_www.jinjianh.com_bundle.crt;  # ssl 证书目录</span><br><span class="line">    ssl_certificate_key &#x2F;ssl&#x2F;2_www.jinjianh.com.key;</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        root   &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"># ......</span><br><span class="line">&#125;</span><br><span class="line">server&#123;</span><br><span class="line">  listen 80;</span><br><span class="line">  server_name localhost;</span><br><span class="line">  rewrite ^(.*) https:&#x2F;&#x2F;$host$1 permanent;</span><br><span class="line">&#125;</span><br><span class="line"># 按esc，然后输入:wq保持退出</span><br></pre></td></tr></table></figure>
+<p>不重要的部分我省略了，可根据自己服务器配置做出相应调整<br>由于我们现在用的nginx容器并未监听443端口，所以需要删除现在的容器，重新启动一个新的nginx容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker stop nginx  # 停止容器</span><br><span class="line">docker rm nginx # 删除容器</span><br><span class="line"># 启动新的</span><br><span class="line">docker run -d -p 80:80 -p 443:443 --name nginx \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;ssl:&#x2F;ssl&#x2F; \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;www:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html \</span><br><span class="line">-v &#x2F;dockerData&#x2F;nginx&#x2F;logs:&#x2F;var&#x2F;log&#x2F;nginx nginx</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>-p 443:443</code> 监听443端口</li>
+<li><code>-v /dockerData/nginx/ssl:/ssl/</code> 挂载ssl证书目录</li>
+</ul>
+<p>访问查看，一切正常<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-d2e1477f.png" alt="image.png"></p>
+<h1 id="10-将solo通过nginx方向代理实现https访问"><a href="#10-将solo通过nginx方向代理实现https访问" class="headerlink" title="10. 将solo通过nginx方向代理实现https访问"></a>10. 将solo通过nginx方向代理实现https访问</h1><p>让solo还是跑在8080端口上，通过nginx代理到443端口即可，由于我们上面启动solo时添加了 <code>--rm</code>参数，只需要 <code>docker stop solo</code>即可自动删除solo容器，然后我们重新启动一个solo容器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run --detach --name solo --network&#x3D;host \</span><br><span class="line">--env RUNTIME_DB&#x3D;&quot;MYSQL&quot; \</span><br><span class="line">--env JDBC_USERNAME&#x3D;&quot;root&quot; \</span><br><span class="line">--env JDBC_PASSWORD&#x3D;&quot;123123&quot; \</span><br><span class="line">--env JDBC_DRIVER&#x3D;&quot;com.mysql.cj.jdbc.Driver&quot; \</span><br><span class="line">--env JDBC_URL&#x3D;&quot;jdbc:mysql:&#x2F;&#x2F;127.0.0.1:3306&#x2F;solo?useUnicode&#x3D;yes&amp;characterEncoding&#x3D;UTF-8&amp;useSSL&#x3D;false&amp;serverTimezone&#x3D;UTC&quot; \</span><br><span class="line">b3log&#x2F;solo --listen_port&#x3D;8080 --server_scheme&#x3D;https --server_host&#x3D;www.jinjianh.com --server_port&#x3D;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>--server_scheme=http</code>换成 <code>--server_scheme=https</code>即可</li>
+<li><code>--server_port</code>：最终访问端口，使用浏览器默认的 80 或者 443 的话值留空即可</li>
+</ul>
+<p>然后我们去配置nginx配置文件，实现nginx反向代理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;dockerData&#x2F;nginx&#x2F;conf&#x2F;conf.d</span><br><span class="line">vim default.conf</span><br><span class="line"> location &#x2F; &#123;</span><br><span class="line">        proxy_pass http:&#x2F;&#x2F;backend$request_uri;</span><br><span class="line">        proxy_set_header  Host $http_host;</span><br><span class="line">        proxy_set_header  X-Real-IP $remote_addr;</span><br><span class="line">        #root   &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html;</span><br><span class="line">        #index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line"># 替换上面部分即可</span><br><span class="line"># 按esc，然后输入:wq保持退出</span><br></pre></td></tr></table></figure>
+<h2 id="注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代"><a href="#注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代" class="headerlink" title="注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代"></a>注意！！！Nginx反代理上面的方式可能出现问题参考<a target="_blank" rel="noopener" href="https://hacpai.com/article/1492881378588#NGINX-%E5%8F%8D%E4%BB%A3">Nginx反代</a></h2><h2 id="注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代-1"><a href="#注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代-1" class="headerlink" title="注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代"></a>注意！！！Nginx反代理上面的方式可能出现问题参考<a target="_blank" rel="noopener" href="https://hacpai.com/article/1492881378588#NGINX-%E5%8F%8D%E4%BB%A3">Nginx反代</a></h2><h2 id="注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代-2"><a href="#注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代-2" class="headerlink" title="注意！！！Nginx反代理上面的方式可能出现问题参考Nginx反代"></a>注意！！！Nginx反代理上面的方式可能出现问题参考<a target="_blank" rel="noopener" href="https://hacpai.com/article/1492881378588#NGINX-%E5%8F%8D%E4%BB%A3">Nginx反代</a></h2><p>重启nginx，<code>docker restart nginx</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-2c7eb017.png" alt="image.png"></p>
+<p>完美</p>
+<h1 id="11-后记"><a href="#11-后记" class="headerlink" title="11. 后记"></a>11. 后记</h1><h2 id="皮肤挂载"><a href="#皮肤挂载" class="headerlink" title="皮肤挂载"></a>皮肤挂载</h2><ul>
+<li>在你的服务器上创建一个目录用于存放皮肤，比如我的 <code>/dockerData/solo/skins/</code></li>
+<li>然后将你要挂载的皮肤放到上面那个目录下</li>
+<li>最后删除当前容器 重新启动一个容器，添加参数 <code>--v /dockerData/solo/skins/:/opt/solo/skins/</code>，这个添加时要注意位置，要添加到 <code>b3log/solo --listen...</code> 的上面一排</li>
+<li>使用挂载皮肤时，默认会使用 <code>Pingsu</code>,</li>
+</ul>
+<h2 id="皮肤推荐"><a href="#皮肤推荐" class="headerlink" title="皮肤推荐"></a>皮肤推荐</h2><p>我开源了两款皮肤 <a target="_blank" rel="noopener" href="https://hacpai.com/article/1566468138289">solo-nexmoe</a>，因为我很懒的原因，solo-star没有手机端，所以你可以多挂载一款皮肤们比如官方皮肤 <code>Pinghsu</code>，如果你没有这款皮肤就会报错，没有请前往<a target="_blank" rel="noopener" href="https://github.com/b3log/solo-skins">solo-skins</a>下载</p>
+<h2 id="数据库占用内存过大优化"><a href="#数据库占用内存过大优化" class="headerlink" title="数据库占用内存过大优化"></a>数据库占用内存过大优化</h2><p>由于我们购买的服务器是内存只有1G，然后docker安装的mysql虽然很快，但是实际上占用内存非常大，之前服务器在腾讯云的时候就经常挂掉，排查了很久才发现是docker下mysql的问题，迁移到阿里云后倒是没出先挂掉的问题，但是服务器内存占用也一直在90%以上，所以我们对mysql容器进行一些优化。<br>由于容器内不能vim，所以我们将mysql的配置文件复制到服务器上改了之后再复制回去，也可以将配置文件挂载到服务器上，过程我不多讲，只讲核心部分。</p>
+<p>这里注意，如果你要删除容器重新挂载的话，请提前备份mysql数据，不然你就属于删库了<br>这里注意，如果你要删除容器重新挂载的话，请提前备份mysql数据，不然你就属于删库了<br>这里注意，如果你要删除容器重新挂载的话，请提前备份mysql数据，不然你就属于删库了<br>重要的话说三遍</p>
+<p>在配置文件 <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">performance_schema_max_table_instances&#x3D;400</span><br><span class="line">table_definition_cache&#x3D;400</span><br><span class="line">table_open_cache&#x3D;256</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 从容器中复制到服务器</span><br><span class="line">docker cp mysql:&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf &#x2F;dockerData&#x2F;mysql</span><br><span class="line"># 从服务器复制到容器</span><br><span class="line">docker cp &#x2F;dockerData&#x2F;mysql&#x2F;mysqld.cnf mysql:&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf</span><br></pre></td></tr></table></figure>
+<p>改完之后记得重启mysql，<code>docker restart mysql</code></p>
+<h2 id="启用lute"><a href="#启用lute" class="headerlink" title="启用lute"></a>启用lute</h2><p><strong>此内容适用于solo3.6.5+</strong></p>
+<ul>
+<li>启动Lute参考<a target="_blank" rel="noopener" href="https://hacpai.com/article/1569240189601">Lute HTTP 使用指南</a></li>
+<li>在solo启动参数末尾追加 <code>--lute_http=http://127.0.0.1:8249</code>/<code>--lute_http=http://localhost:8249</code>/<code>--lute_http=</code><br>solo成功启动后在终端输入 <code>docker logs solo</code>,日志显示有 <code>luteAvailable=true</code>即表示启用lute成功</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/06/1565021931775.html" data-id="ckjtnpjon008t09l96bjoffv2" data-title="从零开始安装 solo 博客" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201908-算法的时间复杂度计算" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/08/03/1564826524260.html" class="article-date">
+  <time class="dt-published" datetime="2019-08-03T10:02:04.000Z" itemprop="datePublished">2019-08-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/08/03/1564826524260.html">算法的时间复杂度计算</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>   时间复杂度与空间复杂度直接决定着一个算法的好坏，而大多时候在设计算法是时间复杂度要优先于空间复杂度。</p>
+<h2 id="时间复杂度是什么-以下内容来着维基百科"><a href="#时间复杂度是什么-以下内容来着维基百科" class="headerlink" title="时间复杂度是什么(以下内容来着维基百科)"></a>时间复杂度是什么(以下内容来着维基百科)</h2><blockquote>
+<p>在<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" title="计算机科学">计算机科学</a>中，<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%AE%97%E6%B3%95" title="算法">算法</a>的<strong>时间复杂度</strong>（Time complexity）是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%87%BD%E6%95%B0" title="函数">函数</a>，它定性描述该算法的运行时间。这是一个代表算法输入值的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E4%B8%B2" title="字符串">字符串</a>的长度的函数。时间复杂度常用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%A4%A7O%E7%AC%A6%E5%8F%B7" title="大O符号">大O符号</a>表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%B8%90%E8%BF%91%E5%88%86%E6%9E%90" title="渐近分析">渐近</a>的，亦即考察输入值大小趋近无穷时的情况。例如，如果一个算法对于任何大小为 <em>n</em> （必须比 <em>n0</em> 大）的输入，它至多需要 5<em>n</em>3 + 3<em>n</em> 的时间运行完毕，那么它的渐近时间复杂度是 O(<em>n</em>3)。<br/><br>为了计算时间复杂度，我们通常会估计算法的操作单元数量，每个单元运行的时间都是相同的。因此，总运行时间和算法的操作单元数量最多相差一个常量系数。<br/><br>相同大小的不同输入值仍可能造成算法的运行时间不同，因此我们通常使用算法的最坏情况复杂度，记为 <strong><em>T</em>(<em>n</em>)</strong> ，定义为任何大小的输入 <em>n</em> 所需的最大运行时间。另一种较少使用的方法是平均情况复杂度，通常有特别指定才会使用。时间复杂度可以用函数 <em>T</em>(<em>n</em>) 的自然特性加以分类，举例来说，有着 <em>T</em>(<em>n</em>) = <em>O</em>(<em>n</em>) 的算法被称作“线性时间算法”；而 <em>T</em>(<em>n</em>) = <em>O</em>(<em>M**n</em>) 和 <em>M**n</em>= O(<em>T</em>(<em>n</em>)) ，其中 <em>M</em> ≥ <em>n</em> &gt; 1 的算法被称作“指数时间算法”。</p>
+</blockquote>
+<h2 id="常见算法时间复杂度"><a href="#常见算法时间复杂度" class="headerlink" title="常见算法时间复杂度"></a>常见算法时间复杂度</h2><h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-8ba9a3db.png" alt="image.png"></p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3a8afbfd.png" alt="image.png"></p>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-fc45c2ae.png" alt="image.png"></p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ed711758.png" alt="image.png"></p>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-813479ac.png" alt="image.png"></p>
+<h2 id="计算时间复杂度"><a href="#计算时间复杂度" class="headerlink" title="计算时间复杂度"></a>计算时间复杂度</h2><p><strong>算法的时间复杂度，用来度量算法的运行时间，记作: T(n) = O(f(n))。它表示随着 输入大小n 的增大，算法执行需要的时间的增长速度可以用 f(n) 来描述</strong><br>1.在一个函数中，常数项对于函数的增长速度并不大，随意当T(n)=一个常数事，我们就可以说这个算法的时间复杂度为O(1)；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func main() &#123;</span><br><span class="line">   i :&#x3D; 1</span><br><span class="line">   fmt.Println(i)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 该函数总共两条执行语句，所以时间复杂度T(n) &#x3D; 2，所以时间复杂度为O(1)</span><br></pre></td></tr></table></figure>
+<p>2.如果T(n)不等于一个常数项时，可直接将常数项省略</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for i :&#x3D; 0; i &lt; n; i++ &#123;</span><br><span class="line">	sum +&#x3D; i</span><br><span class="line">&#125;</span><br><span class="line">sum +&#x3D; 1</span><br><span class="line">sum +&#x3D; 2</span><br><span class="line">sum +&#x3D; 3</span><br><span class="line">此函数共执行了 n+3次，所以T(n) &#x3D; n+3，时间复杂度为O(n)</span><br></pre></td></tr></table></figure>
+<p>3.对于有高次幂的，低次幂的影响可以说是微乎其微。比如n^3对于n^2,n^2对于n，由于时间复杂度要求不是特别高，所以低次幂直接忽略</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">for i :&#x3D; 0; i &lt; n; i++ &#123;</span><br><span class="line"></span><br><span class="line">        for j :&#x3D; 0; j &lt; n; j++ &#123;</span><br><span class="line"></span><br><span class="line">            for k :&#x3D; 0; k &lt; n; k++ &#123;</span><br><span class="line">                &#x2F;&#x2F; xxx</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for i :&#x3D; 0; i &lt; n; i++ &#123;</span><br><span class="line">        for j :&#x3D; 0; j &lt; n; j++ &#123;</span><br><span class="line">                &#x2F;&#x2F; xxx</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">上面函数的执行次数为n^3 + n^2，所以T(n) &#x3D; n^3 + n^2, 时间复杂度为O(n^3)</span><br></pre></td></tr></table></figure>
+<p>4.因为函数的阶数对函数的增长速度的影响是最显著的，所以我们忽略与最高阶相乘的常数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">比如</span><br><span class="line">T(n) &#x3D; 3n^3，此时时间复杂度为 O(n^3)。</span><br></pre></td></tr></table></figure>
+<p><strong>综合一下:只取最高次幂，最高次幂常数归1</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/08/03/1564826524260.html" data-id="ckjtnpjm7001r09l9ejmeco8h" data-title="算法的时间复杂度计算" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201907-《追风筝的人》阅读笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/07/30/1564419665414.html" class="article-date">
+  <time class="dt-published" datetime="2019-07-29T17:01:05.000Z" itemprop="datePublished">2019-07-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/reading/">阅读</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/07/30/1564419665414.html">《追风筝的人》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;离开成都时，励志要成为一个书虫，所以心一横买了Kindle，在买了一个半月后终于看完了第一本书——《追风筝的人》。</p>
+<p>&emsp;&emsp;“一个不能为自己挺身而出的孩子，长大之后只能是个懦夫”，如其父亲所说少年时的阿米尔确实是一个懦夫，在哈桑被欺凌时没有挺身而出，没有为自己口中的朋友挺身而出，这也成为了两人之间不可逾越的鸿沟。这个时候我试着问了一下自己，如果我是阿米尔我是否会挺身而出，是否会不顾一切的冲出求，而被阿塞弗折磨、欺辱与伤害。哈桑 —— 一个哈扎拉人，所以我理解了阿米尔，在那样的背景下，没有真正的人人平等，即使他们之间的关系如朋友般亲密也无济于事。</p>
+<p>&emsp;&emsp;在阿富汗遭到俄国入侵后，阿米尔与父亲来到了美国。在这里，他从一个平凡的人开始做起，过着一个普通人的生活，他失去了曾经的优越感，也和自己的父亲有了童年所没有的父子之情，生活过得还是非常幸福。</p>
+<p>&emsp;&emsp;当接到 拉辛汗电话时，他没有犹豫就走上了自我救赎的道路。在见到拉辛汗后，随之而来的是三观的崩塌，父亲的“偷窃”、哈桑的死亡、故乡的改变。虽有过犹豫，但是阿米尔战胜了自己属于美国人的优越感，走上了自我救赎的道路。</p>
+<p>&emsp;&emsp;文章除了对任务感情的描写，也详细的描述了阿富汗战后的惨状，索拉博是无数阿呼喊儿童的缩影，我很庆幸我所在的国家没有战乱。</p>
+<p>&emsp;&emsp;”我追。一个成年人在一群尖叫的孩子中奔跑。但我不在乎。我追，风拂过我脸庞，我唇上挂着一个潘杰希尔峡谷那样大大的微笑。我追”</p>
+<p>&emsp;&emsp;文章的结局对我来说是一个完美的结局，完成自我救赎的阿米尔仿佛回到了童年与哈桑一起追风筝的世界</p>
+<h4 id="书籍下载：追风筝的人kindle正版-rar"><a href="#书籍下载：追风筝的人kindle正版-rar" class="headerlink" title="书籍下载：追风筝的人kindle正版.rar"></a>书籍下载：<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/inkdp/CDN@master/other/%E8%BF%BD%E9%A3%8E%E7%AD%9D%E7%9A%84%E4%BA%BAkindle%E6%AD%A3%E7%89%88-145b724e.rar">追风筝的人kindle正版.rar</a></h4>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/07/30/1564419665414.html" data-id="ckjtnpjll000l09l9fs038ma8" data-title="《追风筝的人》阅读笔记" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201907-日刷leetcode-简单版" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/leetcode2.html" class="article-date">
+  <time class="dt-published" datetime="2019-07-29T09:59:33.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/leetcode2.html">日刷leetcode--简单版（二）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="返回总目录"><a href="#返回总目录" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a href="/leetcode.html">日刷leetcode–简单版</a></p>
+<hr>
+<h3 id="26-删除排序数组中的重复项"><a href="#26-删除排序数组中的重复项" class="headerlink" title="26. 删除排序数组中的重复项"></a>26. 删除排序数组中的重复项</h3><blockquote>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定数组 nums &#x3D; [1,1,2],</span><br><span class="line">函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [0,0,1,1,1,2,2,3,3,4],</span><br><span class="line">函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>说明:<br>为什么返回数值是整数，但输出的答案是数组呢?<br>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br>你可以想象内部操作如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝</span><br><span class="line">int len &#x3D; removeDuplicates(nums);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">&#x2F;&#x2F; 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</span><br><span class="line">for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>题目中已说明，这是有序数组</li>
+<li>采用双指针的方式，一个用于循环，一个用于记录不同的数</li>
+</ul>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeDuplicates</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	i := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> j :=  <span class="number">1</span>; j &lt; <span class="built_in">len</span>(nums); j++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] != nums[j] &#123;</span><br><span class="line">			i++</span><br><span class="line">			nums[i] = nums[j]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> i + <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :100 ms, 在所有 Go 提交中击败了 84.75%的用户<br>内存消耗 :7.9 MB, 在所有 Go 提交中击败了 66.91%的用户</p>
+</blockquote>
+<hr>
+<h3 id="27-移除元素"><a href="#27-移除元素" class="headerlink" title="27. 移除元素"></a>27. 移除元素</h3><blockquote>
+<h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。<br>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [3,2,2,3], val &#x3D; 3,</span><br><span class="line">函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [0,1,2,2,3,0,4,2], val &#x3D; 2,</span><br><span class="line">函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。</span><br><span class="line">注意这五个元素可为任意顺序。</span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p>说明:<br>为什么返回数值是整数，但输出的答案是数组呢?<br>请注意，输入数组是以“引用”方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。<br>你可以想象内部操作如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len &#x3D; removeElement(nums, val);</span><br><span class="line">&#x2F;&#x2F; 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">&#x2F;&#x2F; 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。</span><br><span class="line">for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>因为<code>你不需要考虑数组中超出新长度后面的元素</code>，所以遇到相同的移除就完事了</li>
+</ul>
+<h5 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeElement</span><span class="params">(nums []<span class="keyword">int</span>, val <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] == val &#123;</span><br><span class="line">			nums = <span class="built_in">append</span>(nums[:i], nums[i+<span class="number">1</span>:]...)</span><br><span class="line">			i--</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.4 MB, 在所有 Go 提交中击败了 44.67%的用户</p>
+</blockquote>
+<hr>
+<h3 id="28-实现-strStr"><a href="#28-实现-strStr" class="headerlink" title="28. 实现 strStr()"></a>28. 实现 strStr()</h3><blockquote>
+<h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>实现 strStr() 函数。<br>给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个 &gt; 位置 (从 0 开始)。如果不存在，则返回  -1。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack &#x3D; &quot;hello&quot;, needle &#x3D; &quot;ll&quot;</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: haystack &#x3D; &quot;aaaaa&quot;, needle &#x3D; &quot;bba&quot;</span><br><span class="line">输出: -1</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>定义两个数组指针 i 和 j，分别记录 haystack 和 needle</li>
+<li>i 递增，从左往右依次匹配，如果当前 haystack 和 needle 字符相等，则继续匹配下一位，直到 j 的长度大于 needle 或者 haystack 和 needle 字符不相等</li>
+<li>如果 haystack 和 needle 字符不相等，则 i 回到第一次匹配的位置，j 归 0 等待下一次匹配</li>
+<li>判断 j 是否等于 needle 的长度，如果是这表示完全匹配</li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeElement</span><span class="params">(nums []<span class="keyword">int</span>, val <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> nums[i] == val &#123;</span><br><span class="line">			nums = <span class="built_in">append</span>(nums[:i], nums[i+<span class="number">1</span>:]...)</span><br><span class="line">			i--</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">len</span>(nums)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.3 MB, 在所有 Go 提交中击败了 53.10%的用户</p>
+</blockquote>
+<h3 id="35-搜索插入位置"><a href="#35-搜索插入位置" class="headerlink" title="35. 搜索插入位置"></a>35. 搜索插入位置</h3><blockquote>
+<h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。<br>你可以假设数组中无重复元素。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 5</span><br><span class="line">输出: 2</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 2</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure>
+
+<p>示例 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 7</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+
+<p>示例 4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,3,5,6], 0</span><br><span class="line">输出: 0</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>这似乎是经典的二分了吧，所以微分就完事了</li>
+</ul>
+<h5 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">searchInsert</span><span class="params">(nums []<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	l, r := <span class="number">0</span>, <span class="built_in">len</span>(nums)</span><br><span class="line">	<span class="keyword">for</span> ; l &lt; r; &#123;</span><br><span class="line">		mid := (l + r) / <span class="number">2</span></span><br><span class="line">		<span class="keyword">if</span> nums[mid] == target &#123;</span><br><span class="line">			<span class="keyword">return</span> mid</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> nums[mid] &lt; target &#123;</span><br><span class="line">			l = mid + <span class="number">1</span></span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			r = mid</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-3"><a href="#运行结果-3" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 97.04%的用户<br>内存消耗 :3.1 MB, 在所有 Go 提交中击败了 50.79%的用户</p>
+</blockquote>
+<h3 id="38-报数"><a href="#38-报数" class="headerlink" title="38. 报数"></a>38. 报数</h3><blockquote>
+<h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>报数序列是一个整数序列，按照其中的整数的顺序进行报数，得到下一个数。其前五项如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br><span class="line">1 被读作  &quot;one 1&quot;  (&quot;一个一&quot;) , 即 11。</span><br><span class="line">11 被读作 &quot;two 1s&quot; (&quot;两个一&quot;）, 即 21。</span><br><span class="line">21 被读作 &quot;one 2&quot;,  &quot;one 1&quot; （&quot;一个二&quot; ,  &quot;一个一&quot;) , 即 1211。</span><br></pre></td></tr></table></figure>
+
+<p>给定一个正整数 n（1 ≤ n ≤ 30），输出报数序列的第 n 项。<br>注意：整数顺序将表示为一个字符串。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1</span><br><span class="line">输出: &quot;1&quot;</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 4</span><br><span class="line">输出: &quot;1211&quot;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-4"><a href="#解题思路-4" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>这道题其实并不难，难得是题目的描述可能让你弄不明白是怎么回事,</li>
+<li>从第二行开始，后面的每一行都是数前面的<code>数字</code>有几个连续的，比如第二行数第一行有<code>1</code>个<code>1</code>，所以第二行对应<code>11</code></li>
+<li>依次类推，第二行有<code>2</code>个<code>1</code>，所以第三行<code>21</code></li>
+<li>4: <code>1211</code></li>
+<li>5: <code>111221</code>(数连续的，<code>1</code>个<code>1</code>，<code>1</code>个<code>2</code>,<code>2</code>个<code>1</code>)</li>
+<li>…</li>
+<li>我们循环判断一个数字字符串，首先定义一个参照标准:<code>this := str[0]</code>，一个计数器<code>count := 1</code>,循环和从<code>str[1]</code>开始，判断<code>str[i] == this</code>，为真则<code>count ++ </code>，否则从新对<code>this</code>与<code>count</code>赋值。这样我们就完成了一次报数操作</li>
+<li>要求求到第 N 位，这个 N 可以循环也可以递归，看个人喜好</li>
+</ul>
+<h5 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">countStr</span><span class="params">(n <span class="keyword">int</span>, str []<span class="keyword">byte</span>)</span> []<span class="title">byte</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> n == <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> str</span><br><span class="line">	&#125;</span><br><span class="line">	s := <span class="built_in">make</span>([]<span class="keyword">byte</span>, <span class="number">0</span>, <span class="built_in">len</span>(str)*<span class="number">2</span>)</span><br><span class="line">	this := str[<span class="number">0</span>]</span><br><span class="line">	count := <span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">		<span class="keyword">if</span> this == str[i] &#123;</span><br><span class="line">			count++</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			s = <span class="built_in">append</span>(s, <span class="keyword">byte</span>(count+<span class="string">&#x27;0&#x27;</span>), this) <span class="comment">// count为int型，+&#x27;0&#x27;相当于+48，得到count对应的ASCII码值</span></span><br><span class="line">			this = str[i]</span><br><span class="line">			count = <span class="number">1</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	s = <span class="built_in">append</span>(s, <span class="keyword">byte</span>(count+<span class="string">&#x27;0&#x27;</span>), this)</span><br><span class="line">	<span class="keyword">return</span> countStr(n<span class="number">-1</span>, s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-4"><a href="#运行结果-4" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.2 MB, 在所有 Go 提交中击败了 50.58%的用户</p>
+</blockquote>
+<h3 id="53-最大子序列合"><a href="#53-最大子序列合" class="headerlink" title="53. 最大子序列合"></a>53. 最大子序列合</h3><blockquote>
+<h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p>示例:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">输出: 6</span><br><span class="line">解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。</span><br></pre></td></tr></table></figure>
+
+<p>进阶:</p>
+<p>如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。</p>
+</blockquote>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路 1"></a>解题思路 1</h4><ul>
+<li>暴力法，时间复杂度为 O(n^2)使用双循环的形式累加即可，这里不过多阐述</li>
+</ul>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路 2"></a>解题思路 2</h4><ul>
+<li>分治法，这道题分治法并不是最简方式，但还是大概讲下思路</li>
+<li>最大子序和要么在左半边，要么在右半边，要么是穿过中间，对于左右边的序列，情况也是一样，因此可以用递归处理。中间部分的则可以直接计算出来，3 个值取最大的即可，时间复杂度是 O(nlogn)</li>
+</ul>
+<h5 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> maxSum(nums, <span class="number">0</span>, <span class="built_in">len</span>(nums)<span class="number">-1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxSum</span><span class="params">(nums []<span class="keyword">int</span>, l, r <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> l == r &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[l]</span><br><span class="line">    &#125;</span><br><span class="line">    mid := (l + r) / <span class="number">2</span></span><br><span class="line">    maxLeft := maxSum(nums, l, mid)</span><br><span class="line">    maxRight := maxSum(nums, mid+<span class="number">1</span>, r)</span><br><span class="line">    lSum, sum := math.MinInt64, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := mid; i &gt;= l; i-- &#123;</span><br><span class="line">        sum += nums[i]</span><br><span class="line">        <span class="keyword">if</span> sum &gt; lSum &#123;</span><br><span class="line">            lSum = sum</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    rSum, sum := math.MinInt64, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i := mid + <span class="number">1</span>; i &lt;= r; i++ &#123;</span><br><span class="line">        sum += nums[i]</span><br><span class="line">        <span class="keyword">if</span> sum &gt; rSum &#123;</span><br><span class="line">            rSum = sum</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max(max(maxLeft, maxRight), lSum+rSum)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> a &gt; b &#123;</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-5"><a href="#运行结果-5" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :8 ms, 在所有 Go 提交中击败了 92.80%的用户</p>
+<p>内存消耗 :3.3 MB, 在所有 Go 提交中击败了 73.67%的用户</p>
+</blockquote>
+<h4 id="解题思路-2-1"><a href="#解题思路-2-1" class="headerlink" title="解题思路 2"></a>解题思路 2</h4><ul>
+<li>动态规划，有关这个思路我找到了一段通熟易懂的理解方式</li>
+</ul>
+<blockquote>
+<p>假设你是一个选择性遗忘的赌徒，数组表示你这几天来赢钱或者输钱，<br>你用 sum 来表示这几天来的输赢，<br>用 ans 来存储你手里赢到的最多的钱，</p>
+<p>如果昨天你手上还是输钱（sum &lt; 0），你忘记它，明天继续赌钱；<br>如果你手上是赢钱(sum &gt; 0), 你记得，你继续赌钱；<br>你记得你手赢到的最多的钱</p>
+</blockquote>
+<h5 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArrays</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    sum, ans := math.MinInt64, math.MinInt64</span><br><span class="line">    <span class="keyword">for</span> _,v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">        <span class="keyword">if</span> sum &gt; <span class="number">0</span> &#123;</span><br><span class="line">            sum += v</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            sum = v</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ans &lt; sum &#123;</span><br><span class="line">            ans = sum</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-6"><a href="#运行结果-6" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 99.10%的用户<br>内存消耗 :3.3 MB, 在所有 Go 提交中击败了 80.78%的用户</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/leetcode2.html" data-id="ckjtnpjlo000s09l9a1y6461o" data-title="日刷leetcode--简单版（二）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201907-日刷leetcode（目录篇）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/leetcode.html" class="article-date">
+  <time class="dt-published" datetime="2019-07-29T09:19:31.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/leetcode.html">日刷leetcode（目录篇）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>谨以此贴记录我刷题的过程，那么我为啥要刷题呢</p>
+<ol>
+<li>熟悉各互联网公司的算法题目，为找工作做准备。</li>
+<li>复习以前学过的编程语言，LeetCode支持几乎所有主流编程语言，大家可以用不同语言来做题。</li>
+<li>熟悉常见的算法和数据结构，LeetCode提供了交流平台，一些大神会将自己的解法贴出来共享，有些巧妙的解法实在令人叫绝，虽然几乎都是英文，但上面的国人也特别多（中文拼音名字&gt;_&lt;）。</li>
+<li>学习别人的编程思维，加快编程的速度，避免常见的BUG。</li>
+</ol>
+<p>以上内容摘抄自网络，纯属瞎说，真是的原因是：</p>
+<ul>
+<li>因为上班工作做完后，不敢明目张胆的摸鱼</li>
+<li>下班无聊不想打游戏</li>
+<li>算法真的很弱</li>
+<li>……</li>
+</ul>
+<p>时过境迁，上次打开leetcode的时候还没有中文版，而现在已经有了–<a target="_blank" rel="noopener" href="https://leetcode-cn.com/">力扣</a>。<br>由于篇幅的问题，我觉得5题一篇，话不多说。</p>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode1.html">日刷leetcode–简单版系列（一）</a></li>
+<li><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode2.html">日刷leetcode–简单版系列（二）</a></li>
+<li><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode3.html">日刷leetcode–简单版系列（三）</a></li>
+<li><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode4.html">日刷leetcode–简单版系列（四）</a></li>
+<li><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode5.html">日刷leetcode–简单版系列（五）</a></li>
+<li><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode6.html">日刷leetcode–简单版系列（六）</a></li>
+</ul>
+<h4 id="简单篇暂停更新，后续打算系统的刷，目录做出更改"><a href="#简单篇暂停更新，后续打算系统的刷，目录做出更改" class="headerlink" title="简单篇暂停更新，后续打算系统的刷，目录做出更改"></a>简单篇暂停更新，后续打算系统的刷，目录做出更改</h4><p>全系列源码：<a target="_blank" rel="noopener" href="https://github.com/InkDP/leetcode">https://github.com/InkDP/leetcode</a></p>
+<ol>
+<li>数组<ul>
+<li>简单[进行中]：此篇章尽量补书写题解<ul>
+<li><a target="_blank" rel="noopener" href="https://inkdp.cn/leetcode_array1.html">leetcode-数组系列1</a></li>
+</ul>
+</li>
+<li>中等[未开始]</li>
+<li>困难[未开始]</li>
+</ul>
+</li>
+<li>字符串</li>
+<li>队列</li>
+<li>栈</li>
+<li>哈希表</li>
+<li>树</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/leetcode.html" data-id="ckjtnpjlp000v09l9839177mb" data-title="日刷leetcode（目录篇）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201907-Go-语言圣经练习解答-第四章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/06/12/1560331304695.html" class="article-date">
+  <time class="dt-published" datetime="2019-07-16T07:54:22.000Z" itemprop="datePublished">2019-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/back-end/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/06/12/1560331304695.html">go 语言圣经练习解答 -- 第四章 (关闭)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="go语言圣经-The-Go-Programming-Language-第四章练习题答案"><a href="#go语言圣经-The-Go-Programming-Language-第四章练习题答案" class="headerlink" title="go语言圣经(The Go Programming Language)第四章练习题答案"></a>go语言圣经(The Go Programming Language)第四章练习题答案</h2><h4 id="练习-4-1：-编写一个函数，计算两个SHA256哈希码中不同bit的数目。（参考2-6-2节的-PopCount函数。"><a href="#练习-4-1：-编写一个函数，计算两个SHA256哈希码中不同bit的数目。（参考2-6-2节的-PopCount函数。" class="headerlink" title="练习 4.1： 编写一个函数，计算两个SHA256哈希码中不同bit的数目。（参考2.6.2节的 PopCount函数。)"></a>练习 4.1： 编写一个函数，计算两个SHA256哈希码中不同bit的数目。（参考2.6.2节的 PopCount函数。)</h4><blockquote>
+<p>解题思路</p>
+</blockquote>
+<ul>
+<li>循环字节数组</li>
+<li>循环字节bit，对比是否相同<iframe style="border:1px solid" src="https://wide.b3log.org/playground/1de1b0989661e96a455fb5f24c9752d2.go" width="99%" height="600"></iframe>
+
+</li>
+</ul>
+<h4 id="练习-4-2：-编写一个程序，默认打印标准输入的以SHA256哈希码，也可以通过命令行标准参-数选择SHA384或SHA512哈希算法。"><a href="#练习-4-2：-编写一个程序，默认打印标准输入的以SHA256哈希码，也可以通过命令行标准参-数选择SHA384或SHA512哈希算法。" class="headerlink" title="练习 4.2： 编写一个程序，默认打印标准输入的以SHA256哈希码，也可以通过命令行标准参 数选择SHA384或SHA512哈希算法。"></a>练习 4.2： 编写一个程序，默认打印标准输入的以SHA256哈希码，也可以通过命令行标准参 数选择SHA384或SHA512哈希算法。</h4><blockquote>
+<p>解题思路</p>
+</blockquote>
+<ul>
+<li>获取命令行输入的参数</li>
+<li>通过命令行参数返回值<iframe style="border:1px solid" src="https://wide.b3log.org/playground/8a883544635b919cd2f822312adb81cf.go" width="99%" height="600"></iframe>
+> 实际效果
+
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0d9ee8d7.png" alt="image.png"></p>
+<h4 id="练习-4-3-重写reverse函数-使用数组指针代替slice。"><a href="#练习-4-3-重写reverse函数-使用数组指针代替slice。" class="headerlink" title="练习 4.3: 重写reverse函数,使用数组指针代替slice。"></a>练习 4.3: 重写reverse函数,使用数组指针代替slice。</h4><blockquote>
+<p>解题思路(无)</p>
+</blockquote>
+<iframe style="border:1px solid" src="https://wide.b3log.org/playground/12a10f74a7fc189d271d8c6aa1de3d95.go" width="99%" height="600"></iframe>
+
+<h4 id="练习-4-4-编写一个rotate函数-通过一次循环完成旋转。"><a href="#练习-4-4-编写一个rotate函数-通过一次循环完成旋转。" class="headerlink" title="练习 4.4: 编写一个rotate函数,通过一次循环完成旋转。"></a>练习 4.4: 编写一个rotate函数,通过一次循环完成旋转。</h4><blockquote>
+<p>解题思路</p>
+</blockquote>
+<ul>
+<li>从新创建一个数组，新数组下标为原数组下标加上偏移值</li>
+<li>如果超出最大长度则从最左边开始</li>
+</ul>
+<iframe style="border:1px solid" src="https://wide.b3log.org/playground/c7b0b5fc4d02333f29038bd4953cf880.go" width="99%" height="600"></iframe>
+
+<h4 id="练习-4-6-写一个函数在原地完成消除-string中相邻重复的字符串的操作。"><a href="#练习-4-6-写一个函数在原地完成消除-string中相邻重复的字符串的操作。" class="headerlink" title="练习 4.6: 写一个函数在原地完成消除[]string中相邻重复的字符串的操作。"></a>练习 4.6: 写一个函数在原地完成消除[]string中相邻重复的字符串的操作。</h4><blockquote>
+<p>解题思路</p>
+</blockquote>
+<ul>
+<li><strong>原地完成消除</strong> / <strong>相邻重复</strong></li>
+<li>原地消除表示必须在原有的数组上操作</li>
+<li>遇到相同的先前移一位</li>
+<li>下标保持不动继续检测当前位置是否跟下一位重复<iframe style="border:1px solid" src="https://wide.b3log.org/playground/7504134d6e7f8ea5167e9afc393338bc.go" width="99%" height="600"></iframe>
+
+</li>
+</ul>
+<h4 id="练习-4-6-编写一个函数-原地将一个UTF-8编码的-byte类型的slice中相邻的空格-参考"><a href="#练习-4-6-编写一个函数-原地将一个UTF-8编码的-byte类型的slice中相邻的空格-参考" class="headerlink" title="练习 4.6: 编写一个函数,原地将一个UTF-8编码的[]byte类型的slice中相邻的空格(参考"></a>练习 4.6: 编写一个函数,原地将一个UTF-8编码的[]byte类型的slice中相邻的空格(参考</h4><p>unicode.IsSpace)替换成一个空格返回</p>
+<blockquote>
+<p>解题思路</p>
+</blockquote>
+<ul>
+<li>基本一4.5一致，只是判断字母变成了判断空格</li>
+</ul>
+<iframe style="border:1px solid" src="https://wide.b3log.org/playground/4699347511e21456ae37d8d335046732.go" width="99%" height="600"></iframe>
+
+<h4 id="练习-4-7-修改reverse函数用于原地反转UTF-8编码的-byte。是否可以不用分配额外的内"><a href="#练习-4-7-修改reverse函数用于原地反转UTF-8编码的-byte。是否可以不用分配额外的内" class="headerlink" title="练习 4.7: 修改reverse函数用于原地反转UTF-8编码的[]byte。是否可以不用分配额外的内"></a>练习 4.7: 修改reverse函数用于原地反转UTF-8编码的[]byte。是否可以不用分配额外的内</h4><p>存?</p>
+<blockquote>
+<p>解题思路</p>
+</blockquote>
+<ul>
+<li>与原本的reverse基本一致<iframe style="border:1px solid" src="https://wide.b3log.org/playground/1f127d8f4ff6c25d302547ebef5b5a35.go" width="99%" height="600"></iframe>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/06/12/1560331304695.html" data-id="ckjtnpjlj000i09l9cpmt7p0j" data-title="go 语言圣经练习解答 -- 第四章 (关闭)" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201907-日刷Leetcode-简单版（一）" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/leetcode1.html" class="article-date">
+  <time class="dt-published" datetime="2019-07-16T07:17:53.000Z" itemprop="datePublished">2019-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/algorithm/">算法</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/leetcode1.html">日刷leetcode--简单版（一）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="返回总目录"><a href="#返回总目录" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a href="/leetcode.html">日刷leetcode–简单版</a></p>
+<h3 id="1-两数之后"><a href="#1-两数之后" class="headerlink" title="1.两数之后"></a>1.两数之后</h3><blockquote>
+<h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。<br>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums &#x3D; [2, 7, 11, 15], target &#x3D; 9</span><br><span class="line">因为 nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路 1"></a>解题思路 1</h4><ul>
+<li>暴力法，双循环相加结果等于 target 就返回</li>
+</ul>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">func twoSum(nums []int, target int) []int &#123;</span><br><span class="line">    for i :&#x3D; 0; i &lt; len(nums); i++ &#123;</span><br><span class="line">        for j :&#x3D; i + 1; j &lt; len(nums); j++ &#123;</span><br><span class="line">            if nums[i] + nums[j] &#x3D;&#x3D;target &#123;</span><br><span class="line">                return []int&#123;i,j&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :56 ms, 在所有 Go 提交中击败了 32.33%的用户<br>内存消耗 :3 MB, 在所有 Go 提交中击败了 78.76%的用户</p>
+</blockquote>
+<h4 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路 2"></a>解题思路 2</h4><ul>
+<li>遍历一次，求当前值的下标是否存在哈希表中，存在就返回，不存在就将当前值与下标存入哈希表</li>
+</ul>
+<h5 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">twoSum</span><span class="params">(nums []<span class="keyword">int</span>, target <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">    maps := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">int</span>]<span class="keyword">int</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> k, v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">        difference := target - v</span><br><span class="line">        <span class="keyword">if</span> _, ok := maps[difference]; ok &#123;  <span class="comment">// 判断是否存在指定k的值</span></span><br><span class="line">            <span class="keyword">return</span> []<span class="keyword">int</span>&#123;maps[difference], k&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maps[v] = k <span class="comment">// 将值作为key存储到map中</span></span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-1"><a href="#运行结果-1" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 89.93%的用户<br>内存消耗 :3.8 MB, 在所有 Go 提交中击败了 30.06%的用户</p>
+</blockquote>
+<hr>
+<h3 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="7.整数反转"></a>7.整数反转</h3><blockquote>
+<h5 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h5><p>给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。<br>示例 1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 123</span><br><span class="line">输出: 321</span><br></pre></td></tr></table></figure>
+
+<p>示例 2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: -123</span><br><span class="line">输出: -321</span><br></pre></td></tr></table></figure>
+
+<p>示例 3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 120</span><br><span class="line">输出: 21</span><br></pre></td></tr></table></figure>
+
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [− 231,  231 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。</p>
+</blockquote>
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>依次取模再乘以 10 即可，注意取值范围</li>
+</ul>
+<h5 id="示例代码-2"><a href="#示例代码-2" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverse</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    num := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> x != <span class="number">0</span> &#123;</span><br><span class="line">		num = num*<span class="number">10</span> + x%<span class="number">10</span></span><br><span class="line">		x = x / <span class="number">10</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> num &gt; math.MaxInt32 || num &lt; math.MinInt32 &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> num</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-2"><a href="#运行结果-2" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.2 MB, 在所有 Go 提交中击败了 41.71%的用户</p>
+</blockquote>
+<hr>
+<h3 id="9-回文数"><a href="#9-回文数" class="headerlink" title="9.回文数"></a>9.回文数</h3><blockquote>
+<h5 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h5><p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 121</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: -121</span><br><span class="line">输出: false</span><br><span class="line">解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure>
+
+<p>示例 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: 10</span><br><span class="line">输出: false</span><br><span class="line">解释: 从右向左读, 为 01 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-1-1"><a href="#解题思路-1-1" class="headerlink" title="解题思路 1"></a>解题思路 1</h4><ul>
+<li>从示例中可以看出，负数和 10 的倍数的数都不是回文数，所以首先排除他们</li>
+<li>转换为字符串，从两头往中间判断是否相等</li>
+</ul>
+<h5 id="示例代码-3"><a href="#示例代码-3" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPalindrome</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">0</span> || (x != <span class="number">0</span> &amp;&amp; x%<span class="number">10</span> == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	s := strconv.Itoa(x)</span><br><span class="line">	fmt.Println(s)</span><br><span class="line">	<span class="keyword">for</span> i, j := <span class="number">0</span>, <span class="built_in">len</span>(s)<span class="number">-1</span>; i &lt; j; i, j = i+<span class="number">1</span>, j<span class="number">-1</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> s[i] != s[j] &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-3"><a href="#运行结果-3" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :20 ms, 在所有 Go 提交中击败了 81.69%的用户<br>内存消耗 :5.5 MB, 在所有 Go 提交中击败了 15.78%的用户</p>
+</blockquote>
+<h4 id="解题思路-2-1"><a href="#解题思路-2-1" class="headerlink" title="解题思路 2"></a>解题思路 2</h4><ul>
+<li>从示例中可以看出，负数和 10 的倍数的数都不是回文数，所以首先排除他们</li>
+<li>将数字分为两部分，的后半部分反转过来，要求后半部分不得大于前半部分</li>
+<li>查看数字后半部分是否与前半部分相同，相同既是回文数，比如<code>1221</code>前半部分为<code>12</code>，后半部分也为<code>12</code>，所以他是回文数</li>
+<li>如果数字位数为奇数，比如<code>12321</code>就会出现前半部分为<code>12</code>，后半部分为<code>123</code>，这样就不相等了，我们将后半部分除以 10 即可。</li>
+</ul>
+<h5 id="示例代码-4"><a href="#示例代码-4" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isPalindrome</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> x &lt; <span class="number">0</span> || (x != <span class="number">0</span> &amp;&amp; x%<span class="number">10</span> == <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> i <span class="keyword">int</span></span><br><span class="line">	<span class="keyword">for</span> i &lt; x &#123;</span><br><span class="line">		i = i * <span class="number">10</span> + x%<span class="number">10</span></span><br><span class="line">		x /= <span class="number">10</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> x == i || x == i/<span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-4"><a href="#运行结果-4" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :5.1 MB, 在所有 Go 提交中击败了 65.52%的用户</p>
+</blockquote>
+<hr>
+<p><strong>PS:</strong> <font color="red">执行速度感觉是和网速有关的，如果你觉得你的程序够快，就多提交几次。上面思路二的代码一开始 40 多秒。</font></p>
+<hr>
+<h3 id="13-罗马数字转整数"><a href="#13-罗马数字转整数" class="headerlink" title="13. 罗马数字转整数"></a>13. 罗马数字转整数</h3><blockquote>
+<h5 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h5><p>罗马数字包含以下七种字符: I， V， X， L，C，D 和 M。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">字符          数值</span><br><span class="line">I             1</span><br><span class="line">V             5</span><br><span class="line">X             10</span><br><span class="line">L             50</span><br><span class="line">C             100</span><br><span class="line">D             500</span><br><span class="line">M             1000</span><br></pre></td></tr></table></figure>
+
+<p>例如， 罗马数字 2 写做 II ，即为两个并列的 1。12 写做 XII ，即为 X + II 。 27 写做  XXVII, 即为 XX + V + II 。<br>通常情况下，罗马数字中小的数字在大的数字的右边。但也存在特例，例如 4 不写做 IIII，而是 IV。数字 1 在数字 5 的左边，所表示的数等于大数 5 减小数 1 得到的数值 4 。同样地，数字 9 表示为 IX。这个特殊的规则只适用于以下六种情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I 可以放在 V (5) 和 X (10) 的左边，来表示 4 和 9。</span><br><span class="line">X 可以放在 L (50) 和 C (100) 的左边，来表示 40 和 90。</span><br><span class="line">C 可以放在 D (500) 和 M (1000) 的左边，来表示 400 和 900。</span><br></pre></td></tr></table></figure>
+
+<p>给定一个罗马数字，将其转换成整数。输入确保在 1 到 3999 的范围内。</p>
+<p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;III&quot;</span><br><span class="line">输出: 3</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IV&quot;</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+
+<p>示例 3:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;IX&quot;</span><br><span class="line">输出: 9</span><br></pre></td></tr></table></figure>
+
+<p>示例 4:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;LVIII&quot;</span><br><span class="line">输出: 58</span><br><span class="line">解释: L &#x3D; 50, V&#x3D; 5, III &#x3D; 3.</span><br></pre></td></tr></table></figure>
+
+<p>示例 5:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;MCMXCIV&quot;</span><br><span class="line">输出: 1994</span><br><span class="line">解释: M &#x3D; 1000, CM &#x3D; 900, XC &#x3D; 90, IV &#x3D; 4.</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><ul>
+<li>将罗马数字对应值放入哈希表中，注意哈希表 key 类型，因为字符串通过<code>s[i]</code>的方式取出来是对应的 ASCII ，所以哈希表的 key 最好使用<code>byte</code>类型。</li>
+<li>定义一个变量记录当前罗马数字，循环字符串，依次相加，判断定义的变了是否小于当前相加的罗马数字，是即减去记录值的二倍。</li>
+</ul>
+<h5 id="示例代码-5"><a href="#示例代码-5" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">romanToInt</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	roman := <span class="keyword">map</span>[<span class="keyword">byte</span>]<span class="keyword">int</span>&#123;</span><br><span class="line">		<span class="string">&#x27;I&#x27;</span>: <span class="number">1</span>,</span><br><span class="line">		<span class="string">&#x27;V&#x27;</span>: <span class="number">5</span>,</span><br><span class="line">		<span class="string">&#x27;X&#x27;</span>: <span class="number">10</span>,</span><br><span class="line">		<span class="string">&#x27;L&#x27;</span>: <span class="number">50</span>,</span><br><span class="line">		<span class="string">&#x27;C&#x27;</span>: <span class="number">100</span>,</span><br><span class="line">		<span class="string">&#x27;D&#x27;</span>: <span class="number">500</span>,</span><br><span class="line">		<span class="string">&#x27;M&#x27;</span>: <span class="number">1000</span>,</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> sum <span class="keyword">int</span></span><br><span class="line">	index := <span class="number">999</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(s); i++ &#123;</span><br><span class="line">		this := roman[s[i]]</span><br><span class="line">		<span class="keyword">if</span> index &lt; this &#123;</span><br><span class="line">			sum = sum - index*<span class="number">2</span></span><br><span class="line">		&#125;</span><br><span class="line">		sum += this</span><br><span class="line">		index = this</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-5"><a href="#运行结果-5" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :4 ms, 在所有 Go 提交中击败了 97.65%的用户<br>内存消耗 :3 MB, 在所有 Go 提交中击败了 45.05%的用户</p>
+</blockquote>
+<h3 id="14-最长公共前缀"><a href="#14-最长公共前缀" class="headerlink" title="14. 最长公共前缀"></a>14. 最长公共前缀</h3><blockquote>
+<h5 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h5><p>编写一个函数来查找字符串数组中的最长公共前缀。<br>如果不存在公共前缀，返回空字符串 &quot;&quot;。<br>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]</span><br><span class="line">输出: &quot;fl&quot;</span><br></pre></td></tr></table></figure>
+
+<p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">输出: &quot;&quot;</span><br><span class="line">解释: 输入不存在公共前缀。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="解题思路-2"><a href="#解题思路-2" class="headerlink" title="解题思路"></a>解题思路</h5><ul>
+<li>使用双循环的方式，取出第一个字符串的的一个字符，依次判断是否与剩余字符串的第一个字符相等</li>
+<li>不相等或者剩余字符串长度不够时返回</li>
+<li>如果双循环没有返回公共前缀则表示只传入了一个字符串，直接返回即可</li>
+</ul>
+<h5 id="示例代码-6"><a href="#示例代码-6" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">longestCommonPrefix</span><span class="params">(strs []<span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(strs) == <span class="number">0</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;&quot;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(strs[<span class="number">0</span>]); i++ &#123;</span><br><span class="line">		<span class="keyword">for</span> j := <span class="number">1</span>; j &lt; <span class="built_in">len</span>(strs); j++ &#123;</span><br><span class="line">			<span class="keyword">if</span> i == <span class="built_in">len</span>(strs[j]) || strs[j][i] != strs[<span class="number">0</span>][i] &#123;</span><br><span class="line">				<span class="keyword">return</span> strs[<span class="number">0</span>][:i]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> strs[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-6"><a href="#运行结果-6" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.5 MB, 在所有 Go 提交中击败了 35.75%的用户</p>
+</blockquote>
+<h3 id="20-有效的括号"><a href="#20-有效的括号" class="headerlink" title="20. 有效的括号"></a>20. 有效的括号</h3><blockquote>
+<h5 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h5><p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串，判断字符串是否有效。<br>有效字符串需满足：</p>
+<ol>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。<br>注意空字符串可被认为是有效字符串。<br>示例 1:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;()&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 示例 2:</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输入: “()[]{}”<br>输出: true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">示例 3:</span><br></pre></td></tr></table></figure>
+<p>输入: “(]”<br>输出: false</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt; 示例 4:</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输入: “([)]”<br>输出: false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">示例 5:</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输入: “{[]}”<br>输出: true</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### 解题思路</span><br><span class="line"></span><br><span class="line">* 使用栈的特效，后进先出，匹配到右括号时去查询栈最后一个是否是相对应的左括号，如果是则从栈中去除，不是则返回 false</span><br><span class="line">* 最后判断剩余栈长度是否为 0</span><br><span class="line">* 使用切片模仿栈操作</span><br><span class="line"></span><br><span class="line">##### 示例代码</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;go</span><br><span class="line">func isValid(s string) bool &#123;</span><br><span class="line">brackets :&#x3D; map[int32]int32&#123;</span><br><span class="line">	&#39;)&#39;: &#39;(&#39;,</span><br><span class="line">	&#39;&#125;&#39;: &#39;&#123;&#39;,</span><br><span class="line">	&#39;]&#39;: &#39;[&#39;,</span><br><span class="line">&#125;</span><br><span class="line">list :&#x3D; []int32&#123;&#125;</span><br><span class="line">for _, v :&#x3D; range s &#123;</span><br><span class="line">	if v &#x3D;&#x3D; &#39;(&#39; || v &#x3D;&#x3D; &#39;&#123;&#39; || v &#x3D;&#x3D; &#39;[&#39; &#123;</span><br><span class="line">		list &#x3D; append(list, v)</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		l :&#x3D; len(list) - 1</span><br><span class="line">		if len(list) !&#x3D; 0 &amp;&amp; list[l] &#x3D;&#x3D; brackets[v] &#123;</span><br><span class="line">			list &#x3D; list[:l]</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			return false</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">return len(list) &#x3D;&#x3D; 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="运行结果-7"><a href="#运行结果-7" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100.00%的用户<br>内存消耗 :2.1 MB, 在所有 Go 提交中击败了 33.87%的用户</p>
+</blockquote>
+<h3 id="21-合并两个有序链表"><a href="#21-合并两个有序链表" class="headerlink" title="21.合并两个有序链表"></a>21.合并两个有序链表</h3><blockquote>
+<h5 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h5><p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。<br>示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4</span><br><span class="line">输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="解题思路-3"><a href="#解题思路-3" class="headerlink" title="解题思路"></a>解题思路</h5><ul>
+<li>判断两个链表哪一个较小，然后递归地决定下一个添加到结果里的值。</li>
+<li>判断两个链表是否为空，为空直接返回</li>
+</ul>
+<h5 id="示例代码-7"><a href="#示例代码-7" class="headerlink" title="示例代码"></a>示例代码</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">mergeTwoLists</span><span class="params">(l1 *ListNode, l2 *ListNode)</span> *<span class="title">ListNode</span></span> &#123;</span><br><span class="line">	<span class="keyword">if</span> l1 == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> l2</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> l2 == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> l1</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> l1.Val &lt; l2.Val &#123;</span><br><span class="line">		l1.Next = mergeTwoLists(l1.Next, l2)</span><br><span class="line">		<span class="keyword">return</span> l1</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		l2.Next = mergeTwoLists(l1, l2.Next)</span><br><span class="line">		<span class="keyword">return</span> l2</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="运行结果-8"><a href="#运行结果-8" class="headerlink" title="运行结果"></a>运行结果</h5><blockquote>
+<p>执行用时 :0 ms, 在所有 Go 提交中击败了 100%的用户<br>内存消耗 :2.6 MB, 在所有 Go 提交中击败了 35.89%的用户</p>
+</blockquote>
+<h3 id="返回总目录-1"><a href="#返回总目录-1" class="headerlink" title="返回总目录"></a>返回总目录</h3><p><a target="_blank" rel="noopener" href="https://www.jinjianh.com/leetcode.html">日刷leetcode–简单版</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/leetcode1.html" data-id="ckjtnpjlm000o09l99et37pfj" data-title="日刷leetcode--简单版（一）" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201906-【go-语言圣经】练习答案-目录篇-关闭" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/06/16/1560663440490.html" class="article-date">
+  <time class="dt-published" datetime="2019-06-16T05:37:20.000Z" itemprop="datePublished">2019-06-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/back-end/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/06/16/1560663440490.html">【go 语言圣经】练习答案 -- 目录篇 (关闭)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="go语言圣经-The-Go-Programming-Language-练习题答案"><a href="#go语言圣经-The-Go-Programming-Language-练习题答案" class="headerlink" title="go语言圣经(The Go Programming Language)练习题答案"></a>go语言圣经(The Go Programming Language)练习题答案</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>go语言圣经是一本go入门非常不错的书籍，翻译至The Go Programming Language，本文记录该书章节后练习题答案</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ThomasHuke/books/blob/master/gopl-zh.pdf">中文pdf获取地址1</a>  <a target="_blank" rel="noopener" href="https://books.studygolang.com/download/gopl-zh.pdf">中文pdf获取地址2</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/KeKe-Li/book/blob/master/Go/The.Go.Programming.Language.pdf">英文原版获取地址</a></li>
+<li><a target="_blank" rel="noopener" href="https://https//weidian.com/item.html?itemID=2176920472">中文实体书获取地址</a> (一个还不赖的盗版书网站)</li>
+<li>由于在书写过程中跟换了博客地址，所以你想阅读所有的需要同时关注两个博客</li>
+<li>1-3章请前往我的<a target="_blank" rel="noopener" href="https://blog.csdn.net/q1576962841">CSDN</a>查看</li>
+<li>4-13章请关注我的<a target="_blank" rel="noopener" href="https://www.jinjianh.com/">个人博客(金戋博客)</a>或<a target="_blank" rel="noopener" href="https://hacpai.com/member/jinjianh/articles">黑客派</a>查看。</li>
+</ul>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/q1576962841/article/details/85162346">【go语言圣经】练习答案–第一章</a> （完结）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/q1576962841/article/details/85163080">【go语言圣经】练习答案–第二章</a> （完结）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/q1576962841/article/details/86084461">【go语言圣经】练习答案–第三章</a> （完结）</p>
+</li>
+<li><p><a href="/articles/2019/06/10/1560159392016.html">【go语言圣经】练习答案–第三章(3.10-3.13)</a> （完结）</p>
+</li>
+<li><p><a href="/articles/2019/06/12/1560331304695.html">【go语言圣经】练习答案 – 第四章(更新中)</a></p>
+</li>
+</ul>
+<p>此贴关闭–400多页的书我看不下去了:huaji:，因为我懒</p>
+<p>查看剩余部分习题请移步<a target="_blank" rel="noopener" href="https://www.cnblogs.com/taoshihan/p/8677343.html">[日常] Go语言圣经前言</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/06/16/1560663440490.html" data-id="ckjtnpjlh000d09l93x41cwct" data-title="【go 语言圣经】练习答案 -- 目录篇 (关闭)" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201906-Docker导出mysql数据" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/06/11/1560267833958.html" class="article-date">
+  <time class="dt-published" datetime="2019-06-11T15:43:54.000Z" itemprop="datePublished">2019-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/back-end/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/06/11/1560267833958.html">Docker导出mysql数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>&emsp;&emsp;前几天无意中在社区看到一个帖子（<a target="_blank" rel="noopener" href="https://hacpai.com/article/1553941852324">记一次清空数据仓库的过程</a>），讲的是自己无意中删库的经历。如文中所讲，大多时候删库这件事我们只是耳闻，并没有遇到过，可要是万一呢，到时候恐怕是追悔莫及，而且mysql也没有oracle的恢复机制，所以备份就成了一个非常有必要的操作。</p>
+<p>&emsp;&emsp;由于没有相关操作经验，所以从零开始讲如何数据，毕竟我还是比较珍惜我的小博客的。</p>
+<h1 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h1><p>&emsp;&emsp;以前也导出过sql文件，但是都是直接用Navicat导出就完事了，但是这次我想实现的是自动备份，最好写成脚本的方式。</p>
+<p>&emsp;&emsp;基本思路：使用命令将数据库数据从docker容器中导出来，以时间戳命名。最多保持7天，过期文件自动删除。</p>
+<h3 id="导出mysql数据"><a href="#导出mysql数据" class="headerlink" title="导出mysql数据"></a>导出mysql数据</h3><h4 id="间接导出"><a href="#间接导出" class="headerlink" title="间接导出"></a>间接导出</h4><p>&emsp;&emsp;mysql 导出数据的命令还是蛮简单的：<code>mysqldump -u 用户名 -p 数据库名 &gt; 导出的文件名</code>，但这是linux里面执行的，我们的放在docker里面，所以要先进入容器，然后执行上述命令。然后你就会惊讶的发现，导出的文件在你的容器里面，然后你再从容器里面copy到你的主机上。这样做会在容器上产生大量sql文件，写定时任务是需要及时清理。</p>
+<h4 id="直接导出"><a href="#直接导出" class="headerlink" title="直接导出"></a>直接导出</h4><p>&emsp;&emsp;上述方法是可行的，但是过于麻烦，有没有一步到位的呢？很显然是有的，命令是这个样子的：<code>docker exec -it [docker容器名称/ID] mysqldump -u[数据库用户名] -p[数据库密码] [数据库名称] &gt; [导出表格路径]</code>，比如我的<code>docker exec -it mysql mysqldump -uroot -p123456 solo &gt; /var/www/solo.sql</code>。没有报错的话，导出的数据库文件就会到你指定的目录下了。</p>
+<h3 id="写成脚本方式运行"><a href="#写成脚本方式运行" class="headerlink" title="写成脚本方式运行"></a>写成脚本方式运行</h3><p>博主是不会写Shell脚本的，所以现学了下，参考<a target="_blank" rel="noopener" href="https://github.com/qinjx/30min_guides/blob/master/shell.md">Shell脚本编程30分钟入门</a></p>
+<blockquote>
+<p>间接导出(间接导出时请先创建相关文件目录)</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -i mysql bash&lt;&lt;<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line"><span class="comment"># solo 为数据库的名称</span></span><br><span class="line"> XXX为数据库密码</span><br><span class="line">mysqldump -uroot -pXXX solo &gt; /mysqlData/$(date +%Y%m%d).sql</span><br><span class="line"><span class="comment">#删除超过1天的数据</span></span><br><span class="line">find /mysqlData/ -mtime +1 -<span class="built_in">type</span> f | xargs rm -rf</span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line">EOF</span><br><span class="line"><span class="comment"># 将docker中的备份的数据拷贝到宿主机上。</span></span><br><span class="line">docker cp mysql:/mysqlData/$(date +%Y%m%d).sql /var/www/html/solo/sqlData/</span><br><span class="line"><span class="comment">#删除超过7天的数据</span></span><br><span class="line">find /var/www/html/solo/sqlData -mtime +7 -<span class="built_in">type</span> f | xargs rm -rf</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>直接导出(导出时<code>exec</code>不需指定参数<code>-it</code>)</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># 进入你要保持数据的文件</span></span><br><span class="line"><span class="built_in">cd</span> /var/www/html/solo/sqlData</span><br><span class="line"><span class="comment"># 导出今日的sql</span></span><br><span class="line">docker <span class="built_in">exec</span> mysql mysqldump -uroot -p123123 solo &gt;`date +%Y%m%d%H%M%S`.sql</span><br><span class="line"><span class="comment"># 删除7天前的sql(+号后面跟天数,N天前,find后指定目录)</span></span><br><span class="line">find . -mtime +7 -<span class="built_in">type</span> f | xargs rm -rf</span><br></pre></td></tr></table></figure>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>&emsp;&emsp;导出的sql文件中会出现一些版本备注信息等，这样的sql文件导入时有时会出现问题，会报错，导入之前需要将sql文件中的无用信息删除。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*!40101 SET @OLD_CHARACTER_SET_CLIENT&#x3D;@@CHARACTER_SET_CLIENT *&#x2F;;</span><br><span class="line">&#x2F;*!40101 SET @OLD_CHARACTER_SET_RESULTS&#x3D;@@CHARACTER_SET_RESULTS *&#x2F;;</span><br><span class="line">&#x2F;*!40101 SET @OLD_COLLATION_CONNECTION&#x3D;@@COLLATION_CONNECTION *&#x2F;;</span><br><span class="line">&#x2F;*!40101 SET NAMES utf8 *&#x2F;;</span><br><span class="line">&#x2F;*!40103 SET @OLD_TIME_ZONE&#x3D;@@TIME_ZONE *&#x2F;;</span><br><span class="line">&#x2F;*!40103 SET TIME_ZONE&#x3D;&#39;+00:00&#39; *&#x2F;;</span><br><span class="line">&#x2F;*!40014 SET @OLD_UNIQUE_CHECKS&#x3D;@@UNIQUE_CHECKS, UNIQUE_CHECKS&#x3D;0 *&#x2F;;</span><br><span class="line">&#x2F;*!40014 SET @OLD_FOREIGN_KEY_CHECKS&#x3D;@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS&#x3D;0 *&#x2F;;</span><br><span class="line">&#x2F;*!40101 SET @OLD_SQL_MODE&#x3D;@@SQL_MODE, SQL_MODE&#x3D;&#39;NO_AUTO_VALUE_ON_ZERO&#39; *&#x2F;;</span><br><span class="line">&#x2F;*!40111 SET @OLD_SQL_NOTES&#x3D;@@SQL_NOTES, SQL_NOTES&#x3D;0 *&#x2F;;</span><br></pre></td></tr></table></figure>
+<p>这样的内容在sql中还不是一两句，到处都是。这里提供一段正则，可快速匹配到sql文件中所有<code>/*!40101XXXXX*/;</code>，通过正则<code>\/\*\![0-9]+\s[\s\S]+?\s\*\/;\n</code>实现快速替换。<br>替换完后的效果如下所示，多舒服。<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3766354f.png" alt="image.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/06/11/1560267833958.html" data-id="ckjtnpjlc000909l94ghxgu9q" data-title="Docker导出mysql数据" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/" rel="tag">shell</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-posts-201906-go-语言圣经练习解答-第三章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/06/10/1560159392016.html" class="article-date">
+  <time class="dt-published" datetime="2019-06-10T09:36:32.000Z" itemprop="datePublished">2019-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/back-end/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/articles/2019/06/10/1560159392016.html">go 语言圣经练习解答 -- 第三章</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg"></p>
+<h2 id="go语言圣经-The-Go-Programming-Language-第三章练习题答案"><a href="#go语言圣经-The-Go-Programming-Language-第三章练习题答案" class="headerlink" title="go语言圣经(The Go Programming Language)第三章练习题答案"></a>go语言圣经(The Go Programming Language)第三章练习题答案</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>go语言圣经是一本go入门非常不错的书籍，翻译至The Go Programming Language，本文记录该书章节后练习题答案</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ThomasHuke/books/blob/master/gopl-zh.pdf">中文pdf获取地址1</a>  <a target="_blank" rel="noopener" href="https://books.studygolang.com/download/gopl-zh.pdf">中文pdf获取地址2</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/KeKe-Li/book/blob/master/Go/The.Go.Programming.Language.pdf">英文原版获取地址</a></li>
+<li><a target="_blank" rel="noopener" href="https://https//weidian.com/item.html?itemID=2176920472">中文实体书获取地址</a> (一个还不赖的盗版书网站)</li>
+<li>本文从第三章练习3.10开始，前面的请查看移步我的<a target="_blank" rel="noopener" href="https://blog.csdn.net/q1576962841">CSDN</a></li>
+</ul>
+<h4 id="练习-3-10：-编写一个非递归版本的comma函数，使用bytes-Buffer代替字符串链接操作。"><a href="#练习-3-10：-编写一个非递归版本的comma函数，使用bytes-Buffer代替字符串链接操作。" class="headerlink" title="练习 3.10： 编写一个非递归版本的comma函数，使用bytes.Buffer代替字符串链接操作。"></a>练习 3.10： 编写一个非递归版本的comma函数，使用bytes.Buffer代替字符串链接操作。</h4><blockquote>
+<p>解题思路:</p>
+</blockquote>
+<ul>
+<li>参考书中的comma函数，即实现基本的为数字添加逗号分隔符</li>
+<li>确定了第一个逗号位置后，每隔三个数字添加一个逗号，最后末尾会多出来一个逗号，去掉即可</li>
+<li>使用bytes.Buffe而非”+”</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">comma</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> buffer bytes.Buffer</span><br><span class="line">    l := <span class="built_in">len</span>(s)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(s); i++ &#123;</span><br><span class="line">        buffer.WriteString(<span class="keyword">string</span>(s[i]))</span><br><span class="line">	<span class="comment">// 取余3可以得到第一个插入逗号的位置,后面依次+3即可,末尾不加&quot;,&quot;</span></span><br><span class="line">        <span class="keyword">if</span> (i+<span class="number">1</span>)%<span class="number">3</span> == l%<span class="number">3</span> &#123;  <span class="keyword">if</span> (i+<span class="number">1</span>)%<span class="number">3</span> == l%<span class="number">3</span> &amp;&amp; i != l<span class="number">-1</span> &#123;</span><br><span class="line">            buffer.WriteString(<span class="string">&quot;,&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    s = buffer.String()</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">``</span></span><br><span class="line"></span><br><span class="line">#### 练习 <span class="number">3.11</span>： 完善comma函数，以支持浮点数处理和一个可选的正负号的处理。</span><br><span class="line">&gt; 解题思路:</span><br><span class="line"></span><br><span class="line">* 将整数部分分离处理处理即可，整树部分与<span class="number">3.10</span>相同</span><br><span class="line">* 首先判读第一个字符是否为<span class="string">&quot;+/-&quot;</span>，如果是，将符号添加到buffer中，然后去掉原字符串的第一个字符。</span><br><span class="line">* 通过小数点将字符串分隔为两个数组，下标为<span class="number">0</span>的为整数部分，如果存在小数点则下标为<span class="number">1</span>的为小数部分</span><br><span class="line">* 处理完整数部分后判断是否存在小数部分，存在着添加到buffer中</span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`go</span></span><br><span class="line"><span class="string">// 判断是否有正负号</span></span><br><span class="line"><span class="string">// 判断是否有小数部分</span></span><br><span class="line"><span class="string">func comma(s string) string &#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    var buffer bytes.Buffer</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 获取正负号</span></span><br><span class="line"><span class="string">    if s[0] == &#x27;-&#x27; || s[0] == &#x27;+&#x27; &#123;</span></span><br><span class="line"><span class="string">        // 将符号添加到返回的字符串中</span></span><br><span class="line"><span class="string">        buffer.WriteByte(s[0])</span></span><br><span class="line"><span class="string">        s = s[1:]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 分离整数部分与小数部位</span></span><br><span class="line"><span class="string">    arr := strings.Split(s, &quot;.&quot;)</span></span><br><span class="line"><span class="string">    s = arr[0]</span></span><br><span class="line"><span class="string">    l := len(s)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 格式整数部分</span></span><br><span class="line"><span class="string">    for i := 0; i &lt; len(s); i++ &#123;</span></span><br><span class="line"><span class="string">        buffer.WriteString(string(s[i]))</span></span><br><span class="line"><span class="string">        // 取余3可以得到第一个插入逗号的位置,后面依次+3即可,末尾不加&quot;,&quot;</span></span><br><span class="line"><span class="string">        if (i+1)%3 == l%3 &amp;&amp; i != l-1 &#123;</span></span><br><span class="line"><span class="string">            buffer.WriteString(&quot;,&quot;)</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 存在小数部分</span></span><br><span class="line"><span class="string">    if len(arr) &gt; 1 &#123;</span></span><br><span class="line"><span class="string">        buffer.WriteString(&quot;.&quot;)</span></span><br><span class="line"><span class="string">        buffer.WriteString(arr[1])</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    s = buffer.String()</span></span><br><span class="line"><span class="string">    return s // 末尾会多一个逗号,去掉 + &quot;.&quot; + arr[1]</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="练习-3-12：-编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。"><a href="#练习-3-12：-编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。" class="headerlink" title="练习 3.12： 编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。"></a>练习 3.12： 编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。</h4><blockquote>
+<p>解题思路:</p>
+</blockquote>
+<ul>
+<li>拥有相同字符那么他们长度肯定是相同的</li>
+<li>每个字符都有自己的Unicode码，记录每个字符串中每个字符出现的次数</li>
+<li>循环记录的数组，对比个数是否相同</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isReverse</span><span class="params">(a, b <span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    <span class="comment">// 长度不一样直接返回false</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(a) != <span class="built_in">len</span>(b) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 用于记录每个字符串出现的次数</span></span><br><span class="line">    m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">rune</span>]<span class="keyword">int</span>)</span><br><span class="line">    n := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">rune</span>]<span class="keyword">int</span>)</span><br><span class="line">    <span class="comment">// 以字符串Unicode码作为map的Key</span></span><br><span class="line">    <span class="keyword">for</span> _, v := <span class="keyword">range</span> a &#123;</span><br><span class="line">        m[v]++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> _, v := <span class="keyword">range</span> b &#123;</span><br><span class="line">    n[v]++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断相同下标值是否相同</span></span><br><span class="line">    <span class="keyword">for</span> i, v := <span class="keyword">range</span> m &#123;</span><br><span class="line">        <span class="keyword">if</span> n[i] != v &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="练习-3-13：-编写KB、MB的常量声明，然后扩展到YB。"><a href="#练习-3-13：-编写KB、MB的常量声明，然后扩展到YB。" class="headerlink" title="练习 3.13： 编写KB、MB的常量声明，然后扩展到YB。"></a>练习 3.13： 编写KB、MB的常量声明，然后扩展到YB。</h4><blockquote>
+<p>1.简单粗暴法(没有解题思路)</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    KB = <span class="number">1000</span></span><br><span class="line">    MB = KB * KB</span><br><span class="line">    GB = MB * KB</span><br><span class="line">    TB = GB * KB</span><br><span class="line">    PB = TB * KB</span><br><span class="line">    EB = PB * KB</span><br><span class="line">    ZB = EB * KB</span><br><span class="line">    YB = ZB * KB</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.结合书中例子定义KiB到YiB解决</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KiB &#x3D; 1024,       KB &#x3D; 1000</span><br><span class="line">MiB &#x3D; 1048576,    MB &#x3D; 1000000</span><br><span class="line">GiB &#x3D; 1073741824, GB&#x3D; 1000000000</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>KiB减去24就是KB</li>
+<li>MIB减去48576就是MB</li>
+<li>…<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    _   = <span class="number">1</span> &lt;&lt; (<span class="number">10</span> * <span class="literal">iota</span>)</span><br><span class="line">    KiB  <span class="comment">// 1024</span></span><br><span class="line">    MiB  <span class="comment">// 1048576</span></span><br><span class="line">    GiB  <span class="comment">// 1073741824</span></span><br><span class="line">    TiB  <span class="comment">// 1099511627776 (exceeds 1 &lt;&lt; 32)</span></span><br><span class="line">    PiB  <span class="comment">// 1125899906842624</span></span><br><span class="line">    EiB  <span class="comment">// 1152921504606846976</span></span><br><span class="line">    ZiB  <span class="comment">// 1180591620717411303424 (exceeds 1 &lt;&lt; 64)</span></span><br><span class="line">    YiB  <span class="comment">// 1208925819614629174706176</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    KB = <span class="number">1000</span></span><br><span class="line">    MB = MiB - MiB % (KB * KB)</span><br><span class="line">    GB = GiB - GiB % (MB * KB)</span><br><span class="line">    TB = TiB - TiB % (GB * KB)</span><br><span class="line">    PB = PiB - PiB % (TB * KB)</span><br><span class="line">    EB = EiB - EiB % (PB * KB)</span><br><span class="line">    ZB = ZiB - ZiB % (EB * KB)</span><br><span class="line">    YB = YiB - YiB % (ZB * KB)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+感觉第一种更加简单粗暴</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.jinjianh.com/articles/2019/06/16/1560663440490.html">返回目录</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/06/10/1560159392016.html" data-id="ckjtnpjle000b09l9hybv9kzg" data-title="go 语言圣经练习解答 -- 第三章" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/front-end/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/back-end/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/algorithm/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/pitDiary/">踩坑日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reading/">阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/essays/summary/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/emotional/">情感</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nexmoe/" rel="tag">Nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TGIF/" rel="tag">TGIF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solo-nexmoe/" rel="tag">solo-nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about-me/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skin/" rel="tag">皮肤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crack/" rel="tag">破解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Golang/" style="font-size: 20px;">Golang</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/Nexmoe/" style="font-size: 10px;">Nexmoe</a> <a href="/tags/Solo/" style="font-size: 13.33px;">Solo</a> <a href="/tags/TGIF/" style="font-size: 10px;">TGIF</a> <a href="/tags/docker/" style="font-size: 11.11px;">docker</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/solo-nexmoe/" style="font-size: 10px;">solo-nexmoe</a> <a href="/tags/about-me/" style="font-size: 14.44px;">关于我</a> <a href="/tags/learn/" style="font-size: 15.56px;">学习</a> <a href="/tags/summary/" style="font-size: 15.56px;">总结</a> <a href="/tags/tutorials/" style="font-size: 12.22px;">教程</a> <a href="/tags/diary/" style="font-size: 10px;">日记</a> <a href="/tags/skin/" style="font-size: 10px;">皮肤</a> <a href="/tags/crack/" style="font-size: 10px;">破解</a> <a href="/tags/algorithm/" style="font-size: 17.78px;">算法</a> <a href="/tags/study-notes/" style="font-size: 17.78px;">读书笔记</a> <a href="/tags/essay/" style="font-size: 18.89px;">随笔</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/reading/38859.html">如何读一本书</a>
+          </li>
+        
+          <li>
+            <a href="/2020.html">2020年个人总结</a>
+          </li>
+        
+          <li>
+            <a href="/leetcode_array1.html">leetcode-数组系列1</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/10/21/1603213579436.html">MySQL分页查询优化</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/07/09/1594287406684.html">Go爬虫初体验</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 InkDP<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

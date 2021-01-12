@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Navicat Premium for Mac 破解教程 | 墨殇的技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="前言本教程破解的版本为Navicat Premium 12.1.27，理论上支持12.0.24~最新版，所以在你开始破解时请确认你的版本 下载并安装进入Navicat Premium，选中对应软件进行下载，安装就不多说了，整安装就可以了 编译1. 安装依赖首先你的确认你安装了brew，没有的话就先去装一个吧，然后安装下列库   12345brew install openssl  brew ins">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Navicat Premium for Mac 破解教程">
+<meta property="og:url" content="https://hexo.inkdp.cn/articles/2019/10/24/1571890488789.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="前言本教程破解的版本为Navicat Premium 12.1.27，理论上支持12.0.24~最新版，所以在你开始破解时请确认你的版本 下载并安装进入Navicat Premium，选中对应软件进行下载，安装就不多说了，整安装就可以了 编译1. 安装依赖首先你的确认你安装了brew，没有的话就先去装一个吧，然后安装下列库   12345brew install openssl  brew ins">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-605b5c43.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-6e4f4f06.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b4f15694.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-27449b40.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-5c6f876b.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-99b4f449.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-8b2aa128.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ea68d143.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-c224bb16.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-acf9356f.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0aa226c9.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-81692bde.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-eaa0ba85.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0b68abdb.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-e8dfb932.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-d3b2e298.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-50a37e9d.png">
+<meta property="article:published_time" content="2019-10-24T04:14:48.000Z">
+<meta property="article:modified_time" content="2019-10-24T04:24:50.000Z">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="破解">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-605b5c43.png">
+  
+    <link rel="alternate" href="/atom.xml" title="墨殇的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">墨殇的技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexo.inkdp.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-posts-201910-Navicat-Premium-for-Mac-破解教程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/10/24/1571890488789.html" class="article-date">
+  <time class="dt-published" datetime="2019-10-24T04:14:48.000Z" itemprop="datePublished">2019-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Navicat Premium for Mac 破解教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本教程破解的版本为Navicat Premium 12.1.27，理论上支持12.0.24~最新版，所以在你开始破解时请确认你的版本</p>
+<h2 id="下载并安装"><a href="#下载并安装" class="headerlink" title="下载并安装"></a>下载并安装</h2><p>进入<a target="_blank" rel="noopener" href="https://www.navicat.com.cn/download/navicat-premium">Navicat Premium</a>，选中对应软件进行下载，安装就不多说了，整安装就可以了</p>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><h3 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1. 安装依赖"></a>1. 安装依赖</h3><p>首先你的确认你安装了brew，没有的话就先去装一个吧，然后安装下列库  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew install openssl  </span><br><span class="line">brew install capstone  </span><br><span class="line">brew install keystone  </span><br><span class="line">brew install rapidjson  </span><br><span class="line">brew install libplist  </span><br></pre></td></tr></table></figure>
+<h3 id="2-克隆项目"><a href="#2-克隆项目" class="headerlink" title="2. 克隆项目"></a>2. 克隆项目</h3><p>克隆Mac分支，并编译keygen和patcher</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone -b mac --single-branch https:&#x2F;&#x2F;github.com&#x2F;DoubleLabyrinth&#x2F;navicat-keygen.git</span><br><span class="line">cd navicat-keygen</span><br><span class="line">make all</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-605b5c43.png" alt="image.png"></p>
+<p>编译成功后当前目录下的bin文件下回出现两个可执行文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls bin&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-6e4f4f06.png" alt="image.png"></p>
+<h3 id="3-备份"><a href="#3-备份" class="headerlink" title="3. 备份"></a>3. 备份</h3><ul>
+<li>备份好<code>Navicat Premium.app/Contents/MacOS/Navicat Premium </code>，防止翻车(不怕翻车可跳过)</li>
+<li>备份好Navicat中所有已保存的数据库连接(包括密码)，我没备份(可跳过）</li>
+<li>移除所有Navicat在钥匙链中保持的密码，可通过搜索<code>navacat</code>来找到他们<br> <img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b4f15694.png" alt="image.png"></li>
+</ul>
+<h3 id="4-使用navicat-patcher替换公钥："><a href="#4-使用navicat-patcher替换公钥：" class="headerlink" title="4. 使用navicat-patcher替换公钥："></a>4. 使用navicat-patcher替换公钥：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Usage:</span><br><span class="line"> navicat-patcher &lt;Navicat installation path&gt; [RSA-2048 Private Key File]</span><br><span class="line"></span><br><span class="line">     &lt;Navicat installation path&gt;    Path to &#96;Navicat Premium.app&#96;.</span><br><span class="line">                                    Example:</span><br><span class="line">                                        &#x2F;Applications&#x2F;Navicat\ Premium.app&#x2F;</span><br><span class="line">                                    This parameter must be specified.</span><br><span class="line"></span><br><span class="line">     [RSA-2048 Private Key File]    Path to a PEM-format RSA-2048 private key file.</span><br><span class="line">                                    This parameter is optional.</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Navicat installation path</code> ：<code>Navicat Premium.app</code>的路径，必填</li>
+<li><code>RSA-2048 Private Key File</code>：PEM格式的RSA-2048的私钥路径，可选，不填会在当前目录下生成一个新的RSA-2047密钥文件<code>RegPrivateKey.pem</code></li>
+</ul>
+<p>默认如下：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;navicat-patcher &#x2F;Applications&#x2F;Navicat\ Premium.app&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-27449b40.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-5c6f876b.png" alt="image.png"></p>
+<h3 id="5-生成一份自动签名-的代码签名证书"><a href="#5-生成一份自动签名-的代码签名证书" class="headerlink" title="5. 生成一份自动签名 的代码签名证书"></a>5. 生成一份自动签名 的代码签名证书</h3><ul>
+<li><p>打开钥匙串访问</p>
+</li>
+<li><p>选择创建证书</p>
+</li>
+<li><p>输入名称”Navicat”，身份类型，证书类型</p>
+</li>
+<li><p>点击创建</p>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-99b4f449.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-8b2aa128.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ea68d143.png" alt="image.png"></p>
+</li>
+</ul>
+<h3 id="6-签名"><a href="#6-签名" class="headerlink" title="6. 签名"></a>6. 签名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">codesign -f -s &quot;Navicat&quot; &#x2F;Applications&#x2F;Navicat\ Premium.app&#x2F;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-c224bb16.png" alt="image.png"></p>
+<h2 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h2><h3 id="1-使用navicat-keygen生成序列号和激活码"><a href="#1-使用navicat-keygen生成序列号和激活码" class="headerlink" title="1. 使用navicat-keygen生成序列号和激活码"></a>1. 使用<code>navicat-keygen</code>生成序列号和激活码</h3><pre><code>Usage:  
+ navicat-keygen &lt;RSA-2048 Private Key File&gt;  
+
+ &lt;RSA-2048 Private Key File&gt;    Path to a PEM-format RSA-2048 private key file.  
+ This parameter must be specified.  </code></pre>
+<ul>
+<li><code>RSA-2048 Private Key File</code>，PEM格式的RSA-2048密钥文件路径，既上文中提到的<code>RegPrivateKey.pem</code>  </li>
+</ul>
+<p>默认如下：  </p>
+<pre><code>./navicat-keygen ./RegPrivateKey.pem  </code></pre>
+<p>输入语言以及主版本号后会得到一个序列号<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-acf9356f.png" alt="image.png"><br>使用这个序列号来激活Navicat<br>接下来会要求你输入用户名以及组织名，随意填写即可<br>之后你会被要求填入请求码<br><strong>请不要关闭注册机！</strong><br><strong>请不要关闭注册机！</strong><br><strong>请不要关闭注册机！</strong></p>
+<h3 id="2-断网并启动Navicat-premium完成激活"><a href="#2-断网并启动Navicat-premium完成激活" class="headerlink" title="2. 断网并启动Navicat premium完成激活"></a>2. 断网并启动Navicat premium完成激活</h3><ul>
+<li>启动时点击注册</li>
+<li>在注册页面输入注册机给你的序列号，点击激活</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0aa226c9.png" alt="image.png"></p>
+<ul>
+<li>一般都会激活失败，这时点击手动激活即可</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-81692bde.png" alt="image.png"></p>
+<ul>
+<li>手动激活的窗口会给到你一个请求码，复制并粘贴到注册机里面，<strong>两次回车结束输入</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-eaa0ba85.png" alt="image.png"></p>
+<ul>
+<li>不出意外的话，你会得到一个激活码，复制它并粘贴到navicat的手动激活窗口<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0b68abdb.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-e8dfb932.png" alt="image.png"></li>
+<li>最后点击激活，没出问题的话就激活成功了<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-d3b2e298.png" alt="image.png"><br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-50a37e9d.png" alt="image.png"></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/DoubleLabyrinth/navicat-keygen/blob/mac/README.zh-CN.md">Navicat Keygen</a></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>由于删除了钥匙串的密码，所以原有连接里的密码可能需要重新输入</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/10/24/1571890488789.html" data-id="ckjtnpjmf002809l9h6q9g4np" data-title="Navicat Premium for Mac 破解教程" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/crack/" rel="tag">破解</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/leetcode6.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          日刷leetcode--简单版（六）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/articles/2019/10/13/1570960015377.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">迟来的9月总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/front-end/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/back-end/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/algorithm/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/pitDiary/">踩坑日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reading/">阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/essays/summary/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/emotional/">情感</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nexmoe/" rel="tag">Nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TGIF/" rel="tag">TGIF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solo-nexmoe/" rel="tag">solo-nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about-me/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skin/" rel="tag">皮肤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crack/" rel="tag">破解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Golang/" style="font-size: 20px;">Golang</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/Nexmoe/" style="font-size: 10px;">Nexmoe</a> <a href="/tags/Solo/" style="font-size: 13.33px;">Solo</a> <a href="/tags/TGIF/" style="font-size: 10px;">TGIF</a> <a href="/tags/docker/" style="font-size: 11.11px;">docker</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/solo-nexmoe/" style="font-size: 10px;">solo-nexmoe</a> <a href="/tags/about-me/" style="font-size: 14.44px;">关于我</a> <a href="/tags/learn/" style="font-size: 15.56px;">学习</a> <a href="/tags/summary/" style="font-size: 15.56px;">总结</a> <a href="/tags/tutorials/" style="font-size: 12.22px;">教程</a> <a href="/tags/diary/" style="font-size: 10px;">日记</a> <a href="/tags/skin/" style="font-size: 10px;">皮肤</a> <a href="/tags/crack/" style="font-size: 10px;">破解</a> <a href="/tags/algorithm/" style="font-size: 17.78px;">算法</a> <a href="/tags/study-notes/" style="font-size: 17.78px;">读书笔记</a> <a href="/tags/essay/" style="font-size: 18.89px;">随笔</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/reading/38859.html">如何读一本书</a>
+          </li>
+        
+          <li>
+            <a href="/2020.html">2020年个人总结</a>
+          </li>
+        
+          <li>
+            <a href="/leetcode_array1.html">leetcode-数组系列1</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/10/21/1603213579436.html">MySQL分页查询优化</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/07/09/1594287406684.html">Go爬虫初体验</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 InkDP<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

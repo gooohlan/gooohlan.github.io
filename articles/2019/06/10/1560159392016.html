@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>go 语言圣经练习解答 -- 第三章 | 墨殇的技术博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="go语言圣经(The Go Programming Language)第三章练习题答案前言go语言圣经是一本go入门非常不错的书籍，翻译至The Go Programming Language，本文记录该书章节后练习题答案  中文pdf获取地址1  中文pdf获取地址2 英文原版获取地址 中文实体书获取地址 (一个还不赖的盗版书网站) 本文从第三章练习3.10开始，前面的请查看移步我的CSDN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go 语言圣经练习解答 -- 第三章">
+<meta property="og:url" content="https://hexo.inkdp.cn/articles/2019/06/10/1560159392016.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="go语言圣经(The Go Programming Language)第三章练习题答案前言go语言圣经是一本go入门非常不错的书籍，翻译至The Go Programming Language，本文记录该书章节后练习题答案  中文pdf获取地址1  中文pdf获取地址2 英文原版获取地址 中文实体书获取地址 (一个还不赖的盗版书网站) 本文从第三章练习3.10开始，前面的请查看移步我的CSDN">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg">
+<meta property="article:published_time" content="2019-06-10T09:36:32.000Z">
+<meta property="article:modified_time" content="2019-09-25T06:01:25.000Z">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="Golang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="墨殇的技术博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">墨殇的技术博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://hexo.inkdp.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-posts-201906-go-语言圣经练习解答-第三章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/articles/2019/06/10/1560159392016.html" class="article-date">
+  <time class="dt-published" datetime="2019-06-10T09:36:32.000Z" itemprop="datePublished">2019-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/skill/">技术</a>►<a class="article-category-link" href="/categories/skill/back-end/">后端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      go 语言圣经练习解答 -- 第三章
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg"></p>
+<h2 id="go语言圣经-The-Go-Programming-Language-第三章练习题答案"><a href="#go语言圣经-The-Go-Programming-Language-第三章练习题答案" class="headerlink" title="go语言圣经(The Go Programming Language)第三章练习题答案"></a>go语言圣经(The Go Programming Language)第三章练习题答案</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>go语言圣经是一本go入门非常不错的书籍，翻译至The Go Programming Language，本文记录该书章节后练习题答案</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ThomasHuke/books/blob/master/gopl-zh.pdf">中文pdf获取地址1</a>  <a target="_blank" rel="noopener" href="https://books.studygolang.com/download/gopl-zh.pdf">中文pdf获取地址2</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/KeKe-Li/book/blob/master/Go/The.Go.Programming.Language.pdf">英文原版获取地址</a></li>
+<li><a target="_blank" rel="noopener" href="https://https//weidian.com/item.html?itemID=2176920472">中文实体书获取地址</a> (一个还不赖的盗版书网站)</li>
+<li>本文从第三章练习3.10开始，前面的请查看移步我的<a target="_blank" rel="noopener" href="https://blog.csdn.net/q1576962841">CSDN</a></li>
+</ul>
+<h4 id="练习-3-10：-编写一个非递归版本的comma函数，使用bytes-Buffer代替字符串链接操作。"><a href="#练习-3-10：-编写一个非递归版本的comma函数，使用bytes-Buffer代替字符串链接操作。" class="headerlink" title="练习 3.10： 编写一个非递归版本的comma函数，使用bytes.Buffer代替字符串链接操作。"></a>练习 3.10： 编写一个非递归版本的comma函数，使用bytes.Buffer代替字符串链接操作。</h4><blockquote>
+<p>解题思路:</p>
+</blockquote>
+<ul>
+<li>参考书中的comma函数，即实现基本的为数字添加逗号分隔符</li>
+<li>确定了第一个逗号位置后，每隔三个数字添加一个逗号，最后末尾会多出来一个逗号，去掉即可</li>
+<li>使用bytes.Buffe而非”+”</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">comma</span><span class="params">(s <span class="keyword">string</span>)</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> buffer bytes.Buffer</span><br><span class="line">    l := <span class="built_in">len</span>(s)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(s); i++ &#123;</span><br><span class="line">        buffer.WriteString(<span class="keyword">string</span>(s[i]))</span><br><span class="line">	<span class="comment">// 取余3可以得到第一个插入逗号的位置,后面依次+3即可,末尾不加&quot;,&quot;</span></span><br><span class="line">        <span class="keyword">if</span> (i+<span class="number">1</span>)%<span class="number">3</span> == l%<span class="number">3</span> &#123;  <span class="keyword">if</span> (i+<span class="number">1</span>)%<span class="number">3</span> == l%<span class="number">3</span> &amp;&amp; i != l<span class="number">-1</span> &#123;</span><br><span class="line">            buffer.WriteString(<span class="string">&quot;,&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    s = buffer.String()</span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">``</span><span class="string">``</span></span><br><span class="line"></span><br><span class="line">#### 练习 <span class="number">3.11</span>： 完善comma函数，以支持浮点数处理和一个可选的正负号的处理。</span><br><span class="line">&gt; 解题思路:</span><br><span class="line"></span><br><span class="line">* 将整数部分分离处理处理即可，整树部分与<span class="number">3.10</span>相同</span><br><span class="line">* 首先判读第一个字符是否为<span class="string">&quot;+/-&quot;</span>，如果是，将符号添加到buffer中，然后去掉原字符串的第一个字符。</span><br><span class="line">* 通过小数点将字符串分隔为两个数组，下标为<span class="number">0</span>的为整数部分，如果存在小数点则下标为<span class="number">1</span>的为小数部分</span><br><span class="line">* 处理完整数部分后判断是否存在小数部分，存在着添加到buffer中</span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`go</span></span><br><span class="line"><span class="string">// 判断是否有正负号</span></span><br><span class="line"><span class="string">// 判断是否有小数部分</span></span><br><span class="line"><span class="string">func comma(s string) string &#123;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    var buffer bytes.Buffer</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 获取正负号</span></span><br><span class="line"><span class="string">    if s[0] == &#x27;-&#x27; || s[0] == &#x27;+&#x27; &#123;</span></span><br><span class="line"><span class="string">        // 将符号添加到返回的字符串中</span></span><br><span class="line"><span class="string">        buffer.WriteByte(s[0])</span></span><br><span class="line"><span class="string">        s = s[1:]</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 分离整数部分与小数部位</span></span><br><span class="line"><span class="string">    arr := strings.Split(s, &quot;.&quot;)</span></span><br><span class="line"><span class="string">    s = arr[0]</span></span><br><span class="line"><span class="string">    l := len(s)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 格式整数部分</span></span><br><span class="line"><span class="string">    for i := 0; i &lt; len(s); i++ &#123;</span></span><br><span class="line"><span class="string">        buffer.WriteString(string(s[i]))</span></span><br><span class="line"><span class="string">        // 取余3可以得到第一个插入逗号的位置,后面依次+3即可,末尾不加&quot;,&quot;</span></span><br><span class="line"><span class="string">        if (i+1)%3 == l%3 &amp;&amp; i != l-1 &#123;</span></span><br><span class="line"><span class="string">            buffer.WriteString(&quot;,&quot;)</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 存在小数部分</span></span><br><span class="line"><span class="string">    if len(arr) &gt; 1 &#123;</span></span><br><span class="line"><span class="string">        buffer.WriteString(&quot;.&quot;)</span></span><br><span class="line"><span class="string">        buffer.WriteString(arr[1])</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    s = buffer.String()</span></span><br><span class="line"><span class="string">    return s // 末尾会多一个逗号,去掉 + &quot;.&quot; + arr[1]</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="练习-3-12：-编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。"><a href="#练习-3-12：-编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。" class="headerlink" title="练习 3.12： 编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。"></a>练习 3.12： 编写一个函数，判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序。</h4><blockquote>
+<p>解题思路:</p>
+</blockquote>
+<ul>
+<li>拥有相同字符那么他们长度肯定是相同的</li>
+<li>每个字符都有自己的Unicode码，记录每个字符串中每个字符出现的次数</li>
+<li>循环记录的数组，对比个数是否相同</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">isReverse</span><span class="params">(a, b <span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    <span class="comment">// 长度不一样直接返回false</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(a) != <span class="built_in">len</span>(b) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 用于记录每个字符串出现的次数</span></span><br><span class="line">    m := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">rune</span>]<span class="keyword">int</span>)</span><br><span class="line">    n := <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="keyword">rune</span>]<span class="keyword">int</span>)</span><br><span class="line">    <span class="comment">// 以字符串Unicode码作为map的Key</span></span><br><span class="line">    <span class="keyword">for</span> _, v := <span class="keyword">range</span> a &#123;</span><br><span class="line">        m[v]++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> _, v := <span class="keyword">range</span> b &#123;</span><br><span class="line">    n[v]++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断相同下标值是否相同</span></span><br><span class="line">    <span class="keyword">for</span> i, v := <span class="keyword">range</span> m &#123;</span><br><span class="line">        <span class="keyword">if</span> n[i] != v &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="练习-3-13：-编写KB、MB的常量声明，然后扩展到YB。"><a href="#练习-3-13：-编写KB、MB的常量声明，然后扩展到YB。" class="headerlink" title="练习 3.13： 编写KB、MB的常量声明，然后扩展到YB。"></a>练习 3.13： 编写KB、MB的常量声明，然后扩展到YB。</h4><blockquote>
+<p>1.简单粗暴法(没有解题思路)</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    KB = <span class="number">1000</span></span><br><span class="line">    MB = KB * KB</span><br><span class="line">    GB = MB * KB</span><br><span class="line">    TB = GB * KB</span><br><span class="line">    PB = TB * KB</span><br><span class="line">    EB = PB * KB</span><br><span class="line">    ZB = EB * KB</span><br><span class="line">    YB = ZB * KB</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.结合书中例子定义KiB到YiB解决</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KiB &#x3D; 1024,       KB &#x3D; 1000</span><br><span class="line">MiB &#x3D; 1048576,    MB &#x3D; 1000000</span><br><span class="line">GiB &#x3D; 1073741824, GB&#x3D; 1000000000</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ul>
+<li>KiB减去24就是KB</li>
+<li>MIB减去48576就是MB</li>
+<li>…<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    _   = <span class="number">1</span> &lt;&lt; (<span class="number">10</span> * <span class="literal">iota</span>)</span><br><span class="line">    KiB  <span class="comment">// 1024</span></span><br><span class="line">    MiB  <span class="comment">// 1048576</span></span><br><span class="line">    GiB  <span class="comment">// 1073741824</span></span><br><span class="line">    TiB  <span class="comment">// 1099511627776 (exceeds 1 &lt;&lt; 32)</span></span><br><span class="line">    PiB  <span class="comment">// 1125899906842624</span></span><br><span class="line">    EiB  <span class="comment">// 1152921504606846976</span></span><br><span class="line">    ZiB  <span class="comment">// 1180591620717411303424 (exceeds 1 &lt;&lt; 64)</span></span><br><span class="line">    YiB  <span class="comment">// 1208925819614629174706176</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    KB = <span class="number">1000</span></span><br><span class="line">    MB = MiB - MiB % (KB * KB)</span><br><span class="line">    GB = GiB - GiB % (MB * KB)</span><br><span class="line">    TB = TiB - TiB % (GB * KB)</span><br><span class="line">    PB = PiB - PiB % (TB * KB)</span><br><span class="line">    EB = EiB - EiB % (PB * KB)</span><br><span class="line">    ZB = ZiB - ZiB % (EB * KB)</span><br><span class="line">    YB = YiB - YiB % (ZB * KB)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+感觉第一种更加简单粗暴</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://www.jinjianh.com/articles/2019/06/16/1560663440490.html">返回目录</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://hexo.inkdp.cn/articles/2019/06/10/1560159392016.html" data-id="ckjtnpjle000b09l9hybv9kzg" data-title="go 语言圣经练习解答 -- 第三章" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/articles/2019/06/11/1560267833958.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Docker导出mysql数据
+        
+      </div>
+    </a>
+  
+  
+    <a href="/articles/2019/06/07/1559921813174.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">未来的路</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/skill/front-end/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/back-end/">后端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/skill/algorithm/">算法</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/pitDiary/">踩坑日记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/reading/">阅读</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">随笔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/essays/summary/">总结</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/emotional/">情感</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/interview/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/" rel="tag">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Golang/" rel="tag">Golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/" rel="tag">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nexmoe/" rel="tag">Nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Solo/" rel="tag">Solo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TGIF/" rel="tag">TGIF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/leetcode/" rel="tag">leetcode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/" rel="tag">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/solo-nexmoe/" rel="tag">solo-nexmoe</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/about-me/" rel="tag">关于我</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learn/" rel="tag">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/" rel="tag">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorials/" rel="tag">教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/" rel="tag">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/skin/" rel="tag">皮肤</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/crack/" rel="tag">破解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/study-notes/" rel="tag">读书笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/essay/" rel="tag">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/interview/" rel="tag">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/Golang/" style="font-size: 20px;">Golang</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/MySQL/" style="font-size: 13.33px;">MySQL</a> <a href="/tags/Nexmoe/" style="font-size: 10px;">Nexmoe</a> <a href="/tags/Solo/" style="font-size: 13.33px;">Solo</a> <a href="/tags/TGIF/" style="font-size: 10px;">TGIF</a> <a href="/tags/docker/" style="font-size: 11.11px;">docker</a> <a href="/tags/leetcode/" style="font-size: 16.67px;">leetcode</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/solo-nexmoe/" style="font-size: 10px;">solo-nexmoe</a> <a href="/tags/about-me/" style="font-size: 14.44px;">关于我</a> <a href="/tags/learn/" style="font-size: 15.56px;">学习</a> <a href="/tags/summary/" style="font-size: 15.56px;">总结</a> <a href="/tags/tutorials/" style="font-size: 12.22px;">教程</a> <a href="/tags/diary/" style="font-size: 10px;">日记</a> <a href="/tags/skin/" style="font-size: 10px;">皮肤</a> <a href="/tags/crack/" style="font-size: 10px;">破解</a> <a href="/tags/algorithm/" style="font-size: 17.78px;">算法</a> <a href="/tags/study-notes/" style="font-size: 17.78px;">读书笔记</a> <a href="/tags/essay/" style="font-size: 18.89px;">随笔</a> <a href="/tags/interview/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">一月 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/reading/38859.html">如何读一本书</a>
+          </li>
+        
+          <li>
+            <a href="/2020.html">2020年个人总结</a>
+          </li>
+        
+          <li>
+            <a href="/leetcode_array1.html">leetcode-数组系列1</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/10/21/1603213579436.html">MySQL分页查询优化</a>
+          </li>
+        
+          <li>
+            <a href="/articles/2020/07/09/1594287406684.html">Go爬虫初体验</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 InkDP<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
