@@ -3052,6 +3052,9 @@ blockquote footer cite:before {
   html.hide-aside .layout > .aside-content {
     display: none;
   }
+  html.hide-aside .layout > .aside-content > .iconfont {
+    font-size: 19px !important;
+  }
   html.hide-aside .layout > div:first-child {
     width: 80%;
   }
