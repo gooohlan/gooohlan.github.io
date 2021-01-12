@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Go面试总结 | 墨殇的技术博客</title><meta name="keywords" content="MySQL,docker,Golang,面试"><meta name="author" content="InkDP"><meta name="copyright" content="InkDP"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="前言俗话说得好，打铁还需自身硬，面对面试官的各种套路，刁钻复杂的各种问题，只有自身实力足够强硬，才能从容不迫的对答如流。此贴意在总结自身面试中遇到的各种问题，让自己面试前能够得到复习，可以抱抱佛脚。 Go 基础基础部分有部分为包的一下基础东西，自行查阅文档或谷歌  sync参考浅谈 Golang sync 包的相关使用方法  channel  goroutine  reflect答：当时答不上来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go面试总结">
+<meta property="og:url" content="https://hexo.inkdp.cn/articles/2019/09/25/1569402355322.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="前言俗话说得好，打铁还需自身硬，面对面试官的各种套路，刁钻复杂的各种问题，只有自身实力足够强硬，才能从容不迫的对答如流。此贴意在总结自身面试中遇到的各种问题，让自己面试前能够得到复习，可以抱抱佛脚。 Go 基础基础部分有部分为包的一下基础东西，自行查阅文档或谷歌  sync参考浅谈 Golang sync 包的相关使用方法  channel  goroutine  reflect答：当时答不上来">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg">
+<meta property="article:published_time" content="2019-09-25T09:05:55.000Z">
+<meta property="article:modified_time" content="2020-10-26T11:04:24.000Z">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="Golang">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg"><link rel="shortcut icon" href="/images/header.png"><link rel="canonical" href="https://hexo.inkdp.cn/articles/2019/09/25/1569402355322"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0a58708186792e44d0c32c51ee6fa8c9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"距离上次更新已有","messageNext":"天，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: InkDP","link":"链接: ","source":"来源: 墨殇的技术博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-10-26 19:04:24'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/header.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">墨殇的技术博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Go面试总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-09-25T09:05:55.000Z" title="发表于 2019-09-25 17:05:55">2019-09-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-10-26T11:04:24.000Z" title="更新于 2020-10-26 19:04:24">2020-10-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/interview/">面试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg" alt="img"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>俗话说得好，打铁还需自身硬，面对面试官的各种套路，刁钻复杂的各种问题，只有自身实力足够强硬，才能从容不迫的对答如流。<br>此贴意在总结自身面试中遇到的各种问题，让自己面试前能够得到复习，可以抱抱佛脚。</p>
+<h2 id="Go-基础"><a href="#Go-基础" class="headerlink" title="Go 基础"></a>Go 基础</h2><p>基础部分有部分为包的一下基础东西，自行查阅文档或谷歌</p>
+<ol>
+<li><p>sync<br>参考<a target="_blank" rel="noopener" href="https://deepzz.com/post/Golang-sync-package-usage.html">浅谈 Golang sync 包的相关使用方法</a></p>
+</li>
+<li><p>channel</p>
+</li>
+<li><p>goroutine</p>
+</li>
+<li><p>reflect<br>答：当时答不上来，依稀记得公司大佬说过，反射性能不好，随口答曰，影响性能很少用它?</p>
+</li>
+<li><p>并发通道安全</p>
+</li>
+<li><p>go支持类的重载吗？<br>答：不支持<br>6.1. 如果我需要的话可以实现吗？<br>答：可以用接口实现（具体实现方式百度）</p>
+</li>
+<li><p>interface</p>
+</li>
+<li><p>包名/目录名之间的关系<br>答：姑且总结为一下几点：</p>
+<ul>
+<li>import导入的是路径而不是包名</li>
+<li>一个文件夹下只能有一个package</li>
+<li>尽量让目录名与包名一致(非强制）</li>
+<li>代码中使用包时，引用的是包名称而非目录</li>
+<li>一个包所有的文件，必须位于同一个目录下</li>
+</ul>
+</li>
+<li><p>字符串拼接的方式（延升问题，性能比较）<br>答：使用运算符、fmt.Sprintf()、strings.Join()、buffer.WriteString()。执行效率如下图（理论上最后一个应该是最快的，不知道是不是我测试用例的原因）<br><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b6c8f4f0.png" alt="image.png"></p>
+</li>
+<li><p>GC，何时回收，如何手动回收等</p>
+</li>
+<li><p>并非时如何防止公共变量污染问题</p>
+<p>答：锁或者通道</p>
+</li>
+</ol>
+<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><ol>
+<li><p>MySQL 事务隔离级别<br>了解隔离级别前先了解脏读、不可重复读、幻读这三个概念</p>
+<ul>
+<li>脏读：一个事物读取到了另外一个事物未提交更新的数据，事物 A 更新了数据，但未提交，事物 B 读取到了这个更新数据，由于某些原因事物 A 回滚了，而此时事物 B 读取到的是事物 A 未提交的更新数据，此为脏读</li>
+<li>不可重复读：在一个事务中多次查询统一数据的到的结果不一致，事物 A 中多次读取数据’a’,在此过程中事物 B 更新并提交数据’a’,导致事物 A 多次读取的数据’a’不一致，此为不可重复读。可重复读与之相反，即多次读取到的都是同意数据，事物 B 更新并提交后的数据’a’读取不到。</li>
+<li>幻读：在一个事物中使用同样的查询语句查询出来的结果不一致(这里的结果不一致体现在结果集个数，而非数据内容不同，数据内容不同为不可重复读)，事物 A 中多次使用同一查询条件查询数据，在此过程中，事物 B 插入了若干条符合事物 A 中查询条件的数据，事物 A 后续查询突然多出若干条数据，此为幻读</li>
+<li>小结：不可重复读的和幻读很容易混淆，不可重复读侧<strong>重于修改</strong>，幻读侧重于<strong>新增或删除</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">隔离级别</th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">读未提交(read-uncommitted)</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td align="left">不可重复读(read-committed)</td>
+<td align="center">×</td>
+<td align="center">✓</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td align="left">可重复读(repeatable-read)</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">✓</td>
+</tr>
+<tr>
+<td align="left">串行化(serializable)</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>索引失效场景</p>
+<ul>
+<li>列类型是字符串，查询条件未加引号</li>
+<li>未使用索引列作为查询条件</li>
+<li>使用了比较操作符 LIKE 和 REGEXP，搜索模板的第一个字符是通配符</li>
+<li>在查询条件中使用 OR，如果想要 OR 时索引生效，需要将所有 OR 中每个列都加上索引</li>
+<li>对索引列进行运算</li>
+<li>查询条件里有不等于号</li>
+<li>查询条件里使用了函数</li>
+<li>在 JOIN 操作中（需要从多个数据表提取数据时），MySQL 只有在主键和外键的数据类型相同时才能使用索引，否则即使建立了索引也不会使用</li>
+<li>在 ORDER BY 操作中，MySQL 只有在排序条件不是一个查询条件表达式的情况下才使用索引。尽管如此，在涉及多个数据表的查询里，即使有索引可用，那些索引在加快 ORDER BY 操作方面也没什么作用</li>
+<li>如果 MySQL 估计使用全表扫描要比使用索引快</li>
+<li>…</li>
+</ul>
+</li>
+<li><p>MySQL存储引擎的区别与比较</p>
+<ul>
+<li>MyISAM：有较高的插入、查询速度，但<strong>不支持事务</strong></li>
+<li>InnoDB：事务型数据库的首选引擎，支持事务安全表（ACID），支持<strong>行锁定</strong>和<strong>外键，InnoDB是默认的MySQL引擎</strong></li>
+</ul>
+</li>
+<li><p>Delete，drop与trunkcate的区别</p>
+<ul>
+<li>delete和truncate操作只删除表中数据，而不删除表结构；delete删除时对于自增类型的字段，值不会从1开始，truncate可以实现删除数据后，自增类型字段从1开始。drop语句将删除表的结构被依赖的约束(constraint)，触发器(trigger)，索引(index)；依赖于该报的存储过程/函数将会保留，但是会变成invalid状态。</li>
+<li>属于不同类型的操作，delete属于DML，这个操作会发放到rollback segement中，事务提交后才能生效；如果有相应的trigger，执行的时候将被触发。drop与truncate属于DDL，操作立即生效，原数据不会放到rollback segement中，不能回滚，操作是不触发trigger。</li>
+<li>delete语句不影响表所占用的extent，高水线(high watermark)保持原位置不动。显然drop语句将所占用的空间全部释放，truncate语句缺省情况下把空间释放到minextents个extent，除非使用reuse storage；truncate会将高水位线复位(回到最开始)</li>
+<li>执行速度，drop &gt; truncate &gt; delete</li>
+<li>安全性：小心使用drop和truncate，尤其是没有备份的时候</li>
+<li>完全删除表[drop]，想保留表而删除所有数据且与事务无关[truncate]，如果和事务有关，或者想触发trigger[delete]</li>
+</ul>
+</li>
+</ol>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><ol>
+<li>```go<br>func reverseList(head *ListNode) *ListNode {<br> if head == nil || head.Next == nil {<pre><code> return head</code></pre>
+ }<br> var prev *ListNode<br> p := head<br> for p != nil {<pre><code> p.Next, prev, p = prev, p, p.Next</code></pre>
+ }<br> return prev<br>}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">2. time，string，regexp，goroutine</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;go</span><br><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;regexp&quot;</span><br><span class="line">	&quot;strings&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	&#x2F;&#x2F; 第一题</span><br><span class="line">	from, _ :&#x3D; time.ParseInLocation(&quot;2006-01-02 15:04:05&quot;, &quot;2019-09-27 00:00:00&quot;, time.Local)</span><br><span class="line">	fmt.Println(sumDiffTime(time.Now(), from))</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 第二题</span><br><span class="line">	vars :&#x3D; make(map[string]string)</span><br><span class="line">	vars[&quot;name&quot;] &#x3D; &quot;小狮子&quot;</span><br><span class="line">	vars[&quot;age&quot;] &#x3D; &quot;18&quot;</span><br><span class="line">	fmt.Println(printTemplate(vars))</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F; 第三题：并发答应1-10，要求顺序输出</span><br><span class="line">	gogogo()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type TimeDiff struct &#123;</span><br><span class="line">	Days    int64</span><br><span class="line">	Hours   int64</span><br><span class="line">	Minutes int64</span><br><span class="line">	Ms      int64</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; sumDiffTime 需要实现以下方法：传入两个不同的时间，计算出两个时间的间隔时间</span><br><span class="line"></span><br><span class="line">func sumDiffTime(from time.Time, to time.Time) TimeDiff &#123;</span><br><span class="line">	diff :&#x3D; from.Unix() - to.Unix()</span><br><span class="line">	Days :&#x3D; diff &#x2F; 60 &#x2F; 60 &#x2F; 24</span><br><span class="line">	diff &#x3D; diff - 60*60*24*Days</span><br><span class="line"></span><br><span class="line">	Hours :&#x3D; diff &#x2F; 60 &#x2F; 60</span><br><span class="line">	diff &#x3D; diff - 60*60*Hours</span><br><span class="line">	Minutes :&#x3D; diff &#x2F; 60</span><br><span class="line">	diff &#x3D; diff - 60*Minutes</span><br><span class="line">	return TimeDiff&#123;</span><br><span class="line">		Days:    Days,</span><br><span class="line">		Hours:   Hours,</span><br><span class="line">		Minutes: Minutes,</span><br><span class="line">		Ms:      diff,</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 需要将str转换为指定字符串:⼩狮⼦今年18岁了,不要⽤字符串拼接</span><br><span class="line">func printTemplate(vars map[string]string) string &#123;</span><br><span class="line">	tp :&#x3D; &quot;&#123;name&#125;今年&#123;age&#125;岁了&quot;</span><br><span class="line">	str :&#x3D; &quot;&quot;</span><br><span class="line"></span><br><span class="line">	reg :&#x3D; regexp.MustCompile(&#96;&#123;([a-z]+)&#125;&#96;)     &#x2F;&#x2F; 创建匹配&#123;name&#125;&#x2F;&#123;age&#125;的正则</span><br><span class="line">	params :&#x3D; reg.FindAllStringSubmatch(tp, -1) &#x2F;&#x2F; [[&#123;name&#125; name] [&#123;age&#125; age]]</span><br><span class="line">	&#x2F;&#x2F; 替换</span><br><span class="line">	str &#x3D; strings.Replace(tp, params[0][0], vars[params[0][1]], 1)</span><br><span class="line">	str &#x3D; strings.Replace(str, params[1][0], vars[params[1][1]], 1)</span><br><span class="line"></span><br><span class="line">	return str</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 并发打印1-10，并按顺序打印</span><br><span class="line">func gogogo() &#123;</span><br><span class="line">	for i :&#x3D; 0; i &lt; 10; i++ &#123;</span><br><span class="line">		ch :&#x3D; make(chan int)</span><br><span class="line">		go func(ch chan int) &#123;</span><br><span class="line">			fmt.Println(&lt;-ch)</span><br><span class="line">		&#125;(ch)</span><br><span class="line">		ch &lt;- i</span><br><span class="line">	&#125;</span><br><span class="line">	time.Sleep(2 * time.Second)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>时间复杂度计算方式</li>
+</ol>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><ol>
+<li>Docker swarm<br><a target="_blank" rel="noopener" href="https://yeasy.gitbooks.io/docker_practice/swarm_mode/overview.html">https://yeasy.gitbooks.io/docker_practice/swarm_mode/overview.html</a></li>
+<li>Docker machine<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sparkdev/p/7044950.html">https://www.cnblogs.com/sparkdev/p/7044950.html</a></li>
+</ol>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ol>
+<li>进程管理</li>
+<li>netstat的使用</li>
+</ol>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><ol>
+<li>讲讲你对Redis的理解</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">InkDP</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hexo.inkdp.cn/articles/2019/09/25/1569402355322.html">https://hexo.inkdp.cn/articles/2019/09/25/1569402355322.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hexo.inkdp.cn" target="_blank">墨殇的技术博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MySQL/">MySQL</a><a class="post-meta__tags" href="/tags/docker/">docker</a><a class="post-meta__tags" href="/tags/Golang/">Golang</a><a class="post-meta__tags" href="/tags/interview/">面试</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/images/weixin.png" target="_blank"><img class="post-qr-code-img" src="/images/weixin.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/images/zhifubao.jpg" target="_blank"><img class="post-qr-code-img" src="/images/zhifubao.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/articles/2019/09/26/1569488898577.html"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180309.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">GO实现一个单链表</div></div></a></div><div class="next-post pull-right"><a href="/articles/2019/09/21/1569077915744.html"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107000806574.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">一别两宽，各生欢喜</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a target="_blank" rel="noopener" href="//articles/2019/06/11/1560267833958.html" title="Docker导出mysql数据"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-3766354f.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-11</div><div class="title">Docker导出mysql数据</div></div></a></div><div><a target="_blank" rel="noopener" href="//leetcode_array1.html" title="leetcode-数组系列1"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-07</div><div class="title">leetcode-数组系列1</div></div></a></div><div><a target="_blank" rel="noopener" href="//articles/2020/10/21/1603213579436.html" title="MySQL分页查询优化"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-10-21</div><div class="title">MySQL分页查询优化</div></div></a></div><div><a target="_blank" rel="noopener" href="//articles/2019/06/10/1560159392016.html" title="go 语言圣经练习解答 -- 第三章"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231539301.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-10</div><div class="title">go 语言圣经练习解答 -- 第三章</div></div></a></div><div><a target="_blank" rel="noopener" href="//articles/2019/06/16/1560663440490.html" title="【go 语言圣经】练习答案 -- 目录篇 (关闭)"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20181022.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-16</div><div class="title">【go 语言圣经】练习答案 -- 目录篇 (关闭)</div></div></a></div><div><a target="_blank" rel="noopener" href="//articles/2019/06/12/1560331304695.html" title="go 语言圣经练习解答 -- 第四章 (关闭)"><img class="cover" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/demo2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-16</div><div class="title">go 语言圣经练习解答 -- 第四章 (关闭)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Gitalk</span><span class="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/header.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">InkDP</div><div class="author-info__description">墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/InkDP"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/InkDP" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:inkdp@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=1576962841" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/images/add_weixin.png" target="_blank" title=""><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://steamcommunity.com/id/InkDP" target="_blank" title=""><i class="fab fa-steam"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">旧博客停止更新，但依旧运行在<a target="_blank" rel="noopener" href="https://www.inkdp.cn">www.inkdp.cn</a>下，文章已全部迁移至<a target="_blank" rel="noopener" href="https://inkdp.cn">inkdp.cn</a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Go-%E5%9F%BA%E7%A1%80"><span class="toc-number">2.</span> <span class="toc-text">Go 基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-number">3.</span> <span class="toc-text">MySQL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker"><span class="toc-number">5.</span> <span class="toc-text">Docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">6.</span> <span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-number">7.</span> <span class="toc-text">Redis</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/reading/38859.html" title="如何读一本书"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/dims.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何读一本书"/></a><div class="content"><a class="title" href="/reading/38859.html" title="如何读一本书">如何读一本书</a><time datetime="2021-01-08T16:46:38.000Z" title="发表于 2021-01-09 00:46:38">2021-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020.html" title="2020年个人总结"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0b682626.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2020年个人总结"/></a><div class="content"><a class="title" href="/2020.html" title="2020年个人总结">2020年个人总结</a><time datetime="2020-12-29T15:30:49.000Z" title="发表于 2020-12-29 23:30:49">2020-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/leetcode_array1.html" title="leetcode-数组系列1"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode-数组系列1"/></a><div class="content"><a class="title" href="/leetcode_array1.html" title="leetcode-数组系列1">leetcode-数组系列1</a><time datetime="2020-12-07T07:29:30.000Z" title="发表于 2020-12-07 15:29:30">2020-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/2020/10/21/1603213579436.html" title="MySQL分页查询优化"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL分页查询优化"/></a><div class="content"><a class="title" href="/articles/2020/10/21/1603213579436.html" title="MySQL分页查询优化">MySQL分页查询优化</a><time datetime="2020-10-20T17:06:19.000Z" title="发表于 2020-10-21 01:06:19">2020-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/2020/07/09/1594287406684.html" title="Go爬虫初体验"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go爬虫初体验"/></a><div class="content"><a class="title" href="/articles/2020/07/09/1594287406684.html" title="Go爬虫初体验">Go爬虫初体验</a><time datetime="2020-07-09T09:36:46.000Z" title="发表于 2020-07-09 17:36:46">2020-07-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/141610122888_.pic.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By InkDP</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="http://beian.miit.gov.cn">渝ICP备17007419号-2</a><br/><span style="box-sizing:border-box;vertical-align:middle;">本网站由</span><img style="height:16px;box-sizing:border-box;vertical-align:middle;padding:0 2px;" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%8F%88%E6%8B%8D%E4%BA%91_logo5.png"><span style="box-sizing:border-box; vertical-align:middle;">提供CDN服务</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: 'inkdp.github.io',
+      owner: 'InkDP',
+      admin: ['InkDP'],
+      id: '6d863fadc1df00b7f09bb91b6fc055b6',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回复',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Gitalk' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+    content = content.replace(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png|webp)/g, '') // remove image link
+    content = content.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi, '') // remove url
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/inkdp/inkdp.github.io/issues/comments?sort=updated&direction=desc&per_page=6&page=1')
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body),
+            'nick': item.user.login,
+            'url': item.html_url,
+            'date': item.updated_at
+          }
+        })
+        saveToLocal.set('github-newest-comments', JSON.stringify(githubArray), 10/(60*24))
+        generateHtml(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          let name = 'src'
+          if(false) {
+            name = 'data-lazy-src'
+          }
+          result += `<a href='${array[i].url}' class="thumbnail"><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script src="/live2d-widget/autoload.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})</script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>

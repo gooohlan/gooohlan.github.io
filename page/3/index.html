@@ -1,0 +1,490 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>墨殇的技术博客</title><meta name="keywords" content="墨殇的技术博客,墨殇,InkDP,inkdp,技术博客"><meta name="author" content="InkDP"><meta name="copyright" content="InkDP"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽">
+<meta property="og:type" content="website">
+<meta property="og:title" content="墨殇的技术博客">
+<meta property="og:url" content="https://hexo.inkdp.cn/page/3/index.html">
+<meta property="og:site_name" content="墨殇的技术博客">
+<meta property="og:description" content="墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo.inkdp.cn/images/header.png">
+<meta property="article:author" content="InkDP">
+<meta property="article:tag" content="墨殇的技术博客,墨殇,InkDP,inkdp,技术博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo.inkdp.cn/images/header.png"><link rel="shortcut icon" href="/images/header.png"><link rel="canonical" href="https://hexo.inkdp.cn/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0a58708186792e44d0c32c51ee6fa8c9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"距离上次更新已有","messageNext":"天，文章内容可能已过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: InkDP","link":"链接: ","source":"来源: 墨殇的技术博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-01-12 17:56:29'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/header.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/144141610121105_.pic.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">墨殇的技术博客</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about.html"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">墨殇的技术博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/InkDP" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:inkdp@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=1576962841" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/images/add_weixin.png" target="_blank" title=""><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://steamcommunity.com/id/InkDP" target="_blank" title=""><i class="fab fa-steam"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/leetcode4.html" title="日刷leetcode--简单版（四）">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180706.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日刷leetcode--简单版（四）"></a></div><div class="recent-post-info"><a class="article-title" href="/leetcode4.html" title="日刷leetcode--简单版（四）">日刷leetcode--简单版（四）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-31T08:48:41.000Z" title="发表于 2019-08-31 16:48:41">2019-08-31</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-04-13T08:25:06.000Z" title="更新于 2020-04-13 16:25:06">2020-04-13</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/skill/">技术</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/skill/algorithm/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Golang/">Golang</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/leetcode/">leetcode</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/algorithm/">算法</a></span></div><div class="content">返回总目录日刷leetcode–简单版
+
+88. 合并两个有序数组题目描述
+解题思路
+采用双指针，从前往后，如果nums2中当前值小于nums1中的值，这插入并后移
+
+示例代码1234567891011121314151617181920212223242526func merge(nums1 []int, m int, nums2 []int, n int) []int &#123;	if n == 0 &#123;		return nums1	&#125;	i, j := 0, 0	for ; i &lt; len(nums1) &amp;&amp; j &lt; n; i++ &#123;		if nums1[i] &gt; nums2[j] &#123;			reverses(nums1[i:])			nums1[i] = nums2[j]			j++		&#125; else &#123;			continue		&#125;	&#125;	for j &lt; n &#123;		nums1[m+j] = nums2[j]		j++	&#125;	return nums1& ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/articles/2019/08/31/1567227232395.html" title="《我的前半生》阅读笔记">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180526.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《我的前半生》阅读笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/articles/2019/08/31/1567227232395.html" title="《我的前半生》阅读笔记">《我的前半生》阅读笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-31T04:53:52.000Z" title="发表于 2019-08-31 12:53:52">2019-08-31</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-08-31T05:25:34.000Z" title="更新于 2019-08-31 13:25:34">2019-08-31</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/reading/">阅读</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/essay/">随笔</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/study-notes/">读书笔记</a></span></div><div class="content">  可能受篇幅影响，这是用Kindle看书以来，看的最快的一本，大概也就一两天的时间。篇幅虽小，但却丝毫不影响该书的质量。
+  老实说，文章的开头给我的感觉并不是特别好，似乎一部言情小说的样子，“女主上来就被抛弃，然后成为职业女强人，遇到白马王子”这类书太多太多了，看完后发现写的还真就是这么回事。看完后我不由得佩服起作者来，与都市言情几乎同样的剧情路线在作者手中展示出了不一样的魅力。虽说是与都市言情一样的线路，但是剧情还是大有不同，有幸读过一两篇相关题材的书，名字早已忘记，但依稀记得书中女主都是青春靓丽的，年龄不过24左右，在嫁人之前就是商业精英之类的，被抛弃后直接走上人生巅峰的那种。讲道理，这种书YY起来是真的爽，这也就是都市爽文的卖点之一了。
+  似乎略有偏题，讲回本书，感觉该书很适合女性去看一看，不论你是否是书中女主前半生那样的人，都适合去看一看。初被抛弃时，女主是无助的，绝望的，即将一无所有是多么绝望，所幸，女主是坚强的，那句“人要脸，树要皮。一个女人失去她的丈夫，已经是一最大的难堪与狼狈，我不能再出洋相”让我感受到女主身体最深处的倔强。离开丈夫的女主没有让人失望，从天真阔太转 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/articles/2019/08/29/1567093295295.html" title="《诸神的传说：希腊神话故事》读中笔记">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190816.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《诸神的传说：希腊神话故事》读中笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/articles/2019/08/29/1567093295295.html" title="《诸神的传说：希腊神话故事》读中笔记">《诸神的传说：希腊神话故事》读中笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-29T15:41:35.000Z" title="发表于 2019-08-29 23:41:35">2019-08-29</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-08-29T15:43:06.000Z" title="更新于 2019-08-29 23:43:06">2019-08-29</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/reading/">阅读</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/essay/">随笔</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/study-notes/">读书笔记</a></span></div><div class="content">  一开始开始看这本书是打算了解一下希腊神话中的神是什么样的，虽然之前也通过一些视频文字等了解过一些，指导诸如宙斯、雅典娜、阿波罗、波塞冬等，但是没有系统的去了解过，抱着好奇的态度翻开了这本书。    这本书目前翻了几页，现在大概看了10%左右，不打算看下去了。可能由于文化差异的问题，我理解不了希腊神话中某些神的做法。该书号称将希腊神话进行收罗，整理后得出的版本，是很经典的书籍。可是给我的感觉是整个书杂乱无章（不排除存在翻译的原因），还没之前读的儿童读物讲的清楚，再就是篇幅过小，我还来不及记住该文主角是谁，这一章就讲完了。
+  虽然槽点很多，但是我还是挺喜欢希腊神话中的一些很经典的故事，比如奥德赛、木马计、塞壬的歌声等，可能该书的开头不是特别好，也可能是我带着主观意识去阅读导致的。但是目前不打算看了，毕竟时间有限，以后再看的话会更新该文章。
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/InkDP.html" title="博客更名">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%9C%86%E5%BA%95-4f20ebb2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客更名"></a></div><div class="recent-post-info"><a class="article-title" href="/InkDP.html" title="博客更名">博客更名</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-28T15:29:26.000Z" title="发表于 2019-08-28 23:29:26">2019-08-28</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-11-22T15:01:44.000Z" title="更新于 2019-11-22 23:01:44">2019-11-22</time></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/about-me/">关于我</a></span></div><div class="content">域名已由https://www.jinjianh.com迁移至https://www.inkdp.cn前言由于一系列原因，最主要的是突然被百度恶心到了，虽然之前也一直恶心着(PS:百度搜索-金戋就知道了) ，但是突然我就受不了，所以决定更换ID
+金戋(jinjian/jianjianh)  =&gt; 墨殇(InkDP)，墨殇诞生于:黑客派社区 – 悬赏一个新 ID
+
+墨殇是一种鸟，生在洛水之滨，墨殇百年一生。他们一旦起飞就不能停了，直到累的吐血才休息一会，继续往前飞。
+
+很喜欢墨殇的的寓意，虽然这两个字听起来很悲
+站点更换
+博客名称:金戋博客 =&gt; 墨殇的技术博客
+
+github:金戋 =&gt;墨殇
+
+黑客派:金戋 =&gt; 墨殇
+
+
+新的图标
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/articles/2019/08/23/1566551996115.html" title="《天才在左，疯子在右》章节摘录">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107230212708.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《天才在左，疯子在右》章节摘录"></a></div><div class="recent-post-info"><a class="article-title" href="/articles/2019/08/23/1566551996115.html" title="《天才在左，疯子在右》章节摘录">《天才在左，疯子在右》章节摘录</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-23T09:19:56.000Z" title="发表于 2019-08-23 17:19:56">2019-08-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-08-23T09:19:56.000Z" title="更新于 2019-08-23 17:19:56">2019-08-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/reading/">阅读</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/essay/">随笔</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/study-notes/">读书笔记</a></span></div><div class="content">女人的星球我推门进来的时候，吓了他一大跳，还没等我看清，他人就躲到桌子底下去了，说实话我也被吓了一跳。
+关上门后我把资料本子、录音笔放在桌上，并没直接坐下，而是蹲下看着他。我怕他在桌子底下咬我——有过先例。
+他被吓坏了，缩在桌子下拼命哆嗦着，惊恐不安地四下看。
+我：“出来吧，门我锁好了，没有女人。”
+他只是摇头不说话。
+我：“真的没有，我确定，你可以出来看一下，就看一眼，好吗？”
+跟这个患者接触大约2个月了。他有焦虑+严重的恐惧症，还失眠，而恐惧的对象是女人。
+他小心地探头看了下四周，谨慎地后退爬了出去，然后蹲坐在椅子上，紧紧地抱着自己双膝，惊魂未定地看着我。
+我：“你看，没有女人吧。”
+他：“你真的是男的？你脱了裤子我看看？”
+我：“……我是男的，这点我可以确认。你忘了我了？”
+他：“你还有什么证据？”
+我：“我今天特地没刮脸，你可以看到啊，这个胡子是真的，不是粘上去的。你见过女人长胡子吗？就算汗毛重也不会重成我这样吧？”
+他狐疑地盯着我的脸看了好一阵。
+他：“上次她们派了个大胡子女人来骗我。”
+我：“没有的，上次那个大胡子是你的主治医师，他可是地道的男人。”
+他努力在想着。我观察着 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/articles/2019/08/23/1566551837849.html" title="《天才在左，疯子在右》阅读笔记">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210108101641.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《天才在左，疯子在右》阅读笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/articles/2019/08/23/1566551837849.html" title="《天才在左，疯子在右》阅读笔记">《天才在左，疯子在右》阅读笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-23T09:17:17.000Z" title="发表于 2019-08-23 17:17:17">2019-08-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-08-23T09:21:58.000Z" title="更新于 2019-08-23 17:21:58">2019-08-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/reading/">阅读</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/essay/">随笔</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/study-notes/">读书笔记</a></span></div><div class="content">  断断续续于今日上班的路上将这本书看完，虽然因为盗版书的原因有大概十章没有看，但也总算是看完了。
+  作者以一个特殊的角度让我了解到了精神病人是什么样子的，书中描写的案例有各式各样的人，他们都有着各式各样的问题。老实说，看完之后对于精神病医生这个职业油然起敬，治疗好一个病人得需要多大的耐心和多缜密的思维逻辑，感觉这也是一个高危职业，书中有提到有不少医生变成了病人，甚至有些人选择了自杀。
+  曾听说过“精神病与天才只有一墙之隔”，书中有很多不知道是天才还是精神病的人，他们大多逻辑缜密，而且在某些相关知识的理解也很到位，但是我无法判断他到底是不是疯了，就如同文中某位病人所说的那样，你回到唐朝去对当时的人讲现在的种种，他们也会觉得你疯了。当然书中也有很多是真的疯了，让我最诡异的就是那位认为自己已经死亡的病人，我无法想象出最后身体长出金属(依稀记得是铝丝)，这个似乎超出了我的认知。
+  读完这本书感觉最大的收获莫过于书中提到最多的物理知识，算是对自己的一个科普，也同时进一步的了解了精神病人的世界是怎么样的。
+  推荐我最喜欢的一个章节：女人的星球，没有别的意思，只是单纯的喜欢这章
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/articles/2019/08/23/1566468138289.html" title="新皮肤 solo-nexmoe">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ef3e7eed.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新皮肤 solo-nexmoe"></a></div><div class="recent-post-info"><a class="article-title" href="/articles/2019/08/23/1566468138289.html" title="新皮肤 solo-nexmoe">新皮肤 solo-nexmoe</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-23T08:44:32.000Z" title="发表于 2019-08-23 16:44:32">2019-08-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-03-27T10:01:20.000Z" title="更新于 2020-03-27 18:01:20">2020-03-27</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/skill/">技术</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/skill/front-end/">前端</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Solo/">Solo</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/skin/">皮肤</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/Nexmoe/">Nexmoe</a></span></div><div class="content">简介solo-nexmoe是移植Hexo的主题Nexmoe而得到的，皮肤效果基本与原作者一致
+项目地址https://github.com/Programming-With-Love/solo-nexmoe
+效果展示
+演示
+墨殇的技术博客
+鼠鼠在碎觉
+记录精彩的人生
+邯城往事
+贼拉正经的技术博客
+…
+
+欢迎将你的博客加入这里
+说明
+本皮肤依赖于b3log/solo，安装solo可查看从零开始安装 Solo 博客
+导航栏自定义图标为字体图标，可以前往solo-nexmoe 图标详解查看图标对应名称，直接填入名称即可，目前包内所有图标都被应用了，填写是请删除前缀 solo-后填写
+接上条，由于solo会自动拉取你的github项目，《我的开源》对应的图标会被覆盖，所以请升级到最新版本，关闭自动拉取设置，然后讲图标设置为 github即可
+需要自定义新图标直接修改 font-icon.scss与 font-icon.css，如果你没有node环境，直接修改 css也是可以的，最后在导航管理处设置即可，你也可以提issue，我会定期收集一些图标更新
+现用图标可前往github上查看或者点击下载 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/articles/2019/08/23/1566548785550.html" title="solo-nexmoe 图标详解">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107224813134.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="solo-nexmoe 图标详解"></a></div><div class="recent-post-info"><a class="article-title" href="/articles/2019/08/23/1566548785550.html" title="solo-nexmoe 图标详解">solo-nexmoe 图标详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-23T08:26:25.000Z" title="发表于 2019-08-23 16:26:25">2019-08-23</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-09-10T02:21:24.000Z" title="更新于 2019-09-10 10:21:24">2019-09-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/skill/">技术</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/skill/front-end/">前端</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Solo/">Solo</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/solo-nexmoe/">solo-nexmoe</a></span></div><div class="content">前言本帖记录官方solo-nexmoe内所对应字体图标值
+
+solo-home 
+
+solo-list 
+
+solo-tags 
+
+solo-tag 
+
+solo-github 
+
+solo-about 
+
+solo-search 
+
+solo-rss 
+
+solo-calendarl 
+
+solo-category 
+
+solo-left 
+
+solo-right 
+
+solo-browse 
+
+solo-heat 
+
+solo-about2 
+
+solo-top 
+
+solo-login 
+
+solo-logout 
+
+solo-spin 
+
+solo-comment 
+
+solo-gotop 
+
+solo-   自定义导航不设置图标时显示
+
+
+</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/leetcode3.html" title="日刷leetcode--简单版（三）">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/timg-af5a1c18.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="日刷leetcode--简单版（三）"></a></div><div class="recent-post-info"><a class="article-title" href="/leetcode3.html" title="日刷leetcode--简单版（三）">日刷leetcode--简单版（三）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-09T03:58:53.000Z" title="发表于 2019-08-09 11:58:53">2019-08-09</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-08-19T03:58:53.000Z" title="更新于 2019-08-19 11:58:53">2019-08-19</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/skill/">技术</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/skill/algorithm/">算法</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Golang/">Golang</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/leetcode/">leetcode</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/algorithm/">算法</a></span></div><div class="content">返回总目录日刷leetcode–简单版
+
+58. 最后一个单词的长度题目描述
+解题思路
+定义一个变量统计，从前往后遍历，遇到空格归零就可以了，注意处理最后几个个字符全为空格的情况
+定义一个变量统计，从后往前便利，虽然时间复杂度同为 O(n)，但是第二个明显快很多
+
+示例代码1234567891011121314func lengthOfLastWord(s string) int &#123;        var count int                for i:= len(s)-1; i &gt;= 0; i-- &#123;                        if s[i] == 32&#123;                                if count == 0 &#123;                                        continue                                &#125;else&#123;                                    ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/articles/2019/08/09/1565315193270.html" title="20190809 TGIF">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/v2-4bba972a094eb1bdc8cbbc55e2bd4ddf_1440w.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="20190809 TGIF"></a></div><div class="recent-post-info"><a class="article-title" href="/articles/2019/08/09/1565315193270.html" title="20190809 TGIF">20190809 TGIF</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-08-09T02:56:36.000Z" title="发表于 2019-08-09 10:56:36">2019-08-09</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2019-08-09T02:56:36.000Z" title="更新于 2019-08-09 10:56:36">2019-08-09</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/essays/">随笔</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/TGIF/">TGIF</a></span></div><div class="content">史上最水的TGIF来了想抢这个好几次了，可是每次都是在拥挤的地铁里就被人抢了，今天居然还在，既然抢到了就水一篇吧。
+不知不觉来社区已经67天了，想起注册社区，搭建博客的时候我还在成都。还坐在办公室里悠闲的摸鱼，划水，想着回到家里晚上吃着女朋友做的饭菜，妙啊。
+转眼间，两个月的时间，我已经来到广州工作，也入职了一个月，也成功从PHP转成了GO，看起来似乎完成了来广州的目的，然后女朋友去了新疆，又开始了异地。
+初来广州时，我踌躇满志，幻想着来到这边之后的一切一切。一开始打算用一个月的时间来找工作，毕竟我知道刚从成都跑到广州来的时候状态有多么的不好，毕竟在成都真的是天天摸鱼划水，太久没写代码，啥都忘了。可以一边面试一边总结，这次一定要找到一个称心如意的工作，毕竟前两次选择的工作都过于草率，也很不利于自己以后的发展。记得是晚上11点多到的广州，很讽刺的是我父母都在这边却并没有人来接我，虽然早知如此，但多少还是有一丝的遗憾吧，最后那晚我去了我姑姑家，第二天，我把箱子扔到我爸那里，就直接去面试了。
+来广州后的第一场面试，记得那天在下了很大的雨，去面试的路上鞋子都湿透了，心里在想下雨太难受了，还是天 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/header.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">InkDP</div><div class="author-info__description">墨殇的技术博客，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/InkDP"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/InkDP" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:inkdp@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://message/?uin=1576962841" target="_blank" title="QQ"><i class="fab fa-qq"></i></a><a class="social-icon" href="/images/add_weixin.png" target="_blank" title=""><i class="fab fa-weixin"></i></a><a class="social-icon" href="https://steamcommunity.com/id/InkDP" target="_blank" title=""><i class="fab fa-steam"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">旧博客停止更新，但依旧运行在<a target="_blank" rel="noopener" href="https://www.inkdp.cn">www.inkdp.cn</a>下，文章已全部迁移至<a target="_blank" rel="noopener" href="https://inkdp.cn">inkdp.cn</a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/reading/38859.html" title="如何读一本书"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/dims.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何读一本书"/></a><div class="content"><a class="title" href="/reading/38859.html" title="如何读一本书">如何读一本书</a><time datetime="2021-01-08T16:46:38.000Z" title="发表于 2021-01-09 00:46:38">2021-01-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020.html" title="2020年个人总结"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0b682626.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2020年个人总结"/></a><div class="content"><a class="title" href="/2020.html" title="2020年个人总结">2020年个人总结</a><time datetime="2020-12-29T15:30:49.000Z" title="发表于 2020-12-29 23:30:49">2020-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/leetcode_array1.html" title="leetcode-数组系列1"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="leetcode-数组系列1"/></a><div class="content"><a class="title" href="/leetcode_array1.html" title="leetcode-数组系列1">leetcode-数组系列1</a><time datetime="2020-12-07T07:29:30.000Z" title="发表于 2020-12-07 15:29:30">2020-12-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/2020/10/21/1603213579436.html" title="MySQL分页查询优化"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20200617.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL分页查询优化"/></a><div class="content"><a class="title" href="/articles/2020/10/21/1603213579436.html" title="MySQL分页查询优化">MySQL分页查询优化</a><time datetime="2020-10-20T17:06:19.000Z" title="发表于 2020-10-21 01:06:19">2020-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/articles/2020/07/09/1594287406684.html" title="Go爬虫初体验"><img src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go爬虫初体验"/></a><div class="content"><a class="title" href="/articles/2020/07/09/1594287406684.html" title="Go爬虫初体验">Go爬虫初体验</a><time datetime="2020-07-09T09:36:46.000Z" title="发表于 2020-07-09 17:36:46">2020-07-09</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-bolt"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/skill/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">22</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/skill/front-end/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/skill/back-end/"><span class="card-category-list-name">后端</span><span class="card-category-list-count">9</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/skill/algorithm/"><span class="card-category-list-name">算法</span><span class="card-category-list-count">10</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pitDiary/"><span class="card-category-list-name">踩坑日记</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/reading/"><span class="card-category-list-name">阅读</span><span class="card-category-list-count">8</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/essays/"><span class="card-category-list-name">随笔</span><span class="card-category-list-count">9</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/essays/summary/"><span class="card-category-list-name">总结</span><span class="card-category-list-count">3</span></a></li></ul></li>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.1em; color: #999">CSS</a> <a href="/tags/Docker/" style="font-size: 1.1em; color: #999">Docker</a> <a href="/tags/Golang/" style="font-size: 1.5em; color: #99a9bf">Golang</a> <a href="/tags/HTML/" style="font-size: 1.1em; color: #999">HTML</a> <a href="/tags/JS/" style="font-size: 1.1em; color: #999">JS</a> <a href="/tags/MySQL/" style="font-size: 1.23em; color: #999ea6">MySQL</a> <a href="/tags/Nexmoe/" style="font-size: 1.1em; color: #999">Nexmoe</a> <a href="/tags/Solo/" style="font-size: 1.23em; color: #999ea6">Solo</a> <a href="/tags/TGIF/" style="font-size: 1.1em; color: #999">TGIF</a> <a href="/tags/docker/" style="font-size: 1.14em; color: #999b9d">docker</a> <a href="/tags/leetcode/" style="font-size: 1.37em; color: #99a4b2">leetcode</a> <a href="/tags/shell/" style="font-size: 1.1em; color: #999">shell</a> <a href="/tags/solo-nexmoe/" style="font-size: 1.1em; color: #999">solo-nexmoe</a> <a href="/tags/about-me/" style="font-size: 1.28em; color: #99a0aa">关于我</a> <a href="/tags/learn/" style="font-size: 1.32em; color: #99a2ae">学习</a> <a href="/tags/summary/" style="font-size: 1.32em; color: #99a2ae">总结</a> <a href="/tags/tutorials/" style="font-size: 1.19em; color: #999da1">教程</a> <a href="/tags/diary/" style="font-size: 1.1em; color: #999">日记</a> <a href="/tags/skin/" style="font-size: 1.1em; color: #999">皮肤</a> <a href="/tags/crack/" style="font-size: 1.1em; color: #999">破解</a> <a href="/tags/algorithm/" style="font-size: 1.41em; color: #99a5b7">算法</a> <a href="/tags/study-notes/" style="font-size: 1.41em; color: #99a5b7">读书笔记</a> <a href="/tags/essay/" style="font-size: 1.46em; color: #99a7bb">随笔</a> <a href="/tags/interview/" style="font-size: 1.1em; color: #999">面试</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/01/"><span class="card-archive-list-date">一月 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/10/"><span class="card-archive-list-date">十月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/07/"><span class="card-archive-list-date">七月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">六月 2020</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">五月 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/12/"><span class="card-archive-list-date">十二月 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/11/"><span class="card-archive-list-date">十一月 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives/">
+              <span>查看更多</span><i class="fas fa-angle-right"  ></i></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">42</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2019-06-07T00:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-01-12T09:56:28.630Z"></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/141610122888_.pic.jpg)"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2021 By InkDP</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="http://beian.miit.gov.cn">渝ICP备17007419号-2</a><br/><span style="box-sizing:border-box;vertical-align:middle;">本网站由</span><img style="height:16px;box-sizing:border-box;vertical-align:middle;padding:0 2px;" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%8F%88%E6%8B%8D%E4%BA%91_logo5.png"><span style="box-sizing:border-box; vertical-align:middle;">提供CDN服务</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        var sub = "凡打不倒我的，必使我强大！！！".length == 0 ? new Array() : "凡打不倒我的，必使我强大！！！".split(',')
+        var both = sub.unshift(data.text)
+        typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.text
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+    content = content.replace(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png|webp)/g, '') // remove image link
+    content = content.replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gi, '') // remove url
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    fetch('https://api.github.com/repos/inkdp/inkdp.github.io/issues/comments?sort=updated&direction=desc&per_page=6&page=1')
+      .then(response => response.json())
+      .then(data => {
+        const githubArray = data.map(item => {
+          return {
+            'avatar': item.user.avatar_url,
+            'content': changeContent(item.body),
+            'nick': item.user.login,
+            'url': item.html_url,
+            'date': item.updated_at
+          }
+        })
+        saveToLocal.set('github-newest-comments', JSON.stringify(githubArray), 10/(60*24))
+        generateHtml(githubArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "无法获取评论，请确认相关配置是否正确"
+      })
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          let name = 'src'
+          if(false) {
+            name = 'data-lazy-src'
+          }
+          result += `<a href='${array[i].url}' class="thumbnail"><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick}</span><time> / ${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('github-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script src="/live2d-widget/autoload.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', '', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})</script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>
