@@ -1,9 +1,13 @@
+---
 title: Navicat Premium for Mac 破解教程
 date: '2019-10-24 12:14:48'
 updated: '2019-10-24 12:24:50'
-tags: [破解, MySQL]
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180424.jpg
+tags:
+  - 破解
+  - MySQL
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180424.jpg'
 permalink: /articles/2019/10/24/1571890488789.html
+abbrlink: 38535
 ---
 
 

@@ -1,12 +1,17 @@
+---
 title: CSS/Javascript实现Word Clock
 date: '2019-06-02 20:08:10'
 updated: '2019-06-07 23:45:08'
-tags: [HTML, CSS, JS]
-
+tags:
+  - HTML
+  - CSS
+  - JS
 categories:
-  - [技术, 前端]
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/无标题-f88e3fb4.png
+  - - 技术
+    - 前端
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/无标题-f88e3fb4.png'
 permalink: /articles/2019/06/02/1559477290334.html
+abbrlink: 63244
 ---
 
 ### 无意中看到了一款锁屏效果--world clock，感觉有点意思，就想着用前端来实现他。

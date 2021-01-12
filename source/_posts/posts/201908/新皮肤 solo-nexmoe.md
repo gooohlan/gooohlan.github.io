@@ -1,11 +1,17 @@
+---
 title: 新皮肤 solo-nexmoe
 date: '2019-08-23 16:44:32'
 updated: '2020-03-27 18:01:20'
-tags: [Solo, 皮肤, Nexmoe]
+tags:
+  - Solo
+  - 皮肤
+  - Nexmoe
 permalink: /articles/2019/08/23/1566468138289.html
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ef3e7eed.png
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ef3e7eed.png'
 categories:
-  - [技术, 前端]
+  - - 技术
+    - 前端
+abbrlink: 64518
 ---
 
 

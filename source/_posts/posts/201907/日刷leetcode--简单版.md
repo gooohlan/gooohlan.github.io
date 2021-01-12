@@ -1,11 +1,17 @@
+---
 title: 日刷leetcode--简单版（二）
 date: '2019-07-29 17:59:33'
 updated: '2020-04-13 16:26:05'
-tags: [leetcode, Golang, 算法]
+tags:
+  - leetcode
+  - Golang
+  - 算法
 categories:
-	- [技术, 算法]
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231236835.jpeg
+  - - 技术
+    - 算法
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231236835.jpeg'
 permalink: /leetcode2.html
+abbrlink: 42838
 ---
 ### 返回总目录
 

@@ -1,11 +1,17 @@
+---
 title: 【go 语言圣经】练习答案 -- 目录篇 (关闭)
 date: '2019-06-16 13:37:20'
 updated: '2019-07-19 15:56:41'
-tags: [Golang, 学习, 教程]
+tags:
+  - Golang
+  - 学习
+  - 教程
 permalink: /articles/2019/06/16/1560663440490.html
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20181022.jpg
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20181022.jpg'
 categories:
-  - [技术, 后端]
+  - - 技术
+    - 后端
+abbrlink: 56676
 ---
 
 ## go语言圣经(The Go Programming Language)练习题答案

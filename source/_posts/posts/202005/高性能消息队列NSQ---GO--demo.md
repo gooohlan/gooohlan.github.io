@@ -1,12 +1,16 @@
+---
 title: 高性能消息队列NSQ---GO--demo
 date: '2020-05-21 15:38:07'
 updated: '2020-05-21 15:40:28'
-tags: [学习, Golang]
+tags:
+  - 学习
+  - Golang
 categories:
-  - [技术, 后端]
-
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180403.jpg
+  - - 技术
+    - 后端
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180403.jpg'
 permalink: /articles/2020/05/21/1590046687574.html
+abbrlink: 28940
 ---
 ### 前言
 

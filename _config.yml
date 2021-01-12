@@ -131,6 +131,11 @@ search:
   path: search.xml
   fild: post
   content: true
+
+# deploy:
+#   type: 'git'
+#   repo: 'git@github.com:InkDP/inkdp.github.io.git'
+#   branch: 'master'
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
 live2d:

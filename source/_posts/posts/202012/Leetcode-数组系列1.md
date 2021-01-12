@@ -1,11 +1,17 @@
+---
 title: leetcode-数组系列1
 date: '2020-12-07 15:29:30'
 updated: '2020-12-07 15:29:57'
-tags: [Golang, leetcode, 学习]
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg
+tags:
+  - Golang
+  - leetcode
+  - 学习
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190622.jpg'
 categories:
-  - [技术, 算法]
+  - - 技术
+    - 算法
 permalink: /leetcode_array1.html
+abbrlink: 76
 ---
 
 
