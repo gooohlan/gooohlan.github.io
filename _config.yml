@@ -161,3 +161,12 @@ live2d:
     height: 300
   mobile:
     show: true # 手机中是否展示
+
+# Extensions
+plugins:
+  hexo-generator-feed
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
