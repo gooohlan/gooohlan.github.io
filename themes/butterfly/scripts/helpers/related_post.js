@@ -59,10 +59,14 @@ hexo.extend.helper.register('related_posts', function (currentPost, allPosts) {
         relatedPosts[i].cover === false
           ? relatedPosts[i].randomcover
           : relatedPosts[i].cover
+      const path =
+          relatedPosts[i].path.substr(0,1) !== "/"
+              ? relatedPosts[i].path
+              : relatedPosts[i].path.substr(1)
       result +=
         '<div><a href="' +
         hexoConfig.root +
-        relatedPosts[i].path +
+          path +
         '" title="' +
         relatedPosts[i].title +
         '">'
