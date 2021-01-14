@@ -259,7 +259,7 @@ func missingNumber4(nums []int) int {
 #### 解题思路
 
 1. 双指针，A一直向右移动，遇到非0的与B交换即可
-   ![283_2.gif](https://pic.leetcode-cn.com/36d1ac5d689101cbf9947465e94753c626eab7fcb736ae2175f5d87ebc85fdf0-283_2.gif)
+   ![283_2.gif](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/36d1ac5d689101cbf9947465e94753c626eab7fcb736ae2175f5d87ebc85fdf0-283_2.gif)
 
 #### 示例代码：
 

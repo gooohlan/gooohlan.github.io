@@ -34,7 +34,8 @@ if err != nil {
 }
 ```
 
-实际中，你绝对不会只返回一个 `err`，可能还夹杂着各种乱七八糟的东西，写一次还好，写多了你真的不会烦吗？然而有了第二种定义方式，不过你又多少个返回值，只需要一个 `return`即可搞定，![991592559676.pic.jpg](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/991592559676.pic-f90f3138.jpg)
+实际中，你绝对不会只返回一个 `err`，可能还夹杂着各种乱七八糟的东西，写一次还好，写多了你真的不会烦吗？然而有了第二种定义方式，不过你又多少个返回值，只需要一个 `return`即可搞定。
+![991592559676.pic.jpg](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/991592559676.pic-f90f3138.jpg)
 
 ```go
 func (b buriedPoint) Retention() (channel, projectId, startTime, endTime string, list []dbmodel.BuriedPointKey, data []map[string]string, err error) {

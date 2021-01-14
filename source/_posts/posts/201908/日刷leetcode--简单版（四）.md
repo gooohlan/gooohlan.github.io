@@ -248,7 +248,7 @@ func levelOrderBottom(root *TreeNode) (res [][]int) {
 #### 题目描述
 ![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-84d3bce3.png)
 #### 解题思路
-* ![PascalTriangleAnimated2.gif](https://img.hacpai.com/file/2019/09/PascalTriangleAnimated2-9958c3e5.gif)
+* ![PascalTriangleAnimated2.gif](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/PascalTriangleAnimated2-9958c3e5.gif)
 
 ##### 示例代码
 ```go
