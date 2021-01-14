@@ -385,7 +385,7 @@ footer:
   owner:
     enable: true
     since: 2019
-  custom_text: <a href="http://beian.miit.gov.cn">渝ICP备17007419号-2</a><br/><span style="box-sizing:border-box;vertical-align:middle;">本网站由</span><img style="height:16px;box-sizing:border-box;vertical-align:middle;padding:0 2px;" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%8F%88%E6%8B%8D%E4%BA%91_logo5.png"><span style="box-sizing:border-box; vertical-align:middle;">提供CDN服务</span>
+  custom_text: <a href="http://beian.miit.gov.cn">渝ICP备17007419号-2</a><br/><a style="text-decoration:none;" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><span style="box-sizing:border-box;vertical-align:middle;">本网站由</span><img style="height:16px;box-sizing:border-box;vertical-align:middle;padding:0 2px;" src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/%E5%8F%88%E6%8B%8D%E4%BA%91_logo5.png"><span style="box-sizing:border-box; vertical-align:middle;">提供CDN服务</span></a>
   copyright: true # Copyright of theme and framework
 
 # Analysis
