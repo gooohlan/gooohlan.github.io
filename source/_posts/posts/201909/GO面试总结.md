@@ -12,7 +12,6 @@ cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg'
 permalink: /articles/2019/09/25/1569402355322.html
 abbrlink: 20413
 ---
-![img](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100.jpeg)
 
 ## 前言
 
