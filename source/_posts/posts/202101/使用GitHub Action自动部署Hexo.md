@@ -2,13 +2,15 @@
 title: 使用GitHub Action自动部署Hexo
 abbrlink: 3295
 date: 2021-01-16 21:29:54
-updated: 2021-01-16 21:29:54
-tags: 
+updated: 2021-01-19 10:28:15
+tags:
   - Hexo
 categories:
   - - 技术
     - 前端
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1610127892296.png
+keywords: Hexo,GitHub Action,自动部署,Github Page,博客
+description: 本文主要介绍如何通过GitHub Action自动部署Hexo博客到GitHub Page以及自己的服务器
 ---
 
 # 前言
@@ -17,7 +19,7 @@ cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1610127892296.png
 
 &emsp;&emsp;Github Actions 可以很方便实现 CI/CD 工作流，通过它可以实现抓取代码、运行测试、登录远程服务器，发布到第三方服务等等，我们使用它来自动部署博客到想部署的位置。
 
-# 大体思路
+# 思路
 
 &emsp;&emsp;建立`yourname.github.io`库，本地写好文章后推送到`hexo`分支，自动编译后部署到`master`分支，然后在上传到我自己的服务器，这样就实现了[inkdp.github.io](https://inkdp.github.io)和[inkdp.cn](https://inkdp.cn)的同时部署。
 
@@ -181,5 +183,7 @@ steps:
 ### 上传配置文件
 
 `push`到`yourname.github.io`的`hexo`分支，到此仓库的`Actions` 页面查看当前 task
+
+![image-20210118014615951](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210118014615951.png)
 
 当任务完成后查看您的博客 `https://yourname.github.io`，如果不出意外的话已经可以看到自动部署的文章了，如有意外欢迎留言
