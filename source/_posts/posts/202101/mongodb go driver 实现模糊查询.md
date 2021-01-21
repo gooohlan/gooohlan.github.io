@@ -1,21 +1,23 @@
 ---
 title: MongoDB GO Driver 实现模糊查询
-date: 2021-01-19 11:23:21
-updated: 2021-01-20 00:19:20
 tags:
   - MongoDB
   - 学习
+  - Golang
 categories:
   - - 技术
     - 后端
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1610127892293.jpg
-keywords: 模糊查询, MongoDB, Golang, MongoDB GO Driver
+cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1610127892293.jpg'
+keywords: '模糊查询, MongoDB, Golang, MongoDB GO Driver'
 description: 使用MongoDB官方驱动实现MongoDB GO Driver 实现模糊查询
+abbrlink: 61018
+date: 2021-01-19 11:23:21
+updated: 2021-01-20 00:19:20
 ---
 
 # MongoDB的模糊查询
 
-&emsp;&emsp;模糊查询时数据库应用中不可缺少的一步，==MySQL==中使用`like`和或者`regexp`来实现实现模糊查询，而==MongoDB==则使用`$regex`操作符或直接使用正则表达式对象来实现。
+&emsp;&emsp;模糊查询时数据库应用中不可缺少的一步，**MySQL**中使用`like`和或者`regexp`来实现实现模糊查询，而**MongoDB**则使用`$regex`操作符或直接使用正则表达式对象来实现。
 
 | MySQL                                         | MongoDB                                  |
 | :-------------------------------------------- | :--------------------------------------- |
