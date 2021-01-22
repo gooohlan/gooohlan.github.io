@@ -25,6 +25,8 @@ jobs:
           GSECRET: ${{ secrets.GITALK_SECRET }}
           VID: ${{ secrets.VALINE_ID }}
           VKEY: ${{ secrets.VALINE_KEY }}
+          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+          SERVER_DIR: ${{ secrets.SERVER_DIR }}
         run: |
           sudo sed -i "${GSECRET}" _config.butterfly.yml
           sudo sed -i "${GID}" _config.butterfly.yml
