@@ -25,38 +25,32 @@ jobs:
           GSECRET: ${{ secrets.GITALK_SECRET }}
           VID: ${{ secrets.VALINE_ID }}
           VKEY: ${{ secrets.VALINE_KEY }}
-          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
-          SERVER_DIR: ${{ secrets.SERVER_DIR }}
         run: |
           sudo sed -i "${GSECRET}" _config.butterfly.yml
           sudo sed -i "${GID}" _config.butterfly.yml
           sudo sed -i "${VKEY}" _config.butterfly.yml
           sudo sed -i "${VID}" _config.butterfly.yml
+
+      - name: 生成Hexo
+        uses: heowc/action-hexo@main
+        with:
+          args: generate
+
+      - name: 部署到master分支
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.CI_TOKEN }}
+          external_repository: inkdp/inkdp.github.io
+          publish_branch: master
+          publish_dir: ./public
+
+      - name: 部署到个人服务器
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
+          SERVER_DIR: ${{ secrets.SERVER_DIR }}
+        run: |
           mkdir -p ~/.ssh/
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          scp -o StrictHostKeyChecking=no _config.butterfly.yml $SERVER_DIR
-
-      # - name: 生成Hexo
-      #   uses: heowc/action-hexo@main
-      #   with:
-      #     args: generate
-      #
-      # - name: 部署到master分支
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     personal_token: ${{ secrets.CI_TOKEN }}
-      #     external_repository: inkdp/inkdp.github.io
-      #     publish_branch: master
-      #     publish_dir: ./public
-      #
-      # - name: 部署到个人服务器
-      #   env:
-      #     ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
-      #     SERVER_DIR: ${{ secrets.SERVER_DIR }}
-      #   run: |
-      #     mkdir -p ~/.ssh/
-      #     echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-      #     chmod 600 ~/.ssh/id_rsa
-      #     mv ./public ./www
-      #     scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
+          mv ./public ./www
+          scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
