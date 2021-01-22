@@ -25,7 +25,7 @@ hide_sidebar_menu_child: false
 
 highlight_theme: mac #  darker / pale night / light / ocean / mac / mac light / false
 highlight_copy: true # copy button
-highlight_lang: true # show the code language
+highlight_lang: false # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
 code_word_wrap: false
 
@@ -294,6 +294,7 @@ gitalk:
 # valine
 # https://valine.js.org
 valine:
+  appId: xYtUMiqO5vSG6beaCAYrICFW-gzGzoHsz # leancloud application app id
   pageSize: 10 # comment list page size
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
