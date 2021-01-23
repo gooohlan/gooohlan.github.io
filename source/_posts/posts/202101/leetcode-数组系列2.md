@@ -1,5 +1,5 @@
 ---
-ttitle: LeetCode-数组系列2
+title: LeetCode-数组系列2
 tags:
   - Golang
   - leetcode
