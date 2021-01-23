@@ -12,7 +12,7 @@ description: 'LeetCode 566.重塑矩阵，605.种花问题，628.三个数的最
 abbrlink: 51727
 date: 2021-01-22 00:17:09
 updated: 2021-01-24 00:00:00
-cover:
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1611417706506.jpg
 ---
 
 # 566. 重塑矩阵
