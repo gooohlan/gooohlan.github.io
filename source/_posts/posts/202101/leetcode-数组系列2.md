@@ -282,6 +282,8 @@ func imageSmoother(M [][]int) [][]int {
 
 # 665. 非递减数列
 
+![665. 非递减数列](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210124001206690.png)
+
 ## 解题思路
 
 {% note info no-icon simple %}
