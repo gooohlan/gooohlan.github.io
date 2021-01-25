@@ -179,14 +179,14 @@ if (asideStatus !== undefined) {
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">brew install openssl  </span><br><span class="line">brew install capstone  </span><br><span class="line">brew install keystone  </span><br><span class="line">brew install rapidjson  </span><br><span class="line">brew install libplist  </span><br></pre></td></tr></table></figure>
 <h3 id="2-克隆项目"><a href="#2-克隆项目" class="headerlink" title="2. 克隆项目"></a>2. 克隆项目</h3><p>克隆Mac分支，并编译keygen和patcher</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone -b mac --single-branch https:&#x2F;&#x2F;github.com&#x2F;DoubleLabyrinth&#x2F;navicat-keygen.git</span><br><span class="line">cd navicat-keygen</span><br><span class="line">make all</span><br></pre></td></tr></table></figure>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-605b5c43.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-605b5c43.png" alt="image.png"></p>
 <p>编译成功后当前目录下的bin文件下回出现两个可执行文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls bin&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-6e4f4f06.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-6e4f4f06.png" alt="image.png"></p>
 <h3 id="3-备份"><a href="#3-备份" class="headerlink" title="3. 备份"></a>3. 备份</h3><ul>
 <li>备份好<code>Navicat Premium.app/Contents/MacOS/Navicat Premium </code>，防止翻车(不怕翻车可跳过)</li>
 <li>备份好Navicat中所有已保存的数据库连接(包括密码)，我没备份(可跳过）</li>
-<li>移除所有Navicat在钥匙链中保持的密码，可通过搜索<code>navacat</code>来找到他们<br> <img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b4f15694.png" alt="image.png"></li>
+<li>移除所有Navicat在钥匙链中保持的密码，可通过搜索<code>navacat</code>来找到他们<br> <img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-b4f15694.png" alt="image.png"></li>
 </ul>
 <h3 id="4-使用navicat-patcher替换公钥："><a href="#4-使用navicat-patcher替换公钥：" class="headerlink" title="4. 使用navicat-patcher替换公钥："></a>4. 使用navicat-patcher替换公钥：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Usage:</span><br><span class="line"> navicat-patcher &lt;Navicat installation path&gt; [RSA-2048 Private Key File]</span><br><span class="line"></span><br><span class="line">     &lt;Navicat installation path&gt;    Path to &#96;Navicat Premium.app&#96;.</span><br><span class="line">                                    Example:</span><br><span class="line">                                        &#x2F;Applications&#x2F;Navicat\ Premium.app&#x2F;</span><br><span class="line">                                    This parameter must be specified.</span><br><span class="line"></span><br><span class="line">     [RSA-2048 Private Key File]    Path to a PEM-format RSA-2048 private key file.</span><br><span class="line">                                    This parameter is optional.</span><br></pre></td></tr></table></figure>
 <ul>
@@ -195,7 +195,7 @@ if (asideStatus !== undefined) {
 </ul>
 <p>默认如下：  </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.&#x2F;navicat-patcher &#x2F;Applications&#x2F;Navicat\ Premium.app&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-27449b40.png" alt="image.png"><br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-5c6f876b.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-27449b40.png" alt="image.png"><br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-5c6f876b.png" alt="image.png"></p>
 <h3 id="5-生成一份自动签名-的代码签名证书"><a href="#5-生成一份自动签名-的代码签名证书" class="headerlink" title="5. 生成一份自动签名 的代码签名证书"></a>5. 生成一份自动签名 的代码签名证书</h3><ul>
 <li><p>打开钥匙串访问</p>
 </li>
@@ -204,11 +204,11 @@ if (asideStatus !== undefined) {
 <li><p>输入名称”Navicat”，身份类型，证书类型</p>
 </li>
 <li><p>点击创建</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-99b4f449.png" alt="image.png"><br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-8b2aa128.png" alt="image.png"><br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ea68d143.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-99b4f449.png" alt="image.png"><br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-8b2aa128.png" alt="image.png"><br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-ea68d143.png" alt="image.png"></p>
 </li>
 </ul>
 <h3 id="6-签名"><a href="#6-签名" class="headerlink" title="6. 签名"></a>6. 签名</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">codesign -f -s &quot;Navicat&quot; &#x2F;Applications&#x2F;Navicat\ Premium.app&#x2F;</span><br></pre></td></tr></table></figure>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-c224bb16.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-c224bb16.png" alt="image.png"></p>
 <h2 id="激活"><a href="#激活" class="headerlink" title="激活"></a>激活</h2><h3 id="1-使用navicat-keygen生成序列号和激活码"><a href="#1-使用navicat-keygen生成序列号和激活码" class="headerlink" title="1. 使用navicat-keygen生成序列号和激活码"></a>1. 使用<code>navicat-keygen</code>生成序列号和激活码</h3><pre><code>Usage:  
  navicat-keygen &lt;RSA-2048 Private Key File&gt;  
 
@@ -219,23 +219,23 @@ if (asideStatus !== undefined) {
 </ul>
 <p>默认如下：  </p>
 <pre><code>./navicat-keygen ./RegPrivateKey.pem  </code></pre>
-<p>输入语言以及主版本号后会得到一个序列号<br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-acf9356f.png" alt="image.png"><br>使用这个序列号来激活Navicat<br>接下来会要求你输入用户名以及组织名，随意填写即可<br>之后你会被要求填入请求码<br><strong>请不要关闭注册机！</strong><br><strong>请不要关闭注册机！</strong><br><strong>请不要关闭注册机！</strong></p>
+<p>输入语言以及主版本号后会得到一个序列号<br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-acf9356f.png" alt="image.png"><br>使用这个序列号来激活Navicat<br>接下来会要求你输入用户名以及组织名，随意填写即可<br>之后你会被要求填入请求码<br><strong>请不要关闭注册机！</strong><br><strong>请不要关闭注册机！</strong><br><strong>请不要关闭注册机！</strong></p>
 <h3 id="2-断网并启动Navicat-premium完成激活"><a href="#2-断网并启动Navicat-premium完成激活" class="headerlink" title="2. 断网并启动Navicat premium完成激活"></a>2. 断网并启动Navicat premium完成激活</h3><ul>
 <li>启动时点击注册</li>
 <li>在注册页面输入注册机给你的序列号，点击激活</li>
 </ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0aa226c9.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0aa226c9.png" alt="image.png"></p>
 <ul>
 <li>一般都会激活失败，这时点击手动激活即可</li>
 </ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-81692bde.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-81692bde.png" alt="image.png"></p>
 <ul>
 <li>手动激活的窗口会给到你一个请求码，复制并粘贴到注册机里面，<strong>两次回车结束输入</strong></li>
 </ul>
-<p><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-eaa0ba85.png" alt="image.png"></p>
+<p><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-eaa0ba85.png" alt="image.png"></p>
 <ul>
-<li>不出意外的话，你会得到一个激活码，复制它并粘贴到navicat的手动激活窗口<br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0b68abdb.png" alt="image.png"><br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-e8dfb932.png" alt="image.png"></li>
-<li>最后点击激活，没出问题的话就激活成功了<br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-d3b2e298.png" alt="image.png"><br><img src= "/img/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-50a37e9d.png" alt="image.png"></li>
+<li>不出意外的话，你会得到一个激活码，复制它并粘贴到navicat的手动激活窗口<br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-0b68abdb.png" alt="image.png"><br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-e8dfb932.png" alt="image.png"></li>
+<li>最后点击激活，没出问题的话就激活成功了<br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-d3b2e298.png" alt="image.png"><br><img src= "/images/loading.gif" data-lazy-src="https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-50a37e9d.png" alt="image.png"></li>
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://github.com/DoubleLabyrinth/navicat-keygen/blob/mac/README.zh-CN.md">Navicat Keygen</a></p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>由于删除了钥匙串的密码，所以原有连接里的密码可能需要重新输入</p>
