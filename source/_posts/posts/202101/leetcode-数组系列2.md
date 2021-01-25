@@ -11,7 +11,7 @@ keywords: 算法,LeetCode,数组,Golang
 description: 'LeetCode 566.重塑矩阵，605.种花问题，628.三个数的最大乘积，643.子数组最大平均数I，661.图片平滑器，665.非递减数列'
 abbrlink: 51727
 date: 2021-01-22 00:17:09
-updated: 2021-01-24 00:00:00
+updated: 2021-01-24 01:22:00
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1611417706506.jpg
 ---
 
