@@ -7,7 +7,7 @@ tags:
   - Golang
 categories:
   - - 技术
-cover:
+cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/4cc9165193ad49be81eee216717bac82_9c26c634gy1fokyi7gt6aj21kw0wahdt1.jpg
 keywords: Golang，Go，Exif，读取Exif，删除Exif
 description: 使用Go读取照片中Exif的隐私信息，并删除它
 ---
