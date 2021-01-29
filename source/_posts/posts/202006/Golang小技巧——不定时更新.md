@@ -158,7 +158,7 @@ func main() {
 
 ```
 
-# 3. append 函数常见操作将切片 b 的元素追加到切片 a 之后：`a = append(a, b...)`
+# 3. append 函数常见操作
 
 1. 将切片 b 的元素追加到切片 a 之后：`a = append(a, b...)`
 
