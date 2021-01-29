@@ -1,5 +1,5 @@
 ---
-title: go 语言圣经练习解答 -- 第三章
+title: Go 语言圣经练习解答 -- 第三章
 date: '2019-06-10 17:36:32'
 updated: '2019-09-25 14:01:25'
 tags:
@@ -13,7 +13,6 @@ categories:
 permalink: /articles/2019/06/10/1560159392016.html
 abbrlink: 34374
 ---
-![](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180915.jpg)
 
 ## go语言圣经(The Go Programming Language)第三章练习题答案
 ### 前言
