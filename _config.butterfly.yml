@@ -820,7 +820,7 @@ pangu:
 # https://github.com/verlok/lazyload
 lazyload:
   enable: true
-  post: /images/loading.gif
+  post: /img/loading.gif
 
 # PWA
 # See https://github.com/JLHwung/hexo-offline

@@ -1,7 +1,7 @@
 ---
-title: Golang小技巧——不定时更新
+title: Go小技巧——不定时更新
 date: '2020-06-19 17:55:22'
-updated: '2020-06-19 21:36:50'
+updated: '2021-01-29 17:08:33'
 tags:
   - Golang
 categories:
@@ -10,9 +10,11 @@ categories:
 cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20190201.jpg'
 permalink: /articles/2020/06/19/1592560522403.html
 abbrlink: 43219
+keywords: 'Go小技巧，append，json'
+description: 1.函数返回值定义, 2.JSON数组返回NULL, 3.append 函数常见操作
 ---
 
-### 1、函数返回值定义
+# 1. 函数返回值定义
 
 一般的函数定义都是：
 
@@ -102,7 +104,7 @@ func StringToInt(str string) (v int, err error) {
 
 到这个时候，它是不是就不这么香了，是否预定义需要根据实际场景决定。
 
-### 2、JSON数组返回NULL
+# 2. JSON数组返回NULL
 
 当你的接口返回一个数组，而且数组正好为空时↓
 
@@ -155,3 +157,30 @@ func main() {
 }
 
 ```
+
+# 3. append 函数常见操作将切片 b 的元素追加到切片 a 之后：`a = append(a, b...)`
+
+1. 将切片 b 的元素追加到切片 a 之后：`a = append(a, b...)`
+
+2. 复制切片 a 的元素到新的切片 b 上：
+
+   ```go
+   b = make([]T, len(a))
+   copy(b, a)
+   ```
+
+3. 删除位于索引 i 的元素：`a = append(a[:i], a[i+1:]...)`
+
+4. 切除切片 a 中从索引 i 至 j 位置的元素：`a = append(a[:i], a[j:]...)`
+
+5. 为切片 a 扩展 j 个元素长度：`a = append(a, make([]T, j)...)`
+
+6. 在索引 i 的位置插入元素 x：`a = append(a[:i], append([]T{x}, a[i:]...)...)`
+
+7. 在索引 i 的位置插入长度为 j 的新切片：`a = append(a[:i], append(make([]T, j), a[i:]...)...)`
+
+8. 在索引 i 的位置插入切片 b 的所有元素：`a = append(a[:i], append(b, a[i:]...)...)`
+
+9. 取出位于切片 a 最末尾的元素 x：`x, a = a[len(a)-1], a[:len(a)-1]`
+
+10. 将元素 x 追加到切片 a：`a = append(a, x)`
