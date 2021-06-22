@@ -31,8 +31,6 @@ description: 本文主要介绍如何通过GitHub Action自动部署Hexo博客�
 
 ## 配置部署密钥
 
-<font color="red">实测可不配置，也可能是因为一开始就添加了公钥到GitHub的原因，按需配置即可</font>
-
 使用以下命令生成部署密钥(一路回车到底即可)
 
 ```shell
@@ -46,9 +44,9 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
 
 接下来,去仓库设置
 
-*  复制`gh-pages.pub`的内容，仓库的 `Settings -> Deploy keys -> Add deploy key` 页面粘贴你的内容，`Title`可随意填写，<font color="#dd0000">并勾选`Allow write access`</font>
+*  复制`gh-pages.pub`的内容，仓库的 `Settings -> Deploy keys -> Add deploy key` 页面粘贴你的内容，`Title`可随意填写，<font color="#dd0000">并勾选`Allow write access`，实测可不配置</font>
 
-* 复制`gh-pages`的内容，去仓库的`Settings -> Secrets -> Add a new secret` 页面上粘贴你的内容，`Name`字段填写为`ACTIONS_DEPLOY_KEY(可更改)`
+* 复制`gh-pages`的内容，去仓库的`Settings -> Secrets -> Add a new secret` 页面上粘贴你的内容，`Name`字段填写为`ACTION_DEPLOY_KEY(可更改)`
 
   | 添加你的公钥                                                 | 成功                                                         |
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -187,3 +185,19 @@ steps:
 ![image-20210118014615951](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210118014615951.png)
 
 当任务完成后查看您的博客 `https://yourname.github.io`，如果不出意外的话已经可以看到自动部署的文章了，如有意外欢迎留言
+
+### 可能出现的问题
+
+- 问题1：
+
+  ![image-20210622202346107](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210622202346.png)
+  
+  出现该问题是node版本过低导致的，在`yaml`文件中指定node版本为`12+`，或者设置
+  
+  ```yaml
+  highlight:
+    enable: false
+  ```
+  
+  
+
