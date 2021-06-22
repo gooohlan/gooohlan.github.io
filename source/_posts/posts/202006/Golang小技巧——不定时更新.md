@@ -14,7 +14,7 @@ keywords: 'Go小技巧，append，json'
 description: 1.函数返回值定义, 2.JSON数组返回NULL, 3.append 函数常见操作
 ---
 
-# 1. 函数返回值定义
+# 函数返回值定义
 
 一般的函数定义都是：
 
@@ -104,7 +104,7 @@ func StringToInt(str string) (v int, err error) {
 
 到这个时候，它是不是就不这么香了，是否预定义需要根据实际场景决定。
 
-# 2. JSON数组返回NULL
+# JSON数组返回NULL
 
 当你的接口返回一个数组，而且数组正好为空时↓
 
@@ -158,7 +158,7 @@ func main() {
 
 ```
 
-# 3. append 函数常见操作
+# append 函数常见操作
 
 1. 将切片 b 的元素追加到切片 a 之后：`a = append(a, b...)`
 
