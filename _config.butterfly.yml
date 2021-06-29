@@ -639,7 +639,7 @@ aside:
       link: https://github.com/InkDP
   card_announcement:
     enable: true
-    content: 旧博客停止更新，但依旧运行在<a href="https://www.inkdp.cn">www.inkdp.cn</a>下，文章已全部迁移至<a href="https://inkdp.cn">inkdp.cn</a>
+    content: 旧博客停止更新，但依旧运行在<a href="https://bolo.inkdp.cn">bolo.inkdp.cn</a>下，文章已全部迁移至<a href="https://www.inkdp.cn">www.inkdp.cn</a>
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
