@@ -2,7 +2,7 @@
 title: 使用GitHub Action自动部署Hexo
 abbrlink: 3295
 date: 2021-01-16 21:29:54
-updated: 2021-01-19 10:28:15
+updated: 2021-06-22 20:28:15
 tags:
   - Hexo
 categories:
@@ -191,13 +191,10 @@ steps:
 - 问题1：
 
   ![image-20210622202346107](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210622202346.png)
-  
+
   出现该问题是node版本过低导致的，在`yaml`文件中指定node版本为`12+`，或者设置
-  
+
   ```yaml
   highlight:
     enable: false
   ```
-  
-  
-
