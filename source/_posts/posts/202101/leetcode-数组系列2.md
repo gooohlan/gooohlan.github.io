@@ -21,20 +21,20 @@ toc_number: false
 
 ---
 
-# 566. 重塑矩阵
+### 566. 重塑矩阵
 
 ![image-20210122002325449](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210122002325449.png)
 
-{% tabs %}
+{% tabs 566 %}
 <!-- tab 方法一 -->
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 创建固定的行，依次循环原数组，同时放入结果数组中，每一行存满后，就添加新的列继续存储
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func matrixReshape(nums [][]int, r int, c int) [][]int {
@@ -61,7 +61,7 @@ func matrixReshape(nums [][]int, r int, c int) [][]int {
 
 <!-- tab 方法二 -->
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 
@@ -79,7 +79,7 @@ newNums := []int{1,2,3,4,5,6}
 
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func matrixReshape2(nums [][]int, r int, c int) [][]int {
@@ -103,11 +103,11 @@ func matrixReshape2(nums [][]int, r int, c int) [][]int {
 
 
 
-# 605. 种花问题
+### 605. 种花问题
 
 ![605.种花问题](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123141345851.png)
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 数组由`0`和`1`组成，循环一次数组，并分别处理即可
@@ -118,7 +118,7 @@ func matrixReshape2(nums [][]int, r int, c int) [][]int {
 循环结束后查看`n`是否为`0`，为`0`则表示可种`n`朵花，返回`true`，反之返回`false`
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func canPlaceFlowers(flowerbed []int, n int) bool {
@@ -136,15 +136,15 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 }
 ```
 
-# 628. 三个数的最大乘积
+### 628. 三个数的最大乘积
 
 ![628. 三个数的最大乘积](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123145818480.png)
 
-{% tabs %}
+{% tabs 628 %}
 
 <!-- tab 方法一 -->
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 
@@ -155,7 +155,7 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func maximumProduct(nums []int) int {
@@ -178,7 +178,7 @@ func max(a,b int) int {
 
 <!-- tab 方法二 -->
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 
@@ -186,7 +186,7 @@ func max(a,b int) int {
 
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func maximumProduct2(nums []int) int {
@@ -215,11 +215,11 @@ func maximumProduct2(nums []int) int {
 
 {% endtabs %}
 
-# 643. 子数组最大平均数I
+### 643. 子数组最大平均数I
 
 ![643](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123181732046.png)
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 
@@ -227,7 +227,7 @@ func maximumProduct2(nums []int) int {
 
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func findMaxAverage(nums []int, k int) float64 {
@@ -246,11 +246,11 @@ func findMaxAverage(nums []int, k int) float64 {
 }
 ```
 
-# 661. 图片平滑器
+### 661. 图片平滑器
 
 ![image-20210123211333512](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123211333512.png)
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 
@@ -258,7 +258,7 @@ func findMaxAverage(nums []int, k int) float64 {
 
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func imageSmoother(M [][]int) [][]int {
@@ -286,11 +286,11 @@ func imageSmoother(M [][]int) [][]int {
 }
 ```
 
-# 665. 非递减数列
+### 665. 非递减数列
 
 ![665. 非递减数列](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210124001206690.png)
 
-## 解题思路
+#### 解题思路
 
 {% note info no-icon simple %}
 
@@ -311,7 +311,7 @@ func imageSmoother(M [][]int) [][]int {
 
 {% endnote %}
 
-## 示例代码
+#### 示例代码
 
 ```go
 func checkPossibility(nums []int) bool {
