@@ -13,6 +13,12 @@ abbrlink: 51727
 date: 2021-01-22 00:17:09
 updated: 2021-01-24 01:22:00
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1611417706506.jpg
+toc_number: false
+---
+### 返回总目录
+
+[日刷leetcode–简单版](/leetcode.html)
+
 ---
 
 # 566. 重塑矩阵
