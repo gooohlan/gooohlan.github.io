@@ -48,6 +48,8 @@ abbrlink: 26087
 1. 数组
    * 简单[进行中]：此篇章尽量补书写题解
      * [leetcode-数组系列1](https://inkdp.cn/leetcode_array1.html)
+     * [leetcode-数组系列2](https://inkdp.cn/leetcode_array2.html)
+     * [leetcode-数组系列3](https://inkdp.cn/leetcode_array3.html)
    * 中等[未开始]
    * 困难[未开始]
 2. 字符串
