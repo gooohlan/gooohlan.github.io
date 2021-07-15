@@ -25,12 +25,12 @@ TODO：
 
 使用 [Github Action](https://github.com/features/actions) 实现 CI/CD
 
-push 至 dev 分支的代码，自动构建并部署至 [inkdp.github..io](https://inkdp.github..io) 和 [hexo.inkdp.cn](https://hexo.inkdp.cn)
+push 至 dev 分支的代码，自动构建并部署至 [inkdp.github..io](https://inkdp.github..io) 和 [www.inkdp.cn](https://www.inkdp.cn)
 
 
 ## 1.0.1
 
-从solo迁移至hexo,并部署至[墨殇的技术博客](https://hexo.inkdp.cn)
+从solo迁移至hexo,并部署至[墨殇的技术博客](https://www.inkdp.cn)
 
 ## 0.1.1
 
@@ -42,4 +42,4 @@ push 至 dev 分支的代码，自动构建并部署至 [inkdp.github..io](https
 
 ## 0.0.1
 
-基于[solo](https://github.com/88250/solo)，部署至[墨殇的技术博客](https://inkdp.cn)
+基于[solo](https://github.com/88250/solo)，部署至[墨殇的技术博客](https://bolo.inkdp.cn)
