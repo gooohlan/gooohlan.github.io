@@ -2,7 +2,7 @@
 title: Leetcode-数组系列4
 abbrlink: 6574
 date: 2021-07-22 18:49:40
-updated: 2021-07-24 13:01:50
+updated: 2021-07-26 20:04:50
 tags:
   - Golang
   - leetcode
@@ -11,7 +11,7 @@ categories:
   - - 技术
     - 算法
 keywords: 算法,LeetCode,数组,Golang
-description: 'LeetCode 465.岛屿的周长，495.提莫攻击'
+description: 'LeetCode 465.岛屿的周长，495.提莫攻击，496.下一个更大元素 I，500.键盘行'
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210722202914.png
 toc_number: false
 
@@ -306,3 +306,113 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int  {
 
 {% endtabs%}
 
+### 500. 键盘行
+
+给你一个字符串数组 words ，只返回可以使用在**美式键盘**同一行的字母打印出来的单词。键盘如下图所示。
+
+**美式键盘**中：
+
+- 第一行由字符`"qwertyuiop"`组成。
+- 第二行由字符`"asdfghjkl" 组成。
+- 第三行由字符`"zxcvbnm"`组成。
+
+![American keyboard](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210726193833.png)
+
+**示例 1**：
+
+> **输入：**words = ["Hello","Alaska","Dad","Peace"]
+> **输出：**["Alaska","Dad"]
+
+**示例 2**：
+
+> **输入：**words = ["omk"]
+> **输出：**[]
+
+**示例 3：**
+
+> **输入：**words = ["adsdf","sfd"]
+> **输出：**["adsdf","sfd"]
+
+**提示：**
+
+- `1 <= words.length <= 20`
+- `1 <= words[i].length <= 100`
+- `words[i]`由英文字母（小写和大写字母）组成
+
+{% tabs %}
+
+<!-- tab 哈希 -->
+
+#### 解题思路
+
+{% note no-icon simple info %}
+
+以键盘字母为`key`，所在行数为`value`存入map。遍历words中每一个单词的字母，是否在同一行
+
+{% endnote %}
+
+#### 示例代码
+
+```go
+func findWords(words []string) []string {
+   var (
+      res []string
+      keyboard map[byte]int
+   )
+   keyboard = map[byte]int{
+      'q': 0, 'w': 0, 'e': 0, 'r': 0, 't': 0, 'y': 0, 'u': 0, 'i': 0, 'o': 0, 'p': 0,
+      'a': 1, 's': 1, 'd': 1, 'f': 1, 'g': 1, 'h': 1, 'j': 1, 'k': 1, 'l': 1,
+      'z': 2, 'x': 2, 'c': 2, 'v': 2, 'b': 2, 'n': 2, 'm': 2,
+   }
+   for _, word := range words {
+      b := true
+      lowercase := strings.ToLower(word)
+      for i := 1; i < len(lowercase); i++ {
+         if keyboard[lowercase[i-1]] != keyboard[lowercase[i]] {
+            b = false
+            break
+         }
+      }
+      if b {
+         res = append(res, word)
+      }
+   }
+   return res
+}
+```
+
+<!-- endtab -->
+
+<!-- tab 标准库 -->
+
+#### 解题思路
+
+{% note no-icon info simple %}
+
+利用`strings`库提供的`ContainsAny`函数，判断输入的单词是否出现在键盘的某一行中，如果一个单词在多行中出现则表示不符合标准
+
+{% endnote %}
+
+#### 示例代码
+
+```go
+func findWords2(words []string) []string {
+   line1 := "qwertyuiopQWERTYUIOP"
+   line2 := "asdfghjklASDFGHJKL"
+   line3 := "zxcvbnmZXCVBNM"
+   var res []string
+   for _, word := range words{
+      b1 := strings.ContainsAny(word, line1)
+      b2 := strings.ContainsAny(word, line2)
+      b3 := strings.ContainsAny(word, line3)
+      if (b1 && !b2 && !b3) || (!b1 && b2 && !b3) || (!b1 && !b2 && b3){
+         res = append(res, word)
+      }
+   }
+   return res
+}
+```
+
+<!-- endtab -->
+
+{% endtabs %}
