@@ -2,7 +2,7 @@
 title: Leetcode-数组系列4
 abbrlink: 6574
 date: 2021-07-22 18:49:40
-updated: 2021-07-26 20:04:50
+updated: 2021-07-27 20:57:50
 tags:
   - Golang
   - leetcode
@@ -11,7 +11,7 @@ categories:
   - - 技术
     - 算法
 keywords: 算法,LeetCode,数组,Golang
-description: 'LeetCode 465.岛屿的周长，495.提莫攻击，496.下一个更大元素 I，500.键盘行'
+description: 'LeetCode 465.岛屿的周长，495.提莫攻击，496.下一个更大元素I，500.键盘行，506.相对名次，575：分糖果'
 cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210722202914.png
 toc_number: false
 
@@ -416,3 +416,127 @@ func findWords2(words []string) []string {
 <!-- endtab -->
 
 {% endtabs %}
+
+### 506. 相对名次
+
+给出**N**名运动员的成绩，找出他们的相对名次并授予前三名对应的奖牌。前三名运动员将会被分别授予 “金牌”，“银牌” 和“ 铜牌”（"Gold Medal", "Silver Medal", "Bronze Medal"）。
+
+(注：分数越高的选手，排名越靠前。)
+
+**示例 1:**
+
+> **输入:** [5, 4, 3, 2, 1]
+> **输出: **["Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"]
+> **解释: **前三名运动员的成绩为前三高的，因此将会分别被授予 “金牌”，“银牌”和“铜牌” ("Gold Medal", "Silver Medal" and "Bronze Medal").
+> 余下的两名运动员，我们只需要通过他们的成绩计算将其相对名次即可。
+
+**提示:**
+
+1. N是一个正整数并且不会超过 10000。
+2. 所有运动员的成绩都不相同。
+
+#### 解题思路
+
+{% note no-icon info simple %}
+
+1. 将原位置存入Hash
+2. 排序
+3. 循环排序后的数组，从map中出去原位置作为下标加入返回数组中
+
+{% endnote %}
+
+#### 示例代码
+
+```go
+func findRelativeRanks(score []int) []string {
+   mapList := make(map[int]int, len(score))
+   for k, v := range score {
+      mapList[v] = k
+   }
+   sort.Ints(score)
+   res := make([]string, len(score))
+   for i := 0; i < len(score); i++ {
+      if len(score)-i == 1 {
+         res[mapList[score[i]]] = "Gold Medal"
+         continue
+      }
+      if len(score)-i == 2 {
+         res[mapList[score[i]]] = "Silver Medal"
+         continue
+      }
+      if len(score)-i == 3 {
+         res[mapList[score[i]]] = "Bronze Medal"
+         continue
+      }
+      res[mapList[score[i]]] = strconv.Itoa(len(score) - i)
+   }
+
+   return res
+}
+```
+
+### 575. 分糖果
+
+给定一个**偶数**长度的数组，其中不同的数字代表着不同种类的糖果，每一个数字代表一个糖果。你需要把这些糖果**平均**分给一个弟弟和一个妹妹。返回妹妹可以获得的最大糖果的种类数。
+
+**示例 1:**
+
+> **输入:** candies = [1,1,2,2,3,3]
+> **输出:** 3
+> **解析:** 一共有三种种类的糖果，每一种都有两个。
+>      	最优分配方案：妹妹获得[1,2,3],弟弟也获得[1,2,3]。这样使妹妹获得糖果的种类数最多。
+
+**示例 2 :**
+
+> **输入:** candies = [1,1,2,3]
+> **输出:** 2
+> **解析:** 妹妹获得糖果[2,3],弟弟获得糖果[1,1]，妹妹有两种不同的糖果，弟弟只有一种。这样使得妹妹可以获得的糖果种类数最多。
+
+**注意:**
+
+1. 数组的长度为[2, 10,000]，并且确定为偶数。
+2. 数组中数字的大小在范围[-100,000, 100,000]内。
+
+#### 解题思路
+
+{% note no-icon info simple %}
+
+因为是平均分配，所以妹妹糖果的情况为：
+
+- 最多：所有糖果数量的一半(此时糖果种类大于等于糖果总数的一半)
+- 最少：1种(所有糖果为一类)
+
+所以妹妹获得糖果种类为：`min(总数的一半,糖果种类)`
+
+{% endnote %}
+
+#### 示例代码：排序
+
+```go
+func distributeCandies(candyType []int) int {
+   sort.Ints(candyType)
+   count := 1
+   for i := 1; i < len(candyType) && count < len(candyType)/2; i++ {
+      if candyType[i] != candyType[i-1] {
+         count++
+      }
+   }
+   return count
+}
+```
+
+#### 示例代码：Map
+
+```go
+func distributeCandies(candyType []int) int {
+   mapList := make(map[int]struct{}, 0 )
+   for _, v := range candyType {
+      mapList[v] = struct{}{}
+   }
+   if len(mapList) < len(candyType)/2 {
+      return len(mapList)
+   }
+   return len(candyType)/2
+}
+```
+
