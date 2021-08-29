@@ -6,7 +6,7 @@ categories:
   - - 技术
     - 后端
 cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/mmexport1617101105435.jpg'
-keywords: '‘Swagger, gin, golang'''
+keywords: 'Swagger, gin, golang'
 abbrlink: 21173
 date: 2021-03-31 21:09:56
 updated: 2021-03-31 23:46:56
@@ -21,7 +21,7 @@ updated: 2021-03-31 23:46:56
   ```
   go get -u github.com/swaggo/swag/cmd/swag
   ```
-  
+
   因为swagger需要全局使用，请确保 `$GOPATH/bin` 加入`$PATH`，或将可执行文件移动到`$GOBIN`下
 
 - 验证是否安装成功
