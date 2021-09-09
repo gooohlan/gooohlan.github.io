@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>2021书单分享</title>
+      <link href="reading/65135.html"/>
+      <url>reading/65135.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-《白说》"><a href="#1-《白说》" class="headerlink" title="1.《白说》"></a>1.《白说》</h3><p>整本书通过整理白岩松老师多个场合的演讲而来，涵盖多个领域，时政、教育、改革、音乐、阅读、人生；书中说表述的大道理，于20出头的我来说，过于高深，大多都是智商盲区，以至于几乎无法消化，虽生涩难懂，但却能从字里行间收获一种宁静，引人深思，同时从文中也能感觉到白岩松的博学。也许多年后重读此书会有更深感悟。</p><blockquote><p>幸福可以无限接近，无法彻底到达</p></blockquote><p>推荐指数：⭐⭐⭐</p><h3 id="2-《沉默的巡游》"><a href="#2-《沉默的巡游》" class="headerlink" title="2.《沉默的巡游》"></a>2.《沉默的巡游》</h3><p>买这本书完全是因为作者与书的大名，也是第一次看推理小说。内容上环环相扣，顺叙、倒叙、插叙相结合，叙述视角多而不乱，情节安排详略得当，脉络清晰，推理严密；以并木食堂的营业场景开篇，也以之结尾，首尾呼应，结构完整，跟随主角的思路去发现破绽，并通过各种破绽并细细推敲过去的真相的过程，让人直呼过瘾，这大概就是推理小说的魅力所在。</p><blockquote><p>这是一个悲伤的故事，却会给你一整年的温暖</p></blockquote><p>推荐指数：⭐⭐⭐⭐⭐</p><h3 id="3-《局外人》"><a href="#3-《局外人》" class="headerlink" title="3.《局外人》"></a>3.《局外人》</h3><p>从小被灌输的概念就是以孝为本，完全无法理解书中主人公的做法。母亲死于养老院中，他去奔丧，送葬，但无动于衷，毫无眼泪和悲伤，在旁人看来不能理解，并最终成为他在法庭上的罪证。以及与女友结婚，和邻居一起对付阿拉伯人，并最终失手打死其中一个，最后被逮捕并处决为死刑。他似乎获得真的如同一个局外人，细想之下，这大概就是极致理智。</p><blockquote><p>为了把一切都做得完善，为了使我感到不那么孤独，我还希望处决我的那一天有很多人来，希望他们对我报之以仇恨的喊叫声。</p></blockquote><p>推荐指数：⭐⭐⭐⭐⭐</p><h3 id="4-《穷爸爸富爸爸》"><a href="#4-《穷爸爸富爸爸》" class="headerlink" title="4.《穷爸爸富爸爸》"></a>4.《穷爸爸富爸爸》</h3><p>穷爸爸的思维：遇到钱的问题就逃避，看不起、看不上、不关心，当然也得不到；富爸爸思维：遇到钱的问题努力解决问题，赞美、享受金钱，并且实践大量赚钱的方法。整本书更多的是希望能建立一个理财的思想，给人感触最深的是要去实践，**富爸爸真正强大的部分：我知道我要成为什么人，然后不断暗示自己，并坚定地走下去。合上书后就买了基金，狂跌后现在都还没涨回来。</p><p>推荐指数：⭐⭐⭐</p><h3 id="5-《平凡的世界》"><a href="#5-《平凡的世界》" class="headerlink" title="5.《平凡的世界》"></a>5.《平凡的世界》</h3><p>书中为我们描述了一个平凡而伟大的世界，书中的几位主人公各有各的悲惨生活，却又有着各自的感情线，其中对孙少平与田晓霞的爱情有种莫名的期待，因为孙少安与田润叶的悲剧让我更期待这对情侣在一起，而这种种期待最终在今天化为泡影，在洪水中为了救一个小姑娘，田晓霞去世了，久久不能从书中的悲伤中走出来。文章直到最后也没有令人所谓的反转，所有人都朝着自己认识的方向平凡而不平庸的生活着。</p><blockquote><p>少平，你要记得，你与其他人不一样，你是一个有另外世界的人，你的心不应该只在这，而是在远方，那个充满光的地方</p></blockquote><p>推荐指数：⭐⭐⭐⭐⭐</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 阅读 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Leetcode-数组系列6</title>
+      <link href="skill/algorithm/55343.html"/>
+      <url>skill/algorithm/55343.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="674-最长连续递增序列"><a href="#674-最长连续递增序列" class="headerlink" title="674. 最长连续递增序列"></a>674. 最长连续递增序列</h3><p>给定一个未经排序的整数数组，找到最长且<strong> 连续递增的子序列</strong>，并返回该序列的长度。</p><p><strong>连续递增的子序列</strong> 可以由两个下标 <code>l</code> 和 <code>r</code>（<code>l < r</code>）确定，如果对于每个 <code>l <= i < r</code>，都有 <code>nums[i] < nums[i + 1]</code> ，那么子序列 <code>[nums[l], nums[l + 1], ..., nums[r - 1], nums[r]]</code> 就是连续递增子序列。</p><p> </p><p><strong>示例 1：</strong></p><blockquote><p><strong>输入：</strong>nums = [1,3,5,4,7]<br><strong>输出：</strong>3<br><strong>解释：</strong>最长连续递增序列是 [1,3,5], 长度为3。<br>尽管 [1,3,5,7] 也是升序的子序列, 但它不是连续的，因为 5 和 7 在原数组里被 4 隔开。</p></blockquote><p><strong>示例 2：</strong></p><blockquote><p><strong>输入：</strong>nums = [2,2,2,2,2]<br><strong>输出：</strong>1<br><strong>解释：</strong>最长连续递增序列是 [2], 长度为1。</p></blockquote><h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><div class="note no-icon info simple"><p>因为求的是递增序列，所以当前元素小于等于上一个元素时，表示上一个递增子序列结束，我们更新下一个子序列开始位置，并求出此时最大子序列，依此循环即可</p></div><h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findLengthOfLCIS</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">   <span class="keyword">var</span> ans, start <span class="keyword">int</span></span><br><span class="line">   <span class="keyword">for</span> k, v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">      <span class="keyword">if</span> k &gt; <span class="number">0</span> &amp;&amp; v &lt;= nums[k<span class="number">-1</span>] &#123;</span><br><span class="line">         start = k</span><br><span class="line">      &#125;</span><br><span class="line">      ans = max(ans, k-start +<span class="number">1</span>)</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> ans</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(a, b <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">   <span class="keyword">if</span> a &lt; b &#123;</span><br><span class="line">      <span class="keyword">return</span> b</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+          <category> 算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+            <tag> Golang </tag>
+            
+            <tag> leetcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>go发现网络活跃主机</title>
       <link href="skill/back-end/27211.html"/>
       <url>skill/back-end/27211.html</url>
