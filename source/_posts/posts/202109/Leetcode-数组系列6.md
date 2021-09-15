@@ -9,7 +9,6 @@ categories:
   - - 技术
     - 算法
 keywords: '算法,LeetCode,数组,Golang'
-toc_number: false
 abbrlink: 55343
 date: 2021-09-07 16:33:31
 cover:
