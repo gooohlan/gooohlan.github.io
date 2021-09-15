@@ -1,7 +1,7 @@
 ---
 title: CSS/Javascript实现Word Clock
 date: '2019-06-02 20:08:10'
-updated: '2019-06-07 23:45:08'
+updated: '2021-09-16 00:02:40'
 tags:
   - HTML
   - CSS
@@ -23,7 +23,7 @@ abbrlink: 63244
 
 > 实现元素旋转显示
 
-```
+```css
 // li 通用样式
 li {
         color: #777;
@@ -39,30 +39,31 @@ li {
 li:nth-child(1){ transform: rotate(0deg); }
 ``````
 ### 每个li根据实际位置，旋转度数不同，总的加起来360度就可以了
+
 > 时间初始化与自动旋转
 
 * 每一个li去做循环，等于当前日期值的li旋转度数为0，小于的当前日期值为负，大于为正。
-```
+```html
 <!-- 当前月份为6月，所以6月对应的旋转角度为0，小于6月的为负，大于6月为正-->
 <!-- 整个旋转度数为360度，-30°与330°效果一致-->
 <ul class="month" id="month">
-        <li style="transform: rotate(-150deg); color: rgb(119, 119, 119);">一月</li>
-        <li style="transform: rotate(-120deg); color: rgb(119, 119, 119);">二月</li>
-        <li style="transform: rotate(-90deg); color: rgb(119, 119, 119);">三月</li>
-        <li style="transform: rotate(-60deg); color: rgb(119, 119, 119);">四月</li>
-        <li style="transform: rotate(-30deg); color: rgb(119, 119, 119);">五月</li>
-        <li style="transform: rotate(0deg); color: rgb(255, 255, 255);">六月</li>
-        <li style="transform: rotate(30deg); color: rgb(119, 119, 119);">七月</li>
-        <li style="transform: rotate(60deg); color: rgb(119, 119, 119);">八月</li>
-        <li style="transform: rotate(90deg); color: rgb(119, 119, 119);">九月</li>
-        <li style="transform: rotate(120deg); color: rgb(119, 119, 119);">十月</li>
-        <li style="transform: rotate(150deg); color: rgb(119, 119, 119);">十一月</li>
-        <li style="transform: rotate(180deg); color: rgb(119, 119, 119);">十二月</li>
-    </ul>
+    <li style="transform: rotate(-150deg); color: rgb(119, 119, 119);">一月</li>
+    <li style="transform: rotate(-120deg); color: rgb(119, 119, 119);">二月</li>
+    <li style="transform: rotate(-90deg); color: rgb(119, 119, 119);">三月</li>
+    <li style="transform: rotate(-60deg); color: rgb(119, 119, 119);">四月</li>
+    <li style="transform: rotate(-30deg); color: rgb(119, 119, 119);">五月</li>
+    <li style="transform: rotate(0deg); color: rgb(255, 255, 255);">六月</li>
+    <li style="transform: rotate(30deg); color: rgb(119, 119, 119);">七月</li>
+    <li style="transform: rotate(60deg); color: rgb(119, 119, 119);">八月</li>
+    <li style="transform: rotate(90deg); color: rgb(119, 119, 119);">九月</li>
+    <li style="transform: rotate(120deg); color: rgb(119, 119, 119);">十月</li>
+    <li style="transform: rotate(150deg); color: rgb(119, 119, 119);">十一月</li>
+    <li style="transform: rotate(180deg); color: rgb(119, 119, 119);">十二月</li>
+</ul>
 ```
 ### 源码如下
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -260,6 +261,7 @@ li:nth-child(1){ transform: rotate(0deg); }
 </html>
 ```
 ### 最后的效果
-![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-7492af1c.png)
+
+![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-7492af1c)
 
 ### 写在最后，时间直接使用jq更改很僵硬，可以通过CSS动画实现。
