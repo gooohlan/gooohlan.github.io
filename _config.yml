@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://inkdp.cn
+url: https://www.inkdp.cn
 root: /
 permalink: :category/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
 abbrlink:
