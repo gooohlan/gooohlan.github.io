@@ -31,7 +31,7 @@ https://github.com/Programming-With-Love/solo-nexmoe
 
 ## 演示
 
-* [墨殇的技术博客](https://www.inksp.cn/?skin=solo-nexmoe)
+* [顾澜的技术小站](https://www.inksp.cn/?skin=solo-nexmoe)
 * [鼠鼠在碎觉](https://sszsj.cc:444/?skin=solo-nexmoe)
 * [记录精彩的人生](https://witheloov.com/?skin=solo-nexmoe)
 * [邯城往事](https://www.cjzshilong.cn/?skin=solo-nexmoe)
@@ -83,6 +83,6 @@ https://github.com/Programming-With-Love/solo-nexmoe
 * 2019-09-19：修复solo3.6.5出现的无法从首页登录后台问题
 * 2019-09-25：修复表格无法换行问题
 * 2019-09-26：添加用户自定义背景功能
-* 2019-10-24：修复文章中:huaji:等表情过大问题，D 哥完成了[友情链接添加图片属性](https://hacpai.com/forward?goto=https%3A%2F%2Fgithub.com%2Fb3log%2Fsolo%2Fissues%2F12861)，所以友链可以以列表的方式显示，不过你先得在友链中添加图片属性，效果如下：[友情链接-墨殇的技术博客](https://www.inkdp.cn/links.html)
+* 2019-10-24：修复文章中:huaji:等表情过大问题，D 哥完成了[友情链接添加图片属性](https://hacpai.com/forward?goto=https%3A%2F%2Fgithub.com%2Fb3log%2Fsolo%2Fissues%2F12861)，所以友链可以以列表的方式显示，不过你先得在友链中添加图片属性，效果如下：[友情链接-顾澜的技术小站](https://www.inkdp.cn/links.html)
 * 2019-12-26日：修复社区防盗链引发的皮肤图片403问题：https://hacpai.com/article/1577238746196，更新左侧头像为自己设置的**Favicon**，而非社区头像
 * 2020-03-27日：修复所有已知BUG，抱歉拖了这么久，给各位带来的不便深表歉意

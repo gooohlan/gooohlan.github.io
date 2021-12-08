@@ -1,4 +1,4 @@
-  # [墨殇的技术博客](https://inkdp.cn)
+  # [顾澜的技术小站](https://inkdp.cn)
 
 ![CI](https://github.com/inkdp/inkdp.github.io/workflows/CI/badge.svg) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inkdp/inkdp.github.io/CI) ![GitHub last commit](https://img.shields.io/github/last-commit/inkdp/inkdp.github.io)
 
@@ -29,7 +29,7 @@ push 至 dev 分支的代码，自动构建并部署至 [inkdp.github..io](https
 
 ## 1.0.1
 
-从solo迁移至hexo,并部署至[墨殇的技术博客](https://www.inkdp.cn)
+从solo迁移至hexo,并部署至[顾澜的技术小站](https://www.inkdp.cn)
 
 ## 0.1.1
 
@@ -41,4 +41,4 @@ push 至 dev 分支的代码，自动构建并部署至 [inkdp.github..io](https
 
 ## 0.0.1
 
-基于[solo](https://github.com/88250/solo)，部署至[墨殇的技术博客](https://bolo.inkdp.cn)
+基于[solo](https://github.com/88250/solo)，部署至[顾澜的技术小站](https://bolo.inkdp.cn)
