@@ -7,7 +7,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1610127892293.jpg'
+cover: 'https://cdn.inkdp.cn/img/1610127892293.jpg'
 keywords: '模糊查询, MongoDB, Golang, MongoDB GO Driver'
 description: 使用MongoDB官方驱动实现MongoDB GO Driver 实现模糊查询
 abbrlink: 61018

@@ -9,7 +9,7 @@ tags:
 categories:
   - - 技术
     - 算法
-cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107231236835.jpeg'
+cover: 'https://cdn.inkdp.cn/img/100-20210107231236835.jpeg'
 permalink: /leetcode2.html
 abbrlink: 42838
 toc_number: false

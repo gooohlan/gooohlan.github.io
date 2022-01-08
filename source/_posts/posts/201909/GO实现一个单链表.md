@@ -8,7 +8,7 @@ tags:
 categories:
   - - 技术
     - 算法
-cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180309.jpg'
+cover: 'https://cdn.inkdp.cn/img/20180309.jpg'
 permalink: /articles/2019/09/26/1569488898577.html
 abbrlink: 1460
 ---

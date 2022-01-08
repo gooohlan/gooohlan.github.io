@@ -8,7 +8,7 @@ tags:
 categories:
   - - 技术
     - 前端
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1610127892296.png
+cover: https://cdn.inkdp.cn/img/1610127892296.png
 keywords: Hexo,GitHub Action,自动部署,Github Page,博客
 description: 本文主要介绍如何通过GitHub Action自动部署Hexo博客到GitHub Page以及自己的服务器
 ---
@@ -50,11 +50,11 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
 
   | 添加你的公钥                                                 | 成功                                                         |
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | ![image-20210117235120550](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210117235120550.png) | ![image-20210117235147362](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210117235147362.png) |
+  | ![image-20210117235120550](https://cdn.inkdp.cn/img/image-20210117235120550.png) | ![image-20210117235147362](https://cdn.inkdp.cn/img/image-20210117235147362.png) |
 
   | 添加你的私钥                                                 | 成功                                                         |
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | ![image-20210117235828106](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210117235828106.png) | ![image-20210117235912296](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210117235912296.png) |
+  | ![image-20210117235828106](https://cdn.inkdp.cn/img/image-20210117235828106.png) | ![image-20210117235912296](https://cdn.inkdp.cn/img/image-20210117235912296.png) |
 
   `GitHub Secret`可以用来存储一些私密内容，类似一些私钥，Key之类的，在CI中通过`${{ Secret Name}}`取出对应的值
 
@@ -159,7 +159,7 @@ steps:
 
 | 配置个人访问令牌 | 成功 |
 | ---------------- | ---- |
-|  ![image-20210118005047841](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210118005047841.png) | ![image-20210118005143713](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210118005143713.png) |
+|  ![image-20210118005047841](https://cdn.inkdp.cn/img/image-20210118005047841.png) | ![image-20210118005143713](https://cdn.inkdp.cn/img/image-20210118005143713.png) |
 
 ### 部署到个人服务器(可选)
 
@@ -182,7 +182,7 @@ steps:
 
 `push`到`yourname.github.io`的`hexo`分支，到此仓库的`Actions` 页面查看当前 task
 
-![image-20210118014615951](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210118014615951.png)
+![image-20210118014615951](https://cdn.inkdp.cn/img/image-20210118014615951.png)
 
 当任务完成后查看您的博客 `https://yourname.github.io`，如果不出意外的话已经可以看到自动部署的文章了，如有意外欢迎留言
 
@@ -190,7 +190,7 @@ steps:
 
 - 问题1：
 
-  ![image-20210622202346107](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210622202346.png)
+  ![image-20210622202346107](https://cdn.inkdp.cn/img/20210622202346.png)
 
   出现该问题是node版本过低导致的，在`yaml`文件中指定node版本为`12+`，或者设置
 

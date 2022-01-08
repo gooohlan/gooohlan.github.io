@@ -12,7 +12,7 @@ description: 'LeetCode 566.重塑矩阵，605.种花问题，628.三个数的最
 abbrlink: 51727
 date: 2021-01-22 00:17:09
 updated: 2021-01-24 01:22:00
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/1611417706506.jpg
+cover: https://cdn.inkdp.cn/img/1611417706506.jpg
 toc_number: false
 ---
 ### 返回总目录
@@ -23,7 +23,7 @@ toc_number: false
 
 ### 566. 重塑矩阵
 
-![image-20210122002325449](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210122002325449.png)
+![image-20210122002325449](https://cdn.inkdp.cn/img/image-20210122002325449.png)
 
 {% tabs 566 %}
 <!-- tab 方法一 -->
@@ -105,7 +105,7 @@ func matrixReshape2(nums [][]int, r int, c int) [][]int {
 
 ### 605. 种花问题
 
-![605.种花问题](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123141345851.png)
+![605.种花问题](https://cdn.inkdp.cn/img/image-20210123141345851.png)
 
 #### 解题思路
 
@@ -138,7 +138,7 @@ func canPlaceFlowers(flowerbed []int, n int) bool {
 
 ### 628. 三个数的最大乘积
 
-![628. 三个数的最大乘积](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123145818480.png)
+![628. 三个数的最大乘积](https://cdn.inkdp.cn/img/image-20210123145818480.png)
 
 {% tabs 628 %}
 
@@ -217,7 +217,7 @@ func maximumProduct2(nums []int) int {
 
 ### 643. 子数组最大平均数I
 
-![643](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123181732046.png)
+![643](https://cdn.inkdp.cn/img/image-20210123181732046.png)
 
 #### 解题思路
 
@@ -248,7 +248,7 @@ func findMaxAverage(nums []int, k int) float64 {
 
 ### 661. 图片平滑器
 
-![image-20210123211333512](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210123211333512.png)
+![image-20210123211333512](https://cdn.inkdp.cn/img/image-20210123211333512.png)
 
 #### 解题思路
 
@@ -288,7 +288,7 @@ func imageSmoother(M [][]int) [][]int {
 
 ### 665. 非递减数列
 
-![665. 非递减数列](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-20210124001206690.png)
+![665. 非递减数列](https://cdn.inkdp.cn/img/image-20210124001206690.png)
 
 #### 解题思路
 
