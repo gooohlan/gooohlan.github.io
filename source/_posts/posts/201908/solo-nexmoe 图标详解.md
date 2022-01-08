@@ -6,7 +6,7 @@ tags:
   - Solo
   - solo-nexmoe
 permalink: /articles/2019/08/23/1566548785550.html
-cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/100-20210107224813134.jpeg'
+cover: 'https://cdn.inkdp.cn/img/100-20210107224813134.jpeg'
 categories:
   - - 技术
     - 前端

@@ -12,7 +12,7 @@ toc_number: false
 abbrlink: 55663
 date: 2021-08-01 20:32:33
 updated: 2021-08-29 16:17:10
-cover: https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20210829163649.png
+cover: https://cdn.inkdp.cn/img/20210829163649.png
 description: 'LeetCode 115.最小栈，594.最长和谐子序列，202.快乐数，598.范围求和 II，599.两个列表的最小索引总和，645.错误的集合'
 ---
 

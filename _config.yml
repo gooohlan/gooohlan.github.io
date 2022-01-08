@@ -160,7 +160,7 @@ live2d:
     width: 150
     height: 300
   mobile:
-    show: true # 手机中是否展示
+    show: false # 手机中是否展示
 
 # Extensions
 plugins:

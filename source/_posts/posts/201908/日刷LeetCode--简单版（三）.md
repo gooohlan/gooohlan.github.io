@@ -7,7 +7,7 @@ tags:
   - 算法
   - Golang
 permalink: /leetcode3.html
-cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/timg-af5a1c18.jpeg'
+cover: 'https://cdn.inkdp.cn/img/timg-af5a1c18.jpeg'
 categories:
   - - 技术
     - 算法
@@ -26,7 +26,7 @@ toc_number: false
 
 #### 题目描述
 
-![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-45f2c7e9.png)
+![image.png](https://cdn.inkdp.cn/img/image-45f2c7e9.png)
 
 #### 解题思路
 
@@ -61,7 +61,7 @@ func lengthOfLastWord(s string) int {
 
 #### 题目描述
 
-![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-1081bedf.png)
+![image.png](https://cdn.inkdp.cn/img/image-1081bedf.png)
 
 ##### 解题思路
 
@@ -97,7 +97,7 @@ func plusOne(digits []int) []int {
 
 #### 题目描述
 
-![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-21de0dac.png)
+![image.png](https://cdn.inkdp.cn/img/image-21de0dac.png)
 
 #### 解题思路
 
@@ -149,7 +149,7 @@ func addBinary(a string, b string) string {
 
 #### 题目描述
 
-![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-66ad4fc1.png)
+![image.png](https://cdn.inkdp.cn/img/image-66ad4fc1.png)
 
 #### 解题思路 1
 
@@ -189,7 +189,7 @@ func mySqrt(x int) int {
 
 #### 题目描述
 
-![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-4aa9ad43.png)
+![image.png](https://cdn.inkdp.cn/img/image-4aa9ad43.png)
 
 #### 解题思路
 
@@ -222,7 +222,7 @@ func climbStairs(n int) int {
 
 #### 题目描述
 
-![image.png](https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/image-191c979d.png)
+![image.png](https://cdn.inkdp.cn/img/image-191c979d.png)
 
 #### 解题思路
 

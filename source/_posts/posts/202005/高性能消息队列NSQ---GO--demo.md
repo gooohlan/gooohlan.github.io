@@ -8,7 +8,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.jsdelivr.net/gh/inkdp/CDN@main/img/20180403.jpg'
+cover: 'https://cdn.inkdp.cn/img/20180403.jpg'
 permalink: /articles/2020/05/21/1590046687574.html
 abbrlink: 28940
 ---
