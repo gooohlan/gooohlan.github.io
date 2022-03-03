@@ -189,3 +189,14 @@ githubcalendar:
   # api: https://python-gitee-calendar-api.vercel.app/api
   calendar_js: https://cdn.jsdelivr.net/gh/Zfour/hexo-github-calendar@1.21/hexo_githubcalendar.js
   plus_style: ""
+
+  # 加密
+encrypt:
+  enable: true
+  abstract: 这是一篇加密文章，内容可能是个人日常吐槽或者特殊技术分享。如果你确实想看，请与我联系。非亲友团勿扰。
+  message: 请输入密码.
+  theme: xray
+  tags:
+  - {name: private, password: 这是密码}
+  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
