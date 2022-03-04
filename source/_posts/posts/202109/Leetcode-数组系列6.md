@@ -80,8 +80,6 @@ func max(a, b int) int {
 
 <p>请你返回记录中所有得分的总和。</p>
 
-<p> </p>
-
 <p><strong>示例 1：</strong></p>
 
 > <strong>输入：</strong>ops = ["5","2","C","D","+"]
@@ -152,8 +150,6 @@ func calPoints(ops []string) int {
 
 <p>你的任务是在 <code>nums</code> 中找到与&nbsp;<code>nums</code>&nbsp;拥有相同大小的度的最短连续子数组，返回其长度。</p>
 
-<p>&nbsp;</p>
-
 <p><strong>示例 1：</strong></p>
 
 > <strong>输入：</strong>nums = [1,2,2,3,1]
@@ -218,3 +214,38 @@ func min(a, b int) int {
 }
 ```
 
+### 704. 二分查找
+
+<p>给定一个&nbsp;<code>n</code>&nbsp;个元素有序的（升序）整型数组&nbsp;<code>nums</code> 和一个目标值&nbsp;<code>target</code> &nbsp;，写一个函数搜索&nbsp;<code>nums</code>&nbsp;中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p>
+
+<strong>示例 1:</strong></p>
+
+
+> <strong>输入:</strong> <code>nums</code> = [-1,0,3,5,9,12], <code>target</code> = 9
+<strong>输出:</strong> 4
+<strong>解释:</strong> 9 出现在 <code>nums</code> 中并且下标为 4
+
+<p><strong>示例&nbsp;2:</strong></p>
+> <strong>输入:</strong> <code>nums</code> = [-1,0,3,5,9,12], <code>target</code> = 2
+<strong>输出:</strong> -1
+<strong>解释:</strong> 2 不存在 <code>nums</code> 中因此返回 -1
+
+#### 示例代码
+
+```go
+func search(nums []int, target int) int {
+   l, r := 0, len(nums)-1
+   for l <= r {
+      mid := (r-l)/2 + l
+      num := nums[mid]
+      if num == target {
+         return mid
+      } else if target < num {
+         r = mid - 1
+      } else {
+         l = mid + 1
+      }
+   }
+   return -1
+}
+```
