@@ -175,7 +175,7 @@ githubcalendar:
   enable: true
   priority: 3
   enable_page: /
-  user: InkDP-HQL
+  user: InkDP
   layout:
     type: id
     name: recent-posts
