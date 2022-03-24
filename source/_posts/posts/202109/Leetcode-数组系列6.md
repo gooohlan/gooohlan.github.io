@@ -1,6 +1,6 @@
 ---
 title: Leetcode-数组系列6
-updated: '2022-03-03 18:16'
+updated: '2022-03-24 17:29'
 tags:
   - Golang
   - leetcode
@@ -11,8 +11,9 @@ categories:
 keywords: '算法,LeetCode,数组,Golang'
 abbrlink: 55343
 date: 2021-09-07 16:33:31
-cover:
-description:
+cover: https://cdn.inkdp.cn/img/20220324161314.png
+description: 'LeetCode 674.最长连续递增序列，482.棒球比赛，494.数组的度，704.二分查找，705.设计哈希集合，706.设计哈希集合'
+toc_number: false
 ---
 
 ### 674. 最长连续递增序列
@@ -230,6 +231,14 @@ func min(a, b int) int {
 <strong>输出:</strong> -1
 <strong>解释:</strong> 2 不存在 <code>nums</code> 中因此返回 -1
 
+#### 解题思路
+
+{% note no-icon info simple %}
+
+略
+
+{% endnote %}
+
 #### 示例代码
 
 ```go
@@ -249,3 +258,214 @@ func search(nums []int, target int) int {
    return -1
 }
 ```
+
+### 705. 设计哈希集合
+
+<p>不使用任何内建的哈希表库设计一个哈希集合（HashSet）。</p>
+
+<p>实现 <code>MyHashSet</code> 类：</p>
+
+<ul>
+	<li><code>void add(key)</code> 向哈希集合中插入值 <code>key</code> 。</li>
+	<li><code>bool contains(key)</code> 返回哈希集合中是否存在这个值 <code>key</code> 。</li>
+	<li><code>void remove(key)</code> 将给定值 <code>key</code> 从哈希集合中删除。如果哈希集合中没有这个值，什么也不做。</li>
+</ul>
+&nbsp;
+
+<p><strong>示例：</strong></p>
+
+> <strong>输入：</strong>
+> ["MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"]
+> [[], [1], [2], [1], [3], [2], [2], [2], [2]]
+> <strong>输出：</strong>
+> [null, null, null, true, false, null, true, null, false]
+>
+> <strong>解释：</strong>
+> MyHashSet myHashSet = new MyHashSet();
+> myHashSet.add(1);      // set = [1]
+> myHashSet.add(2);      // set = [1, 2]
+> myHashSet.contains(1); // 返回 True
+> myHashSet.contains(3); // 返回 False ，（未找到）
+> myHashSet.add(2);      // set = [1, 2]
+> myHashSet.contains(2); // 返回 True
+> myHashSet.remove(2);   // set = [1]
+> myHashSet.contains(2); // 返回 False ，（已移除）
+
+<p></p>
+
+{% tabs 705 %}
+
+<!-- tab 顺序存储 -->
+
+#### 解题思路
+
+{% note no-icon info simple %}
+
+利用数组存储，直接对数组进行插入，查找，删除
+
+{% endnote %}
+
+#### 示例代码
+
+略
+
+<!-- endtab -->
+
+<!-- tab 链式存储 -->
+
+#### 解题思路
+
+{% note no-icon info simple %}
+
+**HashSet是在时间和空间上做权衡的例子：**如果不考虑空间问题，直接使用顺序存储的方式，用一个超大的数组报错，每个Key都有单独的位置。插入和查找都会比较费时间。
+
+为了平衡时间和空间的平衡，**HashSet**是基于数组实现的，通过hsah方法求键Key在数组中的位置，当hash后的位置存在冲突的时候，在解决冲突。设计合适的 hash 函数，一般都是对分桶数取模`%`，为了避免冲突，尽量采用质数取模
+
+![c9bbf70f3f0c446ed294e087d8565348.jpg](https://cdn.inkdp.cn/img/20220324154253.jpg)
+
+{% endnote %}
+
+#### 示例代码
+
+使用了golang自带的双向链表，这样不用每次都从头开始遍历
+
+```go
+type MyHashSet struct {
+   data []list.List
+}
+
+const base = 997
+
+func Constructor() MyHashSet {
+   return MyHashSet{make([]list.List, base)}
+}
+
+func (this *MyHashSet) hash(key int) int {
+   return key % base
+}
+
+func (this *MyHashSet) Add(key int) {
+   if !this.Contains(key) {
+      h := this.hash(key)
+      this.data[h].PushBack(key)
+   }
+}
+
+func (this *MyHashSet) Remove(key int) {
+   h := this.hash(key)
+   for e := this.data[h].Front(); e != nil; e = e.Next() {
+      if e.Value.(int) == key {
+         this.data[h].Remove(e)
+      }
+   }
+}
+
+func (this *MyHashSet) Contains(key int) bool {
+   h := this.hash(key)
+   for e := this.data[h].Front(); e != nil; e = e.Next() {
+      if e.Value.(int) == key {
+         return true
+      }
+   }
+   return false
+}
+```
+
+<!-- endtab -->
+
+{% endtabs %}
+
+### 706. 设计哈希集合
+
+<p>不使用任何内建的哈希表库设计一个哈希映射（HashMap）。</p>
+
+<p>实现 <code>MyHashMap</code> 类：</p>
+
+<ul>
+   <li><code>MyHashMap()</code> 用空映射初始化对象</li>
+   <li><code>void put(int key, int value)</code> 向 HashMap 插入一个键值对 <code>(key, value)</code> 。如果 <code>key</code> 已经存在于映射中，则更新其对应的值 <code>value</code> 。</li>
+   <li><code>int get(int key)</code> 返回特定的 <code>key</code> 所映射的 <code>value</code> ；如果映射中不包含 <code>key</code> 的映射，返回 <code>-1</code> 。</li>
+   <li><code>void remove(key)</code> 如果映射中存在 <code>key</code> 的映射，则移除 <code>key</code> 和它所对应的 <code>value</code> 。</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>示例：</strong></p>
+
+> <strong>输入</strong>：
+["MyHashMap", "put", "put", "get", "get", "put", "get", "remove", "get"]
+[[], [1, 1], [2, 2], [1], [3], [2, 1], [2], [2], [2]]
+<strong>输出</strong>：
+[null, null, null, 1, -1, null, 1, null, -1]
+>
+> <strong>解释</strong>：
+> MyHashMap myHashMap = new MyHashMap();
+> myHashMap.put(1, 1); // myHashMap 现在为 [[1,1]]
+> myHashMap.put(2, 2); // myHashMap 现在为 [[1,1], [2,2]]
+> myHashMap.get(1);    // 返回 1 ，myHashMap 现在为 [[1,1], [2,2]]
+> myHashMap.get(3);    // 返回 -1（未找到），myHashMap 现在为 [[1,1], [2,2]]
+> myHashMap.put(2, 1); // myHashMap 现在为 [[1,1], [2,1]]（更新已有的值）
+> myHashMap.get(2);    // 返回 1 ，myHashMap 现在为 [[1,1], [2,1]]
+> myHashMap.remove(2); // 删除键为 2 的数据，myHashMap 现在为 [[1,1]]
+> myHashMap.get(2);    // 返回 -1（未找到），myHashMap 现在为 [[1,1]]
+
+#### 解题思路
+
+{% note no-icon info simple %}
+
+与上题几乎一致，唯一的区别在于我们存储的不是`key`本身，而是 `(key,value)` 对。除此之外，代码基本是类似的。
+
+{% endnote %}
+
+#### 示例代码
+
+```go
+type entry struct {
+   key, value int
+}
+
+const base = 997
+
+type MyHashMap struct {
+   data []list.List
+}
+
+func Constructors() MyHashMap {
+   return MyHashMap{make([]list.List, base)}
+}
+
+func hash(key int) int {
+   return key % base
+}
+
+func (this *MyHashMap) Put(key int, value int) {
+   h := hash(key)
+   for e := this.data[h].Front(); e != nil; e = e.Next() {
+      if v := e.Value.(entry); v.key == key {
+         e.Value = entry{key, value}
+         return
+      }
+   }
+   this.data[h].PushBack(entry{key, value})
+}
+
+func (this *MyHashMap) Get(key int) int {
+   h := hash(key)
+   for e := this.data[h].Front(); e != nil; e = e.Next() {
+      if v := e.Value.(entry); v.key == key {
+         return v.value
+      }
+   }
+   return -1
+}
+
+func (this *MyHashMap) Remove(key int) {
+   h := hash(key)
+   for e := this.data[h].Front(); e != nil; e = e.Next() {
+      if v := e.Value.(entry); v.key == key {
+         this.data[h].Remove(e)
+      }
+   }
+}
+```
+

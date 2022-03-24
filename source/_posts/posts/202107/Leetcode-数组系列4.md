@@ -11,7 +11,7 @@ categories:
   - - 技术
     - 算法
 keywords: 算法,LeetCode,数组,Golang
-description: 'LeetCode 465.岛屿的周长，495.提莫攻击，496.下一个更大元素I，500.键盘行，506.相对名次，575：分糖果'
+description: 'LeetCode 465.岛屿的周长，495.提莫攻击，496.下一个更大元素I，500.键盘行，506.相对名次，575.分糖果'
 cover: https://cdn.inkdp.cn/img/20210722202914.png
 toc_number: false
 
