@@ -15,7 +15,7 @@ description: >-
   的快速发布、测试和部署代码的方法，可以显著减少编写代码和在生产环境中运行代码之间的延迟。
 abbrlink: 10048
 date: 2022-06-01 01:59:28
-updated: 2022-06-01 02:59:28
+updated: 2022-06-04 17:50:28
 ---
 
 
@@ -68,7 +68,7 @@ Docker提供一个能力来打包和运行应用，在一个被称为容器的�
 
 5. 多个版本软件共存，不污染系统，例如 Python2、Python3，Redis4.0，Redis5.0
 
-####  <font color="red">重要概念：镜像、容器</font>
+####  重要概念：<font color="red">镜像、容器</font>、仓库
 
 - 镜像
 
@@ -81,6 +81,14 @@ Docker提供一个能力来打包和运行应用，在一个被称为容器的�
   一个容器就是就是一个镜像的实例，你可以通过Docker API或命令行创建、启动、停止、移动或者删除。一个容器可以连接多个网络或者基于当前的状态创造更多的镜像。
 
   默认情况下，容器会与其它容器进行隔离，可以控制容器的网络、存储或其他底层系统。容器由镜像定义像其它配置选项一样
+
+- 仓库
+
+  仓库类似Git的远程仓库，集中存放镜像文件。
+
+三者的关系：
+
+![img](https://cdn.inkdp.cn/img/20220602082051.png)
 
 #### Docker的好处
 
@@ -137,4 +145,376 @@ Docker 本身非常适合用于管理单个容器。但随着您开始使用越�
 
 ### Docker常见命令
 
-1
+![Docker常用命令](https://cdn.inkdp.cn/img/20220602080651.svg)
+
+#### 服务
+
+- 查看docker版本信息
+
+  ```shell
+  docker version
+  ```
+
+- 查看docker简要信息
+
+  ```shell
+  docker -v
+  ```
+
+- 启动docker(linux)
+
+  ```shell
+  systemctl start docker
+  ```
+
+- 关闭docker(linux)
+
+  ```shell
+  systemctl stop docker
+  ```
+
+- 设置开机启动
+
+  ```shell
+  systemctl enable docker
+  ```
+
+- 重启docker服务
+
+  ```shell
+  service docker restart
+  ```
+
+- 关闭docker服务
+
+  ```shell
+  service docker stop
+  ```
+
+#### 镜像
+
+镜像仓库中存储这大量官方镜像，可以从仓库直接获取镜像并运行，比如[Docker Hub](https://hub.docker.com/search?q=&type=)，拉取慢可以更换镜像源以提速，以腾讯加速源为例，编辑`/etc/docker/daemon.json`配置文件，添加一下内容即可
+
+```sh
+{
+   "registry-mirrors": [
+       "https://mirror.ccs.tencentyun.com"
+  ]
+}
+```
+
+##### 获取镜像
+
+- 搜索镜像
+
+  ```shell
+  docker search 镜像名
+  ```
+
+- 获取镜像
+
+  ```shell
+  docker pull [OPTIONS] 镜像名称[:TAG|@DIGEST]
+  ```
+
+  OPTIONS:
+
+  - `--all-tags,-a`  下载存储库中所有标记的镜像
+  - `--disable-content-trust`  跳过镜像验证，默认为`true`
+  - `--platform` 如果服务器支持多平台，则设置平台
+  - `--quiet,-q` 取消详情输出
+
+  | `--all-tags`,`-a`         |        | 下载存储库中的所有标记图像       |
+  | ------------------------- | ------ | -------------------------------- |
+  | `--disable-content-trust` | `true` | 跳过图像验证                     |
+  | `--platform`              |        | 如果服务器支持多平台，则设置平台 |
+  | `--quiet`,`-q`            |        | 抑制详细输出                     |
+
+##### 镜像管理
+
+- 列出镜像
+
+  ```shell
+  docker images
+  docker image ls
+
+- 删除镜像
+
+  ```shell
+  docker rmi <镜像Id|镜像名称> [<镜像Id|镜像名称>,...]
+  ```
+
+- 导出镜像
+
+  ```sh
+  docekr save
+  ```
+
+- 导入镜像
+
+  ```shell
+  docker load
+  ```
+
+##### Dockerfile构建镜像
+
+Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。
+
+**Dockerfile常见指令：**
+
+- FORM：指定基础镜像
+- RUN：执行命令
+- WORKDIR：指定工作目录
+- COPY：复制文件
+- ADD：更高级的复制文件
+- CMD：容器启动命令
+- ENV：设置环境变量
+- EXPOST：声明端口
+- VOLUME：挂载目录
+
+其他指令还有：ENTRYPOINT、ARG、USER、HEALTHCHECK、LABEL…，详见[Environment replacement](https://docs.docker.com/engine/reference/builder/#environment-replacement)
+
+Dockerfiles示例：
+
+```dockerfile
+FROM golang:1.16.7
+
+ENV GO111MODULE=on \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
+
+WORKDIR /build
+COPY . .
+RUN go build -ldflags "-s -w"
+
+EXPOSE 8080
+
+FROM alpine:latest
+
+WORKDIR /build
+COPY --from=0 /build ./
+
+CMD ./demo
+```
+
+**镜像构建**
+
+```shell
+docker build [OPTIONS] PATH | URL | -
+```
+
+OPTIONS：
+
+- **--build-arg=[] :**设置镜像创建时的变量；
+- **--cpu-shares :**设置 cpu 使用权重；
+- **--cpu-period :**限制 CPU CFS周期；
+- **--cpu-quota :**限制 CPU CFS配额；
+- **--cpuset-cpus :**指定使用的CPU id；
+- **--cpuset-mems :**指定使用的内存 id；
+- **--disable-content-trust :**忽略校验，默认开启；
+- **-f :**指定要使用的Dockerfile路径；
+- **--force-rm :**设置镜像过程中删除中间容器；
+- **--isolation :**使用容器隔离技术；
+- **--label=[] :**设置镜像使用的元数据；
+- **-m :**设置内存最大值；
+- **--memory-swap :**设置Swap的最大值为内存+swap，"-1"表示不限swap；
+- **--no-cache :**创建镜像的过程不使用缓存；
+- **--pull :**尝试去更新镜像的新版本；
+- **--quiet, -q :**安静模式，成功后只输出镜像 ID；
+- **--rm :**设置镜像成功后删除中间容器；
+- **--shm-size :**设置/dev/shm的大小，默认值是64M；
+- **--ulimit :**Ulimit配置。
+- **--squash :**将 Dockerfile 中所有的操作压缩为一层。
+- **--tag, -t:** 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。
+- **--network:** 默认 default。在构建期间设置RUN指令的网络模式
+
+**镜像运行**
+
+```shell
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+```
+
+#### 容器
+
+##### 容器操作
+
+- 启动容器：启动容器有两种方式：一是基于镜像新建容器，二是启动终止状态的容器
+
+  ```shell
+  # 新建并启动
+  docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+  # 启动已终止容器
+  docker start <容器ID|容器名>
+  ```
+
+  `docker run`命令详见：[Docker run reference](https://docs.docker.com/engine/reference/run/#general-form)
+
+- 查看容器
+
+  ```shell
+  # 列出所有运行中的容器
+  docker ps
+  # 列出所有容器(运行中和已停止)
+  docker ps -a
+  ```
+
+- 停止容器
+
+  ```shel
+  docker stop <容器ID|容器名称>
+  ```
+
+- 重启容器
+
+  ```shell
+  docker restart <容器ID|容器名称>
+  ```
+
+- 删除容器
+
+  删除的容器必须是已停止
+  ```shell
+  docker rm <容器ID|容器名称>
+  ```
+
+##### 进入容器
+
+```shell
+docker exec [OPTIONS] <容器ID|容器名> 命令 [ARG...]
+```
+
+使用`docker exec`命令需要容器在运行中，OPTIONS参数详见：[OPTIONS](https://docs.docker.com/engine/reference/commandline/exec/#options)
+
+##### 导入和导出
+
+- 导出容器
+
+  ```shell
+  docker export <容器ID|容器名称>
+  ```
+
+- 导入容器
+
+  ```shell
+  docker import <路径>
+  ```
+
+##### 其他
+
+- 查看日志:
+
+  ```shell
+  docker logs [OPTIONS] <容器ID|容器名>
+  ```
+
+  OPTIONS参数列表:
+
+  - **--details :** 显示日志详情
+  - **--follow, –f :** 日志滚动输出
+  - **--since : **显示某个开始时间的所有日志
+  - **--tail, -t :** 从日志末尾显示的行数
+  - **--timestamps, -t : **显示时间戳
+  - **--until : **显示某个时间内的所有日志
+
+- 复制文件
+
+  ```shell
+  # 从主机复制到容器
+  docker cp 主机路径 <容器ID|容器名称>:容器类内路径 
+  # 从容器复制到主机
+  docker cp <容器ID|容器名称>:容器类内路径 主机路径
+  ```
+
+### Docker Compose
+
+Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。
+
+docker compose使用的3个步骤：
+
+- 使用`Dockerfile`定义应用程序环境
+- 使用`docker-compose.yaml`定义构成应用程序的服务，这样它们在隔离环境中一起运行
+- 最后，执行`docker-compose up`命令来启动并运行整个应用程序
+
+`docker-compose.yaml`示例配置
+
+```yaml
+version: '3.3'
+services:
+  web:
+    build: .
+    links:
+      - redis
+    container_name: demo-web
+    ports:
+      - "8080:8080"
+  redis:
+    image: redis:6.2.5
+    volumes:
+      - ~/dockerData/redis/conf/redis.conf:/etc/redis/redis.conf
+      - ~/dockerData/redis/data:/data
+    ports:
+      - "6379:6379"
+    container_name: demo-web-redis
+```
+
+运行`docker-compose up`即可启动应用程序，如果需要后台运行可以使用`docker-compose up -d`
+
+#### 配置指令参考：
+
+- version: 指定本`yaml`依从的`compose`哪个版本制定的
+- services：运行的服务列表
+- build：指定为构建镜像上下文路径，或者作为具有在上下文指定的路径的对象，以及可选的 Dockerfile 和 args：
+  - context：上下文路径。
+  - dockerfile：指定构建镜像的 Dockerfile 文件名。
+  - args：添加构建参数，这是只能在构建过程中访问的环境变量。
+  - labels：设置构建镜像的标签。
+  - target：多层构建，可以指定构建哪一层。
+- volumes：文件挂载文件、目录映射
+- image：所使用的镜像名
+- links：对应容器ip映射到容器内，上文所示中的应用程序就可以使用`redis:6379`访问redis
+- container_name：容器名称
+- ports：端口映射,把docker内部的端口暴露出来
+- restart：重启操作[no|always|on-failure|unless-stoppen]
+- env_file：环境变量文件
+- environment：环境变量
+- external_links：链接其他的容器服务
+- depends_on：由于启动顺序是随机的，如果有依赖关系时添加
+- ….
+
+[docker-compose 参数 官方文档](https://links.jianshu.com/go?to=https%3A%2F%2Fdocs.docker.com%2Fcompose%2Fcompose-file%2F%23environment)
+
+#### docker compose命令
+
+| 命令                                                         | 详情                                        |
+| ------------------------------------------------------------ | ------------------------------------------- |
+| [docker compose build](https://docs.docker.com/engine/reference/commandline/compose_build/) | 构建或重建服务                              |
+| [docker compose convert](https://docs.docker.com/engine/reference/commandline/compose_convert/) | 格式化配置文件                              |
+| [docker compose cp](https://docs.docker.com/engine/reference/commandline/compose_cp/) | 在服务容器和本地文件系统之间复制文件/文件夹 |
+| [docker compose create](https://docs.docker.com/engine/reference/commandline/compose_create/) | 为服务创建容器                              |
+| [docker compose down](https://docs.docker.com/engine/reference/commandline/compose_down/) | 停止并移除容器、网络                        |
+| [docker compose events](https://docs.docker.com/engine/reference/commandline/compose_events/) | 从容器接收实时事件                          |
+| [docker compose exec](https://docs.docker.com/engine/reference/commandline/compose_exec/) | 在正在运行的容器中执行命令                  |
+| [docker compose images](https://docs.docker.com/engine/reference/commandline/compose_images/) | 列出所创建的容器使用的镜像                  |
+| [docker compose kill](https://docs.docker.com/engine/reference/commandline/compose_kill/) | 强制停止容器                                |
+| [docker compose logs](https://docs.docker.com/engine/reference/commandline/compose_logs/) | 插入容器日志                                |
+| [docker compose ls](https://docs.docker.com/engine/reference/commandline/compose_ls/) | 列出正在运行的compose项目                   |
+| [docker compose pause](https://docs.docker.com/engine/reference/commandline/compose_pause/) | 暂停服务                                    |
+| [docker compose port](https://docs.docker.com/engine/reference/commandline/compose_port/) | 打印端口绑定的公共端口                      |
+| [docker compose ps](https://docs.docker.com/engine/reference/commandline/compose_ps/) | 容器列表                                    |
+| [docker compose pull](https://docs.docker.com/engine/reference/commandline/compose_pull/) | 拉取服务镜像                                |
+| [docker compose push](https://docs.docker.com/engine/reference/commandline/compose_push/) | 推送服务镜像                                |
+| [docker compose restart](https://docs.docker.com/engine/reference/commandline/compose_restart/) | 重新启动容器                                |
+| [docker compose rm](https://docs.docker.com/engine/reference/commandline/compose_rm/) | 移除已停止的服务容器                        |
+| [docker compose run](https://docs.docker.com/engine/reference/commandline/compose_run/) | 对服务运行一次性命令                        |
+| [docker compose start](https://docs.docker.com/engine/reference/commandline/compose_start/) | 启动服务                                    |
+| [docker compose stop](https://docs.docker.com/engine/reference/commandline/compose_stop/) | 停止服务                                    |
+| [docker compose top](https://docs.docker.com/engine/reference/commandline/compose_top/) | 显示正在运行的服务进程                      |
+| [docker compose unpause](https://docs.docker.com/engine/reference/commandline/compose_unpause/) | 停止服务                                    |
+| [docker compose up](https://docs.docker.com/engine/reference/commandline/compose_up/) | 创建和启动容器                              |
+| [docker compose version](https://docs.docker.com/engine/reference/commandline/compose_version/) | 显示 Docker Compose 版本信息                |
+
+### 进阶
+
+- kubernetes学习笔记：学习中
+- ……
