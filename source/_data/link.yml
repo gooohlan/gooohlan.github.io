@@ -7,7 +7,7 @@
       descr: 死钻技术 | 绝不抄袭
     - name: 鼠鼠在碎觉
       link: https://www.sszsj.cc/
-      avatar: https://cdn.jsdelivr.net/gh/csfwff/CDN@master/img/head.jpg
+      avatar: https://tmx.fishpi.cn/image/head.jpg
       descr: forever alone forever sad
     - name: 邯城往事
       link: https://www.cjzshilong.cn/
@@ -35,8 +35,8 @@
       descr: 两岸猿声啼不住 轻舟已过万重山
     - name: 愿星光伴你左右
       link: http://shanks.link/
-      avatar: http://shanks.link/img/logo.jpg
-      descr: 
+      avatar: http://shanks.link/img/favicon.ico
+      descr:
 
 - class_name: 网站
   class_desc: 那些有意思的网站
