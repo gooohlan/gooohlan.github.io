@@ -53,4 +53,4 @@ jobs:
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           mv ./public ./www
-          scp -o StrictHostKeyChecking=no -r ./www $SERVER_DIR
+          scp -o StrictHostKeyChecking=no -r ./www/* $SERVER_DIR
