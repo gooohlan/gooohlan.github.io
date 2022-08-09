@@ -11,21 +11,26 @@ cover: 'https://cdn.inkdp.cn/img/20220731201045.png'
 keywords: MySQL
 abbrlink: 62506
 date: 2022-07-25 07:52:21
-updated: 2022-07-31 20:00:21
+updated: 2022-08-09 20:00:21
 description:
+copyright: false
 ---
+
+{% note orange 'fas fa-bullhorn' flat %}
+由于版本原因，部分建议可能已无效，请实际测试后使用
+{% endnote %}
 
 ### 1、查询SQL尽量不要使用select *，而是select具体字段
 
 反例：
 
-```mysql
+```sql
 select * from user;
 ```
 
 正例：
 
-```mysql
+```sql
 select id, name from user;
 ```
 
@@ -38,13 +43,13 @@ select id, name from user;
 
 反例：
 
-```mysql
+```sql
 select id, name from user where name = 'InkDP';
 ```
 
 正例：
 
-```mysql
+```sql
 select id, name from user where name = 'InkDP' limit 1;
 ```
 
@@ -57,14 +62,14 @@ select id, name from user where name = 'InkDP' limit 1;
 
 反例:
 
-```mysql
+```sql
 select * from user where id = 1 or name = 'InkDP';
 ```
 
 正例：
 
-```mysql
-select * from user where id =1 union all select * from user where name = 'InkDP'; -- 使用union all
+```sql
+select * from user where id = 1 union all select * from user where name = 'InkDP'; -- 使用union all
 select * from user where id = 1; select * from user where name = 'InkDP' -- 分开两条sql写
 ```
 
@@ -80,14 +85,14 @@ select * from user where id = 1; select * from user where name = 'InkDP' -- 分�
 
 反例：
 
-```mysql
+```sql
 select id，name，age from employee limit 10000，10
 ```
 
 正例：
 
-```mysql
-select id，name from name where id>10000 limit 10; -- 方案一：返回上次查询的最大记录(偏移量)
+```sql
+select id，name from name where id > 10000 limit 10; -- 方案一：返回上次查询的最大记录(偏移量)
 select id，name from name order by id  limit 10000，10; -- 方案二：order by + 索引
 -- 方案三：在业务允许的情况下限制页数
 ```
@@ -105,13 +110,13 @@ select id，name from name order by id  limit 10000，10; -- 方案二：order b
 
 反例：
 
-```mysql
+```sql
 select id，name from user where name like '%time';
 ```
 
 正例：
 
-```mysql
+```sql
 select id，name from user where name like 'time%';
 ```
 
@@ -139,13 +144,13 @@ select id，name from user where name like 'time%';
 
 反例：
 
-```mysql
+```sql
 select id from user where is_vip = 1; -- 之后在通过业务去判断查询结果里面有无指定用户
 ```
 
 正例：
 
-```mysql
+```sql
 select id from user where id = 123 and is_vip = 1; -- 直接查看是否有结果即可
 ```
 
@@ -159,13 +164,13 @@ select id from user where id = 123 and is_vip = 1; -- 直接查看是否有结�
 
 反例：
 
-```mysql
-select user_id, login_time from login_user where Date_ADD(login_time, Interval 7 DAY) >=now();
+```sql
+select user_id, login_time from login_user where Date_ADD(login_time, Interval 7 DAY) >= now();
 ```
 
 正例：
 
-```mysql
+```sql
 select user_id, login_time from loginuser where  loginTime >= Date_ADD(NOW(), INTERVAL - 7 DAY);
 ```
 
@@ -183,19 +188,19 @@ select user_id, login_time from loginuser where  loginTime >= Date_ADD(NOW(), IN
 
 反例：
 
-```mysql
+```sql
 select * from user where id - 1 = 10
 ```
 
 正例：
 
-```mysql
+```sql
 select * from user where id = 11;
 ```
 
 理由：
 
-- 虽然`id`是主键索引，但是因为对它进行运算，索引直接迷路了。。。 
+- 虽然`id`是主键索引，但是因为对它进行运算，索引直接迷路了。。。
 
   ![image-20220729104822176](https://cdn.inkdp.cn/img/20220729104822.png)
 
@@ -209,14 +214,14 @@ select * from user where id = 11;
 
 反例：
 
-```mysql
-select * from tab1 t1 left join tab2 t2  on t1.size = t2.size where t1.id>2;
+```sql
+select * from tab1 t1 left join tab2 t2  on t1.size = t2.size where t1.id > 2;
 ```
 
 正例：（子查询性能优化也是个大问题）
 
-```mysql
-select * from (select * from tab1 where id >2) t1 left join tab2 t2 on t1.size = t2.size;
+```sql
+select * from (select * from tab1 where id > 2) t1 left join tab2 t2 on t1.size = t2.size;
 ```
 
 理由：
@@ -228,16 +233,16 @@ select * from (select * from tab1 where id >2) t1 left join tab2 t2 on t1.size =
 
 反例：
 
-```mysql
+```sql
 select id, age from user where age <> 18;
 ```
 
 正例：
 
-```mysql
+```sql
 -- 可以考虑分开两条sql写
-select id, age from user where age <18;
-select id, age from user where age >18;
+select id, age from user where age < 18;
+select id, age from user where age > 18;
 ```
 
 理由：
@@ -258,7 +263,7 @@ select id, age from user where age >18;
 
 反例：
 
-```mysql
+```sql
 select * from user where age = 18;
 ```
 
@@ -266,8 +271,8 @@ select * from user where age = 18;
 
 正例：
 
-```mysql
-select * from user where user_id = 1 and age =18; -- 符合最左匹配原则
+```sql
+select * from user where user_id = 1 and age = 18; -- 符合最左匹配原则
 select * from user where user_id = 2; -- 符合最左匹配原则
 ```
 
@@ -284,7 +289,7 @@ select * from user where user_id = 2; -- 符合最左匹配原则
 
 反例：
 
-```mysql
+```sql
 select * from user where address ='重庆' order by age ;
 ```
 
@@ -292,8 +297,8 @@ select * from user where address ='重庆' order by age ;
 
 正例：
 
-```mysql
-alter table user add index idx_address_age (address,age); -- 添加索引
+```sql
+alter table user add index idx_address_age (address, age); -- 添加索引
 ```
 
 ![image-20220730180723417](https://cdn.inkdp.cn/img/20220730180723.png)
@@ -302,16 +307,16 @@ alter table user add index idx_address_age (address,age); -- 添加索引
 
 反例：
 
-```mysql
+```sql
 for { -- 业务代码中存在循环插入
- inster into user (user, age) values ("user", 18)
+ insert into user (user, age) values ("user", 18)
 }
 ```
 
 正例：
 
-```mysql
-insert into user (name,age) values ("InkDP1", 18),("HQL", 19)....
+```sql
+insert into user (name, age) values ("InkDP1", 18),("HQL", 19)....
 ```
 
 理由：
@@ -326,7 +331,7 @@ insert into user (name,age) values ("InkDP1", 18),("HQL", 19)....
 
 反例：
 
-```mysql
+```sql
 select * from user where user_id like '%1' -- like模糊查血，不走索引了
 ```
 
@@ -342,13 +347,13 @@ distinct 关键字一般用来过滤重复记录，以返回不重复的记录�
 
 反例：
 
-```mysql
+```sql
 select distinct * from user;
 ```
 
 正例:
 
-```mysql
+```sql
 select distinct name form user;
 ```
 
@@ -378,9 +383,9 @@ select distinct name form user;
 
 反例：
 
-```mysql
+```sql
 -- 一次删除10万或者100万+
-delete from user where id <100000;
+delete from user where id < 100000;
 -- 或者采用单一循环操作，效率低，
 for {
   delete from user where id = xxx；
@@ -391,8 +396,9 @@ for {
 
 正例：
 
-```mysql
-delete user where id < 500： delete user where id >= 500 and id < 1000； -- 分批进行删除,如每次500
+```sql
+delete user where id < 500;
+delete user where id >= 500 and id < 1000； -- 分批进行删除,如每次500
 ```
 
 复制
@@ -405,13 +411,13 @@ delete user where id < 500： delete user where id >= 500 and id < 1000； -- �
 
 反例：
 
-```mysql
+```sql
 explain select * from user where age is not null
 ```
 
 正例：
 
-```mysql
+```sql
 explain select * from user where age > 0
 ```
 
@@ -433,17 +439,17 @@ explain select * from user where age > 0
 
 假设表A表示某企业的员工表，表B表示部门表，查询所有部门的所有员工，很容易有以下SQL:
 
-```mysql
+```sql
 select * from A where deptId in (select deptId from B);
 ```
 
 这样写等价于：
 
-> 先查询部门表B 
+> 先查询部门表B
 >
-> select deptId from B 
+> select deptId from B
 >
-> 再由部门deptId，查询A的员工 
+> 再由部门deptId，查询A的员工
 >
 > select * from A where A.deptId = B.deptId
 
@@ -461,7 +467,7 @@ for i := 0; i < len(a); i++ {
 
 显然，除了使用in，我们也可以用exists实现一样的查询功能，如下：
 
-```mysql
+```sql
 select * from A where exists (select 1 from B where A.deptId = B.deptId);
 ```
 
@@ -469,7 +475,7 @@ select * from A where exists (select 1 from B where A.deptId = B.deptId);
 
 那么，这样写就等价于：
 
-> select * from A,先从A表做循环 
+> select * from A,先从A表做循环
 >
 > select * from B where A.deptId = B.deptId,再从B表做循环.
 
@@ -497,14 +503,14 @@ PS：使用连表会不会更好，不好的话为什么？
 
 反例：
 
-```mysql
-select * from user where userid=1 union  select * from user where age = 10
+```sql
+select * from user where userid = 1 union  select * from user where age = 10
 ```
 
 正例：
 
-```mysql
-select * from user where userid=1 union allselect * from user where age = 10
+```sql
+select * from user where userid = 1 union allselect * from user where age = 10
 ```
 
 理由：
@@ -521,13 +527,13 @@ select * from user where userid=1 union allselect * from user where age = 10
 
 反例：
 
-```mysql
+```sql
 `king_id` varchar（20） NOT NULL COMMENT '守护者Id'
 ```
 
 正例：
 
-```mysql
+```sql
  `king_id` int(11) NOT NULL COMMENT '守护者Id'
 ```
 
@@ -545,28 +551,28 @@ select * from user where userid=1 union allselect * from user where age = 10
 
 反例：
 
-```mysql
-select * from living_info where watch_id =user_id and watch_time >= Date_sub(now(),Interval 1 Y)  -- 一次性查询所有数据回来
+```sql
+select * from living_info where watch_id = user_id and watch_time >= Date_sub(now(),Interval 1 Y)  -- 一次性查询所有数据回来
 ```
 
 正例：
 
-```mysql
-select * from LivingInfo where watchId =useId and watchTime>= Date_sub(now(),Interval 1 Y) limit offset，pageSize -- //分页查询
-select * from LivingInfo where watchId =useId and watchTime>= Date_sub(now(),Interval 1 Y) limit 200; -- 如果是前端分页，可以先查询前两百条记录，因为一般用户应该也不会往下翻太多页，
+```sql
+select * from LivingInfo where watchId = useId and watchTime >= Date_sub(now(),Interval 1 Y) limit offset，pageSize -- //分页查询
+select * from LivingInfo where watchId = useId and watchTime >= Date_sub(now(),Interval 1 Y) limit 200; -- 如果是前端分页，可以先查询前两百条记录，因为一般用户应该也不会往下翻太多页，
 ```
 
 ### 26、当在SQL语句中连接多个表时,请使用表的别名，并把别名前缀于每一列上，这样语义更加清晰。
 
 反例：
 
-```mysql
+```sql
 select  * from XXXXXX_A innerjoin XXXXXX_B on XXXXXX_A.deptId = XXXXXX_B.deptId;
 ```
 
 正例
 
-```mysql
+```sql
 select  A.name, B.deptName from XXXXXX_A A innerjoin XXXXXX_B B on A.deptId = B.deptId;
 ```
 
@@ -574,13 +580,13 @@ select  A.name, B.deptName from XXXXXX_A A innerjoin XXXXXX_B B on A.deptId = B.
 
 反例：
 
-```mysql
+```sql
 `deptName` char(100) DEFAULT NULL COMMENT '部门名称'
 ```
 
 正例：
 
-```mysql
+```sql
  `deptName` varchar(100) DEFAULT NULL COMMENT '部门名称'
 ```
 
@@ -593,21 +599,21 @@ select  A.name, B.deptName from XXXXXX_A A innerjoin XXXXXX_B B on A.deptId = B.
 
 反例：
 
-```mysql
-select job，avg（salary） from employee group by job having job ='president' or job = 'managent'
+```sql
+select job，avg（salary） from employee group by job having job = 'president' or job = 'managent'
 ```
 
 正例：
 
-```mysql
-select job，avg（salary） from employee where job ='president' or job = 'managent' group by job；
+```sql
+select job，avg（salary） from employee where job = 'president' or job = 'managent' group by job；
 ```
 
 ### 29、如果字段类型是字符串，where时一定用引号括起来，否则索引失效
 
 反例：
 
-```mysql
+```sql
 select * from user where name = 1
 ```
 
@@ -615,7 +621,7 @@ select * from user where name = 1
 
 正例：
 
-```mysql
+```sql
 select * from user where name = '1'
 ```
 
@@ -631,7 +637,6 @@ select * from user where name = '1'
 
 日常开发写SQL的时候，尽量养成一个习惯吧。用explain分析一下你写的SQL，尤其是走不走索引
 
-```mysql
-explain select * from user where user_id =10086 or age =18;
+```sql
+explain select * from user where user_id = 10086 or age = 18;
 ```
-
