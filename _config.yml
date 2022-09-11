@@ -172,7 +172,7 @@ feed:
   limit: 20
 
 githubcalendar:
-  enable: true
+  enable: false
   priority: 3
   enable_page: /
   user: InkDP
