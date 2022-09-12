@@ -13,13 +13,15 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
 
     if theme.background
       #web_bg
-      
+
     !=partial('includes/sidebar', {}, {cache: true})
 
     if page.type !== '404'
       #body-wrap(class=pageType)
         include ./header/index.pug
-
+        if (is_home())
+          #main_top
+            #bber-talk.wow.animate__flipInX
         main#content-inner.layout(class=hideAside)
           if body
             div!= body

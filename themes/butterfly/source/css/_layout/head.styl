@@ -293,6 +293,8 @@
       & > a > i:last-child
         padding: 4px
         transition: transform .3s
+      & > a > i.fa-chevron-down
+        display: none
 
       .menus_item_child
         position: absolute
@@ -317,13 +319,6 @@
         li
           list-style: none
 
-          &:hover
-            background: var(--text-bg-hover)
-
-          &:first-child
-            border-radius: 5px 5px 0 0
-          &:last-child
-            border-radius: 0 0 5px 5px
           a
             display: inline-block
             padding: 8px 16px

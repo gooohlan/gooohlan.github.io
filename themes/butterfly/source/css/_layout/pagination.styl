@@ -1,11 +1,12 @@
 #pagination
   .pagination
+    position: relative
     margin-top: 20px
     text-align: center
 
   .page-number
     &.current
-      background: $theme-paginator-color
+      background: $button-bg
       color: var(--white)
 
   .pagination-info
@@ -18,7 +19,7 @@
   .prev_info,
   .next_info
     @extend .limit-one-line
-    color: var(--white)
+    color: var(--font-color)
     font-weight: 500
 
   .next-post
@@ -30,7 +31,7 @@
 
   .prev-post .label,
   .next-post .label
-    color: var(--light-grey)
+    color: var(--font-color)
     text-transform: uppercase
     font-size: 90%
 
@@ -57,27 +58,41 @@
 .layout
   & > .recent-posts
     .pagination
+      & > *:not(.space)
+        @extend .cardHover
+
+  & > div
+    .pagination
+      & > *:not(.space)
+        border: 1px solid #e3e8f7
+
+        &:hover
+          background: var(--btn-bg)
+          color: white !important
+
       & > *
         display: inline-block
         margin: 0 6px
         width: w = 2.5em
         height: w
         line-height: w
-
-      & > *:not(.space)
-        @extend .cardHover
-
-        &:hover
-          background: var(--btn-hover-color)
-          color: var(--btn-color)
-
-  & > div:not(.recent-posts)
-    .pagination
-      .page-number
-        display: inline-block
-        margin: 0 4px
-        min-width: w = 24px
-        height: w
+        color: var(--font-color)
+        box-shadow: none !important
+        border-radius: 8px;
         text-align: center
-        line-height: w
         cursor: pointer
+
+        @media screen and (max-width: 768px)
+          margin: 0 3px
+
+      .next,.prev
+        width: 4rem !important
+        position: absolute
+        right: 0
+
+        @media screen and (max-width: 768px)
+          width: 2.5rem !important
+          position:relative
+
+      .prev
+        left: 0

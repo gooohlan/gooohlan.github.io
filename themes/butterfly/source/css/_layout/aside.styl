@@ -147,13 +147,39 @@
       &.no-cover
         min-height: 4.4em
 
-  .card-archives ul.card-archive-list,
+
   .card-categories ul.card-category-list
     margin: 0
     padding: 0
     list-style: none
 
-  .card-archives ul.card-archive-list > .card-archive-list-item,
+  .card-archives ul.card-archive-list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: -webkit-box
+    display: -moz-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: box
+    display: flex
+    -webkit-box-lines: multiple
+    -moz-box-lines: multiple
+    -o-box-lines: multiple
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-pack: justify
+    -moz-box-pack: justify
+    -o-box-pack: justify
+    -ms-flex-pack: justify
+    -webkit-justify-content: space-between
+    justify-content: space-between
+
+    li
+      width: 48%;
+      margin: 3px 0;
+
   .card-categories ul.card-category-list > .card-category-list-item
     a
       display: flex
@@ -171,6 +197,41 @@
 
         &:first-child
           flex: 1
+
+  .card-archives ul.card-archive-list > .card-archive-list-item
+    a
+      display: -webkit-flex
+      display: -ms-flexbox
+      display: flex
+      -webkit-box-orient: vertical
+      -moz-box-orient: vertical
+      -o-box-orient: vertical
+      -webkit-flex-direction: column
+      -ms-flex-direction: column
+      flex-direction: column
+      color: var(--font-color)
+      -webkit-transition: all .4s
+      -moz-transition: all .4s
+      -o-transition: all .4s
+      -ms-transition: all .4s
+      transition: all .4s
+      border: 1px solid #aaa
+      border-radius: 10px
+      padding: 5px 10px
+
+      &:hover
+        border-color: var(--leonus-blue)
+        background-color: var(--leonus-blue)
+        color: #fff
+      span
+        line-height: 1.5
+        &:last-child
+          font-size: 1.5rem
+          font-weight: 700
+          &::after
+            font-size: 15px
+            margin-left: 3px
+            content: '篇'
 
   .card-categories
     .card-category-list
