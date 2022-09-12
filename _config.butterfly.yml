@@ -7,10 +7,11 @@
 #   name || link || icon
 
 menu:
-  首页: / || fas fa-home
-  归档: /archives/ || fas fa-archive
+  # 首页: / || fas fa-home
+  # 文章 ||fas fa-list:
   标签: /tags/ || fas fa-tags
   分类: /categories/ || fas fa-folder-open
+  归档: /archives/ || fas fa-archive
   # List||fas fa-list:
   #   - Music || /music/ || fas fa-music
   #   - Movie || /movies/ || fas fa-video
@@ -852,13 +853,13 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
+    - <link rel="stylesheet" href="https://cdn.inkdp.cn/other/style.css">
     - <link rel="stylesheet" href="https://cdn.inkdp.cn/other/iconfont.css">
     - <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
     - <script src="/live2d-widget/autoload.js"></script>
-    - <link rel="stylesheet" href="https://cdn.inkdp.cn/other/style.css">
     - <script data-pjax src="https://cdn.inkdp.cn/other/style.js"></script>
 # CDN
 # Don't modify the following settings unless you know how they work
