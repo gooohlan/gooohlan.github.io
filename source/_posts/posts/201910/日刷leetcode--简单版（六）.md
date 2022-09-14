@@ -2,6 +2,7 @@
 title: 日刷leetcode--简单版（六）
 date: '2019-10-24 16:32:05'
 updated: '2020-04-13 16:25:40'
+toc_number: false
 tags:
   - Golang
   - leetcode
