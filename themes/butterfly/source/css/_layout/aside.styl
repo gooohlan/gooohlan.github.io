@@ -301,14 +301,14 @@
     .toc-content
       overflow-y: scroll
       overflow-y: overlay
-      margin: 0 -24px
+      margin: 0px
       max-height: calc(100vh - 120px)
+      width: 100%
 
       +maxWidth900()
         max-height: calc(100vh - 140px)
 
       & > *
-        margin: 0 20px !important
 
         & > .toc-item > .toc-child
           margin-left: 10px
@@ -349,7 +349,8 @@
           color: $theme-color
 
         &.active
-          background: $theme-toc-color
+          background: var(--text-bg-hover)
+          border-radius: 5px
           color: $toc-active-color
 
   :only-child
