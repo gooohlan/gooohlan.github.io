@@ -35,8 +35,12 @@ abbrlink: 26087
 
 ### 目录思路：
 
-1. [链表](https://github.com/InkDP/leetcode/tree/master/LinkedList)
-   - [链表专项练习一](skill/algorithm/13378.html)
+1. 链表
+    - [双指针技巧秒杀链表](skill/algorithm/13378.html)
+2. 数组
+    - [双指针技巧秒杀数组](skill/algorithm/17874.html)
+3. 二叉树
+    - [两种思路手撕二叉树](skill/algorithm/14521.html)
 
 ### 旧版目录：
 
