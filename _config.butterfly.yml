@@ -74,7 +74,7 @@ mathjax:
 
 # KaTeX
 katex:
-  enable: false
+  enable: true
   per_page: false
   hide_scrollbar: true
 
@@ -854,6 +854,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="https://cdn.inkdp.cn/other/style.css">
+    - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
     - <link rel="stylesheet" href="https://cdn.inkdp.cn/other/iconfont.css">
     - <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     # - <link rel="stylesheet" href="/xxx.css">
