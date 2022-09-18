@@ -202,8 +202,13 @@ encrypt:
   wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
 
 markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
   plugins:
-    - plugin:
-      name: '@neilsustc/markdown-it-katex'
-      options:
-        strict: false
+  anchors:
+    level: 1
+    collisionSuffix: ''
