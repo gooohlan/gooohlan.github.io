@@ -12,7 +12,7 @@
     "version": "5.4.0"
   },
   "dependencies": {
-    "hexo": "^5.4.0",
+    "hexo": "^5.4.1",
     "hexo-abbrlink": "^2.2.1",
     "hexo-blog-encrypt": "^3.1.6",
     "hexo-deployer-git": "^2.1.0",
