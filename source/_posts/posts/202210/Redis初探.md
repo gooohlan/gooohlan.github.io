@@ -1,6 +1,5 @@
 ---
 title: Redis初探
-toc_number: false
 tags: Redis
 categories:
   - - 技术
@@ -12,8 +11,6 @@ abbrlink: 14555
 date: 2022-10-06 20:03:18
 updated: 2022-10-08 10:07:18
 ---
-
-# Redis初探
 
 带着问题去寻找答案往往会是最好的学习方法，开始探究前，先问几个关于Redis的问题：
 
