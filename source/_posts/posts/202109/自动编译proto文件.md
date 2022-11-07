@@ -19,7 +19,7 @@ description:
 
 你是否和我一样厌烦了无休止的`protobuf`编译，是否对`protoc`的命令深恶痛绝，如果有，那请继续看下去。初接触`protobuf`的我，对他的各种编译命令深恶痛绝，生涩难记。
 
-在同事的帮助下，弄了个编译proto的库：[proto_build](https://github.com/InkDP/proto_build)，每次改完`proto`文件，直接执行就完事，再也不用去输入各种乱七八糟的命令，简直爽到飞起。
+在同事的帮助下，弄了个编译proto的库：[proto_build](https://github.com/gooohlan/proto_build)，每次改完`proto`文件，直接执行就完事，再也不用去输入各种乱七八糟的命令，简直爽到飞起。
 
 ### 使用Goland实现自动编译
 
@@ -27,7 +27,7 @@ description:
 
 ![image-20210927211122811](https://cdn.inkdp.cn/img/20210927211122.png)
 
-下载[proto_build程序包](https://github.com/InkDP/proto_build/releases)，或下载[源码]((https://github.com/InkDP/proto_build))后编译，打开**Jetbrains**家的`ide`，这里以`Goland`为例：
+下载[proto_build程序包](https://github.com/gooohlan/proto_build/releases)，或下载[源码]((https://github.com/gooohlan/proto_build))后编译，打开**Jetbrains**家的`ide`，这里以`Goland`为例：
 
 `Preferences` → `Tools` → `File Watcher`
 

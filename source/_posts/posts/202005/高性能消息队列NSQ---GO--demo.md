@@ -137,6 +137,6 @@ func main() {
 	}
 }
 ```
-源码请访问本人GitHub下载：https://github.com/InkDP/nsq-demo
+源码请访问本人GitHub下载：https://github.com/gooohlan/nsq-demo
 ### 结语
 &emsp;&emsp;发送文章那一刻，发现上次发文章已经是5个月前，最近太懒都没学新的东西，希望早日回到高产似母猪的状态。

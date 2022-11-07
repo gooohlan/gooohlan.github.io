@@ -152,4 +152,4 @@ import _ "goweb/docs"
 
 ## 参考
 
-* 本文源代码: [goweb](https://github.com/InkDP/goweb.git)
+* 本文源代码: [goweb](https://github.com/gooohlan/goweb.git)

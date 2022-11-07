@@ -141,7 +141,7 @@ steps:
 
 我使用的大部分都是第三方的Actions，更多第三方Actions可查看[官方 Actions 市场](https://github.com/marketplace?type=actions&query=checkout)
 
-可以根据自己的需求书写对应的配置文件，可以参考我的[HexoCI.yml](https://github.com/InkDP/inkdp.github.io/blob/hexo/.github/workflows/HexoCI.yml)
+可以根据自己的需求书写对应的配置文件，可以参考我的[HexoCI.yml](https://github.com/gooohlan/inkdp.github.io/blob/hexo/.github/workflows/HexoCI.yml)
 
 ### 额外配置
 

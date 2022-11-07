@@ -42,7 +42,7 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-   fab fa-github: https://github.com/InkDP || Github
+   fab fa-github: https://github.com/gooohlan || Github
    iconfont icon-bilibili-fill: https://space.bilibili.com/18494658 || Bilibili
    iconfont icon-netease-cloud-music-fill: https://music.163.com/#/user/home?id=285669792 || 网易云
    fab fa-qq: tencent://message/?uin=1576962841 || QQ
@@ -638,7 +638,7 @@ aside:
       enable: true
       icon: fab fa-github
       text: 关注我
-      link: https://github.com/InkDP
+      link: https://github.com/gooohlan
   card_announcement:
     enable: true
     content: 服务器迁移，bolo博客永久停止访问

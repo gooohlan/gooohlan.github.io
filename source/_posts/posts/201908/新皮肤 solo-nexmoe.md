@@ -31,7 +31,7 @@ https://github.com/Programming-With-Love/solo-nexmoe
 
 ## 演示
 
-* [顾澜的技术小站](https://www.inksp.cn/?skin=solo-nexmoe)
+* [墨殇的技术小站](https://www.inksp.cn/?skin=solo-nexmoe)
 * [鼠鼠在碎觉](https://sszsj.cc:444/?skin=solo-nexmoe)
 * [记录精彩的人生](https://witheloov.com/?skin=solo-nexmoe)
 * [邯城往事](https://www.cjzshilong.cn/?skin=solo-nexmoe)
@@ -75,14 +75,14 @@ https://github.com/Programming-With-Love/solo-nexmoe
 希望使用本皮肤的各位能够关注本帖，皮肤有BUG修复或者功能更新后会在本帖说明，重要的事说三遍
 
 * 2019-09-05：调换 `mater`分支与 `temporary`内容，目前连分支唯一差别就是友情链接页面
-* 2019-09-09：修复头图误删元素问题，完成[左侧可以添加公告栏](https://github.com/InkDP/solo-nexmoe/issues/6)，将 `master`与 `tempoary`，详细操作查看说明。
+* 2019-09-09：修复头图误删元素问题，完成[左侧可以添加公告栏](https://github.com/gooohlan/solo-nexmoe/issues/6)，将 `master`与 `tempoary`，详细操作查看说明。
 * 2019-09-10：添加置顶标识，更换返回顶部图标
-* 2019-09-10：修复[文章第一次评论时，无法直接更新只评论列表](https://github.com/InkDP/solo-nexmoe/issues/8)
+* 2019-09-10：修复[文章第一次评论时，无法直接更新只评论列表](https://github.com/gooohlan/solo-nexmoe/issues/8)
 * 2019-09-10：修复最新版solo出现代码不高亮问题，没有出现代码不高亮可以不更新
 * 2019-09-12：侧边栏分类文章数量正确显示
 * 2019-09-19：修复solo3.6.5出现的无法从首页登录后台问题
 * 2019-09-25：修复表格无法换行问题
 * 2019-09-26：添加用户自定义背景功能
-* 2019-10-24：修复文章中:huaji:等表情过大问题，D 哥完成了[友情链接添加图片属性](https://hacpai.com/forward?goto=https%3A%2F%2Fgithub.com%2Fb3log%2Fsolo%2Fissues%2F12861)，所以友链可以以列表的方式显示，不过你先得在友链中添加图片属性，效果如下：[友情链接-顾澜的技术小站](https://www.inkdp.cn/links.html)
+* 2019-10-24：修复文章中:huaji:等表情过大问题，D 哥完成了[友情链接添加图片属性](https://hacpai.com/forward?goto=https%3A%2F%2Fgithub.com%2Fb3log%2Fsolo%2Fissues%2F12861)，所以友链可以以列表的方式显示，不过你先得在友链中添加图片属性，效果如下：[友情链接-墨殇的技术小站](https://www.inkdp.cn/links.html)
 * 2019-12-26日：修复社区防盗链引发的皮肤图片403问题：https://hacpai.com/article/1577238746196，更新左侧头像为自己设置的**Favicon**，而非社区头像
 * 2020-03-27日：修复所有已知BUG，抱歉拖了这么久，给各位带来的不便深表歉意
