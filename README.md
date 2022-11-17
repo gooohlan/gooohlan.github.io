@@ -1,6 +1,6 @@
-  # [墨殇的技术小站](https://inkdp.cn)
+  # [顾澜的技术小站](https://gooohlan.cn)
 
-![CI](https://github.com/gooohlan/inkdp.github.io/workflows/CI/badge.svg) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/inkdp/inkdp.github.io/CI) ![GitHub last commit](https://img.shields.io/github/last-commit/inkdp/inkdp.github.io)
+![CI](https://github.com/gooohlan/gooohlan.github.io/workflows/CI/badge.svg) ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/gooohlan/gooohlan.github.io/CI) ![GitHub last commit](https://img.shields.io/github/last-commit/gooohlan/gooohlan.github.io)
 
 ## 1.0.3
 
@@ -18,18 +18,18 @@ TODO：
 - [X] 看板娘
 - [X] 图片迁移至CDN  
 - [X] CDN 加速静态文件
-- [X] 迁移至inkdp.cn
+- [X] 迁移至gooohlan.cn
 
 ## 1.0.2
 
 使用 [Github Action](https://github.com/features/actions) 实现 CI/CD
 
-push 至 dev 分支的代码，自动构建并部署至 [inkdp.github..io](https://inkdp.github..io) 和 [www.inkdp.cn](https://www.inkdp.cn)
+push 至 dev 分支的代码，自动构建并部署至 [gooohlan.github..io](https://gooohlan.github..io) 和 [www.gooohlan.cn](https://www.gooohlan.cn)
 
 
 ## 1.0.1
 
-从solo迁移至hexo,并部署至[墨殇的技术小站](https://www.inkdp.cn)
+从solo迁移至hexo,并部署至[顾澜的技术小站](https://www.gooohlan.cn)
 
 ## 0.1.1
 
@@ -41,4 +41,4 @@ push 至 dev 分支的代码，自动构建并部署至 [inkdp.github..io](https
 
 ## 0.0.1
 
-基于[solo](https://github.com/88250/solo)，部署至[墨殇的技术小站](https://bolo.inkdp.cn)
+基于[solo](https://github.com/88250/solo)，部署至[顾澜的技术小站](https://bolo.gooohlan.cn)

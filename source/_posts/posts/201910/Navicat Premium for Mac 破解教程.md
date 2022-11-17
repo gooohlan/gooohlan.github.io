@@ -5,7 +5,7 @@ updated: '2019-10-24 12:24:50'
 tags:
   - 破解
   - MySQL
-cover: 'https://cdn.inkdp.cn/img/20180424.jpg'
+cover: 'https://cdn.gooohlan.cn/img/20180424.jpg'
 permalink: /articles/2019/10/24/1571890488789.html
 abbrlink: 38535
 ---
@@ -38,20 +38,20 @@ git clone -b mac --single-branch https://github.com/DoubleLabyrinth/navicat-keyg
 cd navicat-keygen
 make all
 ```
-![image.png](https://cdn.inkdp.cn/img/image-605b5c43.png)
+![image.png](https://cdn.gooohlan.cn/img/image-605b5c43.png)
 
 编译成功后当前目录下的bin文件下回出现两个可执行文件
 ```
 ls bin/
 ```
-![image.png](https://cdn.inkdp.cn/img/image-6e4f4f06.png)
+![image.png](https://cdn.gooohlan.cn/img/image-6e4f4f06.png)
 
 ### 3. 备份
 
 * 备份好`Navicat Premium.app/Contents/MacOS/Navicat Premium `，防止翻车(不怕翻车可跳过)
 * 备份好Navicat中所有已保存的数据库连接(包括密码)，我没备份(可跳过）
 * 移除所有Navicat在钥匙链中保持的密码，可通过搜索`navacat`来找到他们
-   ![image.png](https://cdn.inkdp.cn/img/image-b4f15694.png)
+   ![image.png](https://cdn.gooohlan.cn/img/image-b4f15694.png)
 
 ### 4. 使用navicat-patcher替换公钥：
 ```
@@ -73,23 +73,23 @@ ls bin/
 ```  
 ./navicat-patcher /Applications/Navicat\ Premium.app/
 ```
-![image.png](https://cdn.inkdp.cn/img/image-27449b40.png)
-![image.png](https://cdn.inkdp.cn/img/image-5c6f876b.png)
+![image.png](https://cdn.gooohlan.cn/img/image-27449b40.png)
+![image.png](https://cdn.gooohlan.cn/img/image-5c6f876b.png)
 ### 5. 生成一份自动签名 的代码签名证书
    * 打开钥匙串访问
    * 选择创建证书
    * 输入名称"Navicat"，身份类型，证书类型
    * 点击创建
 
-   ![image.png](https://cdn.inkdp.cn/img/image-99b4f449.png)
-   ![image.png](https://cdn.inkdp.cn/img/image-8b2aa128.png)
-   ![image.png](https://cdn.inkdp.cn/img/image-ea68d143.png)
+   ![image.png](https://cdn.gooohlan.cn/img/image-99b4f449.png)
+   ![image.png](https://cdn.gooohlan.cn/img/image-8b2aa128.png)
+   ![image.png](https://cdn.gooohlan.cn/img/image-ea68d143.png)
 
 ### 6. 签名
 ```
 codesign -f -s "Navicat" /Applications/Navicat\ Premium.app/
 ```
-![image.png](https://cdn.inkdp.cn/img/image-c224bb16.png)
+![image.png](https://cdn.gooohlan.cn/img/image-c224bb16.png)
 ## 激活
 ### 1. 使用`navicat-keygen`生成序列号和激活码  
 ```  
@@ -106,7 +106,7 @@ Usage:
 ./navicat-keygen ./RegPrivateKey.pem  
 ```  
 输入语言以及主版本号后会得到一个序列号  
-![image.png](https://cdn.inkdp.cn/img/image-acf9356f.png)  
+![image.png](https://cdn.gooohlan.cn/img/image-acf9356f.png)  
 使用这个序列号来激活Navicat  
 接下来会要求你输入用户名以及组织名，随意填写即可  
 之后你会被要求填入请求码  
@@ -117,22 +117,22 @@ Usage:
 * 启动时点击注册
 * 在注册页面输入注册机给你的序列号，点击激活
 
-![image.png](https://cdn.inkdp.cn/img/image-0aa226c9.png)
+![image.png](https://cdn.gooohlan.cn/img/image-0aa226c9.png)
 
 * 一般都会激活失败，这时点击手动激活即可
 
-![image.png](https://cdn.inkdp.cn/img/image-81692bde.png)
+![image.png](https://cdn.gooohlan.cn/img/image-81692bde.png)
 
 * 手动激活的窗口会给到你一个请求码，复制并粘贴到注册机里面，**两次回车结束输入**
 
-![image.png](https://cdn.inkdp.cn/img/image-eaa0ba85.png)
+![image.png](https://cdn.gooohlan.cn/img/image-eaa0ba85.png)
 
 * 不出意外的话，你会得到一个激活码，复制它并粘贴到navicat的手动激活窗口
-![image.png](https://cdn.inkdp.cn/img/image-0b68abdb.png)   
-![image.png](https://cdn.inkdp.cn/img/image-e8dfb932.png)
+![image.png](https://cdn.gooohlan.cn/img/image-0b68abdb.png)   
+![image.png](https://cdn.gooohlan.cn/img/image-e8dfb932.png)
 * 最后点击激活，没出问题的话就激活成功了
-![image.png](https://cdn.inkdp.cn/img/image-d3b2e298.png)
-![image.png](https://cdn.inkdp.cn/img/image-50a37e9d.png)
+![image.png](https://cdn.gooohlan.cn/img/image-d3b2e298.png)
+![image.png](https://cdn.gooohlan.cn/img/image-50a37e9d.png)
 
 ## 参考
 [Navicat Keygen](https://github.com/DoubleLabyrinth/navicat-keygen/blob/mac/README.zh-CN.md)

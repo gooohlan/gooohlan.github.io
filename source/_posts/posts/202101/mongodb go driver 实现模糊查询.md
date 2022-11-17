@@ -7,7 +7,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.inkdp.cn/img/1610127892293.jpg'
+cover: 'https://cdn.gooohlan.cn/img/1610127892293.jpg'
 keywords: '模糊查询, MongoDB, Golang, MongoDB GO Driver'
 description: 使用MongoDB官方驱动实现MongoDB GO Driver 实现模糊查询
 abbrlink: 61018
@@ -21,8 +21,8 @@ updated: 2021-01-20 00:19:20
 
 | MySQL                                         | MongoDB                                  |
 | :-------------------------------------------- | :--------------------------------------- |
-| select * from users where name like ’%InkDP%’ | db.users.find({name: {$regex: /InkDP/}}) |
-| select * from users where name regexp ’InkDP’ | db.users.find({name: /InkDP/})           |
+| select * from users where name like ’%gooohlan%’ | db.users.find({name: {$regex: /gooohlan/}}) |
+| select * from users where name regexp ’gooohlan’ | db.users.find({name: /gooohlan/})           |
 
 更多相关的语法可查看官方文档：[$regex](https://docs.mongodb.com/manual/reference/operator/query/regex/)，就不再做多讨论。
 
@@ -32,10 +32,10 @@ updated: 2021-01-20 00:19:20
 
 ```shell
  db.users.find({})
-{ "_id" : ObjectId("600704fffc9b483f284d0bc3"), "name" : "1InkDP" }
-{ "_id" : ObjectId("600704fffc9b483f284d0bc4"), "name" : "InkDPPP" }
-{ "_id" : ObjectId("600704fffc9b483f284d0bc5"), "name" : "InkDP" }
-{ "_id" : ObjectId("600704fffc9b483f284d0bc6"), "name" : "inkdp123" }
+{ "_id" : ObjectId("600704fffc9b483f284d0bc3"), "name" : "1gooohlan" }
+{ "_id" : ObjectId("600704fffc9b483f284d0bc4"), "name" : "gooohlanPP" }
+{ "_id" : ObjectId("600704fffc9b483f284d0bc5"), "name" : "gooohlan" }
+{ "_id" : ObjectId("600704fffc9b483f284d0bc6"), "name" : "gooohlan123" }
 { "_id" : ObjectId("600704fffc9b483f284d0bc7"), "name" : "abcdef" }
 { "_id" : ObjectId("60070500fc9b483f284d0bc8"), "name" : "test" }
 ```
@@ -43,11 +43,11 @@ updated: 2021-01-20 00:19:20
 然后执行模糊查询：
 
 ```shell
-db.users.find({name:{$regex: /InkDP/,$options: "i"}})
-{ "_id" : ObjectId("600704fffc9b483f284d0bc3"), "name" : "1InkDP" }
-{ "_id" : ObjectId("600704fffc9b483f284d0bc4"), "name" : "InkDPPP" }
-{ "_id" : ObjectId("600704fffc9b483f284d0bc5"), "name" : "InkDP" }
-{ "_id" : ObjectId("600704fffc9b483f284d0bc6"), "name" : "inkdp123" }
+db.users.find({name:{$regex: /gooohlan/,$options: "i"}})
+{ "_id" : ObjectId("600704fffc9b483f284d0bc3"), "name" : "1gooohlan" }
+{ "_id" : ObjectId("600704fffc9b483f284d0bc4"), "name" : "gooohlanPP" }
+{ "_id" : ObjectId("600704fffc9b483f284d0bc5"), "name" : "gooohlan" }
+{ "_id" : ObjectId("600704fffc9b483f284d0bc6"), "name" : "gooohlan123" }
 ```
 
 ## 错误尝试
@@ -57,7 +57,7 @@ db.users.find({name:{$regex: /InkDP/,$options: "i"}})
 ```go
 filter := bson.M{
    "name": bson.M{
-      "$regex":   "/InkDP/",
+      "$regex":   "/gooohlan/",
       "$options": "i",
    },
 }
@@ -70,7 +70,7 @@ filter := bson.M{
 ```go
 filter := bson.M{
 	"name": primitive.Regex{
-		Pattern:"/InkDP/",
+		Pattern:"/gooohlan/",
 		Options: "i",
 	},
 }
@@ -81,7 +81,7 @@ filter := bson.M{
 ```go
 filter := bson.M{
    "name": primitive.Regex{
-      Pattern:"InkDP",
+      Pattern:"gooohlan",
       Options: "i",
    },
 }
@@ -90,10 +90,10 @@ filter := bson.M{
 执行结果为：
 
 ```shell
-{ID:ObjectID("600704fffc9b483f284d0bc3") Name:1InkDP}
-{ID:ObjectID("600704fffc9b483f284d0bc4") Name:InkDPPP}
-{ID:ObjectID("600704fffc9b483f284d0bc5") Name:InkDP}
-{ID:ObjectID("600704fffc9b483f284d0bc6") Name:inkdp123}
+{ID:ObjectID("600704fffc9b483f284d0bc3") Name:1gooohlan}
+{ID:ObjectID("600704fffc9b483f284d0bc4") Name:gooohlanPP}
+{ID:ObjectID("600704fffc9b483f284d0bc5") Name:gooohlan}
+{ID:ObjectID("600704fffc9b483f284d0bc6") Name:gooohlan123}
 ```
 
 与命令行查找的一致，说明没有问题

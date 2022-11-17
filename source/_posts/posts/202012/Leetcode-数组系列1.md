@@ -6,7 +6,7 @@ tags:
   - Golang
   - leetcode
   - 学习
-cover: 'https://cdn.inkdp.cn/img/20190622.jpg'
+cover: 'https://cdn.gooohlan.cn/img/20190622.jpg'
 categories:
   - - 技术
     - 算法
@@ -24,13 +24,13 @@ toc_number: false
 
 ### 169.多数元素
 
-![image.png](https://cdn.inkdp.cn/img/image-7f596c4b.png)
+![image.png](https://cdn.gooohlan.cn/img/image-7f596c4b.png)
 
 #### 解题思路：
 
 1. 利用哈希表存储每个字符出现的个数，出现次数大于`n/2`的即为多数元素
 2. 根据题意，多数元素的个数大于`n/2`，每次遇到多数元素就将个数+1，否则减一，值为负数时则证明当前选取的这个数不是多数元素，则更换多数元素继续循环(摩尔投票法)
-   ![image.png](https://cdn.inkdp.cn/img/image-022d2db7.png)
+   ![image.png](https://cdn.gooohlan.cn/img/image-022d2db7.png)
    上图来着，题169解解[摩尔投票法](https://leetcode-cn.com/problems/majority-element/solution/3chong-fang-fa-by-gfu-2)
 3. 排序，取下标为`len(nums)/2`的值
 
@@ -94,7 +94,7 @@ func majorityElement2(nums []int) int{
 
 ### 217.多数元素
 
-![image.png](https://cdn.inkdp.cn/img/image-3291f9c1.png)
+![image.png](https://cdn.gooohlan.cn/img/image-3291f9c1.png)
 
 #### 解题思路：
 
@@ -117,7 +117,7 @@ func containsDuplicate(nums []int) bool {
 
 ### 219. 存在重复元素 II
 
-![image.png](https://cdn.inkdp.cn/img/image-b7080722.png)
+![image.png](https://cdn.gooohlan.cn/img/image-b7080722.png)
 
 #### 解题思路：
 
@@ -142,7 +142,7 @@ func containsNearbyDuplicate(nums []int, k int) bool {
 
 ### 228. 汇总区间
 
-![image.png](https://cdn.inkdp.cn/img/image-071d61e0.png)
+![image.png](https://cdn.gooohlan.cn/img/image-071d61e0.png)
 
 #### 解题思路：
 
@@ -202,7 +202,7 @@ func summaryRanges1(nums []int) []string {
 
 ### 268. 丢失的数字
 
-![image.png](https://cdn.inkdp.cn/img/image-89a5554f.png)
+![image.png](https://cdn.gooohlan.cn/img/image-89a5554f.png)
 
 #### 解题思路：
 
@@ -261,12 +261,12 @@ func missingNumber4(nums []int) int {
 
 ### 283. 移动零
 
-![image.png](https://cdn.inkdp.cn/img/image-be9c99ed.png)
+![image.png](https://cdn.gooohlan.cn/img/image-be9c99ed.png)
 
 #### 解题思路
 
 1. 双指针，A一直向右移动，遇到非0的与B交换即可
-   ![283_2.gif](https://cdn.inkdp.cn/img/36d1ac5d689101cbf9947465e94753c626eab7fcb736ae2175f5d87ebc85fdf0-283_2.gif)
+   ![283_2.gif](https://cdn.gooohlan.cn/img/36d1ac5d689101cbf9947465e94753c626eab7fcb736ae2175f5d87ebc85fdf0-283_2.gif)
 
 #### 示例代码：
 

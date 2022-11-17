@@ -12,7 +12,7 @@ categories:
     - 算法
 keywords: 算法,LeetCode,数组,Golang
 description: 'LeetCode 465.岛屿的周长，495.提莫攻击，496.下一个更大元素I，500.键盘行，506.相对名次，575.分糖果'
-cover: https://cdn.inkdp.cn/img/20210722202914.png
+cover: https://cdn.gooohlan.cn/img/20210722202914.png
 toc_number: false
 
 ---
@@ -29,7 +29,7 @@ toc_number: false
 
 **示例 1：**
 
-![img](https://cdn.inkdp.cn/img/20210722195626.png)
+![img](https://cdn.gooohlan.cn/img/20210722195626.png)
 
 > **输入**：grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
 **输出**：16
@@ -316,7 +316,7 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int  {
 - 第二行由字符`"asdfghjkl" 组成。
 - 第三行由字符`"zxcvbnm"`组成。
 
-![American keyboard](https://cdn.inkdp.cn/img/20210726193833.png)
+![American keyboard](https://cdn.gooohlan.cn/img/20210726193833.png)
 
 **示例 1**：
 

@@ -10,7 +10,7 @@ categories:
     - 后端
 permalink: /articles/2020/07/09/1594287406684.html
 cover:
-  https://cdn.inkdp.cn/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg
+  https://cdn.gooohlan.cn/img/szmmbizjpgNOM5HN2icXzxucy69Kn84IROe6uFoU12S3otjxj8deFsL4O9uSEs5p5CUkkzOiaaDJlEUnIJWlT0xhF7qE3U2GIQ640.jpeg
 abbrlink: 40924
 ---
 
@@ -55,9 +55,9 @@ func main() {
 
   有了如上结论的我开始奋笔疾书，然后当我进行到第二步获取图片地址的时候，发现爬下来的页面与网页实际的不一样。
 
-![image.png](https://cdn.inkdp.cn/img/image-5aa0dbd7.png)
+![image.png](https://cdn.gooohlan.cn/img/image-5aa0dbd7.png)
 
-![image.png](https://cdn.inkdp.cn/img/image-1b67caf2.png)
+![image.png](https://cdn.gooohlan.cn/img/image-1b67caf2.png)
 
   我获取到网页内容是一个loading页面，而不是这个页面最终的状态。起初的想法是因为网页一开始打开时这样，加载完后就正常了，所以我隔几秒在读取网页内容，事实证明这样不行。
 
@@ -65,11 +65,11 @@ func main() {
 
   因为不知道啥原因导致的，所以也没找到解决办法，期间尝试了一下爬虫框架也依旧无果。但是也没有彻底放弃，没事就看看这页面的源码，希望能找出解决办法。
 
-![image.png](https://cdn.inkdp.cn/img/image-4b9ea23b.png)
+![image.png](https://cdn.gooohlan.cn/img/image-4b9ea23b.png)
 
   乍一看是某种解密的东西，尝试运行下发现可以得到这一页的图片地址，还剩下几个变量又都是干嘛的呢，好奇之下运行了一下。
 
-![image.png](https://cdn.inkdp.cn/img/image-82545a4e.png)
+![image.png](https://cdn.gooohlan.cn/img/image-82545a4e.png)
 
   如此一来，整个章节所有图片的地址也就都有了。问题也就是怎么在go里运行js，然后就找到了一个叫[otto](https://github.com/robertkrimen/otto)的包，完美。
 
@@ -93,7 +93,7 @@ var catalog []*Catalog
 
   第一步是爬取漫画的首页，通过获取目录内容去获取到章节的标题以及该章节的地址。比如[一人之下](http://www.pufei8.com/manhua/419/)，目录存放在 `id="play_0"`下的无序列表中，获取对应 `li`标签内 `a`标签内容即可。
 
-![image.png](https://cdn.inkdp.cn/img/image-bad891eb.png)
+![image.png](https://cdn.gooohlan.cn/img/image-bad891eb.png)
 
 ```go
 c := colly.NewCollector()
@@ -229,13 +229,13 @@ https://github.com/gooohlan/PF
 
   吐槽一下，苹果有时候真的很坑，我在通过队列下载的时候，出现了 `catalog`数组中的 `imgArr`长度为为空的情况，调试了很久都没用，扔给别人在Windows上就乱跑。
 
-![image.png](https://cdn.inkdp.cn/img/image-cad22904.png)
+![image.png](https://cdn.gooohlan.cn/img/image-cad22904.png)
 
-![image.png](https://cdn.inkdp.cn/img/image-573937e9.png)
+![image.png](https://cdn.gooohlan.cn/img/image-573937e9.png)
 
 &emsp;&emsp;最后的最后附上一张成功的截图
-![image.png](https://cdn.inkdp.cn/img/image-1a984f24.png)
+![image.png](https://cdn.gooohlan.cn/img/image-1a984f24.png)
 
-![image.png](https://cdn.inkdp.cn/img/image-c06579cf.png)
+![image.png](https://cdn.gooohlan.cn/img/image-c06579cf.png)
 
-![image.png](https://cdn.inkdp.cn/img/image-fdd3f60d.png)
+![image.png](https://cdn.gooohlan.cn/img/image-fdd3f60d.png)

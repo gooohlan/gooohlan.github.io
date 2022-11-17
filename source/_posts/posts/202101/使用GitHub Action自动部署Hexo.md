@@ -8,7 +8,7 @@ tags:
 categories:
   - - 技术
     - 前端
-cover: https://cdn.inkdp.cn/img/1610127892296.png
+cover: https://cdn.gooohlan.cn/img/1610127892296.png
 keywords: Hexo,GitHub Action,自动部署,Github Page,博客
 description: 本文主要介绍如何通过GitHub Action自动部署Hexo博客到GitHub Page以及自己的服务器
 ---
@@ -21,7 +21,7 @@ description: 本文主要介绍如何通过GitHub Action自动部署Hexo博客�
 
 # 思路
 
-&emsp;&emsp;建立`yourname.github.io`库，本地写好文章后推送到`hexo`分支，自动编译后部署到`master`分支，然后在上传到我自己的服务器，这样就实现了[inkdp.github.io](https://inkdp.github.io)和[inkdp.cn](https://inkdp.cn)的同时部署。
+&emsp;&emsp;建立`yourname.github.io`库，本地写好文章后推送到`hexo`分支，自动编译后部署到`master`分支，然后在上传到我自己的服务器，这样就实现了[gooohlan.github.io](https://gooohlan.github.io)和[gooohlan.cn](https://gooohlan.cn)的同时部署。
 
 # 开始
 
@@ -50,11 +50,11 @@ ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
 
   | 添加你的公钥                                                 | 成功                                                         |
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | ![image-20210117235120550](https://cdn.inkdp.cn/img/image-20210117235120550.png) | ![image-20210117235147362](https://cdn.inkdp.cn/img/image-20210117235147362.png) |
+  | ![image-20210117235120550](https://cdn.gooohlan.cn/img/image-20210117235120550.png) | ![image-20210117235147362](https://cdn.gooohlan.cn/img/image-20210117235147362.png) |
 
   | 添加你的私钥                                                 | 成功                                                         |
   | ------------------------------------------------------------ | ------------------------------------------------------------ |
-  | ![image-20210117235828106](https://cdn.inkdp.cn/img/image-20210117235828106.png) | ![image-20210117235912296](https://cdn.inkdp.cn/img/image-20210117235912296.png) |
+  | ![image-20210117235828106](https://cdn.gooohlan.cn/img/image-20210117235828106.png) | ![image-20210117235912296](https://cdn.gooohlan.cn/img/image-20210117235912296.png) |
 
   `GitHub Secret`可以用来存储一些私密内容，类似一些私钥，Key之类的，在CI中通过`${{ Secret Name}}`取出对应的值
 
@@ -101,7 +101,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.CI_TOKEN }}
-          external_repository: inkdp/inkdp.github.io
+          external_repository: gooohlan/gooohlan.github.io
           publish_branch: master
           publish_dir: ./public
 ```
@@ -141,7 +141,7 @@ steps:
 
 我使用的大部分都是第三方的Actions，更多第三方Actions可查看[官方 Actions 市场](https://github.com/marketplace?type=actions&query=checkout)
 
-可以根据自己的需求书写对应的配置文件，可以参考我的[HexoCI.yml](https://github.com/gooohlan/inkdp.github.io/blob/hexo/.github/workflows/HexoCI.yml)
+可以根据自己的需求书写对应的配置文件，可以参考我的[HexoCI.yml](https://github.com/gooohlan/gooohlan.github.io/blob/hexo/.github/workflows/HexoCI.yml)
 
 ### 额外配置
 
@@ -152,14 +152,14 @@ steps:
     uses: peaceiris/actions-gh-pages@v3
     with:
       personal_token: ${{ secrets.CI_TOKEN }}
-      external_repository: inkdp/inkdp.github.io
+      external_repository: gooohlan/gooohlan.github.io
       publish_branch: master
       publish_dir: ./public
 ```
 
 | 配置个人访问令牌 | 成功 |
 | ---------------- | ---- |
-|  ![image-20210118005047841](https://cdn.inkdp.cn/img/image-20210118005047841.png) | ![image-20210118005143713](https://cdn.inkdp.cn/img/image-20210118005143713.png) |
+|  ![image-20210118005047841](https://cdn.gooohlan.cn/img/image-20210118005047841.png) | ![image-20210118005143713](https://cdn.gooohlan.cn/img/image-20210118005143713.png) |
 
 ### 部署到个人服务器(可选)
 
@@ -182,7 +182,7 @@ steps:
 
 `push`到`yourname.github.io`的`hexo`分支，到此仓库的`Actions` 页面查看当前 task
 
-![image-20210118014615951](https://cdn.inkdp.cn/img/image-20210118014615951.png)
+![image-20210118014615951](https://cdn.gooohlan.cn/img/image-20210118014615951.png)
 
 当任务完成后查看您的博客 `https://yourname.github.io`，如果不出意外的话已经可以看到自动部署的文章了，如有意外欢迎留言
 
@@ -190,7 +190,7 @@ steps:
 
 - 问题1：
 
-  ![image-20210622202346107](https://cdn.inkdp.cn/img/20210622202346.png)
+  ![image-20210622202346107](https://cdn.gooohlan.cn/img/20210622202346.png)
 
   出现该问题是node版本过低导致的，在`yaml`文件中指定node版本为`12+`，或者设置
 

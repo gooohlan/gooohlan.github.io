@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 墨殇的技术小站
+title: 顾澜的技术小站
 subtitle: ''
-description: '墨殇的技术小站，本站由墨殇(InkDP)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽'
-keywords: '墨殇的技术小站,墨殇,InkDP,inkdp,技术博客,技术小站'
-author: 'InkDP'
+description: '顾澜的技术小站，本站由顾澜(gooohlan)基于Hexo搭建，运行在GitHub上，主要用于记录个人技术成长、读书笔记、日常总结与吐槽'
+keywords: '顾澜的技术小站,顾澜,gooohlan,gooohlan,技术博客,技术小站'
+author: 'gooohlan'
 language: 'zh-CN'
 timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: https://www.inkdp.cn
+url: https://www.gooohlan.cn
 root: /
 permalink: :category/:abbrlink.html  # 此处可以自己设置，也可以直接使用 :/abbrlink
 abbrlink:
@@ -134,7 +134,7 @@ search:
 
 # deploy:
 #   type: 'git'
-#   repo: 'git@github.com:InkDP/inkdp.github.io.git'
+#   repo: 'git@github.com:gooohlan/gooohlan.github.io.git'
 #   branch: 'master'
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
@@ -175,7 +175,7 @@ githubcalendar:
   enable: false
   priority: 3
   enable_page: /
-  user: InkDP
+  user: gooohlan
   layout:
     type: id
     name: recent-posts

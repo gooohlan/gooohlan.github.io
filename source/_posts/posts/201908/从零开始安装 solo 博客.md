@@ -9,7 +9,7 @@ categories:
   - - 技术
     - 后端
 permalink: /articles/2019/08/06/1565021931775.html
-cover: 'https://cdn.inkdp.cn/img/20180919.jpg'
+cover: 'https://cdn.gooohlan.cn/img/20180919.jpg'
 abbrlink: 19060
 toc_number: false
 ---
@@ -27,10 +27,10 @@ toc_number: false
 # 3. 域名解析与备案
 
 服务器和域名购买完后需要将域名解析到服务器，有些服务商可能不支持跨服务商解析，腾讯云域名可以解析阿里云服务器。解析过程大概需要10分钟。解析完成后如下图所示：
-![image.png](https://cdn.inkdp.cn/img/image-5ff5a25e.png)
+![image.png](https://cdn.gooohlan.cn/img/image-5ff5a25e.png)
 如果不备案的话，80端口与443端口大概率会被封。所以备案还是需要的，备案的过程有点麻烦需要耐心。大致步骤如下：
-![image.png](https://cdn.inkdp.cn/img/image-4527c63e.png)
-![image.png](https://cdn.inkdp.cn/img/image-056ca9d6.png)
+![image.png](https://cdn.gooohlan.cn/img/image-4527c63e.png)
+![image.png](https://cdn.gooohlan.cn/img/image-056ca9d6.png)
 接入备案很快，几天就完事了。
 
 # 4. 为服务器安装系统
@@ -53,7 +53,7 @@ docker run hello-world
 ```
 
 出现hello world 就证明安装正常了
-![image.png](https://cdn.inkdp.cn/img/image-cc55a2ad.png)
+![image.png](https://cdn.gooohlan.cn/img/image-cc55a2ad.png)
 
 # 6.安装Mysql
 
@@ -134,7 +134,7 @@ docker run --name nginx -p 80:80 -d --rm nginx
 ```
 
 如果你没有备案，可以将上面的 `80:80`换成 `8081:80`，因为这个东西一会儿也要删掉，所以加上 `--rm`参数，命令执行玩后通过 `docker ps`查看nginx是否在运行，在运行的情况下访问你的域名加端口号查看是否正常安装，`80`直接省略。如下表示访问成功
-![image.png](https://cdn.inkdp.cn/img/image-ec38061d.png)
+![image.png](https://cdn.gooohlan.cn/img/image-ec38061d.png)
 导出配置文件
 
 * `docker cp nginx:/etc/nginx/nginx.conf /dockerData/nginx/conf/nginx.conf` 导出配置文件nginx.conf
@@ -156,7 +156,7 @@ docker run -d -p 80:80 --name nginx \
 
 访问你的域名，你会发现报错了
 
-![image.png](https://cdn.inkdp.cn/img/image-9c8de340.png)
+![image.png](https://cdn.gooohlan.cn/img/image-9c8de340.png)
 这时我们可以前往 `/dockerData/nginx/logs`下查看日志文件
 
 `2019/08/05 14:57:54 [error] 6#6: *3 directory index of "/usr/share/nginx/html/" is forbidden, client: 121.32.33.217, server: localhost, request: "GET / HTTP/1.1", host: "www.jinjianh.com" `
@@ -175,7 +175,7 @@ vim index.html
 
 再次访问我们的域名就可以看到我们刚刚写的 `h1`标签内容
 
-![image.png](https://cdn.inkdp.cn/img/image-70a4130f.png)
+![image.png](https://cdn.gooohlan.cn/img/image-70a4130f.png)
 
 # 9. 申请ssl证书，将http升级为https(可跳过)
 
@@ -185,36 +185,36 @@ vim index.html
 
 访问 [SSL证书选购](https://buy.cloud.tencent.com/ssl?fromSource=ssl) 申请
 
-![image.png](https://cdn.inkdp.cn/img/image-05285d99.png)
+![image.png](https://cdn.gooohlan.cn/img/image-05285d99.png)
 
 私钥可不填写
-![image.png](https://cdn.inkdp.cn/img/image-98544bc3.png)
+![image.png](https://cdn.gooohlan.cn/img/image-98544bc3.png)
 
 选择手动DNS验证
 
-![image.png](https://cdn.inkdp.cn/img/image-44754a07.png)
+![image.png](https://cdn.gooohlan.cn/img/image-44754a07.png)
 
 可直接前往 [SSL 证书 域名验证指引 - 操作指南 - 文档中心 - 腾讯云](https://cloud.tencent.com/document/product/400/4142#ManualVerification)查看
 
-![image.png](https://cdn.inkdp.cn/img/image-3e6695e5.png)
-![image.png](https://cdn.inkdp.cn/img/image-8828eaa2.png)
+![image.png](https://cdn.gooohlan.cn/img/image-3e6695e5.png)
+![image.png](https://cdn.gooohlan.cn/img/image-8828eaa2.png)
 
 前往[证书管理-控制台](https://console.cloud.tencent.com/ssl)等待验证通过即可
 
-![image.png](https://cdn.inkdp.cn/img/image-4c7bcc44.png)
+![image.png](https://cdn.gooohlan.cn/img/image-4c7bcc44.png)
 
 将 `nginx`下文件上传到 `/dockerData/nginx/ssl`目录下即可
 
 ## 阿里云
 
 访问[云盾证书服务](https://common-buy.aliyun.com/?spm=5176.10695662.958455.3.3f9140d55mPzFH&commodityCode=cas#/buy)申请，访问后如果有无内容可复制 https://common-buy.aliyun.com/?spm=5176.10695662.958455.3.3f9140d55mPzFH&commodityCode=cas#/buy 打开
-![image.png](https://cdn.inkdp.cn/img/image-2f8ed8b3.png)
+![image.png](https://cdn.gooohlan.cn/img/image-2f8ed8b3.png)
 
 走一下支付流程，然后申请
 
-![image.png](https://cdn.inkdp.cn/img/image-af887011.png)
-![image.png](https://cdn.inkdp.cn/img/image-a3de4d98.png)
-![image.png](https://cdn.inkdp.cn/img/image-8ef94cdf.png)
+![image.png](https://cdn.gooohlan.cn/img/image-af887011.png)
+![image.png](https://cdn.gooohlan.cn/img/image-a3de4d98.png)
+![image.png](https://cdn.gooohlan.cn/img/image-8ef94cdf.png)
 操作流程基本与腾讯云一样，我就不详细说明了
 
 ## 其他平台
@@ -224,11 +224,11 @@ vim index.html
 ## 上传证书
 
 一下示例为腾讯云证书，阿里云
-![image.png](https://cdn.inkdp.cn/img/image-f9c0bb7e.png)
+![image.png](https://cdn.gooohlan.cn/img/image-f9c0bb7e.png)
 
 验证完后，我们下载证书，解压后得到
 
-![image.png](https://cdn.inkdp.cn/img/image-5b610f8d.png)
+![image.png](https://cdn.gooohlan.cn/img/image-5b610f8d.png)
 
 最后把 `Nginx`下的两个文件上传至服务器 `/dockerDat/nginx/ssl`目录下，别的服务商申请的证书也一样，将最后的ssl证书放到 `/dockerDat/nginx/ssl`下即可
 
@@ -287,7 +287,7 @@ docker run -d -p 80:80 -p 443:443 --name nginx \
 * `-v /dockerData/nginx/ssl:/ssl/` 挂载ssl证书目录
 
 访问查看，一切正常
-![image.png](https://cdn.inkdp.cn/img/image-d2e1477f.png)
+![image.png](https://cdn.gooohlan.cn/img/image-d2e1477f.png)
 
 # 10. 将solo通过nginx方向代理实现https访问
 
@@ -329,7 +329,7 @@ vim default.conf
 
 重启nginx，`docker restart nginx`
 
-![image.png](https://cdn.inkdp.cn/img/image-2c7eb017.png)
+![image.png](https://cdn.gooohlan.cn/img/image-2c7eb017.png)
 
 完美
 

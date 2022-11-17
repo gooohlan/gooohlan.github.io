@@ -10,21 +10,21 @@ tags:
 categories:
   - - 技术
     - 算法
-cover: 'https://cdn.inkdp.cn/img/20190222.jpg'
+cover: 'https://cdn.gooohlan.cn/img/20190222.jpg'
 permalink: /leetcode6.html
 abbrlink: 20297
 ---
 
 ### 返回总目录
 
-[日刷leetcode–简单版](https://inkdp.cn/leetcode.html)
+[日刷leetcode–简单版](https://gooohlan.cn/leetcode.html)
 
 ---
 
 ### 167. 两数之和 II - 输入有序数组
 
 #### 题目描述
-![image.png](https://cdn.inkdp.cn/img/image-56cb3cb1.png)
+![image.png](https://cdn.gooohlan.cn/img/image-56cb3cb1.png)
 #### 解题思路
 * 定义双指针，分别在头部与尾部
 * 判断两个的和是否与`targent`相等，相等级返回，比sum大则尾指针前移，反之头指针后移
@@ -52,7 +52,7 @@ func twoSum(numbers []int, target int) []int {
 
 ### 168. Excel表列名称
 #### 题目描述：
-![image.png](https://cdn.inkdp.cn/img/image-6f5a1e22.png)
+![image.png](https://cdn.gooohlan.cn/img/image-6f5a1e22.png)
 #### 解题思路
 * 可以看做一个10进制转26进制问题，进制转换原理可查看-> [理解进制转换的原理](https://zhuanlan.zhihu.com/p/75006709)
 ##### 复杂度分析

@@ -4,7 +4,7 @@ tags: Redis
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.inkdp.cn/img/20221008103445.jpg'
+cover: 'https://cdn.gooohlan.cn/img/20221008103445.jpg'
 keywords: redis
 description: Redis基础知识初探
 abbrlink: 14555
@@ -113,7 +113,7 @@ Redis支持两种方式的持久化：
 
 结合源码（6.0版本，源码太多这里不贴出，可参考`aof.c`）及参考资料，绘制AOF重写（BGREWRITEAOF）流程图：
 
-![E5CAEE8F-32FB-4A33-A09E-39633394A7D5](https://cdn.inkdp.cn/img/20221007192359.png)
+![E5CAEE8F-32FB-4A33-A09E-39633394A7D5](https://cdn.gooohlan.cn/img/20221007192359.png)
 
 结合上图，总结一下AOF文件重写的流程：
 
@@ -135,11 +135,11 @@ Redis支持两种方式的持久化：
 
 其实想要从这些文件中恢复数据，只需要重新启动Redis即可。我们还是通过图来了解这个流程：
 
-![image-20221007193840977](https://cdn.inkdp.cn/img/20221007193841.png)
+![image-20221007193840977](https://cdn.gooohlan.cn/img/20221007193841.png)
 
 Redis 4.0版本后AOF支持了混合持久化，加载AOF文件需要考虑版本兼容性，所以回复数据流程发生了变化：
 
-![image-20221007203352211](https://cdn.inkdp.cn/img/20221007203352.png)
+![image-20221007203352211](https://cdn.gooohlan.cn/img/20221007203352.png)
 
 在AOF方式下，开启混合持久化机制生成的文件是“RDB头+AOF尾”，未开启时生成的文件全部为AOF格式。考虑两种文件格式的兼容性，如果Redis发现AOF文件为RDB头，会使用RDB数据加载的方法读取并恢复前半部分；然后再使用AOF方式读取并恢复后半部分。由于AOF格式存储的数据为RESP协议命令，Redis采用伪客户端执行命令的方式来恢复数据。
 
@@ -186,7 +186,7 @@ Redis的每个命令都是原子性的，但是这并不代表Redis就不存在�
 
 假设现在redis有个叫`stock`的key，用于存放商品的库存数据，只要进货了库存就加一，出货了库存就减一。于是这时候机智的程序员小王这样设计了一下，每次通过get获取stock的值，然后再set stock=stock+1。在某个时间点有两个业务员A、B同时进货了，此时程序运行流程大概是这样的：
 
-![image-20221008081240945](https://cdn.inkdp.cn/img/20221008081240.png)
+![image-20221008081240945](https://cdn.gooohlan.cn/img/20221008081240.png)
 
 - A 获取stock的值为100
 

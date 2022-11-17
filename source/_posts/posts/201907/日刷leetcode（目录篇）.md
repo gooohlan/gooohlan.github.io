@@ -9,7 +9,7 @@ tags:
 categories:
   - - 技术
     - 算法
-cover: 'https://cdn.inkdp.cn/img/100-20210107221459186.jpeg'
+cover: 'https://cdn.gooohlan.cn/img/100-20210107221459186.jpeg'
 permalink: /leetcode.html
 abbrlink: 26087
 ---
@@ -44,12 +44,12 @@ abbrlink: 26087
 
 ### 旧版目录：
 
-* [日刷leetcode--简单版系列（一）](https://inkdp.cn/leetcode1.html)
-* [日刷leetcode--简单版系列（二）](https://inkdp.cn/leetcode2.html)
-* [日刷leetcode--简单版系列（三）](https://inkdp.cn/leetcode3.html)
-* [日刷leetcode--简单版系列（四）](https://inkdp.cn/leetcode4.html)
-* [日刷leetcode--简单版系列（五）](https://inkdp.cn/leetcode5.html)
-* [日刷leetcode--简单版系列（六）](https://inkdp.cn/leetcode6.html)
+* [日刷leetcode--简单版系列（一）](https://gooohlan.cn/leetcode1.html)
+* [日刷leetcode--简单版系列（二）](https://gooohlan.cn/leetcode2.html)
+* [日刷leetcode--简单版系列（三）](https://gooohlan.cn/leetcode3.html)
+* [日刷leetcode--简单版系列（四）](https://gooohlan.cn/leetcode4.html)
+* [日刷leetcode--简单版系列（五）](https://gooohlan.cn/leetcode5.html)
+* [日刷leetcode--简单版系列（六）](https://gooohlan.cn/leetcode6.html)
 
 #### 简单篇暂停更新，后续打算系统的刷，目录做出更改
 

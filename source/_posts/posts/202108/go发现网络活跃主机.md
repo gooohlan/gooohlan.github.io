@@ -10,7 +10,7 @@ description: go开发一个发现网络活跃主机的嗅探器。
 abbrlink: 27211
 date: 2021-08-29 16:59:53
 updated: 2021-08-29 16:59:53
-cover: https://cdn.inkdp.cn/img/20210829173455.png
+cover: https://cdn.gooohlan.cn/img/20210829173455.png
 ---
 
 ### 前言
@@ -25,7 +25,7 @@ cover: https://cdn.inkdp.cn/img/20210829173455.png
 
 本文主角：[go-ping](https://github.com/go-ping/ping)，它可以通过 UDP 发送一个“非特权”ping，与我的实际需求完全一致
 
-![image-20210829172002459](https://cdn.inkdp.cn/img/20210829172002.png)
+![image-20210829172002459](https://cdn.gooohlan.cn/img/20210829172002.png)
 
 看一个官方示例的ping程序：
 
