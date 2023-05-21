@@ -15,9 +15,7 @@ jobs:
         run: npm ci
 
       - name: 清除Hexo
-        uses: heowc/action-hexo@main
-        with:
-          args: clean
+        run: hexo s
 
       - name: 导入配置文件
         env:
@@ -32,9 +30,7 @@ jobs:
           sudo sed -i "${VID}" _config.butterfly.yml
 
       - name: 生成Hexo
-        uses: heowc/action-hexo@main
-        with:
-          args: generate
+        run: npm run build
 
       - name: 部署到master分支
         uses: peaceiris/actions-gh-pages@v3
