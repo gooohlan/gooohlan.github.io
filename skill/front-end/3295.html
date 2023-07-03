@@ -159,7 +159,7 @@
 <p>创建<code>yourname.github.io</code>库，并创建<code>hexo</code>分支，<code>hexo</code>分支用户存储博客源码，默认的<code>master</code>分支用于存放编译好的GitHub源码。</p>
 <h2 id="配置部署密钥">配置部署密钥</h2>
 <p>使用以下命令生成部署密钥(一路回车到底即可)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;$(git config user.email)&quot; -f gh-pages -N &quot;&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> You will get 2 files:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   gh-pages.pub (public key)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   gh-pages     (private key)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;$(git config user.email)&quot; -f gh-pages -N &quot;&quot;</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">You will get 2 files:</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  gh-pages.pub (public key)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  gh-pages     (private key)</span></span><br></pre></td></tr></table></figure>
 <p><font color="#dd0000">切记将生成的密钥文件添加到<code>.gitignore</code>中！！！</font></p>
 <p>接下来,去仓库设置</p>
 <ul>
