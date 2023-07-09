@@ -179,9 +179,12 @@ index_post_content:
 
 # toc (目錄)
 toc:
-  enable: true
+  post: true
+  page: true
   number: true
-  style_simple: false
+  expand: true
+  style_simple: true # for post
+  scroll_percent: true
 
 post_copyright:
   enable: true
