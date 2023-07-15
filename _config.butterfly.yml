@@ -183,7 +183,7 @@ toc:
   page: true
   number: true
   expand: true
-  style_simple: true # for post
+  style_simple: false # for post
   scroll_percent: true
 
 post_copyright:
@@ -643,7 +643,7 @@ aside:
       text: 关注我
       link: https://github.com/gooohlan
   card_announcement:
-    enable: true
+    enable: false
     content: 服务器迁移，bolo博客永久停止访问
   card_recent_post:
     enable: true
