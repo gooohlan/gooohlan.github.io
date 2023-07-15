@@ -209,6 +209,7 @@ markdown:
     linkify: true
     typographer: true
   plugins:
+    - '@renbaoshuo/markdown-it-katex'
   anchors:
     level: 1
     collisionSuffix: ''
