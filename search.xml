@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>alfred workflows 推荐</title>
+      <link href="%E5%B7%A5%E5%85%B7/29093.html"/>
+      <url>%E5%B7%A5%E5%85%B7/29093.html</url>
+      
+        <content type="html"><![CDATA[<p>仅记录个人使用觉得很好用的 <code>workflows</code></p><h3 id="CodeVar：">CodeVar：</h3><p>变量命名神器</p><p>下载地址： <a href="https://github.com/xudaolong/CodeVar">https://github.com/xudaolong/CodeVar</a></p><h3 id="Create-new-file：">Create new file：</h3><p>在指定路径创建文件</p><h3 id="Encode-Decode：">Encode/Decode：</h3><p><code>base64</code> 加密解密</p><p>下载地址：<a href="https://github.com/willfarrell/alfred-encode-decode-workflow">https://github.com/willfarrell/alfred-encode-decode-workflow</a></p><h3 id="Hash：">Hash：</h3><p>支持<code>md5</code>等一系列加密算法</p><p>下载地址：<a href="https://github.com/willfarrell/alfred-hash-workflow">https://github.com/willfarrell/alfred-hash-workflow</a></p><h3 id="IP-address：">IP address：</h3><p>查看自己的 IP</p><p>下载地址：<a href="https://github.com/alexchantastic/alfred-ip-address-workflow">https://github.com/alexchantastic/alfred-ip-address-workflow</a></p><h3 id="Timestamp：">Timestamp：</h3><p>时间戳转换</p><p>下载地址：<a href="https://github.com/mwaterfall/alfred-datetime-format-converter">https://github.com/mwaterfall/alfred-datetime-format-converter</a></p><h3 id="进制转换：">进制转换：</h3><p>进制转换</p><p>下载地址：<a href="https://github.com/xiaomingplus/convert">https://github.com/xiaomingplus/convert</a></p><h3 id="Kill-Process：">Kill Process：</h3><p>杀进程</p><p>下载地址：<a href="https://www.packal.org/workflow/kill-process">https://www.packal.org/workflow/kill-process</a></p><h3 id="TerminalFinder：">TerminalFinder：</h3><p>从 <code>iterm</code> 路径打开文件，从文件夹路径打开 <code>iterm</code></p><p>下载地址：<a href="https://github.com/LeEnno/alfred-terminalfinder">https://github.com/LeEnno/alfred-terminalfinder</a></p><h3 id="Manage-hidden-files：">Manage hidden files：</h3><p>显示/隐藏 隐藏文件</p><p>下载地址：<a href="https://github.com/andreabusi/manage-hidden-files">https://github.com/andreabusi/manage-hidden-files</a></p><h3 id="Json格式化：">Json格式化：</h3><p>复制 <code>json</code> 字符串，按快捷键打开，直接在网页中查看 <code>json</code></p><p>下载地址：<a href="https://github.com/foamzou/alfred-json-format">https://github.com/foamzou/alfred-json-format</a></p><h3 id="网易云音乐控制：">网易云音乐控制：</h3><p>控制网易云</p><p>下载地址：<a href="https://github.com/Ironaki/Netease-Alfred-Controller">https://github.com/Ironaki/Netease-Alfred-Controller</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> alfred </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>周赛355</title>
       <link href="skill/algorithm/24709.html"/>
       <url>skill/algorithm/24709.html</url>
