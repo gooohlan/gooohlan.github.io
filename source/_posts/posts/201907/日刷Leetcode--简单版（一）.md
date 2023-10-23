@@ -7,7 +7,7 @@ tags:
   - 算法
   - Golang
 permalink: /leetcode1.html
-cover: 'https://cdn.gooohlan.cn/img/timg-af5a1c18.jpeg'
+cover: 'https://goohlan.fishpi.cn/img/timg-af5a1c18.jpeg'
 categories:
   - - 技术
     - 算法

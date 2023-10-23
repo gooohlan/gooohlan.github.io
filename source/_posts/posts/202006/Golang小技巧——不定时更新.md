@@ -7,7 +7,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.gooohlan.cn/img/20190201.jpg'
+cover: 'https://goohlan.fishpi.cn/img/20190201.jpg'
 permalink: /articles/2020/06/19/1592560522403.html
 abbrlink: 43219
 keywords: 'Go小技巧，append，json'
@@ -37,7 +37,7 @@ if err != nil {
 ```
 
 实际中，你绝对不会只返回一个 `err`，可能还夹杂着各种乱七八糟的东西，写一次还好，写多了你真的不会烦吗？然而有了第二种定义方式，不过你又多少个返回值，只需要一个 `return`即可搞定。
-![991592559676.pic.jpg](https://cdn.gooohlan.cn/img/991592559676.pic-f90f3138.jpg)
+![991592559676.pic.jpg](https://goohlan.fishpi.cn/img/991592559676.pic-f90f3138.jpg)
 
 ```go
 func (b buriedPoint) Retention() (channel, projectId, startTime, endTime string, list []dbmodel.BuriedPointKey, data []map[string]string, err error) {
@@ -47,7 +47,7 @@ func (b buriedPoint) Retention() (channel, projectId, startTime, endTime string,
 }
 ```
 
-当然上述的方法虽爽，但是也还是会有问题的，让我们再![991592559676.pic.jpg](https://cdn.gooohlan.cn/img/991592559676.pic-f90f3138.jpg)
+当然上述的方法虽爽，但是也还是会有问题的，让我们再![991592559676.pic.jpg](https://goohlan.fishpi.cn/img/991592559676.pic-f90f3138.jpg)
 
 ```go
 func StringToInt(str string) (v int, err error) {

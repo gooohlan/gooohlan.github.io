@@ -9,7 +9,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.gooohlan.cn/img/demo2.jpg'
+cover: 'https://goohlan.fishpi.cn/img/demo2.jpg'
 permalink: /articles/2019/06/12/1560331304695.html
 abbrlink: 6212
 ---
@@ -31,7 +31,7 @@ abbrlink: 6212
 <iframe style="border:1px solid" src="https://wide.b3log.org/playground/8a883544635b919cd2f822312adb81cf.go" width="99%" height="600"></iframe>
 > 实际效果
 
-![image.png](https://cdn.gooohlan.cn/img/image-0d9ee8d7.png)
+![image.png](https://goohlan.fishpi.cn/img/image-0d9ee8d7.png)
 
 #### 练习 4.3: 重写reverse函数,使用数组指针代替slice。
 > 解题思路(无)

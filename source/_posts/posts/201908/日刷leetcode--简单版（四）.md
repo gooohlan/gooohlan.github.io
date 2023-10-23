@@ -7,7 +7,7 @@ tags:
   - 算法
   - Golang
 permalink: /leetcode4.html
-cover: 'https://cdn.gooohlan.cn/img/20180706.jpg'
+cover: 'https://goohlan.fishpi.cn/img/20180706.jpg'
 categories:
   - - 技术
     - 算法
@@ -25,7 +25,7 @@ toc_number: false
 
 #### 题目描述
 
-![image.png](https://cdn.gooohlan.cn/img/image-85be80cb.png)
+![image.png](https://goohlan.fishpi.cn/img/image-85be80cb.png)
 
 #### 解题思路
 
@@ -68,7 +68,7 @@ func reverses(nums []int) {
 ### 100. 相同的树
 
 #### 题目描述
-![image.png](https://cdn.gooohlan.cn/img/image-00f58922.png)
+![image.png](https://goohlan.fishpi.cn/img/image-00f58922.png)
 
 #### 解题思路
 - 有两中情况下可直接返回
@@ -98,7 +98,7 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 ### 101. 对称二叉树
 
 #### 题目描述
-![image.png](https://cdn.gooohlan.cn/img/image-3af0001a.png)
+![image.png](https://goohlan.fishpi.cn/img/image-3af0001a.png)
 
 #### 解题思路--递归
 
@@ -176,7 +176,7 @@ func isSymmetric(root *TreeNode) bool { // 迭代方法，bfs
 
 #### 题目描述
 
-![image.png](https://cdn.gooohlan.cn/img/image-59a22901.png)
+![image.png](https://goohlan.fishpi.cn/img/image-59a22901.png)
 
 #### 解题思路
 * 使用递归查看当前值是否为空，为空则返回0，接受到递归返回的0就加1
@@ -202,7 +202,7 @@ func maxDepth(root *TreeNode) int {
 ### 107. 二叉树的层次遍历 II
 
 #### 题目描述
-![image.png](https://cdn.gooohlan.cn/img/image-28e94e96.png)
+![image.png](https://goohlan.fishpi.cn/img/image-28e94e96.png)
 
 #### 解题思路
 - 看下面代码注释
@@ -247,9 +247,9 @@ func levelOrderBottom(root *TreeNode) (res [][]int) {
 
 ### 118. 杨辉三角
 #### 题目描述
-![image.png](https://cdn.gooohlan.cn/img/image-84d3bce3.png)
+![image.png](https://goohlan.fishpi.cn/img/image-84d3bce3.png)
 #### 解题思路
-* ![PascalTriangleAnimated2.gif](https://cdn.gooohlan.cn/img/PascalTriangleAnimated2-9958c3e5.gif)
+* ![PascalTriangleAnimated2.gif](https://goohlan.fishpi.cn/img/PascalTriangleAnimated2-9958c3e5.gif)
 
 ##### 示例代码
 ```go

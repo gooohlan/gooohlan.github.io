@@ -5,7 +5,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.gooohlan.cn/img/mmexport1617101105435.jpg'
+cover: 'https://goohlan.fishpi.cn/img/mmexport1617101105435.jpg'
 keywords: 'Swagger, gin, golang'
 abbrlink: 21173
 date: 2021-03-31 21:09:56
@@ -148,7 +148,7 @@ import _ "goweb/docs"
 
 运行项目，访问一下 `http://127.0.0.1:8088/swagger/index.html`， 查看 `API` 文档生成是否正确
 
-![image-20210331234603894](https://cdn.gooohlan.cn/img/image-20210331234603894.png)
+![image-20210331234603894](https://goohlan.fishpi.cn/img/image-20210331234603894.png)
 
 ## 参考
 

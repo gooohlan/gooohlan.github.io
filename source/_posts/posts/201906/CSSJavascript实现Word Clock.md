@@ -9,7 +9,7 @@ tags:
 categories:
   - - 技术
     - 前端
-cover: 'https://cdn.gooohlan.cn/img/无标题-f88e3fb4.png'
+cover: 'https://goohlan.fishpi.cn/img/无标题-f88e3fb4.png'
 permalink: /articles/2019/06/02/1559477290334.html
 abbrlink: 63244
 ---
@@ -262,6 +262,6 @@ li:nth-child(1){ transform: rotate(0deg); }
 ```
 ### 最后的效果
 
-![image.png](https://cdn.gooohlan.cn/img/image-7492af1c)
+![image.png](https://goohlan.fishpi.cn/img/image-7492af1c)
 
 ### 写在最后，时间直接使用jq更改很僵硬，可以通过CSS动画实现。

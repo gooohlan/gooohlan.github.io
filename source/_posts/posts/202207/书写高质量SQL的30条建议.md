@@ -7,7 +7,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.gooohlan.cn/img/20220731201045.png'
+cover: 'https://goohlan.fishpi.cn/img/20220731201045.png'
 keywords: MySQL
 abbrlink: 62506
 date: 2022-07-25 07:52:21
@@ -126,15 +126,15 @@ select id，name from user where name like 'time%';
 
   - 8.0：
 
-    ![image-20220729081240244](https://cdn.gooohlan.cn/img/20220729081240.png)
+    ![image-20220729081240244](https://goohlan.fishpi.cn/img/20220729081240.png)
 
   - 5.6：
 
-    ![image-20220731174559874](https://cdn.gooohlan.cn/img/20220731174559.png)
+    ![image-20220731174559874](https://goohlan.fishpi.cn/img/20220731174559.png)
 
 - 把`%`放关键字后面，还是会走索引的
 
-  ![image-20220729081339405](https://cdn.gooohlan.cn/img/20220729081339.png)
+  ![image-20220729081339405](https://goohlan.fishpi.cn/img/20220729081339.png)
 
 - 综上所述，在`mysql5.6`的版本，两种方式无异，但是在`8.0`的版本上，使用第二种明显效率更高
 
@@ -178,11 +178,11 @@ select user_id, login_time from loginuser where  loginTime >= Date_ADD(NOW(), IN
 
 - 索引列上使用mysql的内置函数，索引失效
 
-  ![image-20220729084656162](https://cdn.gooohlan.cn/img/20220729084656.png)
+  ![image-20220729084656162](https://goohlan.fishpi.cn/img/20220729084656.png)
 
 - 如果索引列不加内置函数，索引还是会走的
 
-  ![image-20220729084743323](https://cdn.gooohlan.cn/img/20220729084743.png)
+  ![image-20220729084743323](https://goohlan.fishpi.cn/img/20220729084743.png)
 
 ### 8、应尽量避免在where子句中对字段进行表达式操作，这将导致系统放弃使用索引而进行全表扫
 
@@ -202,7 +202,7 @@ select * from user where id = 11;
 
 - 虽然`id`是主键索引，但是因为对它进行运算，索引直接迷路了。。。
 
-  ![image-20220729104822176](https://cdn.gooohlan.cn/img/20220729104822.png)
+  ![image-20220729104822176](https://goohlan.fishpi.cn/img/20220729104822.png)
 
 ### 9、Inner join 、left join、right join，优先使用Inner join，如果是left join，左边表结果尽量小
 
@@ -251,11 +251,11 @@ select id, age from user where age > 18;
 
   - 5.6：
 
-    ![image-20220731175351610](https://cdn.gooohlan.cn/img/20220731175351.png)
+    ![image-20220731175351610](https://goohlan.fishpi.cn/img/20220731175351.png)
 
   - 8.0：
 
-    ![image-20220729143037407](https://cdn.gooohlan.cn/img/20220729143037.png)
+    ![image-20220729143037407](https://goohlan.fishpi.cn/img/20220729143037.png)
 
 ### 11、使用联合索引时，注意索引列的顺序，一般遵循最左匹配原则。
 
@@ -267,7 +267,7 @@ select id, age from user where age > 18;
 select * from user where age = 18;
 ```
 
-![image-20220729145327065](https://cdn.gooohlan.cn/img/20220729145327.png)
+![image-20220729145327065](https://goohlan.fishpi.cn/img/20220729145327.png)
 
 正例：
 
@@ -276,9 +276,9 @@ select * from user where user_id = 1 and age = 18; -- 符合最左匹配原则
 select * from user where user_id = 2; -- 符合最左匹配原则
 ```
 
-![image-20220729145544327](https://cdn.gooohlan.cn/img/20220729145544.png)
+![image-20220729145544327](https://goohlan.fishpi.cn/img/20220729145544.png)
 
-![image-20220729145602097](https://cdn.gooohlan.cn/img/20220729145602.png)
+![image-20220729145602097](https://goohlan.fishpi.cn/img/20220729145602.png)
 
 理由：
 
@@ -293,7 +293,7 @@ select * from user where user_id = 2; -- 符合最左匹配原则
 select * from user where address ='重庆' order by age ;
 ```
 
-![image-20220730174154876](https://cdn.gooohlan.cn/img/20220730174155.png)
+![image-20220730174154876](https://goohlan.fishpi.cn/img/20220730174155.png)
 
 正例：
 
@@ -301,7 +301,7 @@ select * from user where address ='重庆' order by age ;
 alter table user add index idx_address_age (address, age); -- 添加索引
 ```
 
-![image-20220730180723417](https://cdn.gooohlan.cn/img/20220730180723.png)
+![image-20220730180723417](https://goohlan.fishpi.cn/img/20220730180723.png)
 
 13、如果插入数据过多，考虑批量插入。
 
@@ -335,11 +335,11 @@ insert into user (name, age) values ("gooohlan1", 18),("HQL", 19)....
 select * from user where user_id like '%1' -- like模糊查血，不走索引了
 ```
 
-![image-20220731175901535](https://cdn.gooohlan.cn/img/20220731175901.png)
+![image-20220731175901535](https://goohlan.fishpi.cn/img/20220731175901.png)
 
 正例：
 
-![image-20220731180147538](https://cdn.gooohlan.cn/img/20220731180147.png)
+![image-20220731180147538](https://goohlan.fishpi.cn/img/20220731180147.png)
 
 ### 15、慎用distinct关键字
 
@@ -365,7 +365,7 @@ select distinct name form user;
 
 反例:
 
-![image-20220731180958402](https://cdn.gooohlan.cn/img/20220731180958.png)
+![image-20220731180958402](https://goohlan.fishpi.cn/img/20220731180958.png)
 
 正例：
 
@@ -617,7 +617,7 @@ select job，avg（salary） from employee where job = 'president' or job = 'man
 select * from user where name = 1
 ```
 
-![image-20220731195859391](https://cdn.gooohlan.cn/img/20220731195859.png)
+![image-20220731195859391](https://goohlan.fishpi.cn/img/20220731195859.png)
 
 正例：
 
@@ -627,7 +627,7 @@ select * from user where name = '1'
 
 
 
-![image-20220731195913670](https://cdn.gooohlan.cn/img/20220731195913.png)
+![image-20220731195913670](https://goohlan.fishpi.cn/img/20220731195913.png)
 
 理由：
 

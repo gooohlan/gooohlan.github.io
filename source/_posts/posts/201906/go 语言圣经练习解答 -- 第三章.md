@@ -6,7 +6,7 @@ tags:
   - 教程
   - 学习
   - Golang
-cover: 'https://cdn.gooohlan.cn/img/100-20210107231539301.jpeg'
+cover: 'https://goohlan.fishpi.cn/img/100-20210107231539301.jpeg'
 categories:
   - - 技术
     - 后端

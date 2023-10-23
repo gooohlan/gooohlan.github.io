@@ -7,7 +7,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://cdn.gooohlan.cn/img/20210927213719.jpg'
+cover: 'https://goohlan.fishpi.cn/img/20210927213719.jpg'
 keywords: 'golang, proto, grpc, protobuf, goland, ide, 自动编译'
 abbrlink: 49446
 date: 2021-09-27 19:54:56
@@ -25,22 +25,22 @@ description:
 
 **Jetbrains**全家桶提供了`file watcher`的功能，可以实现对文件的监听，文件发生更改时可以执行某些操作，这与我们开发的程序结合，即可解放双手，实现自动编译。
 
-![image-20210927211122811](https://cdn.gooohlan.cn/img/20210927211122.png)
+![image-20210927211122811](https://goohlan.fishpi.cn/img/20210927211122.png)
 
 下载[proto_build程序包](https://github.com/gooohlan/proto_build/releases)，或下载[源码]((https://github.com/gooohlan/proto_build))后编译，打开**Jetbrains**家的`ide`，这里以`Goland`为例：
 
 `Preferences` → `Tools` → `File Watcher`
 
-![image-20210927211053278](https://cdn.gooohlan.cn/img/20210927211053.png)
+![image-20210927211053278](https://goohlan.fishpi.cn/img/20210927211053.png)
 
 新建`File Watcher`：点击 `+` → `<custom>`
 
-![image-20210927211252517](https://cdn.gooohlan.cn/img/20210927211252.png)
+![image-20210927211252517](https://goohlan.fishpi.cn/img/20210927211252.png)
 
 选择监听文件类型`Protocol Buffer`，文件监听范围(根据自己实际需求选择，这里我选择当前项目)，选择上面下载或自行编译的运行程序，工作目录选择当前项目所在目录即可。
 
-![image-20210927212113805](https://cdn.gooohlan.cn/img/20210927212113.png)
+![image-20210927212113805](https://goohlan.fishpi.cn/img/20210927212113.png)
 
-![image-20210927212208720](https://cdn.gooohlan.cn/img/20210927212208.png)
+![image-20210927212208720](https://goohlan.fishpi.cn/img/20210927212208.png)
 
 编辑`proto`文件，查看是否自动编译生成对应`.go`文件
