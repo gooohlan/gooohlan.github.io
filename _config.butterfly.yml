@@ -861,7 +861,6 @@ inject:
     - <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
-    # - <script src="xxxx"></script>
     - <script src="/live2d-widget/autoload.js"></script>
     - <script data-pjax src="https://goohlan.fishpi.cn/other/style.js"></script>
 # CDN

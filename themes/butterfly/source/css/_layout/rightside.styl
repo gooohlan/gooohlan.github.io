@@ -6,6 +6,10 @@
   opacity: 0
   transition: all .5s
 
+  &.rightside-show
+    opacity: .8
+    transform: translate(-58px, 0)
+
   #rightside-config-hide
     height: 0
     opacity: 0
@@ -47,3 +51,22 @@
   +maxWidth900()
     #hide-aside-btn
       display: none
+
+  if hexo-config('rightside_scroll_percent')
+    #go-up
+      .scroll-percent
+        display: none
+
+      &.show-percent
+        .scroll-percent
+          display: block
+
+          & + i
+            display: none
+
+      &:hover
+        .scroll-percent
+          display: none
+
+          & + i
+            display: block
