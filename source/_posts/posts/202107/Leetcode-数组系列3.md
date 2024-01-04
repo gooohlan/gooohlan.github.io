@@ -12,7 +12,7 @@ categories:
     - 算法
 keywords: 算法,LeetCode,数组,Golang
 description: 'LeetCode 204.计数质数，303.区域和检索 - 数组不可变，349.两个数组的交集，350.两个数组的交集II，453.最小操作次数使数组元素相同，455.分发饼干'
-cover: https://goohlan.fishpi.cn/img/20210713160004.jpg
+cover: https://gooohlan.fishpi.cn/img/20210713160004.jpg
 toc_number: false
 ---
 
@@ -24,7 +24,7 @@ toc_number: false
 
 ### 204. 计数质数
 
-![image-20210713143946282](https://goohlan.fishpi.cn/img/20210713143946.png)
+![image-20210713143946282](https://gooohlan.fishpi.cn/img/20210713143946.png)
 
 {% tabs 204 %}
 <!-- tab 枚举 -->
@@ -139,7 +139,7 @@ func countPrimes(n int) int {
 
 ### 303. 区域和检索 - 数组不可变
 
-![image-20210713165305675](https://goohlan.fishpi.cn/img/20210713165305.png)
+![image-20210713165305675](https://gooohlan.fishpi.cn/img/20210713165305.png)
 
 {% tabs 303%}
 
@@ -215,7 +215,7 @@ func (this *NumArray) SumRange(left int, right int) int {
 
 ### 349. 两个数组的交集
 
-![image-20210713173412962](https://goohlan.fishpi.cn/img/20210714143501.png)
+![image-20210713173412962](https://gooohlan.fishpi.cn/img/20210714143501.png)
 
 {% tabs 349 %}
 
@@ -296,7 +296,7 @@ func intersection(nums1 []int, nums2 []int) []int {
 
 ### 350. 两个数的交集 II
 
-![image-20210714111828350](https://goohlan.fishpi.cn/img/20210714111828.png)
+![image-20210714111828350](https://gooohlan.fishpi.cn/img/20210714111828.png)
 
 {% tabs 350 %}
 
@@ -373,7 +373,7 @@ func intersect(nums1 []int, nums2 []int) []int {
 
 ### 453. 最小操作次数使数组元素相同
 
-![image-20210714150911830](https://goohlan.fishpi.cn/img/20210714150911.png)
+![image-20210714150911830](https://gooohlan.fishpi.cn/img/20210714150911.png)
 
 {% tabs 453%}
 

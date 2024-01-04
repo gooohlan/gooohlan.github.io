@@ -11,7 +11,7 @@ categories:
   - - 技术
     - 算法
 keywords: '算法,LeetCode,DP,2376. 统计特殊整数,233. 数字 1 的个数,面试题 17.06. 2出现的次数,600. 不含连续1的非负整数,902. 最大为 N 的数字组合,1067. 范围内的数字计数,1397. 找到所有好字符串'
-cover: https://goohlan.fishpi.cn/img/202311122224218.png
+cover: https://gooohlan.fishpi.cn/img/202311122224218.png
 description:
 katex: true
 ---
@@ -24,7 +24,7 @@ katex: true
 
 ### 例题：2376. 统计特殊整数
 
-![image-20231108213945185](https://goohlan.fishpi.cn/img/202311082139219.png)
+![image-20231108213945185](https://gooohlan.fishpi.cn/img/202311082139219.png)
 
 要解决这道题需要前置知识[「位运算与集合论」](https://gooohlan.cn/skill/algorithm/7087.html)，在这简述一下：
 
@@ -133,7 +133,7 @@ func countSpecialNumbers(n int) int {
 
 #### 233. 数字 1 的个数
 
-![image-20231112205906575](https://goohlan.fishpi.cn/img/202311122059706.png)
+![image-20231112205906575](https://gooohlan.fishpi.cn/img/202311122059706.png)
 
 根据上面模版定义 $f(i, cnt, isLimit, isNum)$，表示构造到从左到右第 $i$ 位，已经出现了 $cnt$ 个 $1$，在这种情况下，继续构造最终会得到的 $1$ 的个数 （你可以直接从回溯的角度理解这个过程，只不过是多了个记忆化）。
 
@@ -184,7 +184,7 @@ func countDigitOne(n int) int {
 
 #### 面试题 17.06. 2出现的次数
 
-![image-20231112212159355](https://goohlan.fishpi.cn/img/202311122121382.png)
+![image-20231112212159355](https://gooohlan.fishpi.cn/img/202311122121382.png)
 
 跟上面的题一样，把 $d==1$ 改为 $d==2$ 即可
 
@@ -234,7 +234,7 @@ func numberOf2sInRange(n int) int {
 
 #### 600. 不含连续1的非负整数
 
-![image-20231112211048043](https://goohlan.fishpi.cn/img/202311122110283.png)
+![image-20231112211048043](https://gooohlan.fishpi.cn/img/202311122110283.png)
 
 根据上述通用模版 $f(i, pre, isLimt, isNum)$ 表示构造从左往右第 $i$ 位及其之后数位的合法方案数，其中 $pre$ 表示第 $i-1$ 位是否为 $1$，如果为真则当前位不能填 $1$。
 
@@ -277,7 +277,7 @@ func findIntegers(n int) int {
 
 #### 902. 最大为 N 的数字组合
 
-![image-20231112211615711](https://goohlan.fishpi.cn/img/202311122116912.png)
+![image-20231112211615711](https://gooohlan.fishpi.cn/img/202311122116912.png)
 
 因为这道题填入的数字是直接从 $digits$ 中选择，所以可以胜利第二个参数，然后只记忆化 $i$ 就可以了，因为：
 
@@ -334,7 +334,7 @@ func atMostNGivenDigitSet(digits []string, n int) int {
 
 #### 1067. 范围内的数字计数
 
-![image-20231112213310770](https://goohlan.fishpi.cn/img/202311122133001.png)
+![image-20231112213310770](https://gooohlan.fishpi.cn/img/202311122133001.png)
 
 这题思路和第一题和第二题一致，因为 $high >= low$ 所以 $high$ 中 $d$ 个数，包含了 $low$ 中 $d$ 的个数，计算出 $high$ 中的个数即可
 
@@ -390,7 +390,7 @@ func count(n, x int) int {
 
 #### 1397. 找到所有好字符串
 
-![image-20231112215256912](https://goohlan.fishpi.cn/img/202311122152180.png)
+![image-20231112215256912](https://gooohlan.fishpi.cn/img/202311122152180.png)
 
 依旧是套用上面的模版，不同的是在递归时，进入递归的时机，由`kmp算法提供`，注意几个小细节即可：
 

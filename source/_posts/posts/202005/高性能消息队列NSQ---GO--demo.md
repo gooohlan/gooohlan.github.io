@@ -8,7 +8,7 @@ tags:
 categories:
   - - 技术
     - 后端
-cover: 'https://goohlan.fishpi.cn/img/20180403.jpg'
+cover: 'https://gooohlan.fishpi.cn/img/20180403.jpg'
 permalink: /articles/2020/05/21/1590046687574.html
 abbrlink: 28940
 ---

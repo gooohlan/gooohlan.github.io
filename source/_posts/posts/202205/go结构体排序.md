@@ -10,7 +10,7 @@ keywords: 'golang, sort, 排序, 多字段排序, 组合排序'
 abbrlink: 14370
 date: 2022-05-04 20:30:34
 updated: 2022-05-04 21:30:34
-cover: https://goohlan.fishpi.cn/img/20220504214250.png
+cover: https://gooohlan.fishpi.cn/img/20220504214250.png
 description:
 ---
 

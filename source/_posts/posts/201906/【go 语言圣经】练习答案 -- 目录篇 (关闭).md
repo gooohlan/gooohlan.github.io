@@ -7,7 +7,7 @@ tags:
   - 学习
   - 教程
 permalink: /articles/2019/06/16/1560663440490.html
-cover: 'https://goohlan.fishpi.cn/img/20181022.jpg'
+cover: 'https://gooohlan.fishpi.cn/img/20181022.jpg'
 categories:
   - - 技术
     - 后端

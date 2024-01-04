@@ -11,7 +11,7 @@ categories:
 keywords: '算法,LeetCode,数组,Golang'
 abbrlink: 55343
 date: 2021-09-07 16:33:31
-cover: https://goohlan.fishpi.cn/img/20220324161314.png
+cover: https://gooohlan.fishpi.cn/img/20220324161314.png
 description: 'LeetCode 674.最长连续递增序列，482.棒球比赛，494.数组的度，704.二分查找，705.设计哈希集合，706.设计哈希集合'
 toc_number: false
 ---
@@ -321,7 +321,7 @@ func search(nums []int, target int) int {
 
 为了平衡时间和空间的平衡，**HashSet**是基于数组实现的，通过hsah方法求键Key在数组中的位置，当hash后的位置存在冲突的时候，在解决冲突。设计合适的 hash 函数，一般都是对分桶数取模`%`，为了避免冲突，尽量采用质数取模
 
-![c9bbf70f3f0c446ed294e087d8565348.jpg](https://goohlan.fishpi.cn/img/20220324154253.jpg)
+![c9bbf70f3f0c446ed294e087d8565348.jpg](https://gooohlan.fishpi.cn/img/20220324154253.jpg)
 
 {% endnote %}
 

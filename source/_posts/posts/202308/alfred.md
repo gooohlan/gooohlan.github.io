@@ -3,7 +3,7 @@ title: alfred workflows 推荐
 toc_number: false
 tags: alfred
 categories: 工具
-cover: 'https://goohlan.fishpi.cn/img/202308111620662.png'
+cover: 'https://gooohlan.fishpi.cn/img/202308111620662.png'
 abbrlink: 29093
 date: 2023-08-11 15:36:42
 updated: 2023-08-11 15:36:42

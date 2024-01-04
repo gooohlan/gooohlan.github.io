@@ -7,7 +7,7 @@ tags:
   - Golang
 categories:
   - - 技术
-cover: https://goohlan.fishpi.cn/img/4cc9165193ad49be81eee216717bac82_9c26c634gy1fokyi7gt6aj21kw0wahdt1.jpg
+cover: https://gooohlan.fishpi.cn/img/4cc9165193ad49be81eee216717bac82_9c26c634gy1fokyi7gt6aj21kw0wahdt1.jpg
 keywords: Golang，Go，Exif，读取Exif，删除Exif
 description: 使用Go读取照片中Exif的隐私信息，并删除它
 ---
@@ -18,10 +18,10 @@ description: 使用Go读取照片中Exif的隐私信息，并删除它
 
 通过手机或者相机拍摄的照片中会携带Exif信息，而某些手机默认会携带地理位置等隐私信息，比如下面这张图片
 
-![IMG_20210125_191526](https://goohlan.fishpi.cn/img/IMG_20210125_191526.jpg)
+![IMG_20210125_191526](https://gooohlan.fishpi.cn/img/IMG_20210125_191526.jpg)
 
 它的Exif信息为：
-![](https://goohlan.fishpi.cn/img/20210125183002.png)
+![](https://gooohlan.fishpi.cn/img/20210125183002.png)
 
 可以直接看到该照片使用**Redmi K30 Pro**拍摄于**2021:01:25 19:15:28**，甚至还可以直接看到经纬度信息(手机设置中可关闭)。这种未经过处理的照片直接上传到网上之后，可能会造成隐私的泄露。
 
