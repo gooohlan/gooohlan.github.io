@@ -1,16 +1,16 @@
-<h1 id="Live2D-Widget">Live2D Widget</h1>
+<h1 id="live2d-widget">Live2D Widget</h1>
 <p><img src="https://forthebadge.com/images/badges/built-with-love.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/uses-html.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/contains-cat-gifs.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/powered-by-electricity.svg" alt=""><br>
 <img src="https://forthebadge.com/images/badges/makes-people-smile.svg" alt=""></p>
-<h2 id="特性-Feature">特性 Feature</h2>
+<h2 id="特性-feature">特性 Feature</h2>
 <p>在网页中添加 Live2D 看板娘。兼容 PJAX，支持无刷新加载。<br>
 Add Live2D widget to web page. Compatible with PJAX.</p>
 <p><strong>警告：本项目使用了大量 ES6 语法，不支持 IE 11 等老旧浏览器。</strong><br>
 <strong>WARNING: This project does not support legacy browsers such as IE 11.</strong></p>
-<h2 id="示例-Demo">示例 Demo</h2>
+<h2 id="示例-demo">示例 Demo</h2>
 <p>在<a href="https://zhangshuqiao.org">米米的博客</a>的左下角可查看效果。（注：以下人物模型仅供展示之用，本仓库并不包含任何模型。）</p>
 <p><img src="assets/screenshot-2.png" width="280"><img src="assets/screenshot-3.png" width="280"><img src="assets/screenshot-1.png" width="270"></p>
 <p>你也可以在允许的范围内进行二次开发，这里有一些示例</p>
@@ -18,13 +18,13 @@ Add Live2D widget to web page. Compatible with PJAX.</p>
 <li><a href="https://mi.js.org/live2d-widget/demo/demo.html">demo.html</a> ，展现基础效果</li>
 <li><a href="https://mi.js.org/live2d-widget/demo/login.html">login.html</a> ，仿 NPM 的登陆界面</li>
 </ul>
-<h2 id="依赖-Dependencies">依赖 Dependencies</h2>
+<h2 id="依赖-dependencies">依赖 Dependencies</h2>
 <p>本插件需要 Font Awesome (v4 或 v5) 图标支持，请确保相关样式表已在页面中加载。以 Font Awesome v4 为例，请在 <code>&lt;head&gt;</code> 中加入：<br>
 Font Awesome (v4 or v5) is required for this plugin. Take Font Awesome v4 as an example, please add the following in <code>&lt;head&gt;</code>:</p>
 <pre><code class="language-xml">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;
 </code></pre>
 <p>否则图标将无法正常显示。（如果网页中已经加载了任何版本的 Font Awesome，就不要重复加载了）</p>
-<h2 id="使用-Usage">使用 Usage</h2>
+<h2 id="使用-usage">使用 Usage</h2>
 <p>将这一行代码加入 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code>，即可展现出效果：</p>
 <pre><code class="language-xml">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;&gt;&lt;/script&gt;
 </code></pre>
@@ -33,7 +33,7 @@ Font Awesome (v4 or v5) is required for this plugin. Take Font Awesome v4 as an 
 对于用各种模版引擎（例如 Nunjucks，Jinja 或者 PHP）生成的页面，也要自行修改，方法类似，只是可能略为麻烦。以 <a href="https://hexo.io">Hexo</a> 为例，需要在主题相关的 ejs 或 njk 模版中正确配置路径，才可以加载。</p>
 <p><strong>但是！我们强烈推荐自己进行配置，否则很多功能是不完整的，并且可能产生问题！</strong><br>
 如果你有兴趣自己折腾的话，请看下面的详细说明。</p>
-<h3 id="Using-CDN">Using CDN</h3>
+<h3 id="using-cdn">Using CDN</h3>
 <p>要自定义有关内容，可以把这个仓库 Fork 一份，然后进行修改。这时，使用方法对应地变为</p>
 <pre><code class="language-xml">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/username/live2d-widget@latest/autoload.js&quot;&gt;&lt;/script&gt;
 </code></pre>
@@ -42,7 +42,7 @@ Font Awesome (v4 or v5) is required for this plugin. Take Font Awesome v4 as an 
 <li><a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">Git Basics - Tagging</a></li>
 <li><a href="https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository">Managing releases in a repository</a></li>
 </ul>
-<h3 id="Self-host">Self-host</h3>
+<h3 id="self-host">Self-host</h3>
 <p>你也可以直接把这些文件放到服务器上，而不是通过 CDN 加载。</p>
 <ul>
 <li>如果你能够通过 <code>ssh</code> 访问你的主机，请把整个仓库克隆到服务器上。执行：<pre><code class="language-bash">cd /path/to/your/webroot
@@ -66,9 +66,9 @@ git clone https://github.com/stevenjoezhang/live2d-widget.git
 <pre><code class="language-xml">&lt;script src=&quot;https://example.com/path/to/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>就可以加载了。</p>
-<h2 id="后端-API">后端 API</h2>
+<h2 id="后端-api">后端 API</h2>
 <p><code>initWidget</code> 方法接受名为 <code>apiPath</code> 和 <code>cdnPath</code> 的参数，两者设置其中一项即可。其中 <code>apiPath</code> 为后端 API 的 URL，可以自行搭建，并增加模型（需要修改的内容比较多，此处不再赘述）。而 <code>cdnPath</code> 则是通过 jsDelivr 这样的 CDN 服务加载资源，更加稳定。</p>
-<h2 id="目录结构-Files">目录结构 Files</h2>
+<h2 id="目录结构-files">目录结构 Files</h2>
 <ul>
 <li><code>waifu-tips.js</code> 包含了按钮和对话框的逻辑；</li>
 <li><code>waifu-tips.json</code> 中定义了触发条件（<code>selector</code>，CSS 选择器）和触发时显示的文字（<code>text</code>）；</li>
@@ -77,7 +77,7 @@ git clone https://github.com/stevenjoezhang/live2d-widget.git
 <p>源文件是对 Hexo 的 <a href="http://github.com/next-theme/hexo-theme-next">NexT 主题</a>有效的，为了适用于你自己的网页，可能需要自行修改，或增加新内容。<br>
 <strong>警告：作者不对包括但不限于 <code>waifu-tips.js</code> 和 <code>waifu-tips.json</code> 文件中的内容负责，请自行确保它们是合适的。</strong></p>
 <p>如果有任何疑问，欢迎提 Issue。如果有任何修改建议，欢迎提 Pull Request。</p>
-<h2 id="鸣谢-Thanks">鸣谢 Thanks</h2>
+<h2 id="鸣谢-thanks">鸣谢 Thanks</h2>
 <p><a href="https://www.browserstack.com/"><img height="80" src="https://live.browserstack.com/images/opensource/browserstack-logo.svg" alt="BrowserStack Logo"></a></p>
 <blockquote>
 <p>感谢 BrowserStack 容许我们在真实的浏览器中测试此项目。<br>
@@ -91,7 +91,7 @@ Thanks jsDelivr for providing public CDN service.</p>
 <p>代码自这篇博文魔改而来：<br>
 <a href="https://www.fghrsh.net/post/123.html">https://www.fghrsh.net/post/123.html</a></p>
 <p>点击看板娘的纸飞机按钮时，会出现一个彩蛋，这来自于 <a href="http://www.websiteasteroids.com">WebsiteAsteroids</a>。</p>
-<h2 id="更多-More">更多 More</h2>
+<h2 id="更多-more">更多 More</h2>
 <p>更多内容可以参考：<br>
 <a href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02">https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02</a><br>
 <a href="https://github.com/xiazeyu/live2d-widget.js">https://github.com/xiazeyu/live2d-widget.js</a><br>
@@ -107,7 +107,7 @@ Thanks jsDelivr for providing public CDN service.</p>
 <a href="https://github.com/LikeNeko/L2dPetForMac">https://github.com/LikeNeko/L2dPetForMac</a></p>
 <p>以及 Wallpaper Engine：<br>
 <a href="https://github.com/guansss/nep-live2d">https://github.com/guansss/nep-live2d</a></p>
-<h2 id="许可证-License">许可证 License</h2>
+<h2 id="许可证-license">许可证 License</h2>
 <p>Released under the GNU General Public License v3<br>
 <a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
 <p>本仓库并不包含任何模型，用作展示的所有 Live2D 模型、图片、动作数据等版权均属于其原作者，仅供研究学习，不得用于商业用途。</p>
@@ -122,7 +122,7 @@ Live2D Cubism Components は Live2D Open Software License で提供していま�
 <p>The terms and conditions do prohibit modification, but obfuscating in <code>live2d.min.js</code> would not be considered illegal modification.</p>
 </blockquote>
 <p><a href="https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question">https://community.live2d.com/discussion/140/webgl-developer-licence-and-javascript-question</a></p>
-<h2 id="更新-Update">更新 Update</h2>
+<h2 id="更新-update">更新 Update</h2>
 <p>2018年10月31日，由 fghrsh 提供的原 API 停用，请更新至新地址。参考文章：<br>
 <a href="https://www.fghrsh.net/post/170.html">https://www.fghrsh.net/post/170.html</a></p>
 <p>2020年1月1日起，本项目不再依赖于 jQuery。</p>
