@@ -61,11 +61,11 @@ abbrlink: 20413
    - 小结：不可重复读的和幻读很容易混淆，不可重复读侧**重于修改**，幻读侧重于**新增或删除**
 
    | 隔离级别 | 脏读 | 不可重复读 | 幻读 |
-| :- | :-: | :-: | :-: |
-| 读未提交(read-uncommitted) | ✓ | ✓ | ✓ |
-| 不可重复读(read-committed) | × | ✓ | ✓ |
-| 可重复读(repeatable-read) | × | × | ✓ |
-| 串行化(serializable) | × | × | × |
+   | :- | :-: | :-: | :-: |
+   | 读未提交(read-uncommitted) | ✓ | ✓ | ✓ |
+   | 不可重复读(read-committed) | × | ✓ | ✓ |
+   | 可重复读(repeatable-read) | × | × | ✓ |
+   | 串行化(serializable) | × | × | × |
 
 2. 索引失效场景
 
