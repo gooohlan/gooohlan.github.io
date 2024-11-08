@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Mac脚本开机启动与取消</title>
+      <link href="%E5%B7%A5%E5%85%B7/55538.html"/>
+      <url>%E5%B7%A5%E5%85%B7/55538.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="开机运行脚本617af3cb2ee67597c6f8fcc31c99d8a0a58b154b270f66c30306e5d7830ddc2f">开机运行脚本<img src="https://gooohlan.fishpi.cn/img/header.png" alt="617af3cb2ee67597c6f8fcc31c99d8a0a58b154b270f66c30306e5d7830ddc2f"></h1><ol><li><p><strong>创建一个脚本文件：</strong></p><p>首先，在你的主目录下创建一个脚本文件，比如 <code>set_bclm.sh</code>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/set_bclm.sh</span><br></pre></td></tr></table></figure><p>在文件中输入以下内容：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;your_password&quot;</span> | sudo -S bclm write 80</span><br></pre></td></tr></table></figure><p>请将 <code>&quot;your_password&quot;</code> 替换为你的实际密码。<strong>注意：将密码存储在脚本中可能存在安全风险，请谨慎使用。</strong></p></li><li><p><strong>修改脚本权限：</strong></p><p>使脚本可执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ~/set_bclm.sh</span><br></pre></td></tr></table></figure></li><li><p><strong>使用 LaunchAgents 自动执行脚本：</strong></p><p>创建一个 LaunchAgent plist 文件：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p ~/Library/LaunchAgents</span><br><span class="line">nano ~/Library/LaunchAgents/com.user.setbclm.plist</span><br></pre></td></tr></table></figure><p>在文件中输入以下内容：</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line">  <span class="meta">&lt;!DOCTYPE <span class="keyword">plist</span> <span class="keyword">PUBLIC</span> <span class="string">&quot;-//Apple//DTD PLIST 1.0//EN&quot;</span> <span class="string">&quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">plist</span> <span class="attr">version</span>=<span class="string">&quot;1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">key</span>&gt;</span>Label<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">string</span>&gt;</span>com.user.setbclm<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">key</span>&gt;</span>ProgramArguments<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">string</span>&gt;</span>/bin/bash<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">string</span>&gt;</span>/Users/your_username/set_bclm.sh<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">key</span>&gt;</span>RunAtLoad<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">true</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plist</span>&gt;</span></span><br></pre></td></tr></table></figure><p>请将 <code>/Users/your_username/set_bclm.sh</code> 替换为你实际的用户名和脚本路径。</p></li><li><p><strong>加载 LaunchAgent：</strong></p><p>使用以下命令加载 LaunchAgent：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">launchctl load ~/Library/LaunchAgents/com.user.setbclm.plist</span><br></pre></td></tr></table></figure></li></ol><p>这样，每次重启后，<code>sudo bclm write 80</code> 就会自动运行。</p><h1 id="取消脚本">取消脚本</h1><p>要取消已经设置的开机脚本，你可以按照以下步骤操作：</p><ol><li><p><strong>卸载 LaunchAgent：</strong></p><p>使用 <code>launchctl</code> 卸载 LaunchAgent：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">launchctl unload ~/Library/LaunchAgents/com.user.setbclm.plist</span><br></pre></td></tr></table></figure></li><li><p><strong>删除 LaunchAgent 文件：</strong></p><p>删除对应的 plist 文件：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rm</span> ~/Library/LaunchAgents/com.user.setbclm.plist</span><br></pre></td></tr></table></figure></li></ol><p>这样就可以取消开机时自动执行的脚本了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mac </tag>
+            
+            <tag> Shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每日一题(7)</title>
       <link href="skill/algorithm/33214.html"/>
       <url>skill/algorithm/33214.html</url>
